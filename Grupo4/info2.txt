@@ -1,0 +1,167 @@
+header {
+    background-color: #EAC926;
+    font-family: 'Roboto', sans-serif;
+}
+
+#titulares {font-size:24px}
+#precio {
+    font-size:18px; 
+    margin:0px;
+    padding: 0px;
+}
+#descuento{
+    font-size:16px;
+    color:green;
+    margin:0px 0px 20px 0px;
+    
+}
+#descripciones{font-size:16px}  
+
+.buttom{
+    background-color:blue;
+    color: white;
+    font-size: 2em;
+}
+
+.center{
+    text-align: center;
+}
+
+.banner img{
+    width: 100%;
+    padding: 0px;
+    margin:0px;
+   display: block;
+}
+.titulares{
+    background-color: rgb(216, 211, 211);
+    width: 100%;
+    padding: 0px;
+    margin:0px;
+    
+}
+.titulares h3{
+    margin:0%;
+    text-align: center;
+    padding: 40px 50px;
+}
+
+
+.main-navbar a{
+    text-decoration: none; 
+   color: black;
+   display: inline-block;
+   padding: 0px;
+   margin: 3px;
+  
+}
+.main-navbar ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.navbar-separado{
+    margin:0px 0px 15px;
+}
+
+.centrado{
+    text-align: center;
+}
+footer{
+    text-align: center;
+}
+
+.ultimo-izquierda{
+    text-align: left;
+}
+
+.tamaño i{
+    font-size: 2em;
+    color: blue;
+}
+
+.main{
+    width: 90%;
+    margin:auto;
+}
+
+img{
+    width: 90%;
+}
+
+
+.articulo1{
+    padding: 0px 0px 10px;;
+}
+.articulo2{
+    padding: 0px 0px 10px;;
+}
+
+.articulo3{
+    padding: 0px 0px 10px;;
+}
+
+.articulo4{
+    padding: 0px 0px 10px;;
+}
+.articulo5{
+    padding: 0px 0px 10px;;
+}
+.articulo6{
+    padding: 0px 0px 10px;;
+}
+.articulo7{
+    padding: 0px 0px 10px;;
+}
+.articulo8{
+    padding: 0px 0px 10px;;
+}
+.elementos-caja1{
+    border: solid 1px #ebebeb;
+    padding: 15px;
+    
+}
+.elementos-caja1 i{
+color:green;
+}
+#descripciones{
+    display: none;
+}
+.main-navbar{
+    display: none;
+    }
+
+@media (min-width:361px){
+    body{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100); 
+    }
+    .articulo1,.articulo2,.articulo3,.articulo4,.articulo5,.articulo6,.articulo7,.articulo8{
+        border: solid 5px gray;
+        
+    }
+    .main-navbar{
+        display: block;
+    }
+    .center{
+        display: none;
+     }
+     #descripciones{
+        display: block;
+     }
+    }
+
+
+@media (min-width:769px){   
+    body{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100); 
+    }
+    .main-navbar{
+        display: block;
+    }
+    .center{
+        display: none;
+     }
+     #descripciones{
+        display: block;
+     }
+}

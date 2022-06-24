@@ -1,0 +1,77 @@
+header{
+    background-color: blue;
+    
+}
+
+.contenedor-cabeza form{
+    text-align: center;
+    padding: 50px;
+    
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.portada{
+    text-align: center;
+    background-color: red;
+    height: 90px;
+    padding: 40px;
+}
+
+.frase{
+    background-color: aliceblue;
+    text-align: center;
+    padding: 20px;
+   
+}
+
+.carrusel{
+    background-color: blueviolet;
+}
+.carrusel .fotos{
+    width: 200%;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+}
+footer{
+    background-color: aqua;
+    margin:0px;
+    padding: 0px;
+}
+
+.contacto p{
+    margin: 3px;
+    
+}
+
+.redes-sociales{
+    font-size: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.fa-facebook{
+    color:blue;
+    margin: 10px;
+}
+.fa-whatsapp{
+    color: green;
+    margin: 10px;
+}
+.fa-instagram{
+    color: rgb(245, 13, 71);
+    margin: 10px;
+}
+.fa-envelope{
+    margin: 10px;
+}
+.fa-location-dot{
+    margin: 10px;
+}
