@@ -27,3 +27,7 @@ https://www.collectorsquare.com/es/
 Referencias mobile:
 https://www.bonacera.ar/
 https://www.mankioficial.com/
+
+
+Enlace al Tablero de trabajo:
+https://trello.com/invite/jopostore/8de063c376859f5446a94cacad9fbcb6
