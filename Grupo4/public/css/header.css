@@ -1,0 +1,56 @@
+*{  
+    box-sizing: border-box;
+}
+
+
+/*header*/
+
+header{
+    background-color: rgba(180, 175, 175, 0.829); 
+    
+}
+
+.bars-menu{
+    margin: 40px 0px 0px 0px;
+    
+}
+
+.bars-menu i, .cart-shopping i {
+    font-size: 40px;
+}
+
+.cart-shopping{
+    margin: 40px 0px 0px 0px;
+}
+
+.cabecera button{
+    color: #4B200D;
+}
+.cabecera{
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-around;
+}
+
+img{
+    width: 45%;
+    height: 20vh;
+    padding: 20px 0px 0px 0px;
+}
+
+.search-bar{
+    text-align: center;
+    padding: 40px;
+}
+
+.input-header{
+    width: 80%;
+    height: 5vh;
+}
+
+form .form-buttom-header{
+    font-size: 26px;
+    position: absolute;
+    right: 75px;
+    top: 201px;
+}

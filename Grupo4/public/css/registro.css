@@ -1,0 +1,37 @@
+h1{
+    font-size: 30px;
+    text-align: center;
+}
+
+.form-control-registro input{
+    border-radius: 10px;
+    width: 100%;
+    height: 30px;
+    margin: 10px 0px;
+}
+
+.form-control-registro{
+    margin: 30px 0px;
+}
+
+.create-account{
+    border-radius: 15px;
+    width: 80%;
+    height: 30px;
+    background-color: #4B200D;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-final-registro{
+    margin: 100px 0px 0px 0px;
+    text-align: center;
+}
+
+@media (min-width:769px){
+    .form-control-registro{
+        width:60%;
+    }
+}
+

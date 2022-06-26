@@ -9,45 +9,47 @@
     </head>
     <body>
         <header>
-                <div class="menu">
-                <button class="buttom-menu"><i class="fas fa-bars"></i></button>
-
-                <span class="imagen">Aca va una imagen</span>
-                
-                <button class="buttom-carrito"><i class="fa-solid fa-cart-shopping"></i></button>
+            <div class="cabecera">
+                <div class="bars-menu">
+                <button><i class="fas fa-bars"></i></button>
                 </div>
 
-            <div class="contenedor-cabeza">
+                <img src="./images/logo1.jpg" alt="Logo">
+                 
+                <div class="cart-shopping">
+                <button><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+
+            <div class="search-bar">
             <form>
-                <input type="text" placeholder="¿Qué estás buscando?">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>   
+                <input type="text" placeholder="¿Qué estás buscando?" class="input-header">
+                <button class="form-buttom-header"><i class="fa-solid fa-magnifying-glass"></i></button>   
             </form>
             </div> 
         </header>
         <main>
-            <div class="portada">
-                <p>Portada</p>   
-            </div>
-            <div class="frase">
-                <p>Frase o propuesta de valor</p>
-            </div>
-            <div class="carrusel">
-                <div class="fotos">
-                    <img src="#" alt="Imagen 1">
-                    <img src="#" alt="Imagen 2">
-                    <img src="#" alt="Imagen 3">
+            <h1 class="inicio">Iniciá sesión</h1>
+            <form action="/login" method="POST" class="formulario">
+                <div class="form-control">
+                    <label>Email </label>
+                        <input type="email" name="email" class="input-login">
                 </div>
-    
+                <div class="form-control">
+                    <label>Contraseña </label>
+                        <input type="password" name="password" class="input-login">
+                        <a href="#" class="a-password">¿Olvidaste tu contraseña?</a>
+                </div>
                 
-                <div class="info-producto">
-                    <p>Nombre producto</p>
-                    <p>Precio</p>
-                    <p>Agregar al carrito</p>
+                
+                <div class="form-final-login">
+                    <button type="submit" class="button-inicio">INICIAR SESIÓN</button>
+                <p>¿No tenés cuenta aún?</p>
+                <a href="#">Crear cuenta</a>
                 </div>
-                <div class="punto">
-                    
-                </div>
-                </div>
+
+
+            </form>
         </main>
         <footer>
             <div class="categorias">
@@ -64,7 +66,6 @@
         <div><i class="fa-solid fa-envelope"></i><span>grupo4@gmail.com</span></div>
         <div><i class="fa-brands fa-whatsapp"></i><span>11-1234-5678</span></div>
         <div><i class="fa-solid fa-location-dot"></i><span>Nuestra calle 1234, 1111 CABA</span></div>
-            
         </div>
         
         <div class="redes-sociales">
@@ -75,4 +76,4 @@
         </footer>
 
     </body>
-</html>
+    </html>

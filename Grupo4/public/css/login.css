@@ -1,0 +1,56 @@
+.inicio{
+    font-size: 40px;
+    text-align: center;
+    
+}
+
+main{
+    background-color: #ebebeb;
+}
+
+.form-control{
+    margin:35px 10px;
+    display: block;
+    position: relative;
+}
+
+.form-control label{
+    font-size: 25px;
+}
+
+.input-login{
+    width: 100%;
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 0px;
+}
+
+.a-password{
+    bottom: -30px;
+    right: 5px;
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    font-size: 18px;
+}
+
+.button-inicio{
+    
+    width: 70vw;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #4B200D;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-final-login {
+    text-align: center;
+    margin: 100px 0px;
+    font-size: 18px;
+}
+.form-final-login a{
+    text-decoration: none;
+    
+}
