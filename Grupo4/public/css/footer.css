@@ -1,10 +1,19 @@
 footer{
-    background-color: #D4A708;
+    background-color: #B09900;
+    color: white;
 }
 
 .categorias h3{
     margin-bottom: 10px;
     margin-top: 30px;
+}
+
+.categorias{
+    padding: 20px 0px 10px 20px;
+}
+
+.contacto{
+    padding-left: 20px;
 }
 
 h3{
@@ -21,7 +30,7 @@ h3{
 
 .categorias li a{
     text-decoration: none;
-    color:black;
+    color:white;
     
 }
 
@@ -45,21 +54,37 @@ h3{
 }
 
 .fa-whatsapp{
-    color: black;
+    color: white;
     margin-right: 10px;
 }
 
 .fa-location-dot, .fa-envelope{
     margin-right: 10px;
-    color:black;
+    color:white;
 }
 
 .fa-instagram{
-    color: black;
+    color: white;
     margin: 10px;
 }
 
 .fa-facebook{
-    color: black;
+    color: white;
     margin: 10px;
+}
+
+@media (min-width:769px){
+    footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .categorias, .contacto{
+        padding: 20px 50px;
+    }
+
+    .redes-sociales{
+        padding: 50px;
+    }
 }

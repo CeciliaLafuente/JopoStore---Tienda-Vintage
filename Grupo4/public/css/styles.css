@@ -16,12 +16,20 @@ header{
 }
 
 .bars-menu i, .cart-shopping i {
+    
     font-size: 40px;
 }
 
 .cart-shopping{
     margin: 40px 0px 0px 0px;
+    
 }
+
+.bars-menu button, .cart-shopping button{
+background-color: transparent;
+border: none;
+}
+
 
 .cabecera button{
     color: #4B200D;
