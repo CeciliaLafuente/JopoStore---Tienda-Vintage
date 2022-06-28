@@ -20,7 +20,7 @@ let carrito= path.join(__dirname,'./views/productCart.html');
 let detalleProd= path.join(__dirname,'./views/productDetail.html');
 
 app.get('/', function(req,res){
-    res.sendFile(footer);
+    res.sendFile(home);
 })
 
 app.get('/registro', function(req,res){
