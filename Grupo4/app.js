@@ -19,3 +19,8 @@ let registro= path.join(__dirname,'./views/registro.html');
 app.get('/', function(req,res){
     res.sendFile(home);
 })
+
+app.get ('/detalle-producto', (req,res) => {
+    res.sendFile ( path.resolve (__dirname, './views/detalle-producto.html'));
+});
+
