@@ -2,28 +2,34 @@
     box-sizing: border-box;
 }
 
-
-/*header*/
+body{
+    font-family: Arial;
+}
 
 header{
-    background-color: rgba(180, 175, 175, 0.829); 
+    background-color: white;
     
 }
 
-.bars-menu{
-    margin: 40px 0px 0px 0px;
+.cabecera .bars-menu, .cabecera .cart-shopping{
+    margin: 60px 0px 0px 0px;
     
 }
 
-.bars-menu i, .cart-shopping i {
+.cabecera .bars-menu i, .cart-shopping i, .icono-user i {
     font-size: 40px;
 }
 
-.cart-shopping{
-    margin: 40px 0px 0px 0px;
+.bars-menu button, .iconos button{
+    background-color: transparent;
+    border: none;
 }
 
-.cabecera button{
+.bars-menu button a, .iconos button a{
+    color:#4B200D;
+}
+
+button{
     color: #4B200D;
 }
 .cabecera{
@@ -32,25 +38,99 @@ header{
     justify-content: space-around;
 }
 
-img{
-    width: 45%;
-    height: 20vh;
+.cabecera img{
+    height: 25vh;
     padding: 20px 0px 0px 0px;
 }
 
 .search-bar{
     text-align: center;
-    padding: 40px;
+    margin: 40px 10px 0px 10px;
 }
 
-.input-header{
+.search-bar .input-header{
     width: 80%;
     height: 5vh;
 }
 
-form .form-buttom-header{
-    font-size: 26px;
-    position: absolute;
-    right: 75px;
-    top: 201px;
+.search-bar .form-buttom-header{
+    font-size: 19px;
+    position: relative;
+    left: -40px;
+    top: 1px;
+}
+
+.cabecera-min769px{
+    display: none;
+}
+
+.nav-bar{
+    display: none;
+}
+
+@media (min-width:769px){
+    .cabecera{
+        display: none;
+    }
+
+    .search-bar{
+        display: none;
+    }
+    .cabecera-min769px{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .cabecera-min769px img{
+        height: 25vh;
+    }
+
+    .search-bar-min789px .input-header{
+        margin-top: 35px;
+        height: 5vh;
+        width: 40vw;
+    }
+
+    .search-bar-min789px button {
+        font-size: 20px;
+        margin-left: -35px;
+        margin-top: 2px;
+        position: relative;
+    }
+
+    .iconos{
+        margin-top: 30px;
+        font-size: 40px;
+    }
+
+    .iconos a{
+       color: #4B200D;
+    }
+
+    .cart-shopping{
+        margin-right: 10px;
+    }
+    .nav-bar{
+        display: block;
+        border: solid 2px #4B200D;
+        margin-top: 20px;
+    }
+    .nav-bar ul{
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .nav-bar li {
+        list-style: none;
+        
+    }
+    
+    .nav-bar li a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
 }
