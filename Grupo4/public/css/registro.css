@@ -45,19 +45,21 @@ button{
 
 .search-bar{
     text-align: center;
-    margin: 40px 10px 0px 10px;
+    margin: 40px 10px 30px 10px;
 }
 
-.search-bar .input-header{
+.search-bar input{
     width: 80%;
     height: 5vh;
 }
 
-.search-bar .form-buttom-header{
-    font-size: 19px;
+.search-bar button{
+    font-size: 22px;
     position: relative;
     left: -40px;
-    top: 1px;
+    top: 2px;
+    background-color: transparent;
+    border: none;
 }
 
 .cabecera-min769px{
@@ -86,17 +88,23 @@ button{
         height: 25vh;
     }
 
-    .search-bar-min789px .input-header{
+    .search-bar-min789px{
+        position: relative;
+    }
+
+    .search-bar-min789px input{
         margin-top: 35px;
         height: 5vh;
         width: 40vw;
     }
 
-    .search-bar .form-buttom-header{
-        font-size: 19px;
-        position: relative;
-        left: -40px;
-        top: 1px;
+    .search-bar-min789px button{
+        position: absolute;
+        font-size: 22px;
+        top: 35px;
+        right: 0px;
+        background-color: transparent;
+        border: none;
     }
 
     .iconos{
@@ -157,14 +165,30 @@ h1{
 .form-control-registro{
     padding: 20px 0px;
     margin-left: 10px;
+    position: relative;
+}
+
+.form-control-registro i{
+    position: absolute;
+    color: green;
+    top:55px;
+    right: 10px;
+}
+
+.form-control-registro input:invalid ~ i{
+    display: none;
+}
+
+.form-control-registro input:invalid {
+    color:red;
+}
+
+.form-control-registro input:valid ~ i {
+    display: inline;
 }
 
 .form-control-birtday{
     margin-left: 10px;
-}
-
-.nombre-apellido{
-    padding-top:30px;
 }
 
 .create-account{
