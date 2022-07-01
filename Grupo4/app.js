@@ -20,7 +20,7 @@ let carrito= path.join(__dirname,'./views/productCart.html');
 let detalleProd= path.join(__dirname,'./views/productDetail.html');
 
 app.get('/', function(req,res){
-    res.sendFile(header);
+    res.sendFile(footer);
 })
 
 app.get('/registro', function(req,res){
@@ -35,7 +35,7 @@ app.get('/carrito-de-compras', function(req,res){
     res.sendFile(carrito);
 })
 
-app.get('/detalle-de-producto', function(req,res){
+app.get('/detalle-del-producto', function(req,res){
     res.sendFile(detalleProd);
 })
 
