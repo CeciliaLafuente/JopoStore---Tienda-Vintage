@@ -11,12 +11,12 @@ header{
     
 }
 
-.cabecera .bars-menu, .cabecera .cart-shopping{
+.header .bars-menu, .header .cart-shopping{
     margin: 60px 0px 0px 0px;
     
 }
 
-.cabecera .bars-menu i, .cart-shopping i, .icono-user i {
+.header .bars-menu i, .cart-shopping i, .icono-user i {
     font-size: 40px;
 }
 
@@ -32,93 +32,78 @@ header{
 button{
     color: #4B200D;
 }
-.cabecera{
+.header{
     display: flex;
     flex-direction: row;   
     justify-content: space-around;
 }
 
-.cabecera img{
+.header img{
     height: 25vh;
     padding: 20px 0px 0px 0px;
 }
 
 .search-bar{
     text-align: center;
-    margin: 40px 10px 30px 10px;
+    margin: 40px 10px 0px 10px;
+    align-self: flex-end;
+    position: absolute;
+    top: 150px;
+    width: 80%;
 }
 
 .search-bar input{
-    width: 80%;
+    width: 100%;
     height: 5vh;
 }
 
 .search-bar button{
     font-size: 22px;
-    position: relative;
-    left: -40px;
-    top: 2px;
+    position: absolute;
+    right: 0px;
     background-color: transparent;
     border: none;
 }
 
-.cabecera-min769px{
-    display: none;
-}
 
 .nav-bar{
     display: none;
 }
 
+.icono-user{
+    display: none;
+}
+
 @media (min-width:769px){
-    .cabecera{
+    .bars-menu{
         display: none;
+    }
+
+    .icono-user{
+        display: block;
     }
 
     .search-bar{
-        display: none;
-    }
-    .cabecera-min769px{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .cabecera-min769px img{
-        height: 25vh;
-    }
-
-    .search-bar-min789px{
         position: relative;
-    }
-
-    .search-bar-min789px input{
-        margin-top: 35px;
-        height: 5vh;
-        width: 40vw;
-    }
-
-    .search-bar-min789px button{
-        position: absolute;
-        font-size: 22px;
-        top: 35px;
-        right: 0px;
-        background-color: transparent;
-        border: none;
+        top:-60px;
+        width: 45%;
     }
 
     .iconos{
+        display: flex;
         margin-top: 30px;
         font-size: 40px;
+        order:1;
     }
 
     .iconos a{
        color: #4B200D;
     }
 
-    .cart-shopping{
-        margin-right: 10px;
+    .header .cart-shopping{
+        margin: 0px 10px 0px 0px;
     }
+
     .nav-bar{
         display: block;
         border: solid 2px #4B200D;
@@ -132,7 +117,8 @@ button{
     }
 
     .nav-bar li {
-        list-style: none;   
+        list-style: none;
+        
     }
     
     .nav-bar li a{
@@ -149,17 +135,17 @@ button{
         color:#B09900;
         box-shadow: #807e7e;
     }
-  
 }
+
+
 
 /*registro*/
 main{
     background-color: #ebebeb;
 }
 
-h1{
-    font-size: 30px;
-    text-align: center;
+.form-registro{
+    margin-top: 60px;
 }
 
 .form-control-registro input{
@@ -221,6 +207,10 @@ h1{
 @media (min-width:769px){
     .form-control-registro{
         width:60%;
+    }
+
+    .form-registro{
+        margin-top: 0px;
     }
 }
 
