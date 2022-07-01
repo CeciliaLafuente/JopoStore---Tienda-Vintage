@@ -48,17 +48,19 @@ button{
     margin: 40px 10px 0px 10px;
 }
 
-.search-bar .input-header{
-    width: 80%;
+.search-bar input{
+    width: 100%;
     height: 5vh;
 }
 
-.search-bar .form-buttom-header{
-    font-size: 19px;
-    position: relative;
-    left: -40px;
-    top: 1px;
+.search-bar button{
+    font-size: 22px;
+    position: absolute;
+    right: 15px;
+    background-color: transparent;
+    border: none;
 }
+
 
 .cabecera-min769px{
     display: none;
@@ -86,17 +88,23 @@ button{
         height: 25vh;
     }
 
-    .search-bar-min789px .input-header{
+    .search-bar-min789px{
+        position: relative;
+    }
+
+    .search-bar-min789px input{
         margin-top: 35px;
         height: 5vh;
         width: 40vw;
     }
 
-    .search-bar-min789px button {
-        font-size: 20px;
-        margin-left: -35px;
-        margin-top: 2px;
-        position: relative;
+    .search-bar-min789px button{
+        position: absolute;
+        font-size: 22px;
+        top: 35px;
+        right: 0px;
+        background-color: transparent;
+        border: none;
     }
 
     .iconos{
@@ -132,10 +140,18 @@ button{
         text-decoration: none;
         color: black;
         font-weight: bold;
-        
+        font-size: 20px;
+        box-shadow: none;
+        transition: all 1000ms;
+    }
+
+    .nav-bar li a:hover{
+        font-size: 30px;
+        color:#B09900;
+        box-shadow: #807e7e;
+    }
     }
   
-}
 
 /*Login*/
 .inicio{
