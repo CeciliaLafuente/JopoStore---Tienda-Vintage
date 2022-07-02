@@ -4,10 +4,13 @@
 
 body{
     font-family: Arial;
+    width: 100vw; /*MB*/
 }
 
 header{
     background-color: white;
+    width: 100%;  /*MB*/
+    
     
 }
 
@@ -39,7 +42,8 @@ button{
 }
 
 .header img{
-    height: 25vh;
+    /*height: 25vh;*/
+    width: 80px;   /*MB*/
     padding: 20px 0px 0px 0px;
 }
 
