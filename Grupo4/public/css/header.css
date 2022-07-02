@@ -26,11 +26,11 @@ header{
 }
 
 .bars-menu button a, .iconos button a{
-    color:#4B200D;
+    color:var(--marron);
 }
 
 button{
-    color: #4B200D;
+    color: var(--marron);
 }
 .header{
     display: flex;
@@ -97,7 +97,7 @@ button{
     }
 
     .iconos a{
-       color: #4B200D;
+       color: var(--marron);
     }
 
     .header .cart-shopping{
@@ -106,7 +106,7 @@ button{
 
     .nav-bar{
         display: block;
-        border: solid 2px #4B200D;
+        border: solid 2px var(--marron);
         margin-top: 20px;
     }
     .nav-bar ul{
@@ -132,7 +132,7 @@ button{
 
     .nav-bar li a:hover{
         font-size: 30px;
-        color:#B09900;
-        box-shadow: #807e7e;
+        color:var(--verde);
+        box-shadow: var(--gris-medio);
     }
 }
