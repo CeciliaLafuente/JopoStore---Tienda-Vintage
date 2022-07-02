@@ -1,0 +1,80 @@
+/* Prueba footer con ul */
+footer {
+    background-color: var(--verde);
+    color: var(--blanco);
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.categorias {
+    margin: 10px 0;
+    
+}
+
+.categorias h3 {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.categorias ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.categorias li {
+    margin: 0 0 5px;
+    font-size: 12px;
+}
+
+.categorias ul a {
+    text-decoration: none;
+    color: white;
+}
+
+.categorias ul a:hover {
+    color: var(--naranja);
+    font-size: 14px;
+    transform: all 0.5s;
+}
+
+.contacto {
+    margin: 20px 0;
+}
+
+.contacto h3 {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.contacto div {
+    margin: 0 0 5px;
+    font-size: 12px;
+}
+
+.redes-sociales {
+    padding: 25px 0 0 0;
+    text-align: center;
+}
+
+.redes-sociales i {
+    padding: 0 5px;
+}
+
+@media (min-width:769px){
+    footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .categorias, .contacto{
+        padding: 20px 50px;
+    }
+
+    .redes-sociales{
+        padding: 50px;
+    }
+}
+
+/* fin prueba footer *?
