@@ -14,7 +14,7 @@
 
     <link href="/css/colors.css", rel="stylesheet">
     <link href="/css/normalize.css", rel="stylesheet">
-    <link href="/css/header.css", rel="stylesheet">
+    <!--link href="/css/header.css", rel="stylesheet"-->
     <!--link href="/css/footer.css", rel="stylesheet"-->
     <link href="/css/detalleProducto.css", rel="stylesheet">
 
@@ -27,28 +27,44 @@
 
     <header>
         <div class="header">
+
             <div class="bars-menu">
-            <button><a href="/login"><i class="fas fa-bars"></i></a></button>
+
+                <button><a href="#"><i class="fas fa-bars"></i></a></button>
+
+
             </div>
 
-            <img src="./images/logo/isologo.png" alt="Logo">
+            <div class="logo">    
+                <img src="./images/logo/isologo.png" alt="Logo">
+            </div>
              
             <div class="iconos">
-            <button class="cart-shopping"><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a></button>
-            <button class="icono-user"><a href="/login"><i class="fa-solid fa-circle-user"></i></a></button>
+
+                <button class="cart-shopping">
+                    <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                </button>
+
+                <button class="icono-user">
+                    <a href="/login"><i class="fa-solid fa-circle-user"></i></a>
+                </button>
+
             </div>
         
-    
-        
-        <div class="search-bar">
-        <form>
-            <input type="text" placeholder="¿Qué estás buscando?">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>   
-        </form>
+            <div class="search-bar">
+
+                <form method="post" action="/buscar-producto">
+                    
+                    <input type="text" placeholder="¿Qué estás buscando?">
+
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                </form>
+            </div> 
+
         </div> 
-    </div>
-        
-         <nav class="nav-bar">
+
+        <nav class="nav-bar">
             <ul>
                 <li><a href="#">MUEBLES</a></li>
                 <li><a href="#">ILUMINACIÓN</a></li>
@@ -56,56 +72,65 @@
                 <li><a href="#">JUEGOS</a></li>
                 <li><a href="#">ROPA</a></li>
             </ul>
-         </nav>
+        </nav>
+    </div>
     </header>
 
     <main>
-        <img class="img-producto" src="../images/telefonos/telefono-10.jpg">
 
-        <article class="div-datos-producto">
+        <article class="article-producto">
 
-            <p class="p-nombre-producto">TELÉFONO AÑOS 80 MARCA ENTEL</p>
-
-            <p class="p-precio">$2500</p>
-
-            <div class="div-formas-pago">
-
-                <i class="fa-solid fa-credit-card"></i>
-                <p class="p-formas-pago">6 cuotas sin interés de $416.66></p>
-
+            <div class="div-img-producto">
+                <img src="../images/telefonos/telefono-10.jpg" alt="telefono-10">
             </div>
 
-            <form class="form-comprar" method="post" action="/agregarAlCarrito">
-                <i class="fa-solid fa-plus"></i>
+            <div class="div-datos-producto">
 
-                <input type="number" name="cantidad">
+                <p class="p-nombre-producto">TELÉFONO AÑOS 80 MARCA ENTEL</p>
 
-                <i class="fa-solid fa-minus"></i>
+                <p class="p-precio">$2500</p>
 
-                <button class="button-agregar-al-carrito" type="submit">AGREGAR AL CARRITO</button>
+                <div class="div-formas-pago">
 
-            </form>
+                    <i class="fa-solid fa-credit-card"></i>
+                    <p class="p-formas-pago">6 cuotas sin interés de $416.66></p>
 
-            <form class="form-costo-envio" method="post" action="/clacularCostoEnvio">
+                </div>
 
-                <p class="p-texto-costo-envio">CALCULAR EL COSTO DEL ENVIO</p>
+                <div class="div-comprar">
+                    <form class="form-comprar" method="post" action="/agregarAlCarrito">
+                        <i class="fa-solid fa-plus"></i>
 
-                <input type="number" maxlength="4" placeholder="1234">
+                        <input type="number" name="cantidad">
 
-                <button type="submit">CALCULAR</button>
+                        <i class="fa-solid fa-minus"></i>
 
-            </form>
+                        <button class="button-agregar-al-carrito" type="submit">AGREGAR AL CARRITO</button>
+                    </form>
+                </div>
 
-            <div class="div-detalle-del-producto">
+                <div class="div-costo-envio">
+                    <form class="form-costo-envio" method="post" action="/clacularCostoEnvio">
 
-                <p>Telefono antiguo marca Entel con botonera, en perfecto estado de conservación y funcionamiento.</p>
+                        <p class="p-texto-costo-envio">CALCULAR EL COSTO DEL ENVIO</p>
 
-                <p>Industria Argentina.</p> 
-                    
-                <p>Cable para empalmar con cable y ficha actual.</p>
+                        <input type="number" maxlength="4" placeholder="1234">
 
-            </div>
+                        <button type="submit">CALCULAR</button>
 
+                    </form>
+                </div>
+
+                <div class="div-detalle-del-producto">
+
+                    <p>Telefono antiguo marca Entel con botonera, en perfecto estado de conservación y funcionamiento.</p>
+
+                    <p>Industria Argentina.</p> 
+                        
+                    <p>Cable para empalmar con cable y ficha actual.</p>
+
+                </div>
+            </div> 
         </article>
     
     </main>
