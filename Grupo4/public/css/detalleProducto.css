@@ -3,12 +3,13 @@
     font-family: Arial;
 }
 
+/* -----------------------------  header  -----------------------------------------------*/
 
-/* header */
 body {
     width: 100vw;
     margin: 0;
     text-align: center;
+    color: var(--gris-oscuro);
 }
 
 header{
@@ -67,7 +68,6 @@ header{
 
 .search-bar{
     text-align: center;
-    /* margin: 30px 0 20px; */
     width: 85%;
 }
 
@@ -94,7 +94,193 @@ header{
     display: none;
 }
 
+/* -----------------------------  main  -----------------------------------------------*/
+
+main {
+    margin: 0;
+    width: 100%;
+    background-color: var(--gris-claro);
+    text-align: center;
+    padding: 20px;
+}
+
+.article-producto {
+    box-shadow: 2px 2px 10px var(--gris-oscuro);
+    background-color: var(--blanco);
+    }
+
+.div-img-producto {
+    width: 100%;
+    margin: auto;
+}
+
+.div-img-producto img {
+    width: 100%;
+}  
+
+.div-datos-producto {
+    padding: 15px;
+    border-top: 1px solid var(--gris-medio);
+    text-align: left;
+}
+
+.h4-nombre-producto {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.p-precio {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.div-formas-pago {
+    display: flex;
+    margin: 0 0 20px;
+}
+
+.i-tarjeta {
+    width: 10%;
+}
+
+.p-formas-pago {
+    margin: 0;
+}
+
+.form-comprar {
+    display: flex;
+    height: 40px;
+    margin: 30px 0;
+}
+
+.div-cantidad-comprada {
+    display: flex;
+    border: 1px var(--gris-medio) solid;
+    border-radius: 5px;
+}
+
+.div-cantidad-comprada input {
+    width: 50px;
+    height: 100%;
+    margin: auto;
+    border: none;
+    text-align: center;
+}
+
+.div-cantidad-comprada button {
+    border: none;
+    background-color: var(--blanco);
+}
+
+.button-agregar-al-carrito {
+    width: 170px;
+    margin-left: 30px;
+    background-color: var(--marron);
+    color: var(--blanco);
+    border: none;
+    border-radius:20px;
+}
+
+.div-costo-envio {
+    margin: 20px 0;
+}
+
+.form-costo-envio {
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--gris-oscuro);
+    text-align: center;
+    font-size: 12px;
+    border: 1px var(--gris-medio) solid;
+
+}
+
+.p-texto-costo-envio {
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+}
+
+.form-costo-envio input {
+    width: 50%;
+    color: var(--gris-claro);
+    padding: 5px;
+    border:1px var(--gris-medio) solid;
+}
+
+.form-costo-envio button {
+    width: 50%;
+    background-color: transparent;
+    border: 1px var(--gris-medio) solid;
+    padding: 5px;
+}
+
+.div-descripcion-producto {
+    font-size: 18px;
+    color: var(--gris-oscuro);
+    margin-top: 30px;
+}
+
+
+/* -----------------------------  footer  -----------------------------------------------*/
+
+footer {
+    background-color: var(--verde);
+    color: var(--blanco);
+    padding: 35px;
+    text-align: left;
+    font-size: 14px;
+}
+
+footer h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+footer ul {
+    margin: 0;
+    padding: 15px 0;
+    list-style: none;
+}
+
+footer li {
+    margin: 0 0 15px; 
+}
+
+footer ul a {
+    text-decoration: none;
+    color: white;
+}
+
+.redes-sociales a {
+    font-size: 30px;
+    color: var(--blanco);
+}
+
+.i-fb,
+.i-ig {
+    margin-top: 15px;
+}
+
+.i-ig {
+    margin-left: 15px;
+}
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------*/
+/* ------------------------------   LAPTOP  ----------------------------------------------*/
+/* -------------------------------------------------------------------------------------*/
+
 @media (min-width:769px){
+
+/* ------------------------------   header ----------------------------------------------*/
     .bars-menu{
         display: none;
     }
@@ -121,7 +307,7 @@ header{
     .iconos{
         display: flex;
         order:1;
-        justify-content: flex-end; 
+        justify-content: flex-end;; 
     }
 
     .cart-shopping{
@@ -163,118 +349,44 @@ header{
         color:var(--verde);
         box-shadow: var(--gris-medio);
     }
-}
 
-
-/* main */
-
-main {
-    margin: 0;
-    width: 100%;
-    background-color: var(--gris-claro);
-    text-align: center;
-    padding: 20px;
-}
-
-.article-producto {
-    box-shadow: 2px 2px 10px var(--gris-oscuro);
-    background-color: var(--blanco);
+/* ------------------------------   main  ----------------------------------------------*/
+    .article-producto {
+        display: flex;
+        justify-content: space between;
     }
 
-.div-img-producto {
-    width: 100%;
-    margin: auto;
-}
+    .div-img-producto {
+        width: 60%;
+        padding: 40px;
+    }
 
-.div-img-producto img {
-    width: 100%;
-}  
-
-.div-datos-producto {
-    padding: 10px;
-    border-top: 1px solid var(--gris-medio)
-}
+    .div-datos-producto {
+        width: 40%;
+    }
 
 
-
-
-/* footer con ul */
-footer {
-    background-color: var(--verde);
-    color: var(--blanco);
-    padding: 20px;
-    margin-top: 15px;
-    text-align: left;
-}
-
-.categorias {
-    margin: 10px 0;
-   
-}
-
-.categorias h3 {
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-.categorias ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.categorias li {
-    margin: 0 0 5px;
-    font-size: 12px;
-}
-
-.categorias ul a {
-    text-decoration: none;
-    color: white;
-}
-
-.categorias ul a:hover {
-    color: var(--naranja);
-    font-size: 14px;
-    transform: all 0.5s;
-}
-
-.contacto {
-    margin: 20px 0;
-}
-
-.contacto h3 {
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-.contacto div {
-    margin: 0 0 5px;
-    font-size: 12px;
-}
-
-.redes-sociales {
-    padding: 25px 0 0 0;
-    text-align: center;
-}
-
-.redes-sociales i {
-    padding: 0 5px;
-}
-
-@media (min-width:769px){
+/* -----------------------------  footer  -----------------------------------------------*/
     footer{
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
     }
 
-    .categorias, .contacto{
-        padding: 20px 50px;
-    }
-
-    .redes-sociales{
-        padding: 50px;
+    .categorias,
+    .contacto,
+    .redes-sociales {
+        padding: 20px 10px;
+        width: 30%;
     }
 }
 
+/* -------------------------------------------------------------------------------------*/
+/* ------------------------------   PANTALLA ANCHA  ----------------------------------------------*/
+/* -------------------------------------------------------------------------------------*/
+
+
+@media (min-width: 1200px) {
+    body {
+        max-width: 1200px;
+    }
+}

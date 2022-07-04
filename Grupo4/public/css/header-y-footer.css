@@ -3,7 +3,7 @@
     font-family: Arial;
 }
 
-/* header */
+/* -----------------------------  header  -----------------------------------------------*/
 
 body {
     width: 100vw;
@@ -67,7 +67,6 @@ header{
 
 .search-bar{
     text-align: center;
-    /* margin: 30px 0 20px; */
     width: 85%;
 }
 
@@ -95,12 +94,14 @@ header{
 }
 
 
-/* INSERTAR MAIN */
+/* -----------------------------  main  -----------------------------------------------*/
 
 
-/* FIN INSERTAR MAIN */
+/*                          INSERTAR MAIN                                                 */
 
-/* footer */
+
+
+/* -----------------------------  footer  -----------------------------------------------*/
 
 footer {
     background-color: var(--verde);
