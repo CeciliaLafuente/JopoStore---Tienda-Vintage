@@ -2,60 +2,73 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        <script src="https://kit.fontawesome.com/f5adc79cf2.js" crossorigin="anonymous"></script>
-
-        <link rel="stylesheet" href="/css/colors.css">
-        <link rel="stylesheet" href="/css/header.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+       
+    
+        <script src="https://kit.fontawesome.com/0625f444d8.js" crossorigin="anonymous"></script>
+    
+        <link href="/css/colors.css", rel="stylesheet">
+        <link href="/css/normalize.css", rel="stylesheet">
+        <link href="/css/header.css", rel="stylesheet">
+    
+        
+        <title>Detalle del producto JOPO</title>
+        <link rel="icon" href="/images/icono/favicon.ico">
     </head>
 
     <body>
         <header>
             <div class="header">
-
+    
                 <div class="bars-menu">
-
-                    <button><a href="#"><i class="fas fa-bars"></i></a></button> <!--MB-->
-
-                </div>  
-
-                <img src="./images/logo/isologo.png" alt="Logo">
+    
+                    <button><a href="#"><i class="fas fa-bars"></i></a></button>
+                </div>
+    
+                <div class="logo">    
+                    <a href="/"><img src="./images/logo/isologo.png" alt="Logo"></a>
+                </div>
                  
                 <div class="iconos">
-
+    
                     <button class="cart-shopping">
                         <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
                     </button>
-
+    
                     <button class="icono-user">
                         <a href="/login"><i class="fa-solid fa-circle-user"></i></a>
                     </button>
+    
                 </div>
             
                 <div class="search-bar">
-
-                    <form>
-
+    
+                    <form method="post" action="/buscar-producto">
+                        
                         <input type="text" placeholder="¿Qué estás buscando?">
-
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>   
+    
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    
                     </form>
                 </div> 
-                        
-                <nav class="nav-bar">
-
-                    <ul>
-                        <li><a href="#">MUEBLES</a></li>
-                        <li><a href="#">ILUMINACIÓN</a></li>
-                        <li><a href='#'>OBJETO</a></li>
-                        <li><a href="#">JUEGOS</a></li>
-                        <li><a href="#">ROPA</a></li>
-                    </ul>
-
-                </nav>
-            </div>
-        </header>
+    
+            </div> 
+    
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#">MUEBLES</a></li>
+                    <li><a href="#">ILUMINACIÓN</a></li>
+                    <li><a href='#'>OBJETO</a></li>
+                    <li><a href="#">JUEGOS</a></li>
+                    <li><a href="#">ROPA</a></li>
+                </ul>
+            </nav>
+        </div>
     </body>
 </html>
 

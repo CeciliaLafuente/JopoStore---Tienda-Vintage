@@ -121,7 +121,7 @@ header{
     .iconos{
         display: flex;
         order:1;
-        justify-content: flex-end;; 
+        justify-content: flex-end; 
     }
 
     .cart-shopping{
