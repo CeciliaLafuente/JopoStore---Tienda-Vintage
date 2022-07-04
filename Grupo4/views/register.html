@@ -2,40 +2,62 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        <script src="https://kit.fontawesome.com/f5adc79cf2.js" crossorigin="anonymous"></script>
-
-        <link rel="stylesheet" href="/css/registro.css">
-
-        <title>Registro con JOPO</title>
-        <link rel="icon" href="/images/icono/favicon.ico">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+       
+    
+        <script src="https://kit.fontawesome.com/0625f444d8.js" crossorigin="anonymous"></script>
+    
+        <link href="/css/colors.css", rel="stylesheet">
+        <link href="/css/normalize.css", rel="stylesheet">
+        <link href="/css/registro.css", rel="stylesheet">
+    
         
+        <title>Detalle del producto JOPO</title>
+        <link rel="icon" href="/images/icono/favicon.ico">
     </head>
     <header>
         <div class="header">
+
             <div class="bars-menu">
-            <button><a href="/login"><i class="fas fa-bars"></i></a></button>
+
+                <button><a href="#"><i class="fas fa-bars"></i></a></button>
             </div>
 
-            <img src="./images/logo/isologo.png" alt="Logo">
+            <div class="logo">    
+                <a href="/"><img src="./images/logo/isologo.png" alt="Logo"></a>
+            </div>
              
             <div class="iconos">
-            <button class="cart-shopping"><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a></button>
-            <button class="icono-user"><a href="/login"><i class="fa-solid fa-circle-user"></i></a></button>
+
+                <button class="cart-shopping">
+                    <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                </button>
+
+                <button class="icono-user">
+                    <a href="/login"><i class="fa-solid fa-circle-user"></i></a>
+                </button>
+
             </div>
         
-    
-        
-        <div class="search-bar">
-        <form>
-            <input type="text" placeholder="¿Qué estás buscando?">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>   
-        </form>
+            <div class="search-bar">
+
+                <form method="post" action="/buscar-producto">
+                    
+                    <input type="text" placeholder="¿Qué estás buscando?">
+
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                </form>
+            </div> 
+
         </div> 
-    </div>
-        
-         <nav class="nav-bar">
+
+        <nav class="nav-bar">
             <ul>
                 <li><a href="#">MUEBLES</a></li>
                 <li><a href="#">ILUMINACIÓN</a></li>
@@ -43,8 +65,8 @@
                 <li><a href="#">JUEGOS</a></li>
                 <li><a href="#">ROPA</a></li>
             </ul>
-         </nav>
-    </header>
+        </nav>
+    </div>
     <body>
         <main>
             <form action="/registro" method="POST" class="form-registro">
@@ -67,12 +89,12 @@
                 </div>
                 <div class="form-control-registro">
                     <label for="password">Contraseña:</label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" minlength="8" required pattern="[A-Za-z - 0-9]+" title="Sólo letras y números">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
                 <div class="form-control-registro">
                     <label>Confirmar contraseña:</label>
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" minlength="8" required pattern="[A-Za-z - 0-9]" title="Sólo letras y números">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
 
@@ -93,27 +115,49 @@
             </form>
         </main>
         <footer>
+
             <div class="categorias">
+    
                 <h3>Categorías</h3>
-                <li><a href="#">Muebles</a></li>
-                <li><a href="#">Iluminación</a></li>
-                <li><a href='#'>Objeto</a></li>
-                <li><a href="#">Juegos</a></li>
-                <li><a href="#">Ropa</a></li>
+    
+                <ul>
+    
+                    <li><a href="#">Muebles</a></li>
+                    <li><a href="#">Iluminación</a></li>
+                    <li><a href='#'>Objeto</a></li>
+                    <li><a href="#">Juegos</a></li>
+                    <li><a href="#">Ropa</a></li>
+    
+                </ul>
+    
             </div>
-
-        <div class="contacto">
-        <h3>Contacto</h3>
-        <div><i class="fa-solid fa-envelope"></i><span>grupo4@gmail.com</span></div>
-        <div><i class="fa-brands fa-whatsapp"></i><span>11-1234-5678</span></div>
-        <div><i class="fa-solid fa-location-dot"></i><span>Nuestra calle 1234, 1111 CABA</span></div>
-        </div>
-        
-        <div class="redes-sociales">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
-        </div>
-
+    
+            <div class="contacto">
+    
+                <h3>Contacto</h3>
+    
+                <div>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>grupo4@gmail.com</span>
+                </div>
+    
+                <div>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>11-1234-5678</span>
+                </div>
+    
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Nuestra calle 1234, 1111 CABA</span>
+                </div>
+    
+            </div>
+            
+            <div class="redes-sociales">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+    
         </footer>
     </body>
     </html>
