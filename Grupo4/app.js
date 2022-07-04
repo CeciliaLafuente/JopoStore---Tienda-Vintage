@@ -12,6 +12,7 @@ app.listen(3040, ()=>{
 
 let header= path.join(__dirname,'./views/header.html');
 let footer= path.join(__dirname,'./views/footer.html');
+let headerYFooter = path.join(__dirname,'./views/header-y-footer.html');
 
 let home= path.join(__dirname,'./views/index.html');
 let login= path.join(__dirname,'./views/login.html');
@@ -20,7 +21,7 @@ let carrito= path.join(__dirname,'./views/productCart.html');
 let detalleProd= path.join(__dirname,'./views/productDetail.html');
 
 app.get('/', function(req,res){
-    res.sendFile(header);
+    res.sendFile(headerYFooter);
 })
 
 app.get('/registro', function(req,res){
