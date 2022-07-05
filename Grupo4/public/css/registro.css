@@ -173,10 +173,12 @@ header{
 /*registro*/
 main{
     background-color: #ebebeb;
+    padding-top: 20px;
 }
 
 .form-registro{
-    margin-top: 60px;
+   text-align: left;
+   font-weight: bold;
 }
 
 .form-control-registro input{
@@ -246,81 +248,65 @@ main{
 }
 
 /*Footer*/
-
 footer {
     background-color: var(--verde);
     color: var(--blanco);
     padding: 20px;
-    margin-top: 15px;
-}
-
-.categorias {
-    margin: 10px 0;
-    
-}
-
-.categorias h3 {
-    margin: 10px 0;
+    text-align: left;
     font-size: 14px;
 }
 
-.categorias ul {
+footer h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+footer ul {
     margin: 0;
-    padding: 0;
+    padding: 15px 0;
     list-style: none;
 }
 
-.categorias li {
-    margin: 0 0 5px;
-    font-size: 12px;
+footer li {
+    margin: 0 0 15px; 
+    display: flex;
 }
 
-.categorias ul a {
+footer li i{
+    margin-right: 10px;
+}
+
+footer ul a {
     text-decoration: none;
     color: white;
 }
 
-.categorias ul a:hover {
-    color: var(--naranja);
-    font-size: 14px;
-    transform: all 0.5s;
+.redes-sociales a {
+    font-size: 30px;
+    color: var(--blanco);
 }
 
-.contacto {
-    margin: 20px 0;
+.i-fb,
+.i-ig {
+    margin-top: 15px;
 }
 
-.contacto h3 {
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-.contacto div {
-    margin: 0 0 5px;
-    font-size: 12px;
-}
-
-.redes-sociales {
-    padding: 25px 0 0 0;
-    text-align: center;
-}
-
-.redes-sociales i {
-    padding: 0 5px;
+.i-ig {
+    margin-left: 15px;
 }
 
 @media (min-width:769px){
-    footer{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+footer{
+    display: flex;
+    justify-content: space-between;
+}
 
-    .categorias, .contacto{
-        padding: 20px 50px;
-    }
+.categorias,
+.contacto,
+.redes-sociales {
+    padding: 20px 50px;
+    width: 25%;
+}
 
-    .redes-sociales{
-        padding: 50px;
-    }
 }

@@ -126,6 +126,11 @@ footer ul {
 
 footer li {
     margin: 0 0 15px; 
+    display: flex;
+}
+
+footer li i{
+    margin-right: 10px;
 }
 
 footer ul a {
