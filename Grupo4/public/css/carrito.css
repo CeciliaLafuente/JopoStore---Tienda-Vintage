@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* Main */
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(245, 242, 242);
+}
+
+article {
+    text-align: center;
+    background-color: white;
+    padding: 10px 10px 0px 10px;
+
+
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.product img {
+    width: 20%;
+}
+
+.product p {
+    width: 60%;
+    text-align: left;
+}
+
+.product button {
+    width: 8%;
+    padding: 7px 5px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    color: #666;
+}
+
+.price {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    padding-bottom: 10px;
+}
+
+.subtotal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    background-color: white;
+}
+
+.free-shipping {
+    display: flex;
+    flex-wrap: wrap;
+    height: 60px;
+    align-items: center;
+}
+
+.free-shipping button {
+    border: none;
+    width: 8%;
+    padding: 7px 5px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    color: #666;
+    margin-right: 10px;
+}
+
+.free-shipping p {
+    font-size: 14px;
+}
+
+.free-shipping h6 {
+    font-size: 16px;
+    color: rgb(208, 80, 33);
+    margin-right: 3px;
+}
+
+.shipping-cost {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.shipping-cost input {
+    width: 48%;
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.shipping-cost button {
+    width: 48%;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #666;
+    padding: 8px;
+}
+
+.searh-postal-code {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.searh-postal-code a {
+    text-decoration: none;
+    color: rgb(208, 80, 33);
+}
+
+.total {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: white;
+    color: rgb(208, 80, 33);
+    margin-top: 20px;
+}
+
+.start-the-buy {
+    width: 100%;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #B09900;
+    border: none;
+    letter-spacing: 2px;
+}
+
+.more-products {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 25px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.more-products a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #4b200d;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+
+
+
+@media (min-width:361px) {
+
+    /* Main */
+    section {
+        width: 60vw;
+        margin: auto;
+    }
+
+   
