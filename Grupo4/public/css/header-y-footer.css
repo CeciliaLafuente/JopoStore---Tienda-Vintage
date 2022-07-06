@@ -1,15 +1,22 @@
+/* -------------------------------------------------------------------------------------*/
+/* -------------------  CSS HEADER Y FOOTER PARA TODOS LOS FORMATOS DE PANTALLA -------*/
+/* -------------------------------------------------------------------------------------*/
+
+/* --------------------------  general  -----------------------------------------------*/
+
 * {  
     box-sizing: border-box;
     font-family: Arial;
 }
 
-/* -----------------------------  header  -----------------------------------------------*/
-
 body {
     width: 100vw;
     margin: 0;
     text-align: center;
+    color: var(--gris-oscuro);
 }
+
+/* -----------------------------  header  -----------------------------------------------*/
 
 header{
     background-color: white;
@@ -25,15 +32,17 @@ header{
 
 .logo {
     width: 50%;
-    text-align: center;
 }
 
 .logo a {
     display: block;   
+    width: 100px;
+    height: 100px;
+    margin: auto;
 }
 
 .logo a img{
-    width: 100px;   
+    width: 100%;   
 }
 
 .bars-menu {
@@ -94,20 +103,12 @@ header{
 }
 
 
-/* -----------------------------  main  -----------------------------------------------*/
-
-
-/*                          INSERTAR MAIN                                                 */
-
-
-
 /* -----------------------------  footer  -----------------------------------------------*/
 
 footer {
     background-color: var(--verde);
     color: var(--blanco);
-    padding: 20px;
-    margin-top: 15px;
+    padding: 35px;
     text-align: left;
     font-size: 14px;
 }
@@ -126,11 +127,6 @@ footer ul {
 
 footer li {
     margin: 0 0 15px; 
-    display: flex;
-}
-
-footer li i{
-    margin-right: 10px;
 }
 
 footer ul a {
@@ -152,93 +148,124 @@ footer ul a {
     margin-left: 15px;
 }
 
+.i-wa {
+    display: block;
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    font-size: 60px;
+    padding: 5px;
+    opacity: 0.6;
+    color: green;
+    border-radius: 50%; 
+}
 
-/* laptop */
+.i-wa {
+    display: block;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-size: 60px;
+    padding: 5px;
+    opacity: 0.6;
+    color: green;
+    border-radius: 50%; 
+}
+
+
+/* ---------------------------------------------------------------------------------------*/
+/* ------------------------------   LAPTOP  ----------------------------------------------*/
+/* ---------------------------------------------------------------------------------------*/
 
 @media (min-width:769px){
 
-/* header */
-    .bars-menu{
-        display: none;
-    }
-
-    .icono-user{
-        display: block;
-    }
-
-    .logo {
-        width: 25%;
-        text-align: left;
+    /* ------------------------------   header ----------------------------------------------*/
+        .bars-menu{
+            display: none;
+        }
+    
+        .icono-user{
+            display: block;
+        }
+    
+        .logo {
+            width: 25%;
+            margin: 0;
+        }
+        
+        .logo a {
+            margin: 0;
+        }
+    
+        .search-bar {
+            width: 50%;
+            margin: auto;
+        }
+        
+        .search-bar form {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .iconos{
+            display: flex;
+            order:1;
+            justify-content: flex-end;; 
+        }
+    
+        .cart-shopping{
+            margin: 0px 10px 0px 0px;
+            font-size: 30px;
+        }
+    
+        .icono-user {
+            margin-right: 20px;
+            font-size: 30px;
+        }
+    
+        .nav-bar{
+            display: block;
+            border: solid 2px var(--marron);
+            margin-top: 20px;
+        }
+        .nav-bar ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    
+        .nav-bar li {
+            list-style: none;
+        }
+        
+        .nav-bar li a{
+            text-decoration: none;
+            color: var(--marron);
+            font-weight: bold;
+            font-size: 15px;
+            box-shadow: none;
+            transition: all 1000ms;
+        }
+    
+        .nav-bar li a:hover{
+            font-size: 20px;
+            color:var(--verde);
+            box-shadow: var(--gris-medio);
+        }
+    
+       
+    
+    /* -----------------------------  footer  -----------------------------------------------*/
+        footer{
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        .categorias,
+        .contacto,
+        .redes-sociales {
+            padding: 20px 10px;
+            width: 30%;
+        }
     }
     
-    .search-bar {
-        width: 50%;
-        margin: auto;
-    }
-    
-    .search-bar form {
-        width: 100%;
-        margin: 0;
-    }
-    
-    .iconos{
-        display: flex;
-        order:1;
-        justify-content: flex-end;; 
-    }
-
-    .cart-shopping{
-        margin: 0px 10px 0px 0px;
-        font-size: 30px;
-    }
-
-    .icono-user {
-        margin-right: 20px;
-        font-size: 30px;
-    }
-
-    .nav-bar{
-        display: block;
-        border: solid 2px var(--marron);
-        margin-top: 20px;
-    }
-    .nav-bar ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .nav-bar li {
-        list-style: none;
-    }
-    
-    .nav-bar li a{
-        text-decoration: none;
-        color: var(--marron);
-        font-weight: bold;
-        font-size: 15px;
-        box-shadow: none;
-        transition: all 1000ms;
-    }
-
-    .nav-bar li a:hover{
-        font-size: 20px;
-        color:var(--verde);
-        box-shadow: var(--gris-medio);
-    }
-
-/* footer */
-    footer{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .categorias,
-    .contacto,
-    .redes-sociales {
-        padding: 20px 50px;
-        width: 25%;
-    }
-
-}
-

@@ -3,14 +3,14 @@
     font-family: Arial;
 }
 
-/* -----------------------------  header  -----------------------------------------------*/
-
 body {
     width: 100vw;
     margin: 0;
     text-align: center;
     color: var(--gris-oscuro);
 }
+
+/* -----------------------------  header  -----------------------------------------------*/
 
 header{
     background-color: white;
