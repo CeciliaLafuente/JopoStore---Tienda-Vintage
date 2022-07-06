@@ -1,179 +1,8 @@
-body {
-    width: 100vw;
-    margin: 0;
-    text-align: center;
-}
-
-header{
-    background-color: white;
-    width: 100%; 
-}
-
-.header{
-    margin: 30px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.logo {
-    width: 50%;
-    text-align: center;
-}
-
-.logo a {
-    display: block;   
-}
-
-.logo a img{
-    width: 100px;   
-}
-
-.bars-menu {
-    width: 25%;
-    margin: auto;
-    text-align: left;
-}
-
-.iconos {
-    width: 25%;
-    margin: auto;
-    text-align: right;
-}
-
-.icono-user{
-    display: none;
-} 
-
-.bars-menu i, .cart-shopping i, .icono-user i {
-    font-size: 25px;
-}
-
-.bars-menu button, .iconos button{
-    background-color: transparent;
-    border: none;
-}
-
-.bars-menu button a, .iconos button a{
-    color:var(--marron);
-}
-
-.search-bar{
-    text-align: center;
-    /* margin: 30px 0 20px; */
-    width: 85%;
-}
-
-.search-bar form {
-    display: flex;
-    margin-top: 30px;
-}
-
-.search-bar input{
-    width: 100%;
-    height: 4vh;
-    border: 1px var(--gris-medio) solid;
-    border-radius: 5px;
-}
-
-.search-bar button{
-    font-size: 15px;
-    background-color: transparent;
-    border: none;
-    margin: -30px;
-}
-
-
-.nav-bar{
-    display: none;
-}
-
-.icono-user{
-    display: none;
-}
-
-@media (min-width:769px){
-    .bars-menu{
-        display: none;
-    }
-
-    .icono-user{
-        display: block;
-    }
-
-    .logo {
-        width: 25%;
-        text-align: left;
-    }
-    
-    .search-bar {
-        width: 50%;
-        margin: auto;
-    }
-    
-    .search-bar form {
-        width: 100%;
-        margin: 0;
-    }
-    
-    .iconos{
-        display: flex;
-        margin-top: 30px;
-        font-size: 40px;
-        order:1;
-        justify-content: flex-end; 
-    }
-
-    .cart-shopping{
-        margin: 0px 10px 0px 0px;
-        font-size: 30px;
-    }
-
-    .icono-user {
-        margin-right: 20px;
-        font-size: 30px;
-    }
-
-    .nav-bar{
-        display: block;
-        border: solid 2px var(--marron);
-        margin-top: 20px;
-    }
-    .nav-bar ul{
-        
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .nav-bar li {
-        list-style: none;
-        
-    }
-    
-    .nav-bar li a{
-        text-decoration: none;
-        color: var(--marron);
-        font-weight: bold;
-        font-size: 15px;
-        box-shadow: none;
-        transition: all 1000ms;
-    }
-
-    .nav-bar li a:hover{
-        font-size: 20px;
-        color:var(--verde);
-        box-shadow: var(--gris-medio);
-    }
-}
-
-
-
-
 /*registro*/
 main{
-    background-color: #ebebeb;
+    background-color: var(--blanco);
     padding-top: 20px;
+    color: var(--gris-oscuro);
 }
 
 .form-registro{
@@ -189,8 +18,7 @@ main{
 }
 
 .form-control-registro{
-    padding: 20px 0px;
-    margin-left: 10px;
+    padding: 20px 10px;
     position: relative;
 }
 
@@ -198,7 +26,11 @@ main{
     position: absolute;
     color: green;
     top:55px;
-    right: 10px;
+    right: 15px;
+}
+
+.form-control-registro input:focus{
+    border-color: var(--amarillo);
 }
 
 .form-control-registro input:invalid ~ i{
@@ -221,10 +53,11 @@ main{
     border-radius: 15px;
     width: 80%;
     height: 30px;
-    background-color: #4B200D;
+    background-color: var(--amarillo);
     color: white;
     font-size: 20px;
     font-weight: bold;
+    border:none;
 }
 
 .form-final-registro{
@@ -235,6 +68,14 @@ main{
 
 .delete-button{
     margin: 20px 0px 0px 10px;
+    background-color: var(--amarillo);
+    color: white;
+    border:none;
+}
+
+a{
+    color: var(--naranja);
+    text-decoration: none;
 }
 
 @media (min-width:769px){
@@ -245,68 +86,4 @@ main{
     .form-registro{
         margin-top: 0px;
     }
-}
-
-/*Footer*/
-footer {
-    background-color: var(--verde);
-    color: var(--blanco);
-    padding: 20px;
-    text-align: left;
-    font-size: 14px;
-}
-
-footer h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-footer ul {
-    margin: 0;
-    padding: 15px 0;
-    list-style: none;
-}
-
-footer li {
-    margin: 0 0 15px; 
-    display: flex;
-}
-
-footer li i{
-    margin-right: 10px;
-}
-
-footer ul a {
-    text-decoration: none;
-    color: white;
-}
-
-.redes-sociales a {
-    font-size: 30px;
-    color: var(--blanco);
-}
-
-.i-fb,
-.i-ig {
-    margin-top: 15px;
-}
-
-.i-ig {
-    margin-left: 15px;
-}
-
-@media (min-width:769px){
-footer{
-    display: flex;
-    justify-content: space-between;
-}
-
-.categorias,
-.contacto,
-.redes-sociales {
-    padding: 20px 50px;
-    width: 25%;
-}
-
 }
