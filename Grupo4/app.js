@@ -10,9 +10,6 @@ app.listen(3040, ()=>{
     console.log("Servidor corriendo en el puerto 3040");
 })
 
-let header= path.join(__dirname,'./views/header.html');
-let footer= path.join(__dirname,'./views/footer.html');
-
 let home= path.join(__dirname,'./views/index.html');
 let login= path.join(__dirname,'./views/login.html');
 let registro= path.join(__dirname,'./views/register.html');

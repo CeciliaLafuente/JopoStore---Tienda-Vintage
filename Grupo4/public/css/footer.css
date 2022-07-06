@@ -1,90 +1,63 @@
-footer{
-    background-color: #B09900;
-    color: white;
+footer {
+    background-color: var(--verde);
+    color: var(--blanco);
+    padding: 20px;
+    margin-top: 15px;
+    text-align: left;
+    font-size: 14px;
 }
 
-.categorias h3{
-    margin-bottom: 10px;
-    margin-top: 30px;
-}
-
-.categorias{
-    padding: 20px 0px 10px 20px;
-}
-
-.contacto{
-    padding-left: 20px;
-}
-
-h3{
-    font-size: 25px;
+footer h3 {
+    font-size: 16px;
     font-weight: bold;
-    margin-left: 10px;
+    margin: 10px 0;
 }
 
-.categorias li  {
-    font-size: 18px;
-    margin: 0px 0px 5px 20px;
-    display: block;
+footer ul {
+    margin: 0;
+    padding: 15px 0;
+    list-style: none;
 }
 
-.categorias li a{
-    text-decoration: none;
-    color:white;
-    
-}
-
-.categorias li a:hover {
-    color:blue;
-}
-
-.contacto h3{
-    margin: 30px 0px 0px 10px;
-}
-
-.contacto div{
-    margin: 10px 0px 10px 20px;
-}
-
-.redes-sociales{
-    font-size: 2em;
+footer li {
+    margin: 0 0 15px; 
     display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 
-.fa-whatsapp{
-    color: white;
+footer li i{
     margin-right: 10px;
 }
 
-.fa-location-dot, .fa-envelope{
-    margin-right: 10px;
-    color:white;
+footer ul a {
+    text-decoration: none;
+    color: white;
 }
 
-.fa-instagram{
-    color: white;
-    margin: 10px;
+.redes-sociales a {
+    font-size: 30px;
+    color: var(--blanco);
 }
 
-.fa-facebook{
-    color: white;
-    margin: 10px;
+.i-fb,
+.i-ig {
+    margin-top: 15px;
+}
+
+.i-ig {
+    margin-left: 15px;
 }
 
 @media (min-width:769px){
-    footer{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+footer{
+    display: flex;
+    justify-content: space-between;
+}
 
-    .categorias, .contacto{
-        padding: 20px 50px;
-    }
+.categorias,
+.contacto,
+.redes-sociales {
+    padding: 20px 50px;
+    width: 25%;
+}
 
-    .redes-sociales{
-        padding: 50px;
-    }
 }

@@ -72,7 +72,7 @@
                 <li><a href="#">ROPA</a></li>
             </ul>
         </nav>
-    </div>
+
     </header>
 
     <main>
@@ -85,26 +85,32 @@
 
             <div class="div-datos-producto">
 
-                <p class="p-nombre-producto">TELÉFONO AÑOS 80 MARCA ENTEL</p>
+                <h4 class="h4-nombre-producto">TELÉFONO AÑOS 80 MARCA ENTEL</h4>
 
                 <p class="p-precio">$2500</p>
 
                 <div class="div-formas-pago">
 
-                    <i class="fa-solid fa-credit-card"></i>
-                    <p class="p-formas-pago">6 cuotas sin interés de $416.66></p>
+                    <i class="fa-solid fa-credit-card i-tarjeta"></i>
+                    <p class="p-formas-pago"><strong>6 cuotas sin interés</strong> de $416.66</p>
 
                 </div>
 
                 <div class="div-comprar">
                     <form class="form-comprar" method="post" action="/agregarAlCarrito">
-                        <i class="fa-solid fa-plus"></i>
 
-                        <input type="number" name="cantidad">
+                        <div class="div-cantidad-comprada">
 
-                        <i class="fa-solid fa-minus"></i>
+                            <button class="i-mas"><i class="fa-solid fa-plus"></i></button>
+                            
+                            <input type="number" name="cantidad" placeholder="1">
+
+                            <button class="i-menos"><i class="fa-solid fa-minus"></i></button>
+
+                        </div>
 
                         <button class="button-agregar-al-carrito" type="submit">AGREGAR AL CARRITO</button>
+
                     </form>
                 </div>
 
@@ -113,14 +119,14 @@
 
                         <p class="p-texto-costo-envio">CALCULAR EL COSTO DEL ENVIO</p>
 
-                        <input type="number" maxlength="4" placeholder="1234">
+                        <input type="text" maxlength="4" placeholder="Código postal">
 
                         <button type="submit">CALCULAR</button>
 
                     </form>
                 </div>
 
-                <div class="div-detalle-del-producto">
+                <div class="div-descripcion-producto">
 
                     <p>Telefono antiguo marca Entel con botonera, en perfecto estado de conservación y funcionamiento.</p>
 
@@ -156,30 +162,39 @@
 
             <h3>Contacto</h3>
 
-            <div>
-                <i class="fa-solid fa-envelope"></i>
-                <span>grupo4@gmail.com</span>
-            </div>
+            <ul>
 
-            <div>
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>11-1234-5678</span>
-            </div>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>grupo4@gmail.com</span>
+                </li>
 
-            <div>
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Nuestra calle 1234, 1111 CABA</span>
-            </div>
+                <li>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>11-1234-5678</span>
+                </li>
 
+                <li>
+                     <i class="fa-solid fa-location-dot"></i>
+                    <span>Nuestra calle 1234, 1111 CABA</span>
+                </li>
+
+            </ul>
+            
         </div>
         
         <div class="redes-sociales">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
+
+            <h3>Sigamos conectados</h3>
+
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook i-fb"></i></a>
+            <a href="https://www.instagram.com"><i class="fa-brands fa-instagram i-ig"></i></a>
         </div>
 
+        <i class="fa-brands fa-whatsapp-square i-wa"></i> 
+
     </footer>
-    
+   
     
 </body>
 </html>

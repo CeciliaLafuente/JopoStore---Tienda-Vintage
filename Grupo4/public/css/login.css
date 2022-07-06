@@ -1,23 +1,52 @@
-*{  
-    box-sizing: border-box;
-}
-
-body{
-    font-family: Arial;
+body {
+    width: 100vw;
+    margin: 0;
+    text-align: center;
 }
 
 header{
     background-color: white;
-    
+    width: 100%; 
 }
 
-.header .bars-menu, .header .cart-shopping{
-    margin: 60px 0px 0px 0px;
-    
+.header{
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.header .bars-menu i, .cart-shopping i, .icono-user i {
-    font-size: 40px;
+.logo {
+    width: 50%;
+    text-align: center;
+}
+
+.logo a {
+    display: block;   
+}
+
+.logo a img{
+    width: 100px;   
+}
+
+.bars-menu {
+    width: 25%;
+    margin: auto;
+    text-align: left;
+}
+
+.iconos {
+    width: 25%;
+    margin: auto;
+    text-align: right;
+}
+
+.icono-user{
+    display: none;
+} 
+
+.bars-menu i, .cart-shopping i, .icono-user i {
+    font-size: 25px;
 }
 
 .bars-menu button, .iconos button{
@@ -26,51 +55,35 @@ header{
 }
 
 .bars-menu button a, .iconos button a{
-    color:#4B200D;
-}
-
-button{
-    color: #4B200D;
-}
-.header{
-    display: flex;
-    flex-direction: row;   
-    justify-content: space-around;
-}
-
-.header img{
-    height: 25vh;
-    padding: 20px 0px 0px 0px;
+    color:var(--marron);
 }
 
 .search-bar{
     text-align: center;
-    margin: 40px 10px 0px 10px;
-    align-self: flex-end;
-    position: absolute;
-    top: 150px;
-    width: 80%;
+    /* margin: 30px 0 20px; */
+    width: 85%;
+}
+
+.search-bar form {
+    display: flex;
+    margin-top: 30px;
 }
 
 .search-bar input{
     width: 100%;
-    height: 5vh;
+    height: 4vh;
+    border: 1px var(--gris-medio) solid;
+    border-radius: 5px;
 }
 
 .search-bar button{
-    font-size: 22px;
-    position: absolute;
-    right: 0px;
+    font-size: 15px;
     background-color: transparent;
     border: none;
+    margin: -30px;
 }
-
 
 .nav-bar{
-    display: none;
-}
-
-.icono-user{
     display: none;
 }
 
@@ -83,34 +96,43 @@ button{
         display: block;
     }
 
-    .search-bar{
-        position: relative;
-        top:-60px;
-        width: 45%;
+    .logo {
+        width: 25%;
+        text-align: left;
     }
-
+    
+    .search-bar {
+        width: 50%;
+        margin: auto;
+    }
+    
+    .search-bar form {
+        width: 100%;
+        margin: 0;
+    }
+    
     .iconos{
         display: flex;
-        margin-top: 30px;
-        font-size: 40px;
         order:1;
+        justify-content: flex-end; 
     }
 
-    .iconos a{
-       color: #4B200D;
-    }
-
-    .header .cart-shopping{
+    .cart-shopping{
         margin: 0px 10px 0px 0px;
+        font-size: 30px;
+    }
+
+    .icono-user {
+        margin-right: 20px;
+        font-size: 30px;
     }
 
     .nav-bar{
         display: block;
-        border: solid 2px #4B200D;
+        border: solid 2px var(--marron);
         margin-top: 20px;
     }
     .nav-bar ul{
-        
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -118,24 +140,24 @@ button{
 
     .nav-bar li {
         list-style: none;
-        
     }
     
     .nav-bar li a{
         text-decoration: none;
-        color: black;
+        color: var(--marron);
         font-weight: bold;
-        font-size: 20px;
+        font-size: 15px;
         box-shadow: none;
         transition: all 1000ms;
     }
 
     .nav-bar li a:hover{
-        font-size: 30px;
-        color:#B09900;
-        box-shadow: #807e7e;
+        font-size: 20px;
+        color:var(--verde);
+        box-shadow: var(--gris-medio);
     }
 }
+
 
 
   
@@ -152,7 +174,9 @@ main{
 }
 
 .formulario{
-    margin-top: 60px;
+    padding-top: 60px;
+    text-align: left;
+    font-weight: bold;
 }
 
 .form-control{
@@ -160,15 +184,12 @@ main{
     padding: 50px 0px;
     display: block;
     position: relative;
-}
-
-.form-control label{
-    font-size: 25px;
+    
 }
 
 .input-login{
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 30px;
     margin: 10px 0px;
 }
@@ -206,99 +227,76 @@ main{
     padding-bottom: 100px;
 }
 
+@media (min-width:769px){
+    .form-control{
+    width: 60%;
+    }
+
+    .form-control label{
+        font-size: 20px;
+    }
+}
+
 /*Footer*/
-
-footer{
-    background-color: #B09900;
-    color: white;
+footer {
+    background-color: var(--verde);
+    color: var(--blanco);
+    padding: 20px;
+    text-align: left;
+    font-size: 14px;
 }
 
-.categorias h3{
-    margin-bottom: 10px;
-    margin-top: 30px;
-}
-
-.categorias{
-    padding: 20px 0px 10px 20px;
-}
-
-.contacto{
-    padding-left: 20px;
-}
-
-h3{
-    font-size: 25px;
+footer h3 {
+    font-size: 16px;
     font-weight: bold;
-    margin-left: 10px;
+    margin: 10px 0;
 }
 
-.categorias li  {
-    font-size: 18px;
-    margin: 0px 0px 5px 20px;
-    display: block;
+footer ul {
+    margin: 0;
+    padding: 15px 0;
+    list-style: none;
 }
 
-.categorias li a{
-    text-decoration: none;
-    color:white;
-    
-}
-
-.categorias li a:hover {
-    color:blue;
-}
-
-.contacto h3{
-    margin: 30px 0px 0px 10px;
-}
-
-.contacto div{
-    margin: 10px 0px 10px 20px;
-}
-
-.redes-sociales{
-    font-size: 2em;
+footer li {
+    margin: 0 0 15px; 
     display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 
-.fa-whatsapp{
-    color: white;
+footer li i{
     margin-right: 10px;
 }
 
-.fa-location-dot, .fa-envelope{
-    margin-right: 10px;
-    color:white;
+footer ul a {
+    text-decoration: none;
+    color: white;
 }
 
-.fa-instagram{
-    color: white;
-    margin: 10px;
+.redes-sociales a {
+    font-size: 30px;
+    color: var(--blanco);
 }
 
-.fa-facebook{
-    color: white;
-    margin: 10px;
+.i-fb,
+.i-ig {
+    margin-top: 15px;
+}
+
+.i-ig {
+    margin-left: 15px;
 }
 
 @media (min-width:769px){
-    footer{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+footer{
+    display: flex;
+    justify-content: space-between;
+}
 
-    .categorias, .contacto{
-        padding: 20px 50px;
-    }
+.categorias,
+.contacto,
+.redes-sociales {
+    padding: 20px 50px;
+    width: 25%;
+}
 
-    .redes-sociales{
-        padding: 50px;
-    }
-
-    .formulario{
-        margin-top: 0px;
-    }
 }
