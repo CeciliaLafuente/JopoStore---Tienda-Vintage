@@ -1,105 +1,15 @@
-* {  
-    box-sizing: border-box;
-    font-family: Arial;
-}
-
-body {
-    width: 100vw;
-    margin: 0;
-    text-align: center;
-    color: var(--gris-oscuro);
-}
-
 /* -----------------------------  header  -----------------------------------------------*/
-
 header{
-    background-color: white;
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0; 
 }
 
-.header{
-    margin: 30px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.logo {
-    width: 50%;
-}
-
-.logo a {
-    display: block;   
-    width: 100px;
-    height: 100px;
-    margin: auto;
-}
-
-.logo a img{
-    width: 100%;   
-}
-
-.bars-menu {
-    width: 25%;
-    margin: auto;
-    text-align: left;
-}
-
-.iconos {
-    width: 25%;
-    margin: auto;
-    text-align: right;
-}
-
-.icono-user{
-    display: none;
-} 
-
-.bars-menu i, .cart-shopping i, .icono-user i {
-    font-size: 25px;
-}
-
-.bars-menu button, .iconos button{
-    background-color: transparent;
-    border: none;
-}
-
-.bars-menu button a, .iconos button a{
-    color:var(--marron);
-}
-
-.search-bar{
-    text-align: center;
-    width: 85%;
-}
-
-.search-bar form {
-    display: flex;
-    margin-top: 30px;
-}
-
-.search-bar input{
-    width: 100%;
-    height: 4vh;
-    border: 1px var(--gris-medio) solid;
-    border-radius: 5px;
-}
-
-.search-bar button{
-    font-size: 15px;
-    background-color: transparent;
-    border: none;
-    margin: -30px;
-}
-
-.nav-bar{
-    display: none;
-}
 
 /* -----------------------------  main  -----------------------------------------------*/
 
 main {
-    margin: 0;
+    margin: 219px 0 0 0;
     width: 100%;
     background-color: var(--gris-claro);
     text-align: center;
@@ -143,50 +53,45 @@ main {
     margin: 0 0 20px;
 }
 
-.i-tarjeta {
-    width: 10%;
+.i-tarjeta,
+.i-camion {
+    margin-right: 10px;
 }
 
 .p-formas-pago {
     margin: 0;
 }
 
-.form-comprar {
-    display: flex;
-    height: 40px;
-    margin: 30px 0;
+.p-formas-pago strong,
+.free-shipping strong {
+    color: var(--naranja);
 }
 
-.div-cantidad-comprada {
-    display: flex;
-    border: 1px var(--gris-medio) solid;
-    border-radius: 5px;
-}
-
-.div-cantidad-comprada input {
-    width: 50px;
-    height: 100%;
-    margin: auto;
-    border: none;
+.div-comprar {
     text-align: center;
-}
-
-.div-cantidad-comprada button {
-    border: none;
-    background-color: var(--blanco);
+    padding: 10px 0;
+    height: 40px;
+    box-sizing:content-box;
 }
 
 .button-agregar-al-carrito {
-    width: 170px;
-    margin-left: 30px;
-    background-color: var(--marron);
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    background-color: var(--amarillo);
     color: var(--blanco);
     border: none;
-    border-radius:20px;
+    border-radius:5px;
+    padding: 10px;
+}
+
+.free-shipping {
+    display: flex;
+    margin: 20px 0;
 }
 
 .div-costo-envio {
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 .form-costo-envio {
@@ -226,79 +131,6 @@ main {
 }
 
 
-/* -----------------------------  footer  -----------------------------------------------*/
-
-footer {
-    background-color: var(--verde);
-    color: var(--blanco);
-    padding: 35px;
-    text-align: left;
-    font-size: 14px;
-}
-
-footer h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-footer ul {
-    margin: 0;
-    padding: 15px 0;
-    list-style: none;
-}
-
-footer li {
-    margin: 0 0 15px; 
-}
-
-footer ul a {
-    text-decoration: none;
-    color: white;
-}
-
-.redes-sociales a {
-    font-size: 30px;
-    color: var(--blanco);
-}
-
-.i-fb,
-.i-ig {
-    margin-top: 15px;
-}
-
-.i-ig {
-    margin-left: 15px;
-}
-
-.i-wa {
-    display: block;
-    position: fixed;
-    bottom: 15px;
-    right: 20px;
-    font-size: 60px;
-    padding: 5px;
-    opacity: 0.6;
-    color: green;
-    border-radius: 50%; 
-}
-
-.i-wa {
-    display: block;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    font-size: 60px;
-    padding: 5px;
-    opacity: 0.6;
-    color: green;
-    border-radius: 50%; 
-}
-
-
-
-
-
 
 /* -------------------------------------------------------------------------------------*/
 /* ------------------------------   LAPTOP  ----------------------------------------------*/
@@ -306,81 +138,11 @@ footer ul a {
 
 @media (min-width:769px){
 
-/* ------------------------------   header ----------------------------------------------*/
-    .bars-menu{
-        display: none;
-    }
-
-    .icono-user{
-        display: block;
-    }
-
-    .logo {
-        width: 25%;
-        margin: 0;
-    }
-    
-    .logo a {
-        margin: 0;
-    }
-
-    .search-bar {
-        width: 50%;
-        margin: auto;
-    }
-    
-    .search-bar form {
-        width: 100%;
-        margin: 0;
-    }
-    
-    .iconos{
-        display: flex;
-        order:1;
-        justify-content: flex-end;; 
-    }
-
-    .cart-shopping{
-        margin: 0px 10px 0px 0px;
-        font-size: 30px;
-    }
-
-    .icono-user {
-        margin-right: 20px;
-        font-size: 30px;
-    }
-
-    .nav-bar{
-        display: block;
-        border: solid 2px var(--marron);
-        margin-top: 20px;
-    }
-    .nav-bar ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .nav-bar li {
-        list-style: none;
-    }
-    
-    .nav-bar li a{
-        text-decoration: none;
-        color: var(--marron);
-        font-weight: bold;
-        font-size: 15px;
-        box-shadow: none;
-        transition: all 1000ms;
-    }
-
-    .nav-bar li a:hover{
-        font-size: 20px;
-        color:var(--verde);
-        box-shadow: var(--gris-medio);
-    }
-
 /* ------------------------------   main  ----------------------------------------------*/
+    main {
+        margin: 208px 0 0 0;
+    }
+
     .article-producto {
         display: flex;
         justify-content: space between;
@@ -393,23 +155,12 @@ footer ul a {
 
     .div-datos-producto {
         width: 40%;
+        border: none;
+        padding: 40px;
     }
 
 
-/* -----------------------------  footer  -----------------------------------------------*/
-    footer{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .categorias,
-    .contacto,
-    .redes-sociales {
-        padding: 20px 10px;
-        width: 30%;
-    }
 }
-
 /* -------------------------------------------------------------------------------------*/
 /* ------------------------------   PANTALLA ANCHA  ----------------------------------------------*/
 /* -------------------------------------------------------------------------------------*/

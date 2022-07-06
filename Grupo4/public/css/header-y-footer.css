@@ -21,6 +21,9 @@ body {
 header{
     background-color: white;
     width: 100%; 
+    /* position: fixed;
+    top: 0;
+    left: 0; */
 }
 
 .header{
@@ -43,6 +46,11 @@ header{
 
 .logo a img{
     width: 100%;   
+}
+
+.logo a :hover {
+    transform: rotate(360deg);
+    transition: transform 1s;
 }
 
 .bars-menu {
