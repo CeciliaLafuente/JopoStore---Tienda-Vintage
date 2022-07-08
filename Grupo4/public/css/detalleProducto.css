@@ -172,16 +172,27 @@ main {
 /* -------------------------------------------------------------------------------------*/
 
 @media (min-width:769px){
+ 
+     body {
+         width: 90%;
+         margin: 0 5vw;
+     }
+ 
 
+    header {
+        width: 90%;
+        margin: 0 5vw;
+     }
+ 
 /* ------------------------------   main  ----------------------------------------------*/
     main {
         margin-top: 208px;
     }
 
-    article {
+    /* article {
         width:80%;
         margin: auto;
-    }
+    } */
 
     .article-producto {
         display: flex;
