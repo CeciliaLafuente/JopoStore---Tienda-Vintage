@@ -1,18 +1,13 @@
 /* -----------------------------  header  -----------------------------------------------*/
-header{
-    position: fixed;
-    top: 0;
-    left: 0; 
-}
 
 
 /* -----------------------------  main  -----------------------------------------------*/
 
 main {
-    margin: 219px 0 0 0;
+    /* margin-top: 219px; */
     width: 100%;
     background-color: var(--gris-claro);
-    text-align: center;
+    /* text-align: center; */
     padding: 20px;
 }
 
@@ -51,6 +46,13 @@ main {
 .div-formas-pago {
     display: flex;
     margin: 0 0 20px;
+    font-size: 18px;
+}
+
+.div-envio-gratis {
+    display: flex;
+    margin: 20px 0;
+    font-size: 18px;
 }
 
 .i-tarjeta,
@@ -58,12 +60,15 @@ main {
     margin-right: 10px;
 }
 
-.p-formas-pago {
+.div-formas-pago span,
+.div-envio-gratis span{
     margin: 0;
+    font-size: 14px;
 }
 
-.p-formas-pago strong,
-.free-shipping strong {
+.div-formas-pago strong,
+.div-envio-gratis strong {
+    font-size: 16px;
     color: var(--naranja);
 }
 
@@ -75,26 +80,56 @@ main {
 }
 
 .button-agregar-al-carrito {
-    font-size: 20px;
-    font-weight: bold;
-    width: 100%;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    width: 70%;
+    height: 35px;
     background-color: var(--amarillo);
     color: var(--blanco);
     border: none;
-    border-radius:5px;
+    border-radius:3px;
     padding: 10px;
-}
-
-.free-shipping {
-    display: flex;
-    margin: 20px 0;
 }
 
 .div-costo-envio {
     margin: 25px 0;
 }
 
-.form-costo-envio {
+.shipping-cost {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.shipping-cost input {
+    width: 48%;
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.shipping-cost button {
+    width: 48%;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--gris-oscuro);
+    padding: 8px;
+}
+
+.searh-postal-code {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.searh-postal-code a {
+    text-decoration: none;
+    color: var(--naranja);
+}
+
+
+/* .form-costo-envio {
     display: flex;
     flex-wrap: wrap;
     color: var(--gris-oscuro);
@@ -122,7 +157,7 @@ main {
     background-color: transparent;
     border: 1px var(--gris-medio) solid;
     padding: 5px;
-}
+} */
 
 .div-descripcion-producto {
     font-size: 18px;
@@ -137,10 +172,29 @@ main {
 /* -------------------------------------------------------------------------------------*/
 
 @media (min-width:769px){
+ 
+    /* body {
+        width: 90%;
+        margin: 0 5vw;
+        background-color: var(--gris-claro);      
+    }
+     
+
+    header {
+        width: 87.75%;
+        margin: 0 6.125vw;
+     }
+ */
 
 /* ------------------------------   main  ----------------------------------------------*/
     main {
-        margin: 208px 0 0 0;
+        /* margin-top: 191.25px; */
+        background-color: transparent;
+        padding-top:0;
+    }
+
+    .article-producto {
+        box-shadow:none;
     }
 
     .article-producto {

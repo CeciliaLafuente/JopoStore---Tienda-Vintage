@@ -10,7 +10,7 @@
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     margin: 0;
     text-align: center;
     color: var(--gris-oscuro);
@@ -46,11 +46,6 @@ header{
 
 .logo a img{
     width: 100%;   
-}
-
-.logo a :hover {
-    transform: rotate(360deg);
-    transition: transform 1s;
 }
 
 .bars-menu {
@@ -186,7 +181,7 @@ footer ul a {
 /* ---------------------------------------------------------------------------------------*/
 
 @media (min-width:769px){
-
+       
     /* ------------------------------   header ----------------------------------------------*/
         .bars-menu{
             display: none;
@@ -205,6 +200,22 @@ footer ul a {
             margin: 0;
         }
     
+        .logo a:hover {
+            animation-name: anim-logo-rotate;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes anim-logo-rotate {
+            50% {
+                width: 35%;
+            }
+            100% {
+                width: 25%;
+                transform: rotate(720deg); 
+            }
+        }
+
         .search-bar {
             width: 50%;
             margin: auto;
@@ -221,6 +232,10 @@ footer ul a {
             justify-content: flex-end;; 
         }
     
+        .iconos button a:hover {
+            color:var(--verde);
+        }
+        
         .cart-shopping{
             margin: 0px 10px 0px 0px;
             font-size: 30px;
