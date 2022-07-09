@@ -17,6 +17,7 @@ let carrito= path.join(__dirname,'./views/carrito.html');
 let detalleProd= path.join(__dirname,'./views/productDetail.html');
 
 
+
 app.get('/', function(req,res){
     res.sendFile(home);
 })

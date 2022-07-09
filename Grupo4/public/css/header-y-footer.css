@@ -233,7 +233,7 @@ footer ul a {
     
         .nav-bar{
             display: block;
-            border: solid 2px var(--marron);
+            border-bottom: solid 2px var(--marron);
             margin-top: 20px;
         }
         .nav-bar ul{

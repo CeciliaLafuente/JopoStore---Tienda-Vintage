@@ -3,6 +3,18 @@ main{
     background-color: var(--blanco);
     padding-top: 20px;
     color: var(--gris-oscuro);
+    margin: 20px;
+    display: flex;
+}
+
+main form{
+    padding: 20px;
+    background-color: white;
+    flex-grow: 0.3;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 10px rgb(100 100 100);
 }
 
 .form-registro{
@@ -50,14 +62,15 @@ main{
 }
 
 .create-account{
-    border-radius: 15px;
-    width: 80%;
+    border-radius: 3px;
+    width: 70%;
     height: 30px;
     background-color: var(--amarillo);
     color: white;
     font-size: 20px;
     font-weight: bold;
     border:none;
+    letter-spacing: 1px;
 }
 
 .form-final-registro{
@@ -80,7 +93,7 @@ a{
 
 @media (min-width:769px){
     .form-control-registro{
-        width:60%;
+        width:100%;
     }
 
     .form-registro{
