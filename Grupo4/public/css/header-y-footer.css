@@ -10,7 +10,7 @@
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     margin: 0;
     text-align: center;
     color: var(--gris-oscuro);
@@ -21,9 +21,9 @@ body {
 header{
     background-color: white;
     width: 100%; 
-    position: fixed;
+    /* position: fixed;
     top: 0;
-    left: 0;
+    left: 0; */
 }
 
 .header{
@@ -181,7 +181,7 @@ footer ul a {
 /* ---------------------------------------------------------------------------------------*/
 
 @media (min-width:769px){
-
+       
     /* ------------------------------   header ----------------------------------------------*/
         .bars-menu{
             display: none;
@@ -248,7 +248,7 @@ footer ul a {
     
         .nav-bar{
             display: block;
-            border: solid 2px var(--marron);
+            border-bottom: solid 2px var(--marron);
             margin-top: 20px;
         }
         .nav-bar ul{

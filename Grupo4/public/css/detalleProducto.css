@@ -4,10 +4,10 @@
 /* -----------------------------  main  -----------------------------------------------*/
 
 main {
-    margin-top: 219px;
+    /* margin-top: 219px; */
     width: 100%;
     background-color: var(--gris-claro);
-    text-align: center;
+    /* text-align: center; */
     padding: 20px;
 }
 
@@ -173,26 +173,29 @@ main {
 
 @media (min-width:769px){
  
-     body {
-         width: 90%;
-         margin: 0 5vw;
-     }
- 
-
-    header {
+    /* body {
         width: 90%;
         margin: 0 5vw;
+        background-color: var(--gris-claro);      
+    }
+     
+
+    header {
+        width: 87.75%;
+        margin: 0 6.125vw;
      }
- 
+ */
+
 /* ------------------------------   main  ----------------------------------------------*/
     main {
-        margin-top: 208px;
+        /* margin-top: 191.25px; */
+        background-color: transparent;
+        padding-top:0;
     }
 
-    /* article {
-        width:80%;
-        margin: auto;
-    } */
+    .article-producto {
+        box-shadow:none;
+    }
 
     .article-producto {
         display: flex;
