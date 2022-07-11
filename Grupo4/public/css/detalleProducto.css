@@ -1,20 +1,19 @@
 /* -----------------------------  header  -----------------------------------------------*/
 
-
 /* -----------------------------  main  -----------------------------------------------*/
-
 main {
-    /* margin-top: 219px; */
     width: 100%;
-    background-color: var(--gris-claro);
-    /* text-align: center; */
+    /* background-color: var(--gris-claro); */
+    background-image: url('../images/fondos/lineas7.jpg');
+    background-position: center;
+    background-size: cover;
     padding: 20px;
 }
 
 .article-producto {
     box-shadow: 2px 2px 10px var(--gris-oscuro);
     background-color: var(--blanco);
-    }
+}
 
 .div-img-producto {
     width: 100%;
@@ -75,7 +74,6 @@ main {
 .div-comprar {
     text-align: center;
     padding: 10px 0;
-    height: 40px;
     box-sizing:content-box;
 }
 
@@ -90,6 +88,7 @@ main {
     border: none;
     border-radius:3px;
     padding: 10px;
+    box-sizing:content-box;
 }
 
 .div-costo-envio {
@@ -189,12 +188,16 @@ main {
 /* ------------------------------   main  ----------------------------------------------*/
     main {
         /* margin-top: 191.25px; */
-        background-color: transparent;
-        padding-top:0;
+        /* background-color: transparent; */
+        /* padding-top:0; */
     }
+    
 
     .article-producto {
+        width: 70%;
+        margin: 30px 15%;
         box-shadow:none;
+        opacity: 0.85;
     }
 
     .article-producto {
