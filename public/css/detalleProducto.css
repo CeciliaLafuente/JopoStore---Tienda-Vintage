@@ -3,8 +3,7 @@
 /* -----------------------------  main  -----------------------------------------------*/
 main {
     width: 100%;
-    /* background-color: var(--gris-claro); */
-    background-image: url('../images/fondos/lineas7.jpg');
+    background-image: url('../images/fondos/cuadrados-ranguit.jpg');
     background-position: center;
     background-size: cover;
     padding: 20px;
@@ -127,37 +126,6 @@ main {
     color: var(--naranja);
 }
 
-
-/* .form-costo-envio {
-    display: flex;
-    flex-wrap: wrap;
-    color: var(--gris-oscuro);
-    text-align: center;
-    font-size: 12px;
-    border: 1px var(--gris-medio) solid;
-
-}
-
-.p-texto-costo-envio {
-    width: 100%;
-    padding: 5px;
-    margin: 0;
-}
-
-.form-costo-envio input {
-    width: 50%;
-    color: var(--gris-claro);
-    padding: 5px;
-    border:1px var(--gris-medio) solid;
-}
-
-.form-costo-envio button {
-    width: 50%;
-    background-color: transparent;
-    border: 1px var(--gris-medio) solid;
-    padding: 5px;
-} */
-
 .div-descripcion-producto {
     font-size: 18px;
     color: var(--gris-oscuro);
@@ -171,28 +139,9 @@ main {
 /* -------------------------------------------------------------------------------------*/
 
 @media (min-width:769px){
- 
-    /* body {
-        width: 90%;
-        margin: 0 5vw;
-        background-color: var(--gris-claro);      
-    }
-     
-
-    header {
-        width: 87.75%;
-        margin: 0 6.125vw;
-     }
- */
 
 /* ------------------------------   main  ----------------------------------------------*/
-    main {
-        /* margin-top: 191.25px; */
-        /* background-color: transparent; */
-        /* padding-top:0; */
-    }
     
-
     .article-producto {
         width: 70%;
         margin: 30px 15%;
@@ -218,13 +167,3 @@ main {
 
 
 }
-/* -------------------------------------------------------------------------------------*/
-/* ------------------------------   PANTALLA ANCHA  ----------------------------------------------*/
-/* -------------------------------------------------------------------------------------*/
-
-
-/* @media (min-width: 1200px) {
-    body {
-        max-width: 1200px;
-    }
-} */
