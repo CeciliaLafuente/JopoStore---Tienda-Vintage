@@ -9,7 +9,9 @@ main{
     background-color: var(--blanco);
     color: var(--gris-oscuro);
     display: flex;
-    margin: 20px;
+    background-image: url('../images/portada\ 1.jpg');
+    background-repeat: no-repeat;
+    
 }
 
 .formulario{
@@ -40,11 +42,11 @@ main{
 .button-inicio{
     
     width: 70%;
-    height: 30px;
+    height: 35px;
     border-radius: 3px;
     background-color: var(--amarillo);
     color: white;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
     border:none;
     letter-spacing: 1px;
@@ -53,8 +55,8 @@ main{
 .form-final-login {
     text-align: center;
     margin-top: 100px;
-    font-size: 18px;
 }
+
 .form-final-login a{
     text-decoration: none;
 }
@@ -70,11 +72,14 @@ a{
 main form{
     padding: 20px;
     background-color: white;
-    flex-grow: 0.3;
+    opacity: 0.8;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0px 0px 10px rgb(100 100 100);
+    width: 60%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 @media (min-width:769px){
@@ -84,5 +89,21 @@ main form{
 
     .form-control label{
         font-size: 20px;
+    }
+
+    .button-inicio{
+        font-size: 18px;
+    }
+
+    .form-final-login{
+        font-size: 18px;
+    }
+
+    .a-password{
+        font-size: 18px;
+    }
+
+    main form{
+        padding: 20px 50px;
     }
 }

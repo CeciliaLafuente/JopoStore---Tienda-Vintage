@@ -18,6 +18,7 @@ let detalleProd= path.join(__dirname,'./views/detalleProducto.html');
 
 
 
+
 app.get('/', function(req,res){
     res.sendFile(home);
 })
@@ -37,6 +38,8 @@ app.get('/carrito-de-compras', function(req,res){
 app.get('/detalle-del-producto', function(req,res){
     res.sendFile(detalleProd);
 })
+
+
 
 
 
