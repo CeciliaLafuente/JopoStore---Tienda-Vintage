@@ -11,10 +11,10 @@ app.listen(process.env.PORT || 3040, ()=>{
 })
 
 let home= path.join(__dirname,'./views/index.html');
-let login= path.join(__dirname,'./views/login.html');
-let registro= path.join(__dirname,'./views/register.html');
-let carrito= path.join(__dirname,'./views/carrito.html');
-let detalleProd= path.join(__dirname,'./views/detalleProducto.html');
+let login= path.join(__dirname,'./views/users/login.html');
+let registro= path.join(__dirname,'./views/users/register.html');
+let carrito= path.join(__dirname,'./views/products/carrito.html');
+let detalleProd= path.join(__dirname,'./views/products/detalleProducto.html');
 
 
 
