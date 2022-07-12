@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+   
+
+    <script src="https://kit.fontawesome.com/0625f444d8.js" crossorigin="anonymous"></script>
+
+    <link href="/css/colors.css", rel="stylesheet">
+    <link href="/css/normalize.css", rel="stylesheet">
+    <link href="/css/header-y-footer.css", rel="stylesheet">
+    <link href="/css/detalleProducto.css", rel="stylesheet">
+
+    
+    <title>Detalle del producto JOPO</title>
+    <link rel="icon" href="/images/icono/favicon.ico">
+    
+
+<body>
+
+    <header>
+
+        <div class="header">
+
+            <div class="bars-menu">
+
+                <button><a href="#"><i class="fas fa-bars"></i></a></button>
+
+            </div>
+
+            <div class="logo">    
+                <a href="/"><img src="./images/logo/isologo.png" alt="Logo"></a>
+            </div>
+             
+            <div class="iconos">
+
+                <button class="cart-shopping">
+                    <a href="/carrito-de-compras"><i class="fa-solid fa-cart-shopping"></i></a>
+                </button>
+
+                <button class="icono-user">
+                    <a href="/login"><i class="fa-solid fa-circle-user"></i></a>
+                </button>
+
+            </div>
+        
+            <div class="search-bar">
+
+                <form method="post" action="/buscar-producto">
+                    
+                    <input type="text" placeholder="¿Qué estás buscando?">
+
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                </form>
+            </div> 
+
+        </div> 
+
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#">CÁMARAS</a></li>
+                <li><a href="#">JUEGOS</a></li>
+                <li><a href='#'>RELOJES</a></li>
+                <li><a href="#">TELÉFONOS</a></li>
+                <li><a href="#">TOCADISCOS</a></li>
+                <li><a href="#">VINILOS</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <article class="article-producto">
+
+            <div class="div-img-producto">
+                <img src="../images/telefonos/telefono-10.jpg" alt="telefono-10">
+            </div>
+
+            <div class="div-datos-producto">
+
+                <h4 class="h4-nombre-producto">TELÉFONO AÑOS 80 MARCA ENTEL</h4>
+
+                <p class="p-precio">$750</p>
+
+                <div class="div-formas-pago">
+
+                    <i class="fa-solid fa-credit-card i-tarjeta"></i>
+                    <span><strong>6 cuotas sin interés</strong> de $416.66</span>
+
+                </div>
+
+                <div class="div-comprar">
+                    
+                    <button class="button-agregar-al-carrito" type="submit">AGREGAR AL CARRITO</button>
+
+                </div>
+
+                <div class="div-envio-gratis">
+
+                    <i class="fa-solid fa-truck i-camion"></i>
+
+                    <span><strong>Envío gratis</strong> superando los $15.000,00</span>
+
+                </div>
+
+                <form action="" method="">
+
+                    <div class="shipping-cost">
+                        <input type="number" name="postal-code" placeholder="Tu código postal">
+
+                        <button type="submit">Calcular</button>
+                    </div>
+
+                </form>
+            
+                <div class="searh-postal-code">
+
+                    <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">No sé mi código postal</a>
+                 </div>
+
+                <!-- <div class="div-costo-envio">
+                    <form class="form-costo-envio" method="post" action="/clacularCostoEnvio">
+
+                        <p class="p-texto-costo-envio">CALCULAR EL COSTO DEL ENVIO</p>
+
+                        <input type="text" maxlength="4" placeholder="Código postal">
+
+                        <button type="submit">CALCULAR</button>
+
+                    </form>
+                </div> -->
+
+                <div class="div-descripcion-producto">
+
+                    <p>Telefono antiguo marca Entel con botonera, en perfecto estado de conservación y funcionamiento.</p>
+
+                    <p>Industria Argentina.</p> 
+                        
+                    <p>Cable para empalmar con cable y ficha actual.</p>
+
+                </div>
+            </div> 
+        </article>
+    
+    </main>
+
+    <footer>
+
+        <div class="categorias">
+
+            <h3>Categorías</h3>
+
+            <ul>
+
+                <li><a href="#">Muebles</a></li>
+                <li><a href="#">Iluminación</a></li>
+                <li><a href='#'>Objeto</a></li>
+                <li><a href="#">Juegos</a></li>
+                <li><a href="#">Ropa</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="contacto">
+
+            <h3>Contacto</h3>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>grupo4@gmail.com</span>
+                </li>
+
+                <li>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>11-1234-5678</span>
+                </li>
+
+                <li>
+                     <i class="fa-solid fa-location-dot"></i>
+                    <span>Nuestra calle 1234, 1111 CABA</span>
+                </li>
+
+            </ul>
+            
+        </div>
+        
+        <div class="redes-sociales">
+
+            <h3>Sigamos conectados</h3>
+
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook i-fb"></i></a>
+            <a href="https://www.instagram.com"><i class="fa-brands fa-instagram i-ig"></i></a>
+        </div>
+
+        <i class="fa-brands fa-whatsapp-square i-wa"></i> 
+
+    </footer>
+   
+    
+</body>
+</html>
