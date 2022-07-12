@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" href="/css/colors.css">
     <link rel="stylesheet" href="/css/styles.css">
+
+    <title>Home JOPO</title>
+        <link rel="icon" href="/images/logo/isologo.png">
 </head>
 
 <body>
@@ -19,6 +22,7 @@
 
                 <button><a href="#"><i class="fas fa-bars"></i></a></button>
 
+
             </div>
 
             <div class="logo">    
@@ -28,7 +32,7 @@
             <div class="iconos">
 
                 <button class="cart-shopping">
-                    <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="/carrito-de-compras"><i class="fa-solid fa-cart-shopping"></i></a>
                 </button>
 
                 <button class="icono-user">
@@ -52,37 +56,39 @@
 
         <nav class="nav-bar">
             <ul>
-                <li><a href="#">MUEBLES</a></li>
-                <li><a href="#">ILUMINACIÓN</a></li>
-                <li><a href='#'>OBJETO</a></li>
+                <li><a href="#">CÁMARAS</a></li>
                 <li><a href="#">JUEGOS</a></li>
-                <li><a href="#">ROPA</a></li>
+                <li><a href='#'>RELOJES</a></li>
+                <li><a href="#">TELÉFONOS</a></li>
+                <li><a href="#">TOCADISCOS</a></li>
+                <li><a href="#">VINILOS</a></li>
             </ul>
         </nav>
 
     </header>
-
+<!-- <!- ---------------------- Main ----------------------------------> 
     <main>
         <img src="./images/portada 1.jpg" alt="Portada" class="portada">
 
         <div class="text">
             Frase o propuesta de valor
         </div>
+
         <section class="destacados">
             <article>
-                <img src="images/tocadiscos/tocadiscos-9.jpg" alt="tocadiscos-9">
+                <img src="images/camaras/camara-3.jpg" alt="camara-3">
                 <div class="product-description">
                     <p class="product-name">Tocadiscos Rojo</p>
                     <p class="price">$6.000,00</p>
-                    <button>Agregar al carrito</button>
+                    <button><a href="/carrito-de-compras">Agregar al carrito</a></button>
                 </div>
             </article>
             <article>
-                <img src="images/telefonos/telefono-2.jpg" alt="telefono-2">
+                <a href="/detalle-del-producto"><img src="images/telefonos/telefono-10.jpg" alt="telefono-10"></a>
                 <div class="product-description">
                     <p class="product-name">Teléfono Verde</p>
                     <p class="price">$750,00</p>
-                    <button a href="#">Agregar al carrito</button>
+                    <button><a href="/carrito-de-compras">Agregar al carrito</a></button>
                 </div>
             </article>
 
@@ -91,7 +97,7 @@
                 <div class="product-description">
                     <p class="product-name">Vinilo Beatles</p>
                     <p class="price">$800,00</p>
-                    <button>Agregar al carrito</button>
+                    <button><a href="/carrito-de-compras">Agregar al carrito</a></button>
                 </div>
             </article>
             <article class="destacados-ocultos">
@@ -99,12 +105,12 @@
                 <div class="product-description">
                     <p class="product-name">Cámara Polaroid</p>
                     <p class="price">$15.500,00</p>
-                    <button a href="#">Agregar al carrito</button>
+                    <button><a href="/carrito-de-compras">Agregar al carrito</a></button>
                 </div>
             </article>
         </section>
 
-        <section class="categorias">
+        <section class="categorias-home">
             <article>
                 <img src="images/camaras/camara-1.jpg" alt="camara-1">
                 <p class="nombre-categoria">Cámaras</p>
@@ -135,27 +141,58 @@
     </main>
 
     <footer>
+
         <div class="categorias">
+
             <h3>Categorías</h3>
-            <li><a href="#">Cámaras</a></li>
-            <li><a href="#">Juegos</a></li>
-            <li><a href='#'>Relojes</a></li>
-            <li><a href="#">Teléfonos</a></li>
-            <li><a href="#">Tocadiscos</a></li>
-            <li><a href="#">Vinilos</a></li>
+
+            <ul>
+
+                <li><a href="#">CÁMARAS</a></li>
+                <li><a href="#">JUEGOS</a></li>
+                <li><a href='#'>RELOJES</a></li>
+                <li><a href="#">TELÉFONOS</a></li>
+                <li><a href="#">TOCADISCOS</a></li>
+                <li><a href="#">VINILOS</a></li>
+
+            </ul>
+
         </div>
 
-    <div class="contacto">
-    <h3>Contacto</h3>
-    <div><i class="fa-solid fa-envelope"></i><span>grupo4@gmail.com</span></div>
-    <div><i class="fa-brands fa-whatsapp"></i><span>11-1234-5678</span></div>
-    <div><i class="fa-solid fa-location-dot"></i><span>Nuestra calle 1234, 1111 CABA</span></div>
-    </div>
-    
-    <div class="redes-sociales">
-    <i class="fa-brands fa-facebook"></i>
-    <i class="fa-brands fa-instagram"></i>
-    </div>
+        <div class="contacto">
+
+            <h3>Contacto</h3>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>grupo4@gmail.com</span>
+                </li>
+
+                <li>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>11-1234-5678</span>
+                </li>
+
+                <li>
+                     <i class="fa-solid fa-location-dot"></i>
+                    <span>Nuestra calle 1234, 1111 CABA</span>
+                </li>
+
+            </ul>
+            
+        </div>
+        
+        <div class="redes-sociales">
+
+            <h3>Sigamos conectados</h3>
+
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook i-fb"></i></a>
+            <a href="https://www.instagram.com"><i class="fa-brands fa-instagram i-ig"></i></a>
+        </div>
+
+        <i class="fa-brands fa-whatsapp-square i-wa"></i> 
 
     </footer>
 </body>
