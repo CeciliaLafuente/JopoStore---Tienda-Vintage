@@ -15,13 +15,13 @@ main{
 }
 
 .formulario{
-    padding-top: 60px;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
 }
 
 .form-control{
-    padding: 50px 0px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     display: block;
     
 }
@@ -29,19 +29,20 @@ main{
 .input-login{
     width: 100%;
     border-radius: 10px;
-    height: 30px;
+    height: 25px;
 }
+
 
 .a-password{
     margin-top: 10px;
     text-decoration: none;
     display: block;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .button-inicio{
     
-    width: 70%;
+    width: 60%;
     height: 35px;
     border-radius: 3px;
     background-color: var(--amarillo);
@@ -54,56 +55,69 @@ main{
 
 .form-final-login {
     text-align: center;
-    margin-top: 100px;
 }
 
 .form-final-login a{
     text-decoration: none;
+    font-size: 14px;
 }
 
 a{
     color: var(--naranja);
 }
 
-.form-final-login .enlace-registro{
-    padding-bottom: 100px;
+p{
+    font-size: 12px;
 }
 
 main form{
-    padding: 20px;
+    padding: 25px;
     background-color: white;
     opacity: 0.8;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0px 0px 10px rgb(100 100 100);
-    width: 60%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px var(--amarillo);
+    width: 70%;
+    margin-top: 100px;
+    margin-bottom: 100px;    
 }
 
-@media (min-width:769px){
+label {
+    font-size: 15px;;
+}
+
+@media (min-width:700px){
     .form-control{
     width: 100%;
     }
 
     .form-control label{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .button-inicio{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .form-final-login{
         font-size: 18px;
     }
 
+    .form-final-login a{
+        font-size: 16px;
+    }
+
     .a-password{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     main form{
-        padding: 20px 50px;
+        padding: 20px 30px;
+        width: 45%;
+    }
+
+    p{
+        font-size: 16px;
     }
 }
