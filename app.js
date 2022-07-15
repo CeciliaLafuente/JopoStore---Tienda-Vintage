@@ -10,11 +10,11 @@ app.listen(process.env.PORT || 3040, ()=>{
     console.log("Servidor corriendo en el puerto 3040");
 })
 
-let home= path.join(__dirname,'./views/index.html');
-let login= path.join(__dirname,'./views/login.html');
-let registro= path.join(__dirname,'./views/register.html');
-let carrito= path.join(__dirname,'./views/carrito.html');
-let detalleProd= path.join(__dirname,'./views/detalleProducto.html');
+let home= path.join(__dirname,'./src/views/index.html');
+let login= path.join(__dirname,'./src/views/users/login.html');
+let registro= path.join(__dirname,'./src/views/users/register.html');
+let carrito= path.join(__dirname,'./src/views/products/carrito.html');
+let detalleProd= path.join(__dirname,'./src/views/products/detalleProducto.html');
 
 
 

@@ -1,20 +1,24 @@
 /*registro*/
 main{
     background-color: var(--blanco);
-    padding-top: 20px;
     color: var(--gris-oscuro);
-    margin: 20px;
     display: flex;
+    background-image: url('../images/portada\ 1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 main form{
     padding: 20px;
     background-color: white;
-    flex-grow: 0.3;
+    opacity: 0.8;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0px 0px 10px rgb(100 100 100);
+    box-shadow: 0px 0px 10px var(--amarillo);
+    width: 60%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .form-registro{
@@ -25,19 +29,18 @@ main form{
 .form-control-registro input{
     border-radius: 10px;
     width: 100%;
-    height: 30px;
-    margin: 10px 0px;
+    height: 25px;
 }
 
 .form-control-registro{
-    padding: 20px 10px;
+    padding: 10px 0px;
     position: relative;
 }
 
 .form-control-registro i{
     position: absolute;
     color: green;
-    top:55px;
+    top:34px;
     right: 15px;
 }
 
@@ -64,26 +67,30 @@ main form{
 .create-account{
     border-radius: 3px;
     width: 70%;
-    height: 30px;
+    height: 35px;
     background-color: var(--amarillo);
     color: white;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
     border:none;
     letter-spacing: 1px;
 }
 
 .form-final-registro{
-    margin: 100px 0px 0px 0px;
+    margin: 40px 0px 0px 0px;
     text-align: center;
-    padding-bottom: 50px;
+
 }
 
 .delete-button{
-    margin: 20px 0px 0px 10px;
+    margin-left: 10px;
     background-color: var(--amarillo);
     color: white;
     border:none;
+}
+
+button {
+    font-size: 14px;
 }
 
 a{
@@ -91,12 +98,37 @@ a{
     text-decoration: none;
 }
 
-@media (min-width:769px){
+label{
+    font-size: 14px;
+}
+
+p{
+    font-size: 12px;
+}
+
+@media (min-width:700px){
     .form-control-registro{
         width:100%;
     }
 
-    .form-registro{
-        margin-top: 0px;
+    .create-account{
+        font-size: 16px;
+    }
+
+    label, p {
+        font-size: 16px;
+    }
+
+    button{
+        font-size: 16px;
+    }
+
+    main form{
+        padding: 20px 60px;
+        width: 45%;
+    }
+
+    p{
+        font-size: 14px;
     }
 }
