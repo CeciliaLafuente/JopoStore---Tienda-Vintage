@@ -16,7 +16,7 @@ body {
 /* -----------------------------  header  -----------------------------------------------*/
 
 header{
-    background-color: white;
+    background-color: white
     width: 100%; 
     /* position: fixed;
     top: 0;
@@ -71,7 +71,7 @@ header{
 }
 
 .bars-menu button a, .iconos button a{
-    color:var(--marron);
+    color: #4b200d;
 }
 
 .search-bar{
@@ -106,9 +106,15 @@ header{
 /* Main */
 
 main .portada {
-    width: 100%;
-    margin-top: 50px;
+    width: 100vw;
+    display:flex;
+    position: relative;
 }
+
+main .portada img{
+    width: 100%;
+}
+
 
 main .text {
     background-color: white;
@@ -119,13 +125,38 @@ main .text {
     font-weight: bold;
 }
 
+
+main .categorias-home{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.categorias-home article {
+    padding: 0px 15px;
+    margin: 10px 5px;
+    position: relative;
+}
+
+.categorias-home article img {
+    width: 100%;
+}
+ .nombre-categoria {
+    color: rgb(50, 49, 49);
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-stretch: expanded;
+    text-align: center;
+    padding: 10%;
+} 
 .destacados {
     width: 100vw;
     padding: 20px 10px;
-    background-color: #d8d2d0;
+    background-color: #f0edec;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 30px;
+    margin-bottom: 70px;
+    margin-top: 70px;
 }
 
 .destacados article{
@@ -139,6 +170,7 @@ main .text {
 .destacados button a{
     text-decoration: none;
     color: white;
+    letter-spacing: 1px;
 }
 
 .product-description {
@@ -159,8 +191,7 @@ main .text {
     width: 90%;
     border: none;
     border-radius: 5px;
-    background-color: #d4a708;
-    color: #4b200d;
+    background-color: #4b200d;
     padding: 10px 5px;
     text-transform: uppercase;
     font-weight: bold;
@@ -172,37 +203,12 @@ main .text {
     display: none;
 }
 
-.categorias-home article {
-    padding: 0px 15px;
-    margin: 10px 5px;
-    position: relative;
-}
 
-.categorias-home article img {
-    width: 100%;
-}
-
-.nombre-categoria {
-    background-color: rgb(0, 0, 0, 0.5);
-    color: white;
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-stretch: expanded;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 100;
-    width: 100%;
-    top: 0;
-    text-align: center;
-    padding-top: 45%;
-}
 
 /* -----------------------------  footer  -----------------------------------------------*/
 
 footer {
-    background-color: var(--verde);
+    background-color: var(--gris-medio2);
     color: var(--blanco);
     padding: 35px;
     text-align: left;
@@ -219,6 +225,10 @@ footer ul {
     margin: 0;
     padding: 15px 0;
     list-style: none;
+}
+
+footer ul :hover{
+    color: var(--verde);
 }
 
 footer li {
@@ -266,6 +276,20 @@ footer ul a {
     opacity: 0.8;
     color: var(--verde-wa);
     border-radius: 50%; 
+}
+
+@media (min-width:361px) {
+    /* ------------------------------   main ----------------------------------------------*/
+    .categorias-home{
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    
+    .categorias-home article{
+    width: 48%;
+    }
 }
 
 @media (min-width:769px) {

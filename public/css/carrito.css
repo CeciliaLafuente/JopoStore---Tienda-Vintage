@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin-top: 0;
     margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 body{
@@ -11,11 +13,11 @@ body{
 /* -----------------------------  header  -----------------------------------------------*/
 
 header{
-    background-color: white;
+    background-color: white; 
     width: 100%; 
     /* position: fixed;
     top: 0;
-    left: 0; */
+    left: 0;  */
 }
 
 .header{
@@ -102,7 +104,9 @@ header{
 /* -----------------------------  main  -----------------------------------------------*/
 main {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(245, 242, 242);
+    background-image: url('../images/fondos/fondo-4.jpg');
+    background-size: cover;
+    /* background-color: rgb(245, 242, 242); */
 }
 
 article {
@@ -111,11 +115,17 @@ article {
     padding: 10px 10px 0px 10px;
 }
 
+.products{
+    padding: 20px;
+
+}
+
 .product {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
 }
 
 .product img {
@@ -157,6 +167,9 @@ article {
 
 .shipping{
     margin-top: 10px;
+    /* background-color: rgba(0, 0, 0, 70%); */
+    background-color: rgba(255, 255, 255);
+    padding: 20px;
 }
 
 .free-shipping {
@@ -171,7 +184,6 @@ article {
     width: 8%;
     padding: 7px 5px;
     text-align: center;
-    border: none;
     background-color: transparent;
     font-size: 18px;
     color: #666;
@@ -184,7 +196,7 @@ article {
 
 .free-shipping h6 {
     font-size: 16px;
-    color: rgb(208, 80, 33);
+    color: var(--verde);
     margin-right: 3px;
 }
 
@@ -217,7 +229,7 @@ article {
 
 .searh-postal-code a {
     text-decoration: none;
-    color: rgb(208, 80, 33);
+    color: var(--verde);
 }
 
 .div-formas-pago {
@@ -235,7 +247,7 @@ article {
 
 .div-formas-pago strong {
     font-size: 16px;
-    color: var(--naranja);
+    color: var(--verde);
 }
 
 .i-tarjeta{
@@ -251,7 +263,7 @@ article {
     align-items: center;
     padding: 5px 15px;
     background-color: white;
-    color: rgb(208, 80, 33);
+    color: var(--verde);
     margin-top: 30px;
 }
 
@@ -267,10 +279,10 @@ article {
 .start-the-buy button{
     font-size: 16px;
     font-weight: bolder;
-    padding: 10px 10px;
+    padding: 10px 8px;
     text-transform: uppercase;
     color: white;
-    background-color: #d4a708;
+    background-color: var(--marron);
     border: none;
     border-radius: 5px;
     letter-spacing: 2px;
@@ -295,7 +307,7 @@ article {
 /* -----------------------------  footer  -----------------------------------------------*/
 
 footer {
-    background-color: var(--verde);
+    background-color: var(--gris-medio2);
     color: var(--blanco);
     padding: 35px;
     text-align: left;
@@ -365,7 +377,15 @@ footer ul a {
 @media (min-width:361px) {
 
         /* Main */
-    
+
+    .shipping{
+        width: 70%;
+        margin: auto;
+    }
+    .products{
+        width: 76%;
+        margin: auto;
+    }
     
     }
     
@@ -473,14 +493,21 @@ footer ul a {
         main {
             display: flex;
             padding: 80px 60px;
+            justify-content: center;
         }
     
         .products {
-            width: 80%;
+            width: 45%;
+            margin-top: 0px;
+            padding-top: 0px;
+            margin-right: 0px;
         }
     
         .shipping {
             padding: 30px;
+            width: 40%;
+            margin-top: 0px;
+            margin-left: 0px;
         }
     
         .start-the-buy {
@@ -489,7 +516,7 @@ footer ul a {
             padding: 5px 5px;
             text-transform: uppercase;
             color: white;
-            background-color: #d4a708;
+            background-color: var(--marron);
             border: none;
             border-radius: 5px;
             letter-spacing: 2px;
