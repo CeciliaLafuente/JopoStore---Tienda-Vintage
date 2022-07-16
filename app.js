@@ -3,6 +3,8 @@ const path=require('path');
 let app=express();
 
 app.set ("view engine", "ejs");
+app.set ("views", path.join (__dirname, './src/views'));
+
 
 const publicPath= path.resolve(__dirname,'./public');
 app.use(express.static(publicPath));
@@ -15,7 +17,7 @@ let home= path.join(__dirname,'./src/views/index.html');
 let login= path.join(__dirname,'./src/views/users/login.html');
 let registro= path.join(__dirname,'./src/views/users/register.html');
 let carrito= path.join(__dirname,'./src/views/products/carrito.html');
-let detalleProd= path.join(__dirname,'./src/views/products/detalleProducto.html');
+let detalleProd= path.join(__dirname,'./src/views/products/detalleProducto.ejs');
 
 
 
@@ -37,7 +39,7 @@ app.get('/carrito-de-compras', function(req,res){
 })
 
 app.get('/detalle-del-producto', function(req,res){
-    res.sendFile(detalleProd);
+    res.render (detalleProd);
 })
 
 

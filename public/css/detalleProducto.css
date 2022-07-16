@@ -3,9 +3,9 @@
 /* -----------------------------  main  -----------------------------------------------*/
 main {
     width: 100%;
-    /* background-image: url('../images/fondos/lineas2.jpg');
+    background-image: url('../images/fondos/fondo-1.jpg');
     background-position: center;
-    background-size: cover; */
+    background-size: cover;
     padding: 20px;
 }
 
@@ -77,16 +77,16 @@ main {
 }
 
 .button-agregar-al-carrito {
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: bolder;
     width: 70%;
     height: 35px;
-    background-color: var(--amarillo);
+    background-color: var(--marron);
     color: var(--blanco);
     border: none;
-    border-radius:3px;
-    padding: 10px;
+    border-radius:5px;
+    padding: 10px 8px;
     box-sizing:content-box;
 }
 
@@ -105,13 +105,14 @@ main {
     padding: 8px;
     font-size: 14px;
     text-align: center;
+    color: var(--gris-medio2);
 }
 
 .shipping-cost button {
     width: 48%;
     font-size: 14px;
     text-transform: uppercase;
-    color: var(--gris-oscuro);
+    color: var(--gris-medio2);
     padding: 8px;
 }
 
@@ -128,7 +129,6 @@ main {
 
 .div-descripcion-producto {
     font-size: 18px;
-    color: var(--gris-oscuro);
     margin-top: 30px;
 }
 
@@ -155,15 +155,17 @@ main {
     }
 
     .div-img-producto {
-        width: 60%;
+        width: 45%;
         padding: 40px;
     }
 
     .div-datos-producto {
-        width: 40%;
+        width: 55%;
         border: none;
         padding: 40px;
     }
 
-
+    .ul-caracteristicas-prod {
+        list-style-type: square;
+    }
 }

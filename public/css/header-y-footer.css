@@ -13,7 +13,7 @@ body {
     width: 100%;
     margin: 0;
     text-align: center;
-    color: var(--gris-oscuro);
+    color: var(--gris-medio2);
 }
 
 /* -----------------------------  header  -----------------------------------------------*/
@@ -109,7 +109,7 @@ header{
 /* -----------------------------  footer  -----------------------------------------------*/
 
 footer {
-    background-color: var(--verde);
+    background-color: var(--gris-medio2);
     color: var(--blanco);
     padding: 35px;
     text-align: left;
@@ -126,6 +126,10 @@ footer ul {
     margin: 0;
     padding: 15px 0;
     list-style: none;
+}
+
+footer ul :hover{
+    color: var(--verde);
 }
 
 footer li {

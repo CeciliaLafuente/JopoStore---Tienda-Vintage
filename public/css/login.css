@@ -9,9 +9,9 @@ main{
     background-color: var(--blanco);
     color: var(--gris-oscuro);
     display: flex;
-    background-image: url('../images/portada\ 1.jpg');
+    background-image: url('../images/portadas/portada-1.jpg');
     background-repeat: no-repeat;
-    
+    background-size: cover;
 }
 
 .formulario{
