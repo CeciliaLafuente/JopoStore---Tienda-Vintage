@@ -281,12 +281,12 @@ footer ul a {
         .nav-bar{
             display: block;
             border-bottom: solid 2px var(--marron);
-            margin-top: 20px;
         }
+
         .nav-bar ul{
             display: flex;
-            flex-direction: row;
             justify-content: space-around;
+            padding: 0;
         }
     
         .nav-bar li {

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+        <%- include ('../partials/head.ejs') %>
+    
+        <link href="/css/createProduct.css", rel="stylesheet">
+    
+    </head>
+
+    <body>
+
+        <%- include ('../partials/header.ejs') %>
+
+        <main>
+            <form action="/createProduct" method="POST" class="form-producto">
+
+                <div class="div-datos-producto">
+                    <label for="nombreProducto">Nombre del producto:</label>
+                    <input type="text" name="nombreProducto" id="nombreProducto" required >
+                        <!-- <i class="fa-solid fa-circle-check"></i> -->
+                </div>
+
+                <div class="div-datos-producto">
+                    <label for="descripcionProducto">Descripción:</label>
+                    <textarea name="descripcionProducto" id="descripcionProducto" required maxlength="300"></textarea>
+                    <!-- <i class="fa-solid fa-circle-check"></i> -->
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label for="categoriaProducto">Categoría:</label>
+                    <input list="categorias" name="categoriaProducto" id="categoriaProducto" required>
+                    <datalist id="categorias">
+                        <option value="Cámaras">
+                        <option value="Televisores">
+                        <option value="Vinilos">
+                        <option value="Tocadiscos">
+                        <option value="Radios">
+                        <option value="Teléfonos">
+                    </datalist>
+                    <!-- <i class="fa-solid fa-circle-check"></i> -->
+                </div>
+
+                <div class="div-datos-producto">
+                    <label for="color">Color:</label>
+                    <input list="colores" name="color" id="color">
+                    <!-- <i class="fa-solid fa-circle-check"></i> -->
+                    <datalist id="colores">
+                        <option value="Blanco">
+                        <option value="Negro">
+                        <option value="Rojo">
+                        <option value="Verde">
+                        <option value="Azul">
+                        <option value="Amarillo">
+                        <option value="Marrón">
+                    </datalist>
+                </div>
+
+
+                <div class="div-datos-producto">
+                    <label>Precio:</label>
+                    <input type="number" name="precio" id="precio" required>
+                    <!-- <i class="fa-solid fa-circle-check"></i> -->
+                </div>
+                
+                               
+                <div class="div-botones">
+
+                    <button type="reset" class="button-reset">BORRAR</button>
+
+                    <button type="submit" class="button-create">CREAR PRODUCTO</button>
+                </div>
+            </form>
+        </main>
+        
+        <%- include ('../partials/footer.ejs') %>
+
+    </body>
+    </html>
+
+
+ 

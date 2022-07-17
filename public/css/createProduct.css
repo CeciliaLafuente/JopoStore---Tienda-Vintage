@@ -1,0 +1,106 @@
+/*-------------------------------   header   -----------------------------------------*/
+.iconos i {
+    color: var(--gris-medio2);
+}
+
+/*main*/
+
+main{
+    background-color: var(--gris-claro);
+    background-image: url('../images/logo/isologo-blanco.png');
+    background-size: 5%;
+    background-repeat: repeat; 
+    background-position: top;
+    color: var(--gris-oscuro);
+    padding: 25px 0;
+}
+
+main form{
+    padding: 20px;
+    background-color: white;
+    width: 60%;
+    margin: auto;
+}
+
+.form-producto {
+   text-align: left;
+   font-weight: bold;
+}
+
+label{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.div-datos-producto {
+    padding: 10px 0px;
+}
+
+.div-datos-producto input {
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    border: 1px var(--gris-claro) solid;
+}
+
+.div-datos-producto textarea {
+    border-radius: 5px;
+    width: 100%;
+    height: 60px;
+    border: 1px var(--gris-claro) solid;
+}
+
+.div-botones {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.div-botones button {
+    text-align: center;
+    background-color: var(--amarillo);
+    color: white;
+    border:none;
+    border-radius: 5px;
+    width: 35%;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 10px;
+}
+
+
+
+
+@media (min-width:769px) {
+    .div-botones button {
+        width: 25%;
+    }
+}
+
+    /*.div-datos-producto{
+        width:100%;
+    }
+
+    .create-account{
+        font-size: 16px;
+    }
+
+    label, p {
+        font-size: 16px;
+    }
+
+    button{
+        font-size: 16px;
+    }
+
+    main form{
+        padding: 20px 60px;
+        width: 45%;
+    }
+
+    p{
+        font-size: 14px;
+    }
+} */
