@@ -10,13 +10,13 @@ main {
 }
 
 .article-producto {
-    box-shadow: 2px 2px 10px var(--gris-oscuro);
+    /* box-shadow: 2px 2px 10px var(--gris-oscuro); */
     background-color: var(--blanco);
+    opacity: 0.9;
 }
 
 .div-img-producto {
     width: 100%;
-    margin: auto;
 }
 
 .div-img-producto img {
@@ -67,7 +67,7 @@ main {
 .div-formas-pago strong,
 .div-envio-gratis strong {
     font-size: 16px;
-    color: var(--naranja);
+    color: var(--verde);
 }
 
 .div-comprar {
@@ -87,7 +87,6 @@ main {
     border: none;
     border-radius:5px;
     padding: 10px 8px;
-    box-sizing:content-box;
 }
 
 .div-costo-envio {
@@ -100,20 +99,20 @@ main {
     text-align: center;
 }
 
-.shipping-cost input {
+.shipping-cost input,
+.shipping-cost button {
     width: 48%;
     padding: 8px;
     font-size: 14px;
     text-align: center;
     color: var(--gris-medio2);
+    border: 1px var(--gris-medio) solid;
+    border-radius: 5px;
 }
 
 .shipping-cost button {
-    width: 48%;
-    font-size: 14px;
+    background-color: var(--gris-claro);
     text-transform: uppercase;
-    color: var(--gris-medio2);
-    padding: 8px;
 }
 
 .searh-postal-code {
@@ -124,15 +123,37 @@ main {
 
 .searh-postal-code a {
     text-decoration: none;
-    color: var(--naranja);
+    color: var(--verde);
 }
 
 .div-descripcion-producto {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 30px;
 }
 
+/* -------------------------------------------------------------------------------------*/
+/* ------------------------------   TABLET  ----------------------------------------------*/
+/* -------------------------------------------------------------------------------------*/
 
+@media (min-width:480px){
+
+    /* ------------------------------   main  ----------------------------------------------*/
+        
+        .article-producto {
+            width: 90%;
+            margin: auto;
+        }
+    
+        .div-img-producto {
+            width: 70%;
+            margin: auto;
+        }
+    
+        .div-datos-producto {
+            margin:auto;
+            padding: 15px 30px;
+        }
+    }    
 
 /* -------------------------------------------------------------------------------------*/
 /* ------------------------------   LAPTOP  ----------------------------------------------*/
@@ -145,11 +166,6 @@ main {
     .article-producto {
         width: 70%;
         margin: 30px 15%;
-        box-shadow:none;
-        opacity: 0.85;
-    }
-
-    .article-producto {
         display: flex;
         justify-content: space between;
     }

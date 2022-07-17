@@ -15,9 +15,6 @@ body{
 header{
     background-color: white; 
     width: 100%; 
-    /* position: fixed;
-    top: 0;
-    left: 0;  */
 }
 
 .header{
@@ -206,19 +203,20 @@ article {
     text-align: center;
 }
 
-.shipping-cost input {
+.shipping-cost input,
+.shipping-cost button {
     width: 48%;
     padding: 8px;
     font-size: 14px;
     text-align: center;
+    color: var(--gris-medio2);
+    border: 1px var(--gris-medio) solid;
+    border-radius: 5px;
 }
 
 .shipping-cost button {
-    width: 48%;
-    font-size: 14px;
+    background-color: var(--gris-claro);
     text-transform: uppercase;
-    color: #666;
-    padding: 8px;
 }
 
 .searh-postal-code {
