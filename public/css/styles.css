@@ -49,6 +49,11 @@ main .categorias-home{
     text-align: center;
     padding: 10%;
 } 
+
+.categorias-home a{
+  text-decoration: none;
+} 
+
 .destacados {
     width: 100vw;
     padding: 20px 10px;

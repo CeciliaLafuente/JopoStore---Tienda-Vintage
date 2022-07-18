@@ -9,7 +9,7 @@ main{
     background-color: var(--blanco);
     color: var(--gris-oscuro);
     display: flex;
-    background-image: url('../images/portadas/portada-1.jpg');
+    background-image: url('../images/vinilos/vinilo-0.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -45,7 +45,7 @@ main{
     width: 60%;
     height: 35px;
     border-radius: 3px;
-    background-color: var(--amarillo);
+    background-color: var(--marron);
     color: white;
     font-size: 14px;
     font-weight: bold;
@@ -63,7 +63,7 @@ main{
 }
 
 a{
-    color: var(--naranja);
+    color: var(--verde);
 }
 
 p{

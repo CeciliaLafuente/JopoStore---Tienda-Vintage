@@ -3,15 +3,16 @@ main{
     background-color: var(--blanco);
     color: var(--gris-oscuro);
     display: flex;
-    background-image: url('../images/portada\ 1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url('../images/fondos/fondo-1.jpg');
+    background-repeat: repeat;
+    background-size: 70%;
 }
+
 
 main form{
     padding: 20px;
     background-color: white;
-    opacity: 0.8;
+   
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -68,7 +69,7 @@ main form{
     border-radius: 3px;
     width: 70%;
     height: 35px;
-    background-color: var(--amarillo);
+    background-color: var(--marron);
     color: white;
     font-size: 14px;
     font-weight: bold;
@@ -84,7 +85,7 @@ main form{
 
 .delete-button{
     margin-left: 10px;
-    background-color: var(--amarillo);
+    background-color: var(--marron);
     color: white;
     border:none;
 }
@@ -94,7 +95,7 @@ button {
 }
 
 a{
-    color: var(--naranja);
+    color: var(--verde);
     text-decoration: none;
 }
 
