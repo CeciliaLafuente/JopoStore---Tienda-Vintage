@@ -74,13 +74,11 @@ article {
 
 .free-shipping button {
     border: none;
-    width: 8%;
     padding: 7px 0;
-    text-align: center;
+    text-align: left;
     background-color: transparent;
     font-size: 18px;
     color: #666;
-    margin-right: 10px;
 }
 
 .free-shipping p {
@@ -144,6 +142,7 @@ article {
 .div-formas-pago strong {
     font-size: 16px;
     color: var(--verde);
+    margin-left: 5px;
 }
 
 .i-tarjeta,
@@ -218,7 +217,8 @@ article {
         /* Main */
 
     section {
-        margin: 0;
+        margin: 0 10px;
+        width: 60%;
     }
 
     article {
@@ -234,10 +234,6 @@ article {
         padding: 25px;
     }
 
-    section {
-        margin: 0 10px;
-        width: 60%;
-    }
     
     .start-the-buy {
         width: 50%;
@@ -253,9 +249,3 @@ article {
         margin-bottom: 5px;
     }
 }
-    
-    
-    
- 
-
-
