@@ -5,14 +5,7 @@ const controlador = {
     },
     productDetail: (req, res) => {
         res.render ('./products/productDetail');
-    },
-    createProduct: (req, res) => {
-        res.render ('./products/createProduct');
-    },
-    modifyProduct: (req, res) => {
-        res.render ('./products/modifyProduct');
     }
-
 
 }
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+        <%- include ('../partials/headAdmin.ejs') %>
+    
+        <link href="/css/productAdmin.css", rel="stylesheet">
+        
+    
+    </head>
+
+    <body>
+
+        <%- include ('../partials/headerAdmin.ejs') %>
+
+        <main>
+            <h1>Modificar producto</h1>
+
+            <form action="/modifyProduct" method="POST" class="form-producto">
+
+                <div class="div-datos-producto">
+                    <label for="codigoProducto">Código de producto:</label>
+                    <input type="text" name="codigoProducto" id="codigoProducto" maxlength=6 required >
+                </div>
+
+                <%- include ('../partials/productFormData.ejs')  %>  
+                
+                <div class="div-botones">
+
+                    <button type="reset" class="button-reset">BORRAR</button>
+                
+                    <button type="submit" class="button-submit">GUARDAR</button>
+                </div>
+                                   
+            </form>
+
+
+        </main>
+        
+    
+    </body>
+    </html>
+
+
+ 
