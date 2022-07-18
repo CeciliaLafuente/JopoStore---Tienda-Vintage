@@ -326,6 +326,10 @@ footer ul {
     list-style: none;
 }
 
+footer ul :hover{
+    color: var(--verde);
+}
+
 footer li {
     margin: 0 0 15px; 
 }
