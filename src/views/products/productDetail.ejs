@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../partials/head.ejs') %>
+
+    <link href="/css/productDetail.css", rel="stylesheet">
+    
+
+</head>    
+
+<body>
+
+    <%- include ('../partials/header.ejs') %>
+    
+
+    <main>
+
+        <article class="article-producto">
+
+            <div class="div-img-producto">
+                <img src="../images/telefonos/telefono-8.jpg" alt="telefono-8">
+            </div>
+
+            <div class="div-datos-producto">
+
+                <h4 class="h4-nombre-producto">Teléfono réplica antiguo de madera y bronce</h4>
+
+                <p class="p-precio">$7500</p>
+
+                <div class="div-formas-pago">
+
+                    <i class="fa-solid fa-credit-card i-tarjeta"></i>
+                    <span><strong>6 cuotas sin interés</strong> de $1250</span>
+
+                </div>
+
+                <div class="div-comprar">
+                    
+                    <button class="button-agregar-al-carrito" type="submit">AGREGAR AL CARRITO</button>
+
+                </div>
+
+                <div class="div-envio-gratis">
+
+                    <i class="fa-solid fa-truck i-camion"></i>
+
+                    <span><strong>Envío gratis</strong> superando los $15.000,00</span>
+
+                </div>
+
+                <form action="" method="">
+
+                    <div class="shipping-cost">
+                        <input type="number" name="postal-code" placeholder="Tu código postal">
+
+                        <button type="submit">Calcular</button>
+                    </div>
+
+                </form>
+            
+                <div class="searh-postal-code">
+
+                    <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">No sé mi código postal</a>
+                 </div>
+
+                <div class="div-descripcion-producto">
+
+                    <p>Teléfono réplica de un modelo de 1900, marca Hantek.</p>
+
+                    <p>Tecnología actual:</p>
+
+                    <ul class="ul-caracteristicas-prod">
+                        <li>Regulador de timbre Alto/Bajo.</li>
+                        <li>Tecla Redial.</li> 
+                        <li>Tecla Flash.</li> 
+                        <li>Tecla Pause.</li> 
+                        <li>Marcación por tono.</li> 
+                        <li>Cable RJ11 para conexión a línea.</li>
+                    </ul>
+                    
+                        
+                    
+
+                </div>
+            </div> 
+        </article>
+    
+    </main>
+
+    <%- include ('../partials/footer.ejs') %>
+   
+    
+</body>
+</html>

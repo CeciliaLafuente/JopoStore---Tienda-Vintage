@@ -29,6 +29,7 @@ Hacer más:
     - Actualizar tablero de trabajo
     - Mensaje diario qué hice hoy / qué voy a hacer mañana
     - Asignación de tareas de acuerdo a habilidades de cada integrante
+    - Cerrar definiciones de estilo
 
 Continuar haciendo:
     - Respetar las opiniones de los otros integrantes del grupo
@@ -36,7 +37,8 @@ Continuar haciendo:
     - Respetar horarios de reuniones 
 
 Hacer menos:
-    
+    - En esta primera etapa no identificamos algo que cumpla esta consigna.    
 
 Dejar de hacer:
+    - En esta primera etapa no identificamos algo que cumpla esta consigna.
     
