@@ -8,7 +8,11 @@ const controlador = {
     },
     createProduct: (req, res) => {
         res.render ('./products/createProduct');
+    },
+    modifyProduct: (req, res) => {
+        res.render ('./products/modifyProduct');
     }
+
 
 }
 
