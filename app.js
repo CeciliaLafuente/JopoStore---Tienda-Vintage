@@ -1,18 +1,21 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 
 let app = express();
 
-const publicPath= path.join(__dirname,'./public');
-app.use (express.static(publicPath));
+const publicPath = path.join(__dirname, "./public");
+app.use(express.static(publicPath));
 
-// const mainRouter = require ('./src/routers/main.js');
+const indexRouter = require ('./src/routers/index.js');
 const productsRouter = require ('./src/routers/products.js');
 const usersRouter = require ('./src/routers/users.js');
 const adminRouter = require ('./src/routers/admin.js');
 
+app.use("/", indexRouter);
+app.use("/products", productsRouter);
+app.use("/users", usersRouter);
 
-//app.use ('/', mainRouter);
+app.use ('/', indexRouter);
 app.use ('/products', productsRouter);
 app.use ('/users', usersRouter);
 app.use ('/admin', adminRouter);
