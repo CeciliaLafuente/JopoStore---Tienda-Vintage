@@ -5,8 +5,8 @@ const adminController = require (path.join (__dirname, '../controllers/adminCont
 
 const router = express.Router();
 
-router.get ('/createProduct', productsController.createProduct);
+router.get ('/createProduct', adminController.createProduct);
 
-router.get ('/modifyProduct', productsController.modifyProduct);
+router.get ('/modifyProduct', adminController.modifyProduct);
 
 module.exports = router;

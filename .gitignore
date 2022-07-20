@@ -1,3 +1,4 @@
-/node_modules
+/node_modules/.
 /docSprints
+/src/views/admin/PRUEBAlistado.ejs
 
