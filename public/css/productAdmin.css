@@ -1,22 +1,19 @@
-/*-------------------------------   header   -----------------------------------------*/
-.iconos i {
-    color: var(--gris-medio2);
-}
-
 /*main*/
 
 main{
-    background-color: var(--gris-claro);
-    background-image: url('../images/logo/isologo-blanco.png');
-    background-size: 5%;
-    background-repeat: repeat; 
-    background-position: top;
     color: var(--gris-oscuro);
-    padding: 25px 0;
+    margin: 20px;    
 }
 
+h1 {
+    padding: 0;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 main form{
-    padding: 20px;
+    padding: 20px 20px 5px;
     background-color: white;
     width: 90%;
     margin: auto;
@@ -51,7 +48,7 @@ label{
 }
 
 .div-botones {
-    margin-top: 40px;
+    margin: 0;
     display: flex;
     justify-content: center;
 }
@@ -81,6 +78,14 @@ label{
 
 @media (min-width:769px) {
 
+    main{
+        margin-top: -15px;
+    }
+    
+    h1 {
+        padding: 0 20%;
+        text-align: left;
+    }
     main form{
         width: 60%;
     }

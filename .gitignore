@@ -1,3 +1,4 @@
-/node_modules/*.*
+/node_modules/.
 /docSprints
-/src/views/partials/header-y-footer.html
+/src/views/admin/PRUEBAlistado.ejs
+

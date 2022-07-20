@@ -1,0 +1,93 @@
+/* -------------------------------------------------------------------------------------*/
+/* -------------------  CSS HEADERPARA FUNCIONES DE ADMIN PARA TODOS LOS FORMATOS DE PANTALLA -------*/
+/* -------------------------------------------------------------------------------------*/
+
+/* --------------------------  general  -----------------------------------------------*/
+
+* {  
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    background-color: var(--gris-claro);
+    background-image: url('../images/logo/isologo-blanco.png');
+    background-size: 5%;
+    background-repeat: repeat; 
+    background-position: top;
+    color: var(--gris-medio2);
+}
+
+/* -----------------------------  header  -----------------------------------------------*/
+
+header{
+    background-color: transparent;
+    width: 100%; 
+}
+
+.header{
+    margin: auto;
+    padding: 20px 0 0px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo a {
+    width: 20%;
+    display: block;
+    margin: 0;
+
+}
+.logo a img{
+    width: 100%;   
+}
+
+.div-bars-menu {
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    padding: 0 10px 10px;
+}
+
+.div-bars-menu a {
+    display: block;
+}
+
+.div-bars-menu button {
+    background-color: transparent;
+    border: none;
+}
+
+.i-bars-menu {
+    color: var(--negro);
+    font-size: 40px;
+}
+
+
+@media (min-width:480px) {
+    .logo a {
+        width: 10%;
+    }
+    
+    .div-bars-menu {
+        width: 20%;
+        
+    } 
+}  
+
+@media (min-width:769px) {
+    .logo a {
+        width: 6%;
+    }
+
+    .div-bars-menu {
+        width: 20%;
+        padding: 0;
+    } 
+    
+       
+}
+    
