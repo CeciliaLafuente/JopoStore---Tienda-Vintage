@@ -3,16 +3,17 @@ main{
     background-color: var(--blanco);
     color: var(--gris-oscuro);
     display: flex;
-    background-image: url('../images/fondos/fondo-1.jpg');
-    background-repeat: repeat;
-    background-size: 70%;
+    opacity: 0-9;
+    background-image: url('../images/camaras/camara-0.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
 main form{
     padding: 20px;
     background-color: white;
-   
+    opacity: 0.9;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
