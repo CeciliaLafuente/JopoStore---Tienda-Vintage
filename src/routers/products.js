@@ -11,5 +11,4 @@ router.get ('/productDetail/:id', productsController.productDetail);
 
 router.get ('/list', productsController.productsList);
 
-
 module.exports = router;
