@@ -1,4 +1,3 @@
-
 const controlador = {
     shoppingCart: (req, res) => {
         res.render ('./products/shoppingCart');
