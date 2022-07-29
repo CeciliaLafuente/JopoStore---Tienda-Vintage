@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+    <%- include('../partials/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+
+<body>
+
+    <%- include('../partials/header.ejs') %>
+<!-- <!- ---------------------- Main ----------------------------------> 
+    <main>
+ 
+     
+        <div class="div-datos-producto">
+            <label for="categoriaProducto">Filtrar por categoría</label>
+            <input list="categorias" name="categoriaProducto" id="categoriaProducto" placeholder= "Selecciona una opción"required>
+            <datalist id="categorias">
+                <option value="Cámaras">Cámaras</option>
+                <option value="Televisores">Televisores</option>
+                <option value="Vinilos">Vinilos</option>
+                <option value="Tocadiscos">Tocadiscos</option>
+                <option value="Radios">Radios</option>
+                <option value="Teléfonos">Teléfonos</option>
+                <option selected value="Todas">Todas</option>
+            </datalist>
+        </div>
+
+        <% products.forEach((product, item) => { %>
+        <section class="destacados">
+            <article>
+                <img src= "<%= product.image %>" alt="<%= product.name%>">
+                <div class="product-description">
+                    <p class="product-name"><%= product.name%></p>
+                    <p class="price">$<%= product.price%></p>
+                    <button><a href="/productDetail/<%= item %>">Agregar al carrito</a></button>
+                </div>
+            </article>
+        </section>
+    
+        <% }); %>
+
+
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

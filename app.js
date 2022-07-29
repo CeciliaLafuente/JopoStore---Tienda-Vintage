@@ -14,10 +14,6 @@ const adminRouter = require ('./src/routers/admin.js');
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
-
-app.use ('/', indexRouter);
-app.use ('/products', productsRouter);
-app.use ('/users', usersRouter);
 app.use ('/admin', adminRouter);
 
 app.set ("view engine", "ejs");
