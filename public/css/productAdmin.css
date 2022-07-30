@@ -33,7 +33,8 @@ label{
     padding: 10px 0px;
 }
 
-.div-datos-producto input {
+.div-datos-producto input,
+.div-datos-producto select {
     border-radius: 5px;
     width: 100%;
     height: 30px;
@@ -94,5 +95,7 @@ label{
         width: 20%;
         margin: 30px;
     }
+
+    
 }
 

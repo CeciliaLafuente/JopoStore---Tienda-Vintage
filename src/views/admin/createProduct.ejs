@@ -14,58 +14,58 @@
         <main>
             <h1>Nuevo producto</h1>
 
-            <form action="/createProduct" method="POST" class="form-producto">
+            <form action="/admin/createProduct" method="POST" class="form-producto" enctype="multipart/form-data">
                 
                 <div class="div-datos-producto">
-                    <label for="nombreProducto">Nombre del producto:</label>
-                    <input type="text" name="nombreProducto" id="nombreProducto" required >
+                    <label for="name">Nombre del producto:</label>
+                    <input type="text" name="name" id="name" required >
                 </div>
                 
                 <div class="div-datos-producto">
-                    <label for="descripcionProducto">Descripción:</label>
-                    <textarea name="descripcionProducto" id="descripcionProducto" required maxlength="300"></textarea>
+                    <label for="description">Descripción:</label>
+                    <textarea name="description" id="description" required maxlength="300"></textarea>
                 </div>
                 
                 <div class="div-datos-producto">
-                    <label for="categoriaProducto">Categoría:</label>
-                    <input list="categorias" name="categoriaProducto" id="categoriaProducto" required>
-                    <datalist id="categorias">
-                        <option value="Cámaras">
-                        <option value="Televisores">
-                        <option value="Vinilos">
-                        <option value="Tocadiscos">
-                        <option value="Radios">
-                        <option value="Teléfonos">
-                    </datalist>
+                    <label for="category">Categoría:</label>
+                    <select name="category" id="category" required>
+                        <option value="">Elija una categoría</option>
+                        <option value="camaras">Cámaras</option>
+                        <option value="televisores">Televisores</option>
+                        <option value="vinilos">Vinilos</option>
+                        <option value="tocadiscos">Tocadiscos</option>
+                        <option value="radios">Radios</option>
+                        <option value="telefonos">Teléfonos</option>
+                    </select>
                 </div>
                 
                 <div class="div-datos-producto">
                     <label for="color">Color:</label>
-                    <input list="colores" name="color" id="color">
-                    <datalist id="colores">
-                        <option value="Blanco">
-                        <option value="Negro">
-                        <option value="Rojo">
-                        <option value="Verde">
-                        <option value="Azul">
-                        <option value="Amarillo">
-                        <option value="Marrón">
-                    </datalist>
+                    <select name="color" id="color">
+                        <option value="">Elija un color</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="negro">Negro</option>
+                        <option value="rojo">Rojo</option>
+                        <option value="verde">Verde</option>
+                        <option value="azul">Azul</option>
+                        <option value="amarillo">Amarillo</option>
+                        <option value="marron">Marrón</option>
+                    </select>
                 </div>
                 
                 <div class="div-datos-producto">
-                    <label>Precio:</label>
-                    <input type="number" name="precio" id="precio" required>
+                    <label for="price" >Precio:</label>
+                    <input type="number" name="price" id="price" required>
                 </div>
                 
                 <div class="div-datos-producto">
-                    <label>Descuento:</label>
-                    <input type="number" name="descuento" id="descuento" >
+                    <label for="discount">Descuento:</label>
+                    <input type="number" name="discount" id="discount" >
                 </div>
                 
                 <div class="div-datos-producto">
-                    <label>Imagen del producto:</label>
-                    <input type="file" name="imagenProducto" id="imagenProducto" accept=".jpg, .png" required>
+                    <label for="image">Imagen del producto:</label>
+                    <input type="file" name="image" id="image" accept=".jpg, .png" required>
                 </div>              
                                                
                 <%- include ('../partials/productFormButtons.ejs')  %>
