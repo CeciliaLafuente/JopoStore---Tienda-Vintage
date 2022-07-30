@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../partials/head.ejs') %>
+
+    <link href="/css/productDetail.css", rel="stylesheet">
+    
+
+</head>    
+
+<body>
+
+    <%- include ('../partials/header.ejs') %>
+    
+
+    <main>
+
+        <% product.forEach(valor=>{ %>
+
+        <article class="article-producto">
+
+            <div class="div-img-producto">
+                <img src="/images/<%= valor.image %>">
+            </div>
+
+            <div class="div-datos-producto">
+
+                <h4 class="h4-nombre-producto"><%= valor.name %></h4>
+                <h3><%= valor.category %></h3>
+
+                <p class="p-precio">$<%= valor.price %> </p> <strong><%= valor.discount %>%OFF</strong>
+                <p class="p-precio">$<%= valor.price - ((valor.price *valor.discount)/100) %>
+
+                <div class="div-formas-pago">
+
+                    <i class="fa-solid fa-credit-card i-tarjeta"></i>
+                    <span><strong>6 cuotas sin interés de: $</strong> <%=  (valor.price - ((valor.price *valor.discount)/100)) /6 %></span>
+                   
+                </div>
+
+                <div class="div-descripcion-producto">
+
+                    <p><%= valor.description %></p> 
+
+                </div>
+
+                <a href="/admin/edit/<%= valor.id %>"><button>Modificar</button></a>
+                <form action="/admin/delete/<%= valor.id %>?_method=DELETE" method="POST">
+                <button type="submit">Eliminar</button> 
+                </form>  
+                
+            </div> 
+
+        </article>
+        <% }); %>
+
+    </main>
+
+    <%- include ('../partials/footer.ejs') %>
+   
+    
+</body>
+</html>

@@ -9,12 +9,13 @@ const publicPath = path.join(__dirname, "./public");
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use (methodOverride ('_method'));
+app.use(methodOverride('_method'));
 
 const indexRouter = require ('./src/routers/index.js');
 const productsRouter = require ('./src/routers/products.js');
 const usersRouter = require ('./src/routers/users.js');
 const adminRouter = require ('./src/routers/admin.js');
+
 
 app.use ('/', indexRouter);
 app.use ('/products', productsRouter);

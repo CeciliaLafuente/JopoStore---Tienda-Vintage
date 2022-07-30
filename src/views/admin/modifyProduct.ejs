@@ -12,16 +12,58 @@
         <%- include ('../partials/headerAdmin.ejs') %>
 
         <main>
-            <h1>Modificar producto</h1>
+            <h1>Modificar producto: <%= productFind.name %></h1>
 
-            <form action="/modifyProduct" method="POST" class="form-producto">
+            <form action="/admin/<%= productFind.id %>?_method=PUT" method="POST" class="form-producto" enctype="multipart/form-data">
 
                 <div class="div-datos-producto">
-                    <label for="codigoProducto">Código de producto:</label>
-                    <input type="text" name="codigoProducto" id="codigoProducto" maxlength=6 required >
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" value="<%= productFind.name %>">
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label for="description">Descripción:</label>
+                    <input name="description" id="description" value="<%= productFind.description %>">
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label for="categoriaProducto">Categoría:</label>
+                    <input list="categorias" name="category" id="category" required>
+                    <datalist id="categorias">
+                        <option value="Cámaras">
+                        <option value="Televisores">
+                        <option value="Vinilos">
+                        <option value="Tocadiscos">
+                        <option value="Radios">
+                        <option value="Teléfonos">
+                    </datalist>
                 </div>
 
-                <%- include ('../partials/productFormData.ejs')  %>  
+                <!-- Colores 
+                <div class="div-datos-producto">
+                    <label for="color">Color:</label>
+                    <input list="colores" name="color" id="color">
+                    <datalist id="colores">
+                        <option value="Blanco">
+                        <option value="Negro">
+                        <option value="Rojo">
+                        <option value="Verde">
+                        <option value="Azul">
+                        <option value="Amarillo">
+                        <option value="Marrón">
+                    </datalist>
+                </div> -->
+                
+                <div class="div-datos-producto">
+                    <label>Precio:</label>
+                    <input type="number" name="price" id="price"  value="<%= productFind.price %>">
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label>Imagen:</label>
+                    <input type="file" name="image" id="image" accept=".jpg, .png">
+                </div>
+                
                 
                 <div class="div-botones">
 
