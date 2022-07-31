@@ -4,6 +4,8 @@ const path= require ('path');
 const productsPath= path.join(__dirname,'../data/productsDataBase.json');
 const products= JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 const controller = {
     createProduct: (req, res) => {
         res.render ('./admin/createProduct');
@@ -31,10 +33,12 @@ const controller = {
     },
 
     productDetail: (req, res) => {
-        let product= products.filter(valor=>{
-            return valor.id== req.params.id;
+        let product = products.find (valor=>{
+            return valor.id == req.params.id;
         });
-        res.render ('./admin/productDetailAdmin', {product});
+
+        res.render ('./admin/productDetailAdmin', {product, toThousand});
+      
     },
 
     edit: function (req,res){

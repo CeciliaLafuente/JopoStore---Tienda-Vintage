@@ -4,18 +4,6 @@ const multer= require ('multer');
 
 const adminController = require (path.join (__dirname, '../controllers/adminController'));
 
-// let storage= multer.diskStorage({
-//     destination: (req, file,cb)=>{
-//         cb(null, path.join('public/images'));
-//     },
-//     filename: (req, file,cb)=>{
-//         let carp=req.body.category;
-//         cb(null,`/${carp}` +'/' + Date.now() + path.extname(file.originalname));
-//     },
-// });
-
-// let upload= multer({storage:storage});
-
 const router = express.Router();
 
 const storage = multer.diskStorage ( {
