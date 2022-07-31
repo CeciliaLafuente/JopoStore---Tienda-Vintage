@@ -35,7 +35,21 @@ main {
     margin: 20px 0;
 }
 
+.p-descuento, .p-precio {
+    font-size: 18px;
+    color: var(--naranja);
+    margin: 10px 0 0;
+}
+
+small {
+    font-size: 13px;
+}
+
 .p-precio {
+    text-decoration:line-through var(--naranja);
+}
+
+.p-precio-final {
     font-size: 28px;
     font-weight: bold;
     margin: 20px 0;
