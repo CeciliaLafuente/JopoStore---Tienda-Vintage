@@ -2,7 +2,7 @@ const fs= require('fs');
 const path= require ('path');
 
 const productsPath= path.join(__dirname,'../data/productsDataBase.json');
-const products= JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+let products= JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -77,14 +77,13 @@ const controller = {
     },
 
     destroy: function (req,res){
-        
-        let deleteProduct=[];
-        products.forEach((valor, indice) => {
-            if(valor.id==req.params.id){
-                deleteProduct= indice;
-            }
+
+        products = products.filter (product => {
+            return product.id != req.params.id;
         });
-        products.splice(deleteProduct, 1);
+
+        console.log (products);
+
         const productsJson= JSON.stringify(products, null, ' ');
         fs.writeFileSync(productsPath, productsJson);
         res.redirect ('/');
