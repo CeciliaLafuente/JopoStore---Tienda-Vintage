@@ -7,12 +7,26 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 
 const controller = {
 
     shoppingCart: (req, res) => {
+<<<<<<< HEAD
         res.render ('products/shoppingCart');
     },
+=======
+        res.render ('./products/shoppingCart');
+    },
+    productDetail: (req, res) => {
+        let product = products.find ( valor => {
+            return valor.id == req.params.id;
+        });
+
+        res.render ('./products/productDetail', {product, toThousand});
+    }
+>>>>>>> 4685b506e887dc007699bc91971f7fc33472b180
 
     productDetail: (req, res) => {
     let product = products.filter(valor => {

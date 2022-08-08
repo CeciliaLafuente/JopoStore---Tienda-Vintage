@@ -17,7 +17,6 @@ body {
     background-image: url('../images/logo/isologo-blanco.png');
     background-size: 5%;
     background-repeat: repeat; 
-    background-position: top;
     color: var(--gris-medio2);
 }
 

@@ -42,3 +42,25 @@ Hacer menos:
 Dejar de hacer:
     - En esta primera etapa no identificamos algo que cumpla esta consigna.
     
+
+
+Retrospectiva Sprint 3
+----------------------
+Comenzar a hacer:
+    - Acordar los detalles de partes del código comunes a varias tareas (i.e. parámetros de multer) y asignarlas a un miembro del equipo.
+
+Hacer más:
+    - Mensaje diario qué hice hoy / qué voy a hacer mañana
+    - Asignación de tareas de acuerdo a habilidades de cada integrante
+    
+Continuar haciendo:
+    - Respetar las opiniones de los otros integrantes del grupo
+    - Consensuar las decisiones
+    - Respetar horarios de reuniones 
+    - Actualizar tablero de trabajo
+    
+Hacer menos:
+    - Cerrar definiciones de estilo
+
+Dejar de hacer:
+    - En esta primera etapa no identificamos algo que cumpla esta consigna.

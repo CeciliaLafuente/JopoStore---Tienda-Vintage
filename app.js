@@ -1,11 +1,11 @@
 const express = require("express");
 const path = require("path");
-const methodOverride= require ('method-override');
+const methodOverride = require ('method-override');
 
-
-let app = express();
+const app = express();
 
 const publicPath = path.join(__dirname, "./public");
+
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

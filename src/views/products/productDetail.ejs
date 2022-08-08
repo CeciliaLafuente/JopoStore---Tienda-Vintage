@@ -15,29 +15,49 @@
 
     <main>
 
+<<<<<<< HEAD
         <% product.forEach(valor=>{ %>
 
+=======
+>>>>>>> 4685b506e887dc007699bc91971f7fc33472b180
         <article class="article-producto">
 
             <div class="div-img-producto">
-                <img src="<%= valor.image %>" alt="telefono-8">
+                <img src="<%= product.image %>" alt="telefono-8">
             </div>
 
             <div class="div-datos-producto">
 
+<<<<<<< HEAD
                 <h4 class="h4-nombre-producto"><%= valor.name%></h4>
 
                 <p class="p-precio">$<%= valor.price%></p>
                 <h4 class="h4-nombre-producto"><%= valor.name %></h4>
                 <h3><%= valor.category %></h3>
+=======
+                <h4 class="h4-nombre-producto"><%= product.name %></h4>
+>>>>>>> 4685b506e887dc007699bc91971f7fc33472b180
 
-                <p class="p-precio">$<%= valor.price %> </p>
+                <% if (product.discount != 0) { %>
+
+                    <div class="div-precio-con-descuento">
+
+                        <p class="p-precio"><small>ANTES </small>$<%= toThousand(product.price) %></p>
+                        <p class="p-descuento"><%= product.discount %>% <small>de </small>DESCUENTO</p>
+                        <h5 class="p-precio-final">$<%= toThousand (product.price * (1 - product.discount / 100)) %></h5>
+
+                    </div>
+
+                <% } else { %>
+
+                    <h5 class="p-precio-final">$<%= toThousand (product.price) %></h5> 
+                    
+                <% } %>
 
                 <div class="div-formas-pago">
 
                     <i class="fa-solid fa-credit-card i-tarjeta"></i>
-                    <span><strong>6 cuotas sin interés de: $</strong> <%=  valor.price/6 %></span>
-                    <strong>Off%<%= valor.discount %></strong>
+                    <span><strong>6 cuotas sin interés</strong> de $<%= (product.price / 6).toFixed(2) %></span>
 
                 </div>
 
@@ -72,13 +92,21 @@
 
                 <div class="div-descripcion-producto">
 
+<<<<<<< HEAD
                     <p><%= product.description%></p>
 
+=======
+                    <p><%= product.description %></p>
+
+                             
+                        
+                    
+>>>>>>> 4685b506e887dc007699bc91971f7fc33472b180
 
                 </div>
             </div> 
         </article>
-        <% }); %>
+    
     </main>
 
     <%- include ('../partials/footer.ejs') %>
