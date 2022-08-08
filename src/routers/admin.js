@@ -28,5 +28,9 @@ router.put('/:id', upload.single('image'), adminController.update);
 
 router.delete('/delete/:id', adminController.destroy);
 
+router.get ('/productsListAdmin', adminController.productsList);
+
+router.post ('/productsListAdmin/filtro', adminController.filtroPorCategoria);
+
 
 module.exports = router;

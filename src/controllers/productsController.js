@@ -11,22 +11,36 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 
     shoppingCart: (req, res) => {
-        res.render ('shoppingCart');
+        res.render ('products/shoppingCart');
     },
 
     productDetail: (req, res) => {
-    let idProduct = req.params.id;
-    res.render ('productDetail', {product:products[idProduct]});
+    let product = products.filter(valor => {
+        return valor.id == req.params.id;
+    });
+    res.render ('./products/productDetail', {product});
     },
 
     productsList: (req, res) => {
-        res.render('productsList', {products: products});
+    res.render('products/productsList', {products: products});
+    },
+
+    filtroPorCategoria:(req, res) => {
+    if (req.body.category =='Todas'){
+        return  res.render('products/productsList', {products: products});
+    }
+
+    const productosFiltrados = products.filter((producto)=>{
+        return producto.category == req.body.category;
+    })
+
+    res.render('products/productsList', {products: productosFiltrados});
     },
 
     // productsList: (req, res) => {
     // let product= products.filter(valor=>{
     // return valor.id== req.params.id;
-    //  });
+    // });
     }
 
 

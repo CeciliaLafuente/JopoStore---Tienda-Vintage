@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 
-    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/headAdmin.ejs') %>
 
     <link rel="stylesheet" href="/css/styles.css">
+   
 
 </head>
 
 <body>
 
-    <%- include('../partials/header.ejs') %>
+    <%- include('../partials/headerAdmin.ejs') %>
 <!-- <!- ---------------------- Main ----------------------------------> 
     <main>
  
      
         <div class="div-datos-producto">
             <p>Filtrar por categorías</p>
-            <form name ="categoria" action="/products/productsList/filtro/" method = 'post'>
+            <form name ="categoria" action="/admin/productsListAdmin/filtro" method = 'post'>
                 <select name="category">
                     <option value="Cámaras">Cámaras</option>
                     <option value="Televisores">Televisores</option>
@@ -24,7 +25,7 @@
                     <option value="Tocadiscos">Tocadiscos</option>
                     <option value="Radios">Radios</option>
                     <option value="Teléfonos">Teléfonos</option>
-                    <option selected value="Todas">Todas</option>
+                    <option value="Todas">Todas</option>
                 </select>
 
         <button class="button-filter" type="submit" >FILTRAR</button>
@@ -33,14 +34,14 @@
          
 
         
-        <section class="destacados">
+        <section class="productsList">
             <% products.forEach((product, id) => { %>
             <article>
-                <img src= "<%= product.image%>" alt="<%= product.name%>">
+                <a href="/admin/productDetail/<%= product.id %>"><img src= "<%= product.image%>" alt="<%= product.name%>"></a>
                 <div class="product-description">
-                    <p class="product-name"><%= product.name%></p>
+                    <p class="product-name"><a href="/admin/productDetail/<%= product.id %>"><%= product.name%></a></p>
                     <p class="price">$<%= product.price%></p>
-                    <button><a href="/products/productDetail/<%= product.id %>">Agregar al carrito</a></button>
+                    <!-- <button><a href="/admin/productDetail/<%= product.id %>">Agregar al carrito</a></button> -->
                 </div>
             </article>
             <% }); %>

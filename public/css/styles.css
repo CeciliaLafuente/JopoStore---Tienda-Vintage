@@ -73,13 +73,16 @@ margin-bottom: 40px;
     padding: 20px 10px;
     background-color: #f0edec;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 70px;
     margin-top: 70px;
 }
-
 .destacados article{
     text-align: center;
+    width: 25%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .destacados article img {
@@ -87,7 +90,7 @@ margin-bottom: 40px;
 }
 
 .destacados .product-name {
-min-height: 60px;
+min-height: 20px;
 }
 
 .destacados button a{
@@ -129,6 +132,58 @@ min-height: 60px;
 
 /* Filtro de categorías de lista de productos */
 
+.productsList {
+    width: 100vw;
+    padding: 20px 10px;
+    background-color: #f0edec;
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    text-align: center;
+}
+.productsList article{
+    display: flex;
+    text-align: center;
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: flex-start;
+}
+
+.productsList article img {
+    width: 30%;
+}
+
+.productsList .product-name {
+width: 50;
+}
+
+.productsList .product-name a{
+    text-decoration: none;
+    color: #3f3e3e;
+    }
+
+.productList .product-description {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+    width: 90%;
+    justify-content: flex-start;
+}
+
+.productsList .price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.productsList .discount {
+    font-size: 14px;
+}
+
+
 .div-datos-producto{
 font-size: 20px;
 margin-top: 60px;
@@ -139,6 +194,14 @@ text-align: center;
     margin-top: 10px;
     text-align: center;
 }
+
+
+.button-filter a{
+   text-decoration: none;
+   color: #3f3e3e;
+ }
+
+
 
 /* -----------------------------  footer  -----------------------------------------------*/
 

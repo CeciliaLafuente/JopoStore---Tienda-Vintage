@@ -9,6 +9,8 @@ router.get ('/shoppingCart', productsController.shoppingCart);
 
 router.get ('/productDetail/:id', productsController.productDetail);
 
-router.get ('/list', productsController.productsList);
+router.get ('/productsList', productsController.productsList);
+
+router.post ('/productsList/filtro', productsController.filtroPorCategoria);
 
 module.exports = router;

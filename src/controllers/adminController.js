@@ -62,8 +62,23 @@ const controller = {
         const productsJson= JSON.stringify(products, null, ' ');
         fs.writeFileSync(productsPath, productsJson);
         res.redirect ('/');
-    }
+    },
 
+    productsList: (req, res) => {
+        res.render('admin/productsListAdmin', {products: products});
+        },
+    
+    filtroPorCategoria:(req, res) => {
+        if (req.body.category =='Todas'){
+            return  res.render('admin/productsListAdmin', {products: products});
+        }
+    
+        const productosFiltrados = products.filter((producto)=>{
+            return producto.category == req.body.category;
+        })
+    
+        res.render('admin/productsListAdmin', {products: productosFiltrados});
+        },
 }
 
 

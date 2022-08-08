@@ -17,7 +17,6 @@
 
         <% product.forEach(valor=>{ %>
 
-
         <article class="article-producto">
 
             <div class="div-img-producto">
@@ -26,9 +25,9 @@
 
             <div class="div-datos-producto">
 
-                <h4 class="h4-nombre-producto"><%= product.name%></h4>
+                <h4 class="h4-nombre-producto"><%= valor.name%></h4>
 
-                <p class="p-precio">$<%= product.price%></p>
+                <p class="p-precio">$<%= valor.price%></p>
                 <h4 class="h4-nombre-producto"><%= valor.name %></h4>
                 <h3><%= valor.category %></h3>
 
