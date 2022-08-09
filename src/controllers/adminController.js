@@ -87,11 +87,21 @@ const controller = {
         res.redirect ('/');
     },
 
-/********** PRUEBA MARCELA */
-    PRUEBAlistado: (req,res) => {
-        return res.render ('./admin/PRUEBAlistado', {products, toThousand});
-    }
-
+    productsList: (req, res) => {
+        res.render('admin/productsListAdmin', {products: products});
+        },
+    
+    filtroPorCategoria:(req, res) => {
+        if (req.body.category =='Todas'){
+            return  res.render('admin/productsListAdmin', {products: products});
+        }
+    
+        const productosFiltrados = products.filter((producto)=>{
+            return producto.category == req.body.category;
+        })
+    
+        res.render('admin/productsListAdmin', {products: productosFiltrados});
+        },
 }
 
 

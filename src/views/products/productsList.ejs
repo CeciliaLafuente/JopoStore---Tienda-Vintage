@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+    <%- include('../partials/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+
+<body>
+
+    <%- include('../partials/header.ejs') %>
+<!-- <!- ---------------------- Main ----------------------------------> 
+    <main>
+ 
+     
+        <div class="div-datos-producto">
+            <p>Filtrar por categorías</p>
+            <form name ="categoria" action="/products/productsList/filtro/" method = 'post'>
+                <select name="category">
+                    <option value="Cámaras">Cámaras</option>
+                    <option value="Televisores">Televisores</option>
+                    <option value="Vinilos">Vinilos</option>
+                    <option value="Tocadiscos">Tocadiscos</option>
+                    <option value="Radios">Radios</option>
+                    <option value="Teléfonos">Teléfonos</option>
+                    <option selected value="Todas">Todas</option>
+                </select>
+
+        <button class="button-filter" type="submit" >FILTRAR</button>
+    </form>
+        </div>
+         
+
+        
+        <section class="destacados">
+            <% products.forEach((product, id) => { %>
+            <article>
+                <img src= "<%= product.image%>" alt="<%= product.name%>">
+                <div class="product-description">
+                    <p class="product-name"><%= product.name%></p>
+                    <p class="price">$<%= product.price%></p>
+                    <button><a href="/products/productDetail/<%= product.id %>">Agregar al carrito</a></button>
+                </div>
+            </article>
+            <% }); %>
+        </section>
+        
+    
+
+
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

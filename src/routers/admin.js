@@ -30,8 +30,5 @@ router.put('/:id', upload.single('image'), adminController.update);
 
 router.delete('/delete/:id', adminController.destroy);
 
-/****** PRUEBA MARCELA  */
-router.get ('/PRUEBAlistado', adminController.PRUEBAlistado);
-
 
 module.exports = router;

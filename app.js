@@ -26,12 +26,15 @@ app.set ("view engine", "ejs");
 app.set ("views", path.join (__dirname, './src/views'));
 
 
-
 app.listen(process.env.PORT || 3040, ()=>{
     console.log("Servidor corriendo en el puerto 3040");
 })
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1a577688c87b1e2626c0edb3137667344187ac1d
 
 
 
