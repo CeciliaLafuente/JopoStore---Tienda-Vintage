@@ -32,9 +32,6 @@ app.listen(process.env.PORT || 3040, ()=>{
 })
 
 
-app.get('/', function(req,res){
-    res.render('index');
-})
 
 
 
