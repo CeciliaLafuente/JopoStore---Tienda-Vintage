@@ -14,9 +14,59 @@
         <main>
             <h1>Nuevo producto</h1>
 
-            <form action="/createProduct" method="POST" class="form-producto">
-
-                <%- include ('../partials/productFormData.ejs')  %>              
+            <form action="/admin/createProduct" method="POST" class="form-producto" enctype="multipart/form-data">
+                
+                <div class="div-datos-producto">
+                    <label for="name">Nombre del producto:</label>
+                    <input type="text" name="name" id="name" required >
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label for="description">Descripción:</label>
+                    <textarea name="description" id="description" required maxlength="300"></textarea>
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label for="category">Categoría:</label>
+                    <select name="category" id="category" required>
+                        <option value="">Elija una categoría</option>
+                        <option value="camaras">Cámaras</option>
+                        <option value="televisores">Televisores</option>
+                        <option value="vinilos">Vinilos</option>
+                        <option value="tocadiscos">Tocadiscos</option>
+                        <option value="radios">Radios</option>
+                        <option value="telefonos">Teléfonos</option>
+                    </select>
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label for="color">Color:</label>
+                    <select name="color" id="color">
+                        <option value="">Elija un color</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="negro">Negro</option>
+                        <option value="rojo">Rojo</option>
+                        <option value="verde">Verde</option>
+                        <option value="metal">Metal</option>
+                        <option value="madera">Madera</option>
+                        <option value="n/a">n/a</option>
+                    </select>
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label for="price" >Precio:</label>
+                    <input type="number" name="price" id="price" required>
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label for="discount">Descuento:</label>
+                    <input type="number" name="discount" id="discount" >
+                </div>
+                
+                <div class="div-datos-producto">
+                    <label for="image">Imagen del producto:</label>
+                    <input type="file" name="image" id="image" accept=".jpg, .png" class="input-archivo" required>
+                </div>              
                                                
                 <%- include ('../partials/productFormButtons.ejs')  %>
 

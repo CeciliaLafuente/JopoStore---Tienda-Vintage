@@ -1,11 +1,11 @@
 const express = require("express");
 const path = require("path");
-const methodOverride= require ('method-override');
+const methodOverride = require ('method-override');
 
-
-let app = express();
+const app = express();
 
 const publicPath = path.join(__dirname, "./public");
+
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -26,15 +26,12 @@ app.set ("view engine", "ejs");
 app.set ("views", path.join (__dirname, './src/views'));
 
 
-
 app.listen(process.env.PORT || 3040, ()=>{
     console.log("Servidor corriendo en el puerto 3040");
 })
 
 
-app.get('/', function(req,res){
-    res.render('index');
-})
+
 
 
 

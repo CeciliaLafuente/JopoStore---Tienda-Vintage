@@ -3,15 +3,22 @@
 /* -----------------------------  main  -----------------------------------------------*/
 main {
     width: 100%;
-    background-image: url('../images/fondos/fondo-1.jpg');
-    background-position: center;
-    background-size: cover;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .article-producto {
     background-color: var(--blanco);
     opacity: 0.9;
+}
+
+.h4-nombre-producto {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.div-producto {
+    width: 100%;
 }
 
 .div-img-producto {
@@ -26,12 +33,6 @@ main {
     padding: 15px;
     border-top: 1px solid var(--gris-medio);
     text-align: left;
-}
-
-.h4-nombre-producto {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 20px 0;
 }
 
 .p-descuento, .p-precio {
@@ -144,6 +145,13 @@ small {
     margin-top: 30px;
 }
 
+.div-botones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
 /* -------------------------------------------------------------------------------------*/
 /* ------------------------------   TABLET  ----------------------------------------------*/
 /* -------------------------------------------------------------------------------------*/
@@ -178,7 +186,10 @@ small {
     
     .article-producto {
         width: 70%;
-        margin: 30px 15%;
+        margin: 20px 15%;
+    }
+
+    .div-producto {
         display: flex;
         justify-content: space between;
     }
@@ -191,7 +202,28 @@ small {
     .div-datos-producto {
         width: 55%;
         border: none;
-        padding: 40px;
+        padding: 0 20px;
     }
 
+    .action-button {
+        border: none;
+        border-radius: 3px;
+        font-size: 1em;
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+        margin: 0 25px;
+        text-decoration: none;
+        width: 150px;
+      }
+      
+      .action-button.edit {
+        background-color: rgb(27, 81, 27);
+      }
+      .action-button.delete {
+        background-color: rgb(172, 7, 7);
+      }
+      
 }
