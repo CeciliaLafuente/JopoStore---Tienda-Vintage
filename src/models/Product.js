@@ -8,7 +8,7 @@ const Product = {
         let products = this.findAll();
 
         let productsByCategory =  products.filter (product => {
-            return product.category === category;
+            return product.category == category;
         });
         
         return productsByCategory;
@@ -25,7 +25,7 @@ const Product = {
         let products = this.findAll();
 
         let specialProducts = products.filter (product => {
-            product.special;
+            product.special == 1;
         })
 
         return specialProducts;

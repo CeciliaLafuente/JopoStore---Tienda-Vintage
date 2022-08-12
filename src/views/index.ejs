@@ -21,7 +21,7 @@
         <section class="categorias-home">
         <% categories.forEach (category => { %> 
             <article>
-                <a href="/products/productsList/?category=<%= category.label %>">
+                <a href="/products/productsList/?category=<%= category.id %>">
                     <p class="nombre-categoria"><%= category.label %></p>
                     <img src="<%= category.img %>" alt="CategoryImg">
                 </a>
@@ -39,7 +39,7 @@
         <section class="destacados">
            
             <% products.forEach (product => { %> 
-                <% if (product.special) { %> 
+                <% if (product.special == 1) { %> 
                     <article>
                         <a href="/products/productDetail/<%= product.id %>">
                             <img src="<%= product.image %>" alt="Product Img">
