@@ -22,7 +22,7 @@ const controller = {
 
         /***** Completo los campos del nuevo producto *****/
         let newProduct = req.body;
-        console.log (newProduct);
+        
         newProduct.price = parseInt (newProduct.price);
         newProduct.discount = newProduct.discount != ''? parseInt (newProduct.discount) : 0;
         newProduct.id = maxId + 1;
@@ -50,8 +50,6 @@ const controller = {
     update: function (req,res){
         let products = Product.findAll();
 
-        console.log (req.body);
-       
         products.forEach(valor=>{
             if (valor.id==req.params.id){
                 valor.name=req.body.name;
