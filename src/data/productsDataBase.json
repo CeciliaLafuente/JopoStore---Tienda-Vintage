@@ -7,7 +7,8 @@
   "price": 2500,
   "discount": 15,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-1.jpg"
+  "image": "/images/vinilos/vinilo-1.jpg",
+  "special": true
  },
  {
   "id": 2,
@@ -47,7 +48,8 @@
   "price": 3000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-1.jpg"
+  "image": "/images/tocadiscos/tocadiscos-1.jpg",
+  "special": true
  },
  {
   "id": 6,
@@ -307,7 +309,8 @@
   "price": 4000,
   "discount": 20,
   "color": "madera",
-  "image": "/images/telefonos/telefono-6.jpg"
+  "image": "/images/telefonos/telefono-6.jpg",
+  "special": true
  },
  {
   "id": 35,
@@ -337,7 +340,8 @@
   "price": 4500,
   "discount": 0,
   "color": "madera",
-  "image": "/images/radios/radio-7.jpg"
+  "image": "/images/radios/radio-7.jpg",
+  "special": true
  },
  {
   "id": 38,

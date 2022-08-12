@@ -19,75 +19,44 @@
         </div>
 
         <section class="categorias-home">
+        <% categories.forEach (category => { %> 
             <article>
-                <p class="nombre-categoria">Cámaras</p>
-                <img src="images/camaras/camara-0.jpg" alt="camara-0">
+                <a href="/products/productsList/?category=<%= category.label %>">
+                    <p class="nombre-categoria"><%= category.label %></p>
+                    <img src="<%= category.img %>" alt="CategoryImg">
+                </a>
             </article>
-            <article>
-                <p class="nombre-categoria">Televisores</p>
-                <img src="images/televisores/tv-0.jpg" alt="tv-10">
-            </article>
-            <article>
-                <p class="nombre-categoria">Vinilos</p>
-                <img src="images/vinilos/vinilo-0.jpg" alt="vinilo-1">
-            </article>
-            <article>
-                <p class="nombre-categoria">Tocadiscos</p>
-                <img src="images/tocadiscos/tocadiscos-00.jpg" alt="tocadiscos-0">
-            </article>
-            <article>
-                <p class="nombre-categoria">Radios</p>
-                <img src="images/radios/radio-0.jpg" alt="radio-0">  
-            </article>
-            <article>
-                <p class="nombre-categoria">Teléfonos</p>
-                <img src="images/telefonos/telefono-0.jpg" alt="telefono-0">
-            </article>
+        <% }) %>             
         </section>
      
     <div>
         <button class = "showAllProducts"><a href='/products/productsList'>Ver todos los productos</a></button>
     </div>
     
-        
-        <section class="destacados">
-            <article>
-                <img src="images/tocadiscos/tocadiscos-4.jpg" alt="tocadiscos-4">
-                <div class="product-description">
-                    <p class="product-name">Tocadiscos vitrola</p>
-                    <p class="price">$6.000,00</p>
-                    <button><a href='products/shoppingCart'>Agregar al carrito</a></button>
-                </div>
-            </article>
-            <article>
-                <a href="/products/productDetail"><img src="images/telefonos/telefono-8.jpg" alt="telefono-8"></a>
-                <div class="product-description">
-                    <p class="product-name">Teléfono Madera y bronce</p>
-                    <p class="price">$7500,00</p>
-                    <button><a href='products/shoppingCart'>Agregar al carrito</a></button>
-                </div>
-            </article>
-
-            <article class="destacados-ocultos">
-                <img src="images/televisores/tv-8.jpg" alt="tv-8">
-                <div class="product-description">
-                    <p class="product-name">Televisor Remix</p>
-                    <p class="price">$6800,00</p>
-                    <button><a href='products/shoppingCart'>Agregar al carrito</a></button>
-                </div>
-            </article>
-            <article class="destacados-ocultos">
-                <img src="images/camaras/camara-3.jpg" alt="camara-3">
-                <div class="product-description">
-                    <p class="product-name">Cámara Zenit</p>
-                    <p class="price">$5.500,00</p>
-                    <button><a href='products/shoppingCart'>Agregar al carrito</a></button>
-                </div>
-            </article>
+    <div class="div-destacados"> 
+        <h4>Productos destacados</h4>
  
-      
+        <section class="destacados">
+           
+            <% products.forEach (product => { %> 
+                <% if (product.special) { %> 
+                    <article>
+                        <a href="/products/productDetail/<%= product.id %>">
+                            <img src="<%= product.image %>" alt="Product Img">
+                        </a>
+                        
+                        <div class="product-description">
+                            <p class="product-name"><%= product.name %></p>
+                            <p class="price"><%= toThousand(product.price) %></p>
+                            <button><a href='products/shoppingCart'>Agregar al carrito</a></button>
+                        </div>
+                        
+                    </article>
+                <% } %>
+            <% }) %>
+                  
         </section>
-
+    </div>  
 
     </main>
 
