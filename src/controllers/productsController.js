@@ -18,7 +18,7 @@ const controller = {
     let product = products.find(valor => {
         return valor.id == req.params.id;
     });
-    console.log(product)
+   
     res.render ('./products/productDetail', {product, toThousand});
     },
 
