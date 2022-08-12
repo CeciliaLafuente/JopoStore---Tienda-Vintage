@@ -29,7 +29,7 @@ const controller = {
 
         fs.writeFileSync ( productsPath, JSON.stringify (products, null, ' ' ) );
 
-        res.redirect ('/');
+        return res.redirect ('/');
     },
 
     productDetail: (req, res) => {
@@ -37,7 +37,7 @@ const controller = {
             return valor.id == req.params.id;
         });
 
-        res.render ('./admin/productDetailAdmin', {product, toThousand});
+        return res.render ('./admin/productDetailAdmin', {product, toThousand});
       
     },
 
@@ -47,7 +47,7 @@ const controller = {
         let productFind= products.find(valor=>{
             return valor.id==product;
         })
-        res.render('./admin/modifyProduct', {productFind});
+        return res.render('./admin/modifyProduct', {productFind});
     },
 
     update: function (req,res){
@@ -73,7 +73,7 @@ const controller = {
                     const productsJson= JSON.stringify(products, null, ' ');
                     fs.writeFileSync(productsPath ,productsJson);
     
-                    res.redirect('/');
+                    return res.redirect('/');
     },
 
     destroy: function (req,res){
@@ -81,8 +81,6 @@ const controller = {
         products = products.filter (product => {
             return product.id != req.params.id;
         });
-
-        console.log (products);
 
         const productsJson= JSON.stringify(products, null, ' ');
         fs.writeFileSync(productsPath, productsJson);

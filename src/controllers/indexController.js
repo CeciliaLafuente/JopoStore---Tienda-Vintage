@@ -1,15 +1,15 @@
-const path=require('path');
-const fs= require('fs');
+const Category = require ('../models/Category');
+const Product = require ('../models/Product');
 
-let productsPath= path.join(__dirname, '../data/productsDataBase.json');
-const products= JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-
-const express = require ('express');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const indexController = {
 
     vistaIndex: (req,res) =>{
-        res.render('index');  
+        let categories = Category.findAll();
+        let products = Product.findAll();
+
+        res.render('index', { categories, products, toThousand});  
     },
 }
 
