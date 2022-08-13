@@ -1,107 +1,116 @@
-const fs= require('fs');
-const path= require ('path');
-
-const productsPath= path.join(__dirname,'../data/productsDataBase.json');
-let products= JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+const Product = require('../models/Product');
+const Category = require ('../models/Category');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
     createProduct: (req, res) => {
-        res.render ('./admin/createProduct');
+        let categories = Category.findAll();
+
+        return res.render ('./admin/createProduct', {categories});
     },
     
     storeProduct: (req, res) => {
+        let products = Product.findAll();
        
         /***** Obtengo el máximo ID utilizado *****/
         let maxId = Math.max ( ...products.map ( product => {
                 return product.id;
         }));
 
+        let categoryName = Category.findById(req.body.category).name;
+
         /***** Completo los campos del nuevo producto *****/
         let newProduct = req.body;
+        
         newProduct.price = parseInt (newProduct.price);
         newProduct.discount = newProduct.discount != ''? parseInt (newProduct.discount) : 0;
         newProduct.id = maxId + 1;
-        newProduct.image = '/images/' + req.body.category + '/' + req.file.filename;
+        newProduct.image = '/images/products/' + categoryName + '/' + req.file.filename;
 
-        products.push (newProduct);
+        Product.addProduct (newProduct);
 
-        fs.writeFileSync ( productsPath, JSON.stringify (products, null, ' ' ) );
-
-        return res.redirect ('/');
+        return res.redirect ('/admin');
     },
 
     productDetail: (req, res) => {
-        let product = products.find (valor=>{
-            return valor.id == req.params.id;
-        });
-
+        let product = Product.findById (req.params.id);
+        
         return res.render ('./admin/productDetailAdmin', {product, toThousand});
-      
     },
 
     edit: function (req,res){
-        let product= req.params.id;
+        let categories = Category.findAll();
 
-        let productFind= products.find(valor=>{
-            return valor.id==product;
-        })
-        return res.render('./admin/modifyProduct', {productFind});
+        let productFind = Product.findById (req.params.id);
+
+        return res.render('./admin/modifyProduct', {productFind, categories});
     },
 
     update: function (req,res){
+        let products = Product.findAll();
+
+        products.forEach(valor=>{
+            if (valor.id==req.params.id){
+                valor.name=req.body.name;
+                valor.description=req.body.description;
+                valor.category=req.body.category;
+                valor.price= parseInt(req.body.price);
+                valor.discount = req.body.discount = ''? 0 : parseInt(req.body.discount);
+            }
+        });
         
+        let categoryName = Category.findById(req.body.category).name;
+
+        if (req.file){
             products.forEach(valor=>{
                 if (valor.id==req.params.id){
-                    
-                    valor.name=req.body.name;
-                    valor.description=req.body.description;
-                    valor.category=req.body.category;
-                    valor.price= parseInt(req.body.price);
-                    valor.discount = req.body.discount = ''? 0 : parseInt(req.body.discount);
+            valor.image= '/images/products/' + categoryName + '/' + req.file.filename;
                 }
-                });
-                   
-                    if (req.file){
-                        products.forEach(valor=>{
-                            if (valor.id==req.params.id){
-                        valor.image= '/images/' + req.body.category + '/' + req.file.filename;
-                    }
-                });
-                    }
-                    const productsJson= JSON.stringify(products, null, ' ');
-                    fs.writeFileSync(productsPath ,productsJson);
+            });
+        }
+                  
+        Product.writeFile (products);
     
-                    return res.redirect('/');
+        return res.redirect('/admin');
     },
 
     destroy: function (req,res){
-
+        let products = Product.findAll();
+       
         products = products.filter (product => {
             return product.id != req.params.id;
         });
 
-        const productsJson= JSON.stringify(products, null, ' ');
-        fs.writeFileSync(productsPath, productsJson);
-        res.redirect ('/');
+        Product.writeFile (products);
+
+        res.redirect ('/admin');
     },
 
     productsList: (req, res) => {
-        res.render('admin/productsListAdmin', {products: products});
-        },
+        let categories = Category.findAll();
+
+        let products = Product.findAll();
+       
+        // res.render('admin/productsListAdmin', {products: products});
+        res.render('admin/PRUEBAlistado', {products, toThousand, categories});
+    },
     
     filtroPorCategoria:(req, res) => {
-        if (req.body.category =='Todas'){
+        let products = Product.findAll();
+       
+        if (req.body.category ==''){
             return  res.render('admin/productsListAdmin', {products: products});
         }
-    
+
         const productosFiltrados = products.filter((producto)=>{
             return producto.category == req.body.category;
         })
-    
+
         res.render('admin/productsListAdmin', {products: productosFiltrados});
-        },
+    },
+
+    
 }
 
 

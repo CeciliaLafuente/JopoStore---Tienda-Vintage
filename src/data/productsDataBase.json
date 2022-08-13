@@ -7,7 +7,7 @@
   "price": 2500,
   "discount": 15,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-1.jpg",
+  "image": "/images/products/vinilos/vinilo-1.jpg",
   "special": 1
  },
  {
@@ -18,7 +18,7 @@
   "price": 4220,
   "discount": 0,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-2.jpg"
+  "image": "/images/products/vinilos/vinilo-2.jpg"
  },
  {
   "id": 3,
@@ -28,7 +28,7 @@
   "price": 4000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/telefonos/telefono-1.jpg"
+  "image": "/images/products/telefonos/telefono-1.jpg"
  },
  {
   "id": 4,
@@ -38,7 +38,7 @@
   "price": 2500,
   "discount": 15,
   "color": "madera",
-  "image": "/images/radios/radio-1.jpg"
+  "image": "/images/products/radios/radio-1.jpg"
  },
  {
   "id": 5,
@@ -48,7 +48,7 @@
   "price": 3000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-1.jpg",
+  "image": "/images/products/tocadiscos/tocadiscos-1.jpg",
   "special": 1
  },
  {
@@ -59,7 +59,7 @@
   "price": 2500,
   "discount": 20,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-2.jpg"
+  "image": "/images/products/tocadiscos/tocadiscos-2.jpg"
  },
  {
   "id": 7,
@@ -69,7 +69,7 @@
   "price": 3500,
   "discount": 0,
   "color": "madera",
-  "image": "/images/camaras/camara-1.jpg"
+  "image": "/images/products/camaras/camara-1.jpg"
  },
  {
   "id": 8,
@@ -79,7 +79,7 @@
   "price": 2000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/camaras/camara-2.jpg"
+  "image": "/images/products/camaras/camara-2.jpg"
  },
  {
   "id": 9,
@@ -89,7 +89,7 @@
   "price": 3000,
   "discount": 15,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-3.jpg"
+  "image": "/images/products/vinilos/vinilo-3.jpg"
  },
  {
   "id": 10,
@@ -99,7 +99,7 @@
   "price": "3300",
   "discount": 20,
   "color": "madera",
-  "image": "/images/radios/radio-10.jpg"
+  "image": "/images/products/radios/radio-10.jpg"
  },
  {
   "id": 11,
@@ -109,7 +109,7 @@
   "price": 2500,
   "discount": 0,
   "color": "madera",
-  "image": "/images/televisores/tv-1.jpg"
+  "image": "/images/products/televisores/tv-1.jpg"
  },
  {
   "id": 12,
@@ -119,8 +119,7 @@
   "price": 2000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/radios/radio-3.jpg"
-
+  "image": "/images/products/radios/radio-3.jpg"
  },
  {
   "id": 13,
@@ -130,7 +129,7 @@
   "price": 3000,
   "discount": 20,
   "color": "madera",
-  "image": "/images/telefonos/telefono-2.jpg"
+  "image": "/images/products/telefonos/telefono-2.jpg"
  },
  {
   "id": 17,
@@ -140,7 +139,7 @@
   "price": 2000,
   "discount": 0,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-4.jpg"
+  "image": "/images/products/vinilos/vinilo-4.jpg"
  },
  {
   "id": 18,
@@ -150,7 +149,7 @@
   "price": 2500,
   "discount": 10,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-5.jpg"
+  "image": "/images/products/vinilos/vinilo-5.jpg"
  },
  {
   "id": 19,
@@ -160,7 +159,7 @@
   "price": 3000,
   "discount": 0,
   "color": "negro",
-  "image": "/images/telefonos/telefono-3.jpg"
+  "image": "/images/products/telefonos/telefono-3.jpg"
  },
  {
   "id": 20,
@@ -170,7 +169,7 @@
   "price": 3500,
   "discount": 0,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-4.jpg"
+  "image": "/images/products/tocadiscos/tocadiscos-4.jpg"
  },
  {
   "id": 21,
@@ -180,7 +179,7 @@
   "price": 2500,
   "discount": 10,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-5.jpg"
+  "image": "/images/products/tocadiscos/tocadiscos-5.jpg"
  },
  {
   "id": 22,
@@ -190,7 +189,7 @@
   "price": 5000,
   "discount": 20,
   "color": "negro",
-  "image": "/images/camaras/camara-4.jpg"
+  "image": "/images/products/camaras/camara-4.jpg"
  },
  {
   "id": 23,
@@ -200,7 +199,7 @@
   "price": 4000,
   "discount": 20,
   "color": "madera",
-  "image": "/images/telefonos/telefono-4.jpg"
+  "image": "/images/products/telefonos/telefono-4.jpg"
  },
  {
   "id": 24,
@@ -210,7 +209,7 @@
   "price": 2000,
   "discount": 20,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-6.jpg"
+  "image": "/images/products/tocadiscos/tocadiscos-6.jpg"
  },
  {
   "id": 25,
@@ -220,7 +219,7 @@
   "price": 4000,
   "discount": 20,
   "color": "madera",
-  "image": "/images/telefonos/telefono-5.jpg"
+  "image": "/images/products/telefonos/telefono-5.jpg"
  },
  {
   "id": 26,
@@ -230,7 +229,7 @@
   "price": 4500,
   "discount": 0,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-7.jpg"
+  "image": "/images/products/tocadiscos/tocadiscos-7.jpg"
  },
  {
   "id": 27,
@@ -240,7 +239,7 @@
   "price": 5000,
   "discount": 0,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-6.jpg"
+  "image": "/images/products/vinilos/vinilo-6.jpg"
  },
  {
   "id": 28,
@@ -250,7 +249,7 @@
   "price": 5000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/camaras/camara-5.jpg"
+  "image": "/images/products/camaras/camara-5.jpg"
  },
  {
   "id": 29,
@@ -260,7 +259,7 @@
   "price": 4000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/radios/radio-5.jpg"
+  "image": "/images/products/radios/radio-5.jpg"
  },
  {
   "id": 30,
@@ -270,7 +269,7 @@
   "price": 2000,
   "discount": 0,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-7.jpg"
+  "image": "/images/products/vinilos/vinilo-7.jpg"
  },
  {
   "id": 31,
@@ -280,7 +279,7 @@
   "price": 2000,
   "discount": 10,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-8.jpg"
+  "image": "/images/products/vinilos/vinilo-8.jpg"
  },
  {
   "id": 32,
@@ -290,7 +289,7 @@
   "price": 4500,
   "discount": 20,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-8.jpg"
+  "image": "/images/products/tocadiscos/tocadiscos-8.jpg"
  },
  {
   "id": 33,
@@ -300,7 +299,7 @@
   "price": 2500,
   "discount": 15,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-9.jpg"
+  "image": "/images/products/tocadiscos/tocadiscos-9.jpg"
  },
  {
   "id": 34,
@@ -310,7 +309,7 @@
   "price": 4000,
   "discount": 20,
   "color": "madera",
-  "image": "/images/telefonos/telefono-6.jpg",
+  "image": "/images/products/telefonos/telefono-6.jpg",
   "special": 1
  },
  {
@@ -321,7 +320,7 @@
   "price": 2500,
   "discount": 15,
   "color": "madera",
-  "image": "/images/radios/radio-6.jpg"
+  "image": "/images/products/radios/radio-6.jpg"
  },
  {
   "id": 36,
@@ -331,7 +330,7 @@
   "price": 2500,
   "discount": 0,
   "color": "madera",
-  "image": "/images/telefonos/telefono-7.jpg"
+  "image": "/images/products/telefonos/telefono-7.jpg"
  },
  {
   "id": 37,
@@ -341,7 +340,7 @@
   "price": 4500,
   "discount": 0,
   "color": "madera",
-  "image": "/images/radios/radio-7.jpg",
+  "image": "/images/products/radios/radio-7.jpg",
   "special": 1
  },
  {
@@ -352,7 +351,7 @@
   "price": 3500,
   "discount": 0,
   "color": "madera",
-  "image": "/images/tocadiscos/tocadiscos-10.jpg"
+  "image": "/images/products/tocadiscos/tocadiscos-10.jpg"
  },
  {
   "id": 39,
@@ -362,7 +361,7 @@
   "price": 3500,
   "discount": 0,
   "color": "rojo",
-  "image": "/images/telefonos/telefono-8.jpg"
+  "image": "/images/products/telefonos/telefono-8.jpg"
  },
  {
   "id": 40,
@@ -372,7 +371,7 @@
   "price": 3500,
   "discount": 10,
   "color": "madera",
-  "image": "/images/radios/radio-8.jpg"
+  "image": "/images/products/radios/radio-8.jpg"
  },
  {
   "id": 41,
@@ -382,7 +381,7 @@
   "price": 5000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/televisores/tv-2.jpg"
+  "image": "/images/products/televisores/tv-2.jpg"
  },
  {
   "id": 42,
@@ -392,7 +391,7 @@
   "price": 2500,
   "discount": 0,
   "color": "n/a",
-  "image": "/images/vinilos/vinilo-9.jpg"
+  "image": "/images/products/vinilos/vinilo-9.jpg"
  },
  {
   "id": 43,
@@ -402,7 +401,7 @@
   "price": 2000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/telefonos/telefono-9.jpg"
+  "image": "/images/products/telefonos/telefono-9.jpg"
  },
  {
   "id": 44,
@@ -412,7 +411,7 @@
   "price": 4000,
   "discount": 15,
   "color": "madera",
-  "image": "/images/telefonos/telefono-10.jpg"
+  "image": "/images/products/telefonos/telefono-10.jpg"
  },
  {
   "id": 45,
@@ -422,7 +421,7 @@
   "price": 5000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/radios/radio-9.jpg"
+  "image": "/images/products/radios/radio-9.jpg"
  },
  {
   "id": 46,
@@ -432,7 +431,7 @@
   "price": 2500,
   "discount": 0,
   "color": "verde",
-  "image": "/images/radios/radio-10.jpg"
+  "image": "/images/products/radios/radio-10.jpg"
  },
  {
   "id": 47,
@@ -442,7 +441,7 @@
   "price": 2500,
   "discount": 10,
   "color": "madera",
-  "image": "/images/televisores/tv-5.jpg"
+  "image": "/images/products/televisores/tv-5.jpg"
  },
  {
   "id": 48,
@@ -452,7 +451,7 @@
   "price": 2000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/televisores/tv-3.jpg"
+  "image": "/images/products/televisores/tv-3.jpg"
  },
  {
   "id": 49,
@@ -462,7 +461,7 @@
   "price": 2500,
   "discount": 15,
   "color": "negro",
-  "image": "/images/camaras/camara-6.jpg"
+  "image": "/images/products/camaras/camara-6.jpg"
  },
  {
   "id": 50,
@@ -472,7 +471,36 @@
   "price": 3000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/televisores/tv-4.jpg"
-
+  "image": "/images/products/televisores/tv-4.jpg"
+ },
+ {
+  "name": "camara de fotos Nikkon",
+  "description": "cámara de fotos de mi abuela, impecable, alta cámara!",
+  "category": "1",
+  "color": "negro",
+  "price": 1500,
+  "discount": null,
+  "id": 51,
+  "image": "/images/products/camaras/camaras-1660346278646.jpg"
+ },
+ {
+  "name": "telefono",
+  "description": "telefono con tecnologia de ultima generacion",
+  "category": "6",
+  "color": "blanco",
+  "price": 1000,
+  "discount": 0,
+  "id": 53,
+  "image": "/images/products/telefonos/telefonos-1660345891542.jpg"
+ },
+ {
+  "name": "tv moderna",
+  "description": "fdkhgfkgfkhj fgjfgh{oghpghpgjhp",
+  "category": "2",
+  "color": "blanco",
+  "price": 4000,
+  "discount": 10,
+  "id": 54,
+  "image": "/images/products/televisores/televisores-1660346035050.jpg"
  }
 ]

@@ -29,17 +29,16 @@
                 <div class="div-datos-producto">
                     <label for="category">Categoría:</label>
                     <select name="category" id="category" required>
-                        <option value="<%= productFind.category %>"><%= productFind.category %></option>
-                        <option value="1">Cámaras</option>
-                        <option value="2">Televisores</option>
-                        <option value="3">Vinilos</option>
-                        <option value="4">Tocadiscos</option>
-                        <option value="5">Radios</option>
-                        <option value="6">Teléfonos</option>
+
+                        <option value="">Elija una categoría</option>
+                        <% categories.forEach (category => { %> 
+                            <option value="<%= category.id %>"><%= category.label %></option>
+                        <% }) %>
+
                     </select>
                 </div>
                 
-                <!-- <div class="div-datos-producto">
+                <div class="div-datos-producto">
                     <label for="color">Color:</label>
                     <select name="color" id="color">
                         <option value="">Elija un color</option>
@@ -52,7 +51,7 @@
                         <option value="n/a">n/a</option>
                     </select>
                 </div>
-                 -->
+                
                <div class="div-datos-producto">
                     <label>Precio:</label>
                     <input type="number" name="price" id="price"  value="<%= productFind.price %>">

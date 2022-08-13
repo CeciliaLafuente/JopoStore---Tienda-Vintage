@@ -18,13 +18,10 @@
             <p>Filtrar por categorías</p>
             <form name ="categoria" action="/products/productsList/filtro/" method = 'post'>
                 <select name="category">
-                    <option value="Cámaras">Cámaras</option>
-                    <option value="Televisores">Televisores</option>
-                    <option value="Vinilos">Vinilos</option>
-                    <option value="Tocadiscos">Tocadiscos</option>
-                    <option value="Radios">Radios</option>
-                    <option value="Teléfonos">Teléfonos</option>
-                    <option selected value="Todas">Todas</option>
+                    <option selected value="">Todas</option>
+                <% categories.forEach (category => { %> 
+                    <option value="<%= category.id %>"><%= category.label %></option>
+                <% }) %>
                 </select>
 
         <button class="button-filter" type="submit" >FILTRAR</button>

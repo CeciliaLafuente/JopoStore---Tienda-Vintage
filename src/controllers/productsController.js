@@ -1,8 +1,8 @@
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const Product = require ('../models/Product');
 const Category = require ('../models/Category');
+
 
 const categories = Category.findAll();
 
@@ -37,7 +37,9 @@ const controller = {
     },
 
     filtroPorCategoria:(req, res) => {
-        if (req.body.category =='Todas'){
+        let products = Product.findAll();
+        
+        if (req.body.category ==''){
             return  res.render('products/productsList', {products, categories});
     }
 
@@ -47,6 +49,7 @@ const controller = {
 
         res.render('products/productsList', {products: productosFiltrados, categories});
     },
+
 
     search: function(req,res){
         const product= Product.findAll();
@@ -58,6 +61,21 @@ const controller = {
         
        
         res.render('products/productsList', {products, categories});
+    },
+    agregarAlCarrito: (req, res) => {
+        !locals.shoppingCart? res.locals.shoppingCart = []: null;
+
+        let productBought = products.find (product => {
+            return product.id == req.params.id;
+        });
+
+        shoppingCart.push (productBought);
+
+        let subtotal = shoppingCart.reduce (sum, )
+
+        res.redirect ('products/shoppingCart', { shoppingCart, categories, toThousand });
+
+
     }
 
 }

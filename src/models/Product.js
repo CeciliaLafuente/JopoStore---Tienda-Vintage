@@ -1,8 +1,10 @@
 const fs = require ('fs');
 
 const Product = {
+    fileName: './src/data/productsDataBase.json',
+
     findAll: function () {
-        return JSON.parse ( fs.readFileSync ('./src/data/productsDataBase.json'), 'utf-8');  
+        return JSON.parse ( fs.readFileSync (this.fileName), 'utf-8');  
     },
     filterByCategory: function (category)  {
         let products = this.findAll();
@@ -29,6 +31,17 @@ const Product = {
         })
 
         return specialProducts;
+    },
+
+    writeFile: function (products) {
+        fs.writeFileSync (this.fileName, JSON.stringify (products, null, ' ' ) );
+        return true;
+    },
+
+    addProduct: function (newProduct) {
+        let products = this.findAll();
+        products.push (newProduct);
+        this.writeFile (products);
     }
 }
 

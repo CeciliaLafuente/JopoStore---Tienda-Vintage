@@ -83,7 +83,13 @@ small {
     color: var(--verde);
 }
 
-.div-comprar {
+/* .div-comprar {
+    text-align: center;
+    padding: 10px 0;
+    box-sizing:content-box;
+} */
+
+.form-comprar {
     text-align: center;
     padding: 10px 0;
     box-sizing:content-box;
