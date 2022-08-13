@@ -15,4 +15,6 @@ router.post ('/productsList/filtro', productsController.filtroPorCategoria);
 
 router.get ('/productsList', productsController.productsList );
 
+router.post ('/search', productsController.search );
+
 module.exports = router;
