@@ -19,23 +19,17 @@
 
 
             <section class="products">
+            
+            <% shoppingCart.forEach (product => { %> 
                 <article>
                     <div class="product">
-                        <img src="../images/tocadiscos/tocadiscos-10.jpg" alt="tocadiscos-10">
-                        <p>Tocadiscos Vitrola antigua</p>
+                        <img src="<%= product.image %>" alt="Product Image">
+                        <p><%= product.name %></p>
                         <button><i class="fa-solid fa-trash-can"></i></button>
                     </div>
-                    <h4 class="price">$6.000,00</h4>
+                    <h4 class="price"><%= (product.price * (1 - product.discount / 100)).toThousand() %></h4>
                 </article>
-
-                <article>
-                    <div class="product">
-                        <img src="../images/vinilos/vinilo-4.jpg" alt="vinilo-4">
-                        <p>Changes Two/ Bowie</p>
-                        <button><i class="fa-solid fa-trash-can"></i></button>
-                    </div>
-                    <h4 class="price">$3.500,00</h4>
-                </article>
+            <% }) %>
 
                 <div class="subtotal">
                     <p>Subtotal (sin envío):</p>
