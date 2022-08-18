@@ -5,6 +5,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const productsInCartMiddleware = require ('./middlewares/productsInCartMiddleware');
 
+
 const app = express();
 
 const publicPath = path.join(__dirname, "./public");
@@ -18,7 +19,6 @@ app.use(session ({ secret: 'Hush hush',
                     saveUninitialized: false }));
 app.use (cookieParser());
 app.use (productsInCartMiddleware);
-
 
 const indexRouter = require ('./src/routers/index.js');
 const productsRouter = require ('./src/routers/products.js');
