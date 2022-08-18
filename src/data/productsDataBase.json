@@ -1,16 +1,5 @@
 [
  {
-  "id": 1,
-  "category": "3",
-  "name": "Vinilo",
-  "description": "mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui",
-  "price": 2500,
-  "discount": 15,
-  "color": "n/a",
-  "image": "/images/products/vinilos/vinilo-1.jpg",
-  "special": 1
- },
- {
   "id": 2,
   "category": "3",
   "name": "Vinilo 22",

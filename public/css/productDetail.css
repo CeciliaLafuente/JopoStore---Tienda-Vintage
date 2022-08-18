@@ -95,10 +95,7 @@ small {
     box-sizing:content-box;
 }
 
-.button-agregar-al-carrito {
-    font-size: 16px;
-    letter-spacing: 2px;
-    font-weight: bolder;
+.button-agregar-al-carrito{
     width: 70%;
     height: 35px;
     background-color: var(--marron);
@@ -106,6 +103,15 @@ small {
     border: none;
     border-radius:5px;
     padding: 10px 8px;
+}
+
+.button-agregar-al-carrito a {
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--blanco);
+    
 }
 
 .div-costo-envio {
