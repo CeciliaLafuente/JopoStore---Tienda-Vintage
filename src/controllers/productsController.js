@@ -109,8 +109,11 @@ const controller = {
 
         res.redirect ('products/shoppingCart', { shoppingCart, categories, toThousand });
 
-        return res.render('products/productsList', {products, categories});
+     res.render('products/productsList', {products, categories});
+    
+       res.render('products/productsList', {products, categories, notFound});
     },
+
 
 
 }
