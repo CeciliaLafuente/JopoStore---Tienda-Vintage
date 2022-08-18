@@ -1,5 +1,8 @@
 /node_modules/.
 /docSprints
 /src/views/admin/PRUEBAlistado.ejs
-/src/data/productsDataBase-BKP.json
-
+/src/data/productsDataBase-BKP*.json
+/src/data/productsDataBase.json
+/src/views/index BKP.ejs
+/public/css/PRUEBAlistado.css
+prueba.js
