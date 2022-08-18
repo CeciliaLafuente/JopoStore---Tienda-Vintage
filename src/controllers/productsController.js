@@ -2,7 +2,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const Product = require ('../models/Product');
 const Category = require ('../models/Category');
-const { localsName } = require('ejs');
+
 
 const categories = Category.findAll();
 
@@ -86,14 +86,14 @@ const controller = {
         const notFound= "No hay productos que coincidan con su búsqueda"
         const product= Product.findAll();
         const keyWords= req.body.keyWords.toLowerCase();
+       
 
         const products= product.filter(valor=>{
             return valor.name.toLowerCase().includes(keyWords)
         });
+        
 
-       
-<<<<<<< HEAD
-        res.render('products/productsList', {products, categories, notFound});
+        res.render('products/productsList', {products, categories, notFound, word:req.body.keyWords});
     },
 
     agregarAlCarrito: (req, res) => {
@@ -109,12 +109,9 @@ const controller = {
 
         res.redirect ('products/shoppingCart', { shoppingCart, categories, toThousand });
 
-
-    }
-=======
         return res.render('products/productsList', {products, categories});
     },
->>>>>>> 304299b1a1f5ca0d81d93c729dbfa5b1af321efa
+
 
 }
 

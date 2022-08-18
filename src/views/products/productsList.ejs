@@ -44,9 +44,9 @@
             <% }); %>
         </section>
         <% if(products.length==0){ %>
-      
+            <p><%= locals.word %></p>
             <div class="product-not-found">
-            <p><%= notFound %></p>
+            <p style="color:tomato"><%= notFound %></p>
             <a href="/"><p>Volver a la home</p></a>  
             </div>
         <% } %>
