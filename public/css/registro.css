@@ -28,6 +28,11 @@ main form{
    font-weight: bold;
 }
 
+.form-registro p{
+    color: tomato;
+    font-size: 14px;
+}
+
 .form-control-registro input{
     border-radius: 10px;
     width: 100%;
@@ -44,23 +49,17 @@ main form{
     color: green;
     top:34px;
     right: 15px;
+    display: none;
+}
+
+.check ~ i{
+    display: block;
 }
 
 .form-control-registro input:focus{
     border-color: var(--amarillo);
 }
 
-.form-control-registro input:invalid ~ i{
-    display: none;
-}
-
-.form-control-registro input:invalid {
-    color:red;
-}
-
-.form-control-registro input:valid ~ i {
-    display: inline;
-}
 
 .form-control-birtday{
     margin-left: 10px;

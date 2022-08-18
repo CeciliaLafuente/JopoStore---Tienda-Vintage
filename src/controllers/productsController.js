@@ -52,16 +52,18 @@ const controller = {
 
 
     search: function(req,res){
+        const notFound= "No hay productos que coincidan con su búsqueda"
         const product= Product.findAll();
         const keyWords= req.body.keyWords.toLowerCase();
 
         const products= product.filter(valor=>{
             return valor.name.toLowerCase().includes(keyWords)
         });
-        
+
        
-        res.render('products/productsList', {products, categories});
+        res.render('products/productsList', {products, categories, notFound});
     },
+
     agregarAlCarrito: (req, res) => {
         !locals.shoppingCart? res.locals.shoppingCart = []: null;
 

@@ -1,13 +1,39 @@
 <header>
     <div class="header">
+       
+        
 
         <div class="bars-menu">
-
-            <button><a href="#"><i class="fas fa-bars"></i></a></button>
-
-
+            <label id="menu-open" for="check">
+               <i class="fas fa-bars"></i> 
+            </label> 
         </div>
 
+
+        <input id="check" type="checkbox">
+        <nav class="menu-desplegable">
+                    <a href="/users/login"><p>Iniciar sesión</p></a>
+                    <a href="/users/registro"><p>Registrarse</p></a>
+                    <a href="/products/productsList"><p>Ver todos los productos</p></a>
+                    <p>Filtrar por categorías</p>
+                    <form name ="categoria" action="/products/productsList/filtro/" method = 'post'>
+                        <select name="category">
+                            <option selected value="">Todas</option>
+                        <% categories.forEach (category => { %> 
+                            <option value="<%= category.id %>"><%= category.label %></option>
+                        <% }) %>
+                        </select>
+        
+                    <button class="button-filter" type="submit" >FILTRAR</button>
+                    </form>
+                    <a href="#"><p>LogOut</p></a>
+                <label id="menu-closed" for="check">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+        </nav>
+            
+        
+        
         <div class="logo">    
             <a href="/"><img src="/images/logo/isologo-marron.png" alt="Logo"></a>
         </div>
@@ -23,7 +49,8 @@
             </button>
 
         </div>
-    
+        
+        <input id="check" type="checkbox">
         <div class="search-bar">
 
             <form method="post" action="/products/search">

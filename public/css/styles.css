@@ -217,6 +217,18 @@ text-align: center;
    color: #3f3e3e;
  }
 
+ .product-not-found p{
+    color: tomato;
+    
+ }
+
+ .product-not-found a{
+    text-decoration: none;
+ }
+    
+
+
+
 
 
 /* -----------------------------  footer  -----------------------------------------------*/

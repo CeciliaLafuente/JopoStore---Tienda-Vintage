@@ -29,7 +29,8 @@
         </div>
          
 
-        
+       
+       
         <section class="destacados">
             <% products.forEach(product => { %>
             <article>
@@ -42,6 +43,13 @@
             </article>
             <% }); %>
         </section>
+        <% if(products.length==0){ %>
+      
+            <div class="product-not-found">
+            <p><%= notFound %></p>
+            <a href="/"><p>Volver a la home</p></a>  
+            </div>
+        <% } %>
         
     
 
