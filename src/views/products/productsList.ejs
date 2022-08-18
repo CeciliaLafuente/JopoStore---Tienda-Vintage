@@ -17,11 +17,11 @@
         <div class="div-datos-producto">
             <p>Filtrar por categorías</p>
             <form name ="categoria" action="/products/productsList/filtro/" method = 'post'>
-                <select name="category">
+                <select name="category" class="select-categorias">
                     <option selected value="">Todas</option>
-                <% categories.forEach (category => { %> 
-                    <option value="<%= category.id %>"><%= category.label %></option>
-                <% }) %>
+                    <% categories.forEach (category => { %> 
+                        <option value="<%= category.id %>"><%= category.label %></option>
+                    <% }) %>
                 </select>
 
         <button class="button-filter" type="submit" >FILTRAR</button>
@@ -29,7 +29,8 @@
         </div>
          
 
-        
+       
+       
         <section class="destacados">
             <% products.forEach(product => { %>
             <article>
@@ -42,6 +43,13 @@
             </article>
             <% }); %>
         </section>
+        <% if(products.length==0){ %>
+            <p><%= locals.word %></p>
+            <div class="product-not-found">
+            <p style="color:tomato"><%= notFound %></p>
+            <a href="/"><p>Volver a la home</p></a>  
+            </div>
+        <% } %>
         
     
 
