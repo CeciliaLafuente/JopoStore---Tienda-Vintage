@@ -3,7 +3,7 @@ const path = require("path");
 const methodOverride = require ('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const productsInCartMiddleware = require ('./src/middlewares/productsInCartMiddleware');
+// const productsInCartMiddleware = require ('./middlewares/productsInCartMiddleware');
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(session ({ secret: 'Hush hush',
                     resave: false,
                     saveUninitialized: false }));
 app.use (cookieParser());
-app.use (productsInCartMiddleware);
+// app.use (productsInCartMiddleware);
 
 
 const indexRouter = require ('./src/routers/index.js');

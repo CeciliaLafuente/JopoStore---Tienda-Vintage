@@ -91,30 +91,9 @@ const controller = {
             return valor.name.toLowerCase().includes(keyWords)
         });
 
-       
-<<<<<<< HEAD
-        res.render('products/productsList', {products, categories, notFound});
+       res.render('products/productsList', {products, categories, notFound});
     },
 
-    agregarAlCarrito: (req, res) => {
-        !locals.shoppingCart? res.locals.shoppingCart = []: null;
-
-        let productBought = products.find (product => {
-            return product.id == req.params.id;
-        });
-
-        shoppingCart.push (productBought);
-
-        let subtotal = shoppingCart.reduce (sum, )
-
-        res.redirect ('products/shoppingCart', { shoppingCart, categories, toThousand });
-
-
-    }
-=======
-        return res.render('products/productsList', {products, categories});
-    },
->>>>>>> 304299b1a1f5ca0d81d93c729dbfa5b1af321efa
 
 }
 
