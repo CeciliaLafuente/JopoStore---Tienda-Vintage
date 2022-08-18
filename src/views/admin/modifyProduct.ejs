@@ -29,10 +29,12 @@
                 <div class="div-datos-producto">
                     <label for="category">Categoría:</label>
                     <select name="category" id="category" required>
+
                         <option value="">Elija una categoría</option>
                         <% categories.forEach (category => { %> 
                             <option value="<%= category.id %>"><%= category.label %></option>
                         <% }) %>
+
                     </select>
                 </div>
                 

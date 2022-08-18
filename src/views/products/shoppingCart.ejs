@@ -17,64 +17,88 @@
        
         <div class="div-contenido-carrito">  
 
+            <% if (!locals.shoppingCart) { %> 
 
-            <section class="products">
+                <div class="mensaje">
+                    <p>El carrito está vacío.</p>
+
+                    <div class="more-products">
+                        <a href="/products/productsList">Ver todos los productos</a>
+                    </div>
+                </div>
+
+            <% } else { %>
+
+                <section class="products">
+                <% shoppingCart.forEach (product => { %> 
+                    <article>
+                        <div class="product">
+                            <a href="/products/productDetail/<%= product.id %>" class="ir-a-detail">
+                                <img src="<%= product.image %>" alt="Product Image">
+                            </a>
+                            <p><%= product.name %></p>
+                            <form action="/products/shoppingCart/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="i-borrar">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            <!-- <button><a class="i-borrar" href="/products/shoppingCart/<%= product.id %>"><i class="fa-solid fa-trash-can"></i></a></button> -->
+                            </form>
+                        </div>
+                        <% if (!product.discount || product.discount == 0) { %> 
+                            <p class="price">$<%= toThousand(product.price * (1 - product.discount / 100))%></p>
+                        <% } else { %>
+                            <div class="price-discount">
+                                <span class="orig-price">$<%= toThousand(product.price) %></span>
+                                <span class="final-price">$<%= toThousand(product.price * (1 - product.discount / 100)) %></span>
+                            </div>
+                        <% } %>
+                    </article>
+                <% }) %>
             
-            <% shoppingCart.forEach (product => { %> 
-                <article>
-                    <div class="product">
-                        <img src="<%= product.image %>" alt="Product Image">
-                        <p><%= product.name %></p>
-                        <button><i class="fa-solid fa-trash-can"></i></button>
+                </section>
+
+                <section class="shipping">
+                    <div class="free-shipping">
+                        <button><i class="fa-solid fa-truck i-camion"></i></button>
+                        <h6>Envío gratis</h6>
+                        <p>superando los $15.000,00</p>
                     </div>
-                    <h4 class="price"><%= (product.price * (1 - product.discount / 100)).toThousand() %></h4>
-                </article>
-            <% }) %>
 
-                <div class="subtotal">
-                    <p>Subtotal (sin envío):</p>
-                    <h3>$9.500,00</h3>
-                </div>
-            </section>
+                    <form action="" method="">
+                        <div class="shipping-cost">
+                            <input type="number" name="postal-code" placeholder="Tu código postal">
+                            <button type="submit">Calcular</button>
+                        </div>
+                    </form>
 
-            <section class="shipping">
-                <div class="free-shipping">
-                    <button><i class="fa-solid fa-truck i-camion"></i></button>
-                    <h6>Envío gratis</h6>
-                    <p>superando los $15.000,00</p>
-                </div>
-
-                <form action="" method="">
-                    <div class="shipping-cost">
-                        <input type="number" name="postal-code" placeholder="Tu código postal">
-                        <button type="submit">Calcular</button>
+                    <div class="searh-postal-code">
+                        <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">No sé mi código postal</a>
                     </div>
-                </form>
+                    
+                    <div class="subtotal">
+                        <p>Subtotal (sin envío):</p>
+                        <h3>$<%= toThousand(subtotal) %></h3>
+                    </div>
 
-                <div class="searh-postal-code">
-                    <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">No sé mi código postal</a>
-                </div>
+                    <div class="total">
+                        <h2>Total:</h2>
+                        <h2>$<%= toThousand(subtotal) %></h2>
+                    </div>
 
-                <div class="div-formas-pago">
+                    <div class="div-formas-pago">
+                        <i class="fa-solid fa-credit-card i-tarjeta"></i>
+                        <strong>6 cuotas sin interés</strong><span> de $<%= toThousand((subtotal/6).toFixed(2)) %></span>
+                    </div>
 
-                    <i class="fa-solid fa-credit-card i-tarjeta"></i>
-                    <span><strong>6 cuotas sin interés</strong> de $1583.33</span>
+                    <div  class="start-the-buy">
+                        <button>Iniciar Compra</button>
+                    </div>
 
-                </div>
-
-                <div class="total">
-                    <h2>Total:</h2>
-                    <h2>$9.500,00</h2>
-                </div>
-
-                <div  class="start-the-buy">
-                    <button>Iniciar Compra</button>
-                </div>
-
-                <div class="more-products">
-                    <a href="/products/list">Ver más productos</a>
-                </div>
-            </section>
+                    <div class="more-products">
+                        <a href="/products/productsList">Ver más productos</a>
+                    </div>
+                </section>
+            <% } %>
         </div>   
     </main>
 

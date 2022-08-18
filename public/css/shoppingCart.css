@@ -17,43 +17,60 @@ section {
 
 article {
     text-align: center;
-    padding: 20px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
 }
 
 .product {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-top: 10px;
 }
 
-.product img {
+.product .ir-a-detail {
     width: 20%;
+}
+
+.product img {
+    width: 100%;
 }
 
 .product p {
     width: 60%;
     text-align: left;
+    font-size: 17px;
 }
 
 .product button {
-    width: 8%;
-    padding: 7px 5px;
-    text-align: center;
+    padding-right: 0;
+    text-align: right;
     border: none;
     background-color: transparent;
     font-size: 18px;
     color: #666;
 }
 
-.price {
-    display: flex;
-    justify-content: end;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 2px;
-    padding-bottom: 10px;
+.price-discount {
+    text-align: right;
+}
+
+.orig-price {
+    text-align: right;
+    margin: 15px;
+    padding-top: 0;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.price,
+.final-price {
+    text-align: right;
+    margin: 0;
+    padding-top: 0;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .subtotal {
@@ -61,8 +78,15 @@ article {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 15px;
-    background-color: white;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.subtotal p,
+.subtotal h3 {
+    margin: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .free-shipping {
@@ -127,40 +151,44 @@ article {
 }
 
 .div-formas-pago {
-    display: flex;
-    margin: 0 0 20px;
+    margin: 0 0 40px;
     font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    box-sizing: content-box;
+    text-align: right;
 }
 
 .div-formas-pago span{
     margin: 0;
     font-size: 14px;
+    font-weight: bold;
 }
 
 .div-formas-pago strong {
     font-size: 16px;
     color: var(--verde);
     margin-left: 5px;
+    
 }
 
-.i-tarjeta,
 .i-camion {
     color: #666;
     margin-right: 10px;
     margin-left: 0;
 }
 
+.i-tarjeta {
+    color: #666;
+    margin: 0;
+}
+
 .total {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 15px;
-    background-color: white;
-    color: var(--verde);
-    margin-top: 30px;
+    padding: 0;
+    color: var(--gris-oscuro);
+    margin-top: 20px;
+    font-size: 18px;
 }
 
 
@@ -200,6 +228,20 @@ article {
     letter-spacing: 1px;
 }
 
+.mensaje {
+    background-color: var(--blanco);
+    opacity: 0.9;
+    color: var(--gris-medio2);
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    padding: 100px 0;
+}
+
+.i-borrar {
+    color: var(--gris-medio2);
+}
+
 
 @media (min-width:480px) {
 
@@ -223,7 +265,7 @@ article {
 
     article {
         text-align: center;
-        padding: 20px;
+        padding: 10px 20px;
     }
             
     .div-contenido-carrito {

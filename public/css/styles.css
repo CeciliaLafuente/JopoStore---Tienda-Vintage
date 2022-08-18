@@ -212,11 +212,22 @@ text-align: center;
 }
 
 
-.button-filter a{
+.button-filter {
    text-decoration: none;
-   color: #3f3e3e;
+   color: var(--gris-medio2);
+   height: 28px;
+   font-size: 18px; 
+   background-color: var(--gris-muy-claro);
+   border: 1px var(--gris-medio) solid;
+   margin: 5px;
  }
 
+ .select-categorias {
+    font-size: 18px;
+    color: var(--gris-medio2); 
+    height: 28px;
+    margin: 5px;
+ }
 
 
 /* -----------------------------  footer  -----------------------------------------------*/

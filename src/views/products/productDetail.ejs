@@ -50,12 +50,18 @@
 
                 </div>
 
-                <!-- <div class="div-comprar"> -->
-                <form class="form-comprar" action="/products/agregarAlCarrito/<%= product.id %>" method="POST">
+                <!-- <div class="form-comprar">
+                        <button class="button-agregar-al-carrito">
+                        <a href="/products/shoppingCart/?id=<%= product.id %>">AGREGAR AL CARRITO</a>
+                    </button>
+                </div> -->
+
+                <form class="form-comprar" action="/products/shoppingCart/add/<%= product.id %>"     method="POST">
                     
                     <button class="button-agregar-al-carrito" type="submit">AGREGAR AL CARRITO</button>
                 </form>
-                <!-- </div> -->
+
+                
 
                 <div class="div-envio-gratis">
 

@@ -12,7 +12,7 @@ main {
 }
 
 .h4-nombre-producto {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     margin: 20px 0;
 }
@@ -45,12 +45,9 @@ small {
     font-size: 13px;
 }
 
-.p-precio {
-    text-decoration:line-through var(--naranja);
-}
 
 .p-precio-final {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     margin: 20px 0;
 }
@@ -152,6 +149,35 @@ small {
     padding-bottom: 30px;
 }
 
+.div-botones form{
+    width: 45%;
+}
+
+.action-button.edit {
+    background-color: rgb(27, 81, 27);
+    width: 85%;
+  }
+  .action-button.delete {
+    background-color: rgb(172, 7, 7);
+    width: 85%;
+  }
+
+  .boton-edit{
+    width: 45%;
+  }
+
+  .action-button {
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    text-decoration: none;
+  }
+
 /* -------------------------------------------------------------------------------------*/
 /* ------------------------------   TABLET  ----------------------------------------------*/
 /* -------------------------------------------------------------------------------------*/
@@ -205,25 +231,6 @@ small {
         padding: 0 20px;
     }
 
-    .action-button {
-        border: none;
-        border-radius: 3px;
-        font-size: 1em;
-        color: #ffffff;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 15px 30px;
-        margin: 0 25px;
-        text-decoration: none;
-        width: 150px;
-      }
-      
-      .action-button.edit {
-        background-color: rgb(27, 81, 27);
-      }
-      .action-button.delete {
-        background-color: rgb(172, 7, 7);
-      }
+  
       
 }

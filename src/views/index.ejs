@@ -43,14 +43,14 @@
                     <article>
                         <a href="/products/productDetail/<%= product.id %>">
                             <img src="<%= product.image %>" alt="Product Img">
-                        
-                        
-                            <div class="product-description">
-                                <p class="product-name"><%= product.name %></p>
-                                <p class="price"><%= toThousand(product.price) %></p>
-                                <button><a href='#'>Agregar al carrito</a></button>
-                            </div>
                         </a>
+                        
+                        <div class="product-description">
+                            <p class="product-name"><%= product.name %></p>
+                            <p class="price">$<%= toThousand(product.price) %></p>
+                            <button><a href="/products/productDetail/<%= product.id %>">Agregar al carrito</a></button>
+                        </div>
+                        
                     </article>
                 <% } %>
             <% }) %>

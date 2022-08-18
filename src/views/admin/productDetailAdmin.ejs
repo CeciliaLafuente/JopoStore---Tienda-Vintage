@@ -31,7 +31,7 @@
 
                         <div class="div-precio-con-descuento">
 
-                            <p class="p-precio"><small>ANTES </small>$<%= toThousand(product.price) %></p>
+                            <p class="p-precio"><small></small>$<%= toThousand(product.price) %></p>
                             <p class="p-descuento"><%= product.discount %>% <small>de </small>DESCUENTO</p>
                             <h5 class="p-precio-final">$<%= toThousand (product.price * (1 - product.discount / 100)) %></h5>
 
@@ -50,35 +50,6 @@
 
                     </div>
 
-                    <div class="div-comprar">
-                        
-                        <button class="button-agregar-al-carrito" type="submit">AGREGAR AL CARRITO</button>
-
-                    </div>
-
-                    <div class="div-envio-gratis">
-
-                        <i class="fa-solid fa-truck i-camion"></i>
-
-                        <span><strong>Envío gratis</strong> superando los $15.000,00</span>
-
-                    </div>
-
-                    <form action="" method="">
-
-                        <div class="shipping-cost">
-                            <input type="number" name="postal-code" placeholder="Tu código postal">
-
-                            <button type="submit">Calcular</button>
-                        </div>
-
-                    </form>
-                
-                    <div class="searh-postal-code">
-
-                        <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">No sé mi código postal</a>
-                    </div>
-
                     <div class="div-descripcion-producto">
 
                         <p><%= product.description %></p>
@@ -94,7 +65,9 @@
                     <button type="submit" class="action-button delete">ELIMINAR</button>
                 </form>
 
+                <div class="boton-edit">
                 <a href="/admin/edit/<%= product.id %>" class="action-button edit">EDITAR</a>
+                </div>
 
             </div>
 
