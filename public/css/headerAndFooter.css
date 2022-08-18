@@ -108,16 +108,6 @@ form select, button{
     text-align: left;
 }
 
-.iconos {
-    width: 25%;
-    margin: auto;
-    text-align: right;
-}
-
-.icono-user{
-    display: none;
-} 
-
 .bars-menu i, .cart-shopping i, .icono-user i {
     font-size: 25px;
 }
@@ -127,9 +117,35 @@ form select, button{
     border: none;
 }
 
-.bars-menu button a, .iconos button a{
+.bars-menu button i, .iconos button i{
     color:var(--marron);
 }
+
+.iconos {
+    width: 25%;
+    margin: auto;
+    text-align: right;
+}
+
+.product-count {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding: 12%;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--gris-oscuro);
+    border: 1px solid var(--gris-oscuro);
+    border-radius: 50%;
+    background-color: var(--blanco);
+    position: absolute;
+    top: -14px;
+    right: -10px;
+}
+
+.icono-user{
+    display: none;
+} 
 
 .search-bar{
     text-align: center;
@@ -324,6 +340,7 @@ footer ul a {
         }
         
         .cart-shopping{
+            position: relative;
             margin-right: 30px;
             font-size: 30px;
         }
