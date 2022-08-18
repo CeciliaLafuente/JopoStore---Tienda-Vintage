@@ -222,12 +222,27 @@ text-align: center;
    margin: 5px;
  }
 
+<<<<<<< HEAD
+ .product-not-found p{
+    color: tomato;
+    
+ }
+
+ .product-not-found a{
+    text-decoration: none;
+ }
+    
+
+
+
+=======
  .select-categorias {
     font-size: 18px;
     color: var(--gris-medio2); 
     height: 28px;
     margin: 5px;
  }
+>>>>>>> 304299b1a1f5ca0d81d93c729dbfa5b1af321efa
 
 
 /* -----------------------------  footer  -----------------------------------------------*/

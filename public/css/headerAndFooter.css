@@ -28,6 +28,63 @@ header{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    position: relative;
+}
+
+input:not(:checked) ~ .menu-desplegable{
+   display: none;
+}
+
+input:checked ~ .search-bar{
+    display: none;
+}
+
+input:checked ~ .menu-desplegable{
+    display: block;
+    top: -30px;
+    left: -30px;
+}
+
+
+#check {
+    display: none;
+}
+
+#menu-closed {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.menu-desplegable{
+    position: absolute;
+    display: none;
+    background-color: gray;
+    width: 70%;
+    z-index: 1;
+    height: 100vh;
+    box-shadow: 0px 0px 10px var(--gris-medio);
+    padding: 30px;
+    position: fixed;
+    margin: 30px;
+}
+
+
+.menu-desplegable a{
+    text-decoration: none;
+}
+
+.menu-desplegable p{
+    color: black;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+form select, button{
+    border-radius: 10px;
+    background-color: gray;
+    border-color: black;
+    border: solid 2px;
 }
 
 .logo {
