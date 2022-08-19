@@ -59,11 +59,11 @@ const controller = {
             
             let products = Product.filterByCategory (categoryId);
             
-            return res.render('products/productsList', {categoryId, products, categories});
+            return res.render('products/productsList', {categoryId, products, categories, toThousand});
         } else {
             let products = Product.findAll(); 
             
-            return res.render('products/productsList', {products, categories});
+            return res.render('products/productsList', {products, categories, toThousand});
         }
 
     },
@@ -72,14 +72,14 @@ const controller = {
         let products = Product.findAll();
         
         if (req.body.category ==''){
-            return  res.render('products/productsList', {products, categories});
+            return  res.render('products/productsList', {products, categories, toThousand});
     }
 
         const productosFiltrados = products.filter((producto)=>{
             return producto.category == req.body.category;
         })
 
-        return res.render('products/productsList', {products: productosFiltrados, categories});
+        return res.render('products/productsList', {products: productosFiltrados, categories, toThousand});
     },
 
     search: function(req,res){

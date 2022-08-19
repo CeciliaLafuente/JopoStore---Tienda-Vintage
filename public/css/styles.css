@@ -106,7 +106,8 @@ margin-bottom: 40px;
 }
 
 .destacados .product-name {
-min-height: 20px;
+   min-height: 20px;
+   font-size: 18px;
 }
 
 .destacados button a{
@@ -121,16 +122,39 @@ min-height: 20px;
 }
 
 .destacados .price {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
+    margin:  0 0 10px;
 }
 
+.price-discount {
+    margin: 0 0 10px;
+}
+
+.destacados .orig-price {
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: line-through;
+    text-align: left;
+    margin: 0 10px;
+}
+
+.destacados .final-price {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin: 0 10px;
+}
 .destacados .discount {
     font-size: 14px;
 }
 
+.cuotas {
+    margin: 0 0 10px;;
+}
+
 .destacados button {
-    width: 90%;
+    width: 60%;
     border: none;
     border-radius: 5px;
     background-color: #4b200d;
@@ -222,7 +246,6 @@ text-align: center;
    margin: 5px;
  }
 
-<<<<<<< HEAD
  .product-not-found p{
     color: tomato;
     
@@ -232,17 +255,13 @@ text-align: center;
     text-decoration: none;
  }
     
-
-
-
-=======
- .select-categorias {
+.select-categorias {
     font-size: 18px;
     color: var(--gris-medio2); 
     height: 28px;
     margin: 5px;
+    background-color: var(--blanco);
  }
->>>>>>> 304299b1a1f5ca0d81d93c729dbfa5b1af321efa
 
 
 /* -----------------------------  footer  -----------------------------------------------*/
