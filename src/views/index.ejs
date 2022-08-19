@@ -36,11 +36,11 @@
     <div class="div-destacados"> 
         <h4>Productos destacados</h4>
  
-        <section class="destacados">
-           
+        <section class="destacados carrousel">
+           <ul class="carrousel-productos">
             <% products.forEach (product => { %> 
                 <% if (product.special == 1) { %> 
-                    <article>
+                    <li>
                         <a href="/products/productDetail/<%= product.id %>">
                             <img src="<%= product.image %>" alt="Product Img">
                         </a>
@@ -62,10 +62,10 @@
                             <button><a href="/products/productDetail/<%= product.id %>">Agregar al carrito</a></button>
                         </div>
                         
-                    </article>
+                    </li>
                 <% } %>
             <% }) %>
-                  
+        </ul>
         </section>
     </div>  
 
