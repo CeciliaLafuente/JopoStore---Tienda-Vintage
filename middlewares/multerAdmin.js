@@ -1,5 +1,6 @@
 const path = require ('path');
 const multer= require ('multer');
+const Category = require ('../src/models/Category');
 
 const storage = multer.diskStorage ( {
     destination: (req, file, cb) => {

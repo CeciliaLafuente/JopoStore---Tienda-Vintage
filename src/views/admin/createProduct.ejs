@@ -17,7 +17,7 @@
             <form action="/admin/createProduct" method="POST" class="form-producto" enctype="multipart/form-data">
                 
                 <div class="div-datos-producto">
-                    <label for="name">Nombre del producto:</label>
+                    <label for="name">Nombre:</label>
                     <input type="text" name="name" id="name" required >
                 </div>
                 
@@ -37,16 +37,15 @@
                 </div>
                 
                 <div class="div-datos-producto">
+                    <% const colors = ['blanco', 'negro', 'rojo', 'verde', 'metal', 'madera', 'n/a'] %>
                     <label for="color">Color:</label>
                     <select name="color" id="color">
-                        <option value="">Elija un color</option>
-                        <option value="blanco">Blanco</option>
-                        <option value="negro">Negro</option>
-                        <option value="rojo">Rojo</option>
-                        <option value="verde">Verde</option>
-                        <option value="metal">Metal</option>
-                        <option value="madera">Madera</option>
-                        <option value="n/a">n/a</option>
+                        <option value "">Elija un color</option>>
+                        <% colors.forEach (color => { %> 
+                        <option value="<%= color %>" 
+                            ><%= color.toUpperCase() %>
+                        </option>
+                        <% }) %>
                     </select>
                 </div>
                 
@@ -61,9 +60,15 @@
                 </div>
                 
                 <div class="div-datos-producto">
-                    <label for="image">Imagen del producto:</label>
+                    <label for="image">Imagen:</label>
                     <input type="file" name="image" id="image" accept=".jpg, .png" class="input-archivo" required>
-                </div>              
+                </div>  
+                
+                <div class="div-destacado">
+                    <label for="special">Producto destacado</label>
+                    <input type="checkbox" name="special" id="special" class="input-destacado" >
+                </div>  
+                
                                                
                 <%- include ('../partials/productFormButtons.ejs')  %>
 
