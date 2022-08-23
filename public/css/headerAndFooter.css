@@ -131,7 +131,7 @@ form select, button{
     width: 20px;
     height: 20px;
     text-align: center;
-    padding: 12%;
+    padding: 1%;
     font-size: 12px;
     font-weight: bold;
     color: var(--gris-oscuro);
@@ -139,8 +139,9 @@ form select, button{
     border-radius: 50%;
     background-color: var(--blanco);
     position: absolute;
-    top: -14px;
-    right: -10px;
+    top: 12px;
+    right: 0;
+    
 }
 
 .icono-user{
@@ -343,6 +344,12 @@ footer ul a {
             position: relative;
             margin-right: 30px;
             font-size: 30px;
+        }
+
+        .product-count {
+            padding: 12%;
+            top: -14px;
+            right: -10px;
         }
     
         .icono-user {
