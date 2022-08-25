@@ -19,30 +19,43 @@
             <form name ="categoria" action="/products/productsList/filtro/" method = 'post'>
                 <select name="category" class="select-categorias">
                     <option selected value="">Todas</option>
+
                     <% categories.forEach (category => { %> 
                         <option value="<%= category.id %>"><%= category.label %></option>
                     <% }) %>
                 </select>
 
-        <button class="button-filter" type="submit" >FILTRAR</button>
-    </form>
+                <button class="button-filter" type="submit" >FILTRAR</button>
+            </form>
         </div>
-         
-
-       
        
         <section class="destacados">
             <% products.forEach(product => { %>
             <article>
-                <img src= "<%= product.image%>" alt="<%= product.name%>">
-                <div class="product-description">
-                    <p class="product-name"><%= product.name%></p>
-                    <p class="price">$<%= product.price%></p>
-                    <button><a href="/products/productDetail/<%= product.id %>">Agregar al carrito</a></button>
-                </div>
+                
+                <a href="/products/productDetail/<%= product.id %>">
+                    <img src= "<%= product.image%>" alt="<%= product.name%>">
+                </a>
+
+                <p class="product-name"><%= product.name%></p>
+
+                <% if (!product.discount || product.discount == 0) { %> 
+                    <p class="price">$<%= toThousand(product.price)%></p>
+                    <p class="cuotas">6 cuotas sin interés de <strong>$<%= toThousand((product.price / 6).toFixed(2))%></strong></p>
+                <% } else { %>
+                    <div class="price-discount">
+                        <span class="orig-price">$<%= toThousand(product.price) %></span>
+                        <span class="final-price">$<%= toThousand(product.price * (1 - product.discount / 100)) %></span>
+                    </div>
+                    <p class="cuotas">6 cuotas sin interés de <strong>$<%= toThousand(((product.price * (1 - product.discount / 100)) / 6).toFixed(2)) %></strong></p>
+                    <% } %>
+
+                    <button class="agregar-al-carrito"><a href="/products/productDetail/<%= product.id %>">Agregar al carrito</a></button>
+
             </article>
             <% }); %>
         </section>
+
         <% if(products.length==0){ %>
             <p><%= locals.word %></p>
             <div class="product-not-found">

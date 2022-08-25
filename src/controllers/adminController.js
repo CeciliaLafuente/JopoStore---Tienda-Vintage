@@ -27,6 +27,7 @@ const controller = {
         newProduct.discount = newProduct.discount != ''? parseInt (newProduct.discount) : 0;
         newProduct.id = maxId + 1;
         newProduct.image = '/images/products/' + categoryName + '/' + req.file.filename;
+        newProduct.special = req.body.special? 1:0;
 
         Product.addProduct (newProduct);
 
@@ -57,6 +58,7 @@ const controller = {
                 valor.category=req.body.category;
                 valor.price= parseInt(req.body.price);
                 valor.discount = req.body.discount = ''? 0 : parseInt(req.body.discount);
+                valor.special = req.body.special? 1:0;
             }
         });
         

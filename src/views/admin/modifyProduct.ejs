@@ -30,25 +30,25 @@
                     <label for="category">Categoría:</label>
                     <select name="category" id="category" required>
 
-                        <option value="">Elija una categoría</option>
                         <% categories.forEach (category => { %> 
-                            <option value="<%= category.id %>"><%= category.label %></option>
+                            <option value="<%= category.id %>" 
+                                <%= productFind.category == category.id ? 'selected':null %>
+                                ><%= category.label %></option>
                         <% }) %>
 
                     </select>
                 </div>
                 
                 <div class="div-datos-producto">
+                    <% const colors = ['blanco', 'negro', 'rojo', 'verde', 'metal', 'madera', 'n/a'] %>
                     <label for="color">Color:</label>
                     <select name="color" id="color">
-                        <option value="">Elija un color</option>
-                        <option value="blanco">Blanco</option>
-                        <option value="negro">Negro</option>
-                        <option value="rojo">Rojo</option>
-                        <option value="verde">Verde</option>
-                        <option value="metal">Metal</option>
-                        <option value="madera">Madera</option>
-                        <option value="n/a">n/a</option>
+                        <% colors.forEach (color => { %> 
+                        <option value="<%= color %>" 
+                            <%= productFind.color == color? 'selected':null %> 
+                            ><%= color.toUpperCase() %>
+                        </option>
+                        <% }) %>
                     </select>
                 </div>
                 
@@ -62,6 +62,11 @@
                     <input type="file" name="image" id="image" accept=".jpg, .png" class="input-archivo">
                 </div>
                 
+                <div class="div-destacado">
+                    <label for="special">Producto destacado</label>
+                    <input type="checkbox" name="special" id="special" class="input-destacado" 
+                        <%= productFind.special && productFind.special == 1? 'checked':null %>
+                </div>  
                 
                 <div class="div-botones">
 

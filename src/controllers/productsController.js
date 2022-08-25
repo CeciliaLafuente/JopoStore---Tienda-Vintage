@@ -59,11 +59,11 @@ const controller = {
             
             let products = Product.filterByCategory (categoryId);
             
-            return res.render('products/productsList', {categoryId, products, categories});
+            return res.render('products/productsList', {categoryId, products, categories, toThousand});
         } else {
             let products = Product.findAll(); 
             
-            return res.render('products/productsList', {products, categories});
+            return res.render('products/productsList', {products, categories, toThousand});
         }
 
     },
@@ -72,14 +72,14 @@ const controller = {
         let products = Product.findAll();
         
         if (req.body.category ==''){
-            return  res.render('products/productsList', {products, categories});
+            return  res.render('products/productsList', {products, categories, toThousand});
     }
 
         const productosFiltrados = products.filter((producto)=>{
             return producto.category == req.body.category;
         })
 
-        return res.render('products/productsList', {products: productosFiltrados, categories});
+        return res.render('products/productsList', {products: productosFiltrados, categories, toThousand});
     },
 
     search: function(req,res){
@@ -96,6 +96,7 @@ const controller = {
         res.render('products/productsList', {products, categories, notFound, word:req.body.keyWords});
     },
 
+<<<<<<< HEAD
     agregarAlCarrito: (req, res) => {
         !locals.shoppingCart? res.locals.shoppingCart = []: null;
 
@@ -116,6 +117,8 @@ const controller = {
 
 
 
+=======
+>>>>>>> a65799c81372b1325347974416e5a5574361cdfe
 }
 
 
