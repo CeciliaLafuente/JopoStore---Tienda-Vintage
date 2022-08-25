@@ -95,30 +95,6 @@ const controller = {
 
         res.render('products/productsList', {products, categories, notFound, word:req.body.keyWords});
     },
-
-<<<<<<< HEAD
-    agregarAlCarrito: (req, res) => {
-        !locals.shoppingCart? res.locals.shoppingCart = []: null;
-
-        let productBought = products.find (product => {
-            return product.id == req.params.id;
-        });
-
-        shoppingCart.push (productBought);
-
-        let subtotal = shoppingCart.reduce (sum, )
-
-        res.redirect ('products/shoppingCart', { shoppingCart, categories, toThousand });
-
-        res.render('products/productsList', {products, categories});
-    
-        res.render('products/productsList', {products, categories, notFound});
-    },
-
-
-
-=======
->>>>>>> a65799c81372b1325347974416e5a5574361cdfe
 }
 
 
