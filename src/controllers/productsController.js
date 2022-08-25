@@ -109,9 +109,9 @@ const controller = {
 
         res.redirect ('products/shoppingCart', { shoppingCart, categories, toThousand });
 
-     res.render('products/productsList', {products, categories});
+        res.render('products/productsList', {products, categories});
     
-       res.render('products/productsList', {products, categories, notFound});
+        res.render('products/productsList', {products, categories, notFound});
     },
 
 

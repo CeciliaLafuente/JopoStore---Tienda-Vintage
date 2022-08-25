@@ -13,7 +13,7 @@
                 
                 <div class="form-control-registro">
                     <label for="first_name">Nombre:</label>
-                    <input type="text" name="first_name" id="first_name" value="<%= locals.old && old.first_name? old.first_name : null %>" class="<%= locals.errors && errors.first_name? ' ' :locals.check %>">
+                    <input type="text" name="first_name" id="first_name" value="<%= locals.old && old.first_name? old.first_name : '' %>" class="<%= locals.errors && errors.first_name? ' ' :locals.check %>">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
                 <% if(locals.errors && errors.first_name){ %>
@@ -21,7 +21,7 @@
                 <% }; %>
                 <div class="form-control-registro">
                     <label for="last_name">Apellido:</label>
-                    <input type="text" name="last_name" id="last_name"  value="<%= locals.old && old.last_name? old.last_name : null %>" class="<%= locals.errors && errors.last_name? ' ' :locals.check %>">
+                    <input type="text" name="last_name" id="last_name"  value="<%= locals.old && old.last_name? old.last_name : '' %>" class="<%= locals.errors && errors.last_name? ' ' :locals.check %>">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
                 <% if(locals.errors && errors.last_name){ %>
@@ -30,7 +30,7 @@
                
                 <div class="form-control-registro">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" value="<%= locals.old && old.email? old.email : ' ' %>" class="<%= locals.userExist? ' ' :locals.check %>">
+                    <input type="email" name="email" id="email" value="<%= locals.old && old.email? old.email : '' %>" class="<%= locals.userExist || locals.errors && errors.email? ' ' :locals.check %>">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
                 <% if(locals.errors && errors.email){ %>
@@ -42,7 +42,7 @@
                
                 <div class="form-control-registro">
                     <label for="phone">Teléfono:</label>
-                    <input type="tel"  name="phone" id="phone"  value="<%= locals.old && old.phone? old.phone : null %>" class="<%= locals.errors && errors.phone? ' ' :locals.check %>">
+                    <input type="tel"  name="phone" id="phone"  value="<%= locals.old && old.phone? old.phone : '' %>" class="<%= locals.errors && errors.phone? ' ' :locals.check %>">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
                 <% if(locals.errors && errors.phone){ %>
@@ -56,11 +56,7 @@
                 <% if(locals.errors && errors.password){ %>
                     <p><%= errors.password.msg %></p>
                 <% }; %>
-               <!--  <div class="form-control-registro">
-                    <label>Confirmar contraseña:</label>
-                    <input type="password" name="password" minlength="8" required>
-                    <i class="fa-solid fa-circle-check"></i>
-                </div> -->
+             
 
                 <div class="form-control-registro">
                     <label>Subir foto:</label>
