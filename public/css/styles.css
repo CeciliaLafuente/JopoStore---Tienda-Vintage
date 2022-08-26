@@ -26,10 +26,10 @@ main .text {
 }
 
 
-main .categorias-home{
+/* main .categorias-home{
     margin-top: 60px;
     margin-bottom: 60px;
-}
+} */
 
 .categorias-home article {
     padding: 0px 15px;
@@ -303,7 +303,7 @@ text-align: center;
 /* -----------------------------  footer  -----------------------------------------------*/
 
 
-@media (min-width:361px) {
+@media (min-width:480px) {
     /* ------------------------------   main ----------------------------------------------*/
     .categorias-home{
         display:flex;

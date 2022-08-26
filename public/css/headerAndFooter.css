@@ -269,6 +269,13 @@ footer ul a {
             font-size: 13px;
             right: 3px;
         }
+
+        .product-count {
+            padding: 0.5%;
+            top: 13px;
+            right: -5px;
+        }
+    
         
         
 }
