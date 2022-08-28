@@ -52,6 +52,11 @@ label{
     padding: 3px;
 }
 
+.nombre-imagen {
+    margin-left: 20px;
+    font-weight: normal;
+}
+
 .div-destacado {
     margin: 20px 0 10px;
 }
