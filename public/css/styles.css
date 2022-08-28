@@ -1,299 +1,234 @@
-
-
-/* -----------------------------  header  -----------------------------------------------*/
-
- 
 /* Main */
 
 main .portada {
-    width: 100vw;
-    display:flex;
-    position: relative;
+  width: 100vw;
+  display: flex;
+  position: relative;
 }
 
-main .portada img{
-    width: 100%;
+main .portada img {
+  width: 100%;
 }
-
 
 main .text {
-    background-color: white;
-    color: #4b200d;
-    padding: 50px 0px;
-    text-align: center;
-    font-family: arial;
-    font-weight: bold;
+  background-color: white;
+  color: #4b200d;
+  padding: 50px 0px;
+  text-align: center;
+  font-family: arial;
+  font-weight: bold;
 }
 
-
-main .categorias-home{
-    margin-top: 60px;
-    margin-bottom: 60px;
+main .categorias-home {
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .categorias-home article {
-    padding: 0px 15px;
-    margin: 10px 5px;
-    position: relative;
+  padding: 0px 15px;
+  margin: 10px 5px;
+  position: relative;
 }
 
 .categorias-home article img {
-    width: 100%;
+  width: 100%;
 }
- .nombre-categoria {
-    color: rgb(50, 49, 49);
-    font-size: 22px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-stretch: expanded;
-    text-align: center;
-    padding: 10% 10% 5%;
-    margin-bottom: 0;
-} 
+.nombre-categoria {
+  color: rgb(50, 49, 49);
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-stretch: expanded;
+  text-align: center;
+  padding: 10% 10% 5%;
+  margin-bottom: 0;
+}
 
-.categorias-home a{
+.categorias-home a {
   text-decoration: none;
-} 
-
-.showAllProducts{
-background-color:#d8d2d0;
-padding: 10px 20px;
-border: none;
-margin-top: 40px;
-margin-bottom: 40px;
 }
 
-.showAllProducts a{
-    text-decoration: none;
-    color: #3f3e3e;
-    font-size: 20px;
+.showAllProducts {
+  background-color: #d8d2d0;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 75px;
+}
+
+.showAllProducts a {
+  text-decoration: none;
+  color: #3f3e3e;
+  font-size: 20px;
 }
 
 .div-destacados {
-    background-color: #f0edec;
-    padding-top: 10px;
+  background-color: #f0edec;
+  padding-top: 10px;
 }
 
 .div-destacados h4 {
-    font-size: 24px;
-    color: var(--gris-medio2);
-    padding: 50px 0 0;
-    margin: 0;
+  font-size: 24px;
+  color: var(--gris-medio2);
+  padding: 50px 0 0;
+  margin: 0;
 }
 
 .destacados {
-    width: 100vw;
-    padding: 20px 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 70px;
-    margin-top: 10px;
+  width: 100vw;
+  padding: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 70px;
+  margin-top: 10px;
 }
-.destacados article{
-    text-align: center;
-    width: 25%;
-    margin-top: 10px;
-    margin-bottom: 50px;
+.destacados article {
+  text-align: center;
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .destacados article img {
-    width: 90%;
+  width: 90%;
 }
 
 .destacados article a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .destacados .product-name {
-min-height: 20px;
+  min-height: 20px;
 }
 
-.destacados button a{
-    text-decoration: none;
-    color: white;
-    letter-spacing: 1px;
+.destacados button a {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 1px;
 }
 
 .product-description {
-    text-align: center;
-    margin-bottom: 3px;
+  text-align: center;
+  margin-bottom: 3px;
 }
 
 .destacados .price {
-    font-size: 16px;
-    font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .destacados .discount {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .destacados button {
-    width: 90%;
-    border: none;
-    border-radius: 5px;
-    background-color: #4b200d;
-    padding: 10px 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 12px;
-    margin-top: 5px;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  background-color: #4b200d;
+  padding: 10px 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
-.destacados-ocultos{
-    display: none;
+.destacados-ocultos {
+  display: none;
 }
 
-
-/* Filtro de categorías de lista de productos */
-
-.productsList {
-    width: 100vw;
-    padding: 20px 10px;
-    background-color: #f0edec;
-    /* display: flex; */
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 70px;
-    margin-top: 70px;
-    text-align: center;
-}
-.productsList article{
-    display: flex;
-    text-align: center;
-    width: 80%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    justify-content: flex-start;
+.div-datos-producto {
+  font-size: 20px;
+  margin-top: 60px;
+  text-align: center;
 }
 
-.productsList article img {
-    width: 30%;
+.div-datos-producto input {
+  margin-top: 10px;
+  text-align: center;
 }
-
-.productsList .product-name {
-width: 50;
-}
-
-.productsList .product-name a{
-    text-decoration: none;
-    color: #3f3e3e;
-    }
-
-.productList .product-description {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3px;
-    width: 90%;
-    justify-content: flex-start;
-}
-
-.productsList .price {
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 20px;
-}
-
-.productsList .discount {
-    font-size: 14px;
-}
-
-
-.div-datos-producto{
-font-size: 20px;
-margin-top: 60px;
-text-align: center;
-}
-
-.div-datos-producto input{
-    margin-top: 10px;
-    text-align: center;
-}
-
 
 .button-filter {
-   text-decoration: none;
-   color: var(--gris-medio2);
-   height: 28px;
-   font-size: 18px; 
-   background-color: var(--gris-muy-claro);
-   border: 1px var(--gris-medio) solid;
-   margin: 5px;
- }
+  text-decoration: none;
+  color: var(--gris-medio2);
+  height: 28px;
+  font-size: 18px;
+  background-color: var(--gris-muy-claro);
+  border: 1px var(--gris-medio) solid;
+  margin: 5px;
+}
 
-<<<<<<< HEAD
- .product-not-found p{
-    color: tomato;
-    
- }
+.product-not-found p {
+  color: tomato;
+}
 
- .product-not-found a{
-    text-decoration: none;
- }
-    
+.product-not-found a {
+  text-decoration: none;
+}
 
-
-
-=======
- .select-categorias {
-    font-size: 18px;
-    color: var(--gris-medio2); 
-    height: 28px;
-    margin: 5px;
- }
->>>>>>> 304299b1a1f5ca0d81d93c729dbfa5b1af321efa
-
+.select-categorias {
+  font-size: 18px;
+  color: var(--gris-medio2);
+  height: 28px;
+  margin: 5px;
+}
 
 /* -----------------------------  footer  -----------------------------------------------*/
 
-
-@media (min-width:361px) {
-    /* ------------------------------   main ----------------------------------------------*/
-    .categorias-home{
-        display:flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: auto;
-    }
-    
-    .categorias-home article{
-    width: 48%;
-    }
-}
-
-@media (min-width:769px) {
-/* ------------------------------   header ----------------------------------------------*/
-
-/* Main */
-
- .destacados-ocultos {
-    display: inline;
-}
-
-.categorias-home{
-    display:flex;
+@media (min-width: 361px) {
+  /* ------------------------------   main ----------------------------------------------*/
+  .categorias-home {
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: auto;
-}
+  }
 
-.categorias-home article{
+  .categorias-home article {
+    width: 48%;
+  }
+
+  .destacados-ocultos {
     width: 30%;
+  }
 }
 
+@media (min-width: 769px) {
+  /* ------------------------------   header ----------------------------------------------*/
 
-/* -----------------------------  footer  -----------------------------------------------*/
-footer{
+  /* Main */
+
+  .destacados-ocultos {
+    display: inline;
+    width: 20%;
+  }
+
+  .categorias-home {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+
+  .categorias-home article {
+    width: 30%;
+  }
+
+  .destacados article {
+    width: 25%;
+  }
+
+  /* -----------------------------  footer  -----------------------------------------------*/
+  footer {
     display: flex;
     justify-content: space-between;
-}
+  }
 
-.categorias,
-.contacto,
-.redes-sociales {
+  .categorias,
+  .contacto,
+  .redes-sociales {
     padding: 20px 10px;
     width: 30%;
-}
-
+  }
 }

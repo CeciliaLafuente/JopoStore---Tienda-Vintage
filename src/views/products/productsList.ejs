@@ -1,62 +1,74 @@
 <!DOCTYPE html>
 <html>
 
-    <%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/productsList.css">
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <%- include('../partials/header.ejs') %>
-<!-- <!- ---------------------- Main ----------------------------------> 
-    <main>
- 
-     
-        <div class="div-datos-producto">
-            <p>Filtrar por categorías</p>
-            <form name ="categoria" action="/products/productsList/filtro/" method = 'post'>
-                <select name="category" class="select-categorias">
-                    <option selected value="">Todas</option>
-                    <% categories.forEach (category => { %> 
-                        <option value="<%= category.id %>"><%= category.label %></option>
-                    <% }) %>
-                </select>
+        <%- include('../partials/header.ejs') %>
+            <!-- <!- ---------------------- Main ---------------------------------->
+            <main>
 
-        <button class="button-filter" type="submit" >FILTRAR</button>
-    </form>
-        </div>
-         
 
-       
-       
-        <section class="destacados">
-            <% products.forEach(product => { %>
-            <article>
-                <img src= "<%= product.image%>" alt="<%= product.name%>">
-                <div class="product-description">
-                    <p class="product-name"><%= product.name%></p>
-                    <p class="price">$<%= product.price%></p>
-                    <button><a href="/products/productDetail/<%= product.id %>">Agregar al carrito</a></button>
+                <div class="div-datos-producto">
+                    <p>Filtrar por categorías</p>
+                    <form name="categoria" action="/products/productsList/filtro/" method='post'>
+                        <select name="category" class="select-categorias">
+                            <option selected value="">Todas</option>
+                            <% categories.forEach (category=> { %>
+                                <option value="<%= category.id %>">
+                                    <%= category.label %>
+                                </option>
+                                <% }) %>
+                        </select>
+
+                        <button class="button-filter" type="submit">FILTRAR</button>
+                    </form>
                 </div>
-            </article>
-            <% }); %>
-        </section>
-        <% if(products.length==0){ %>
-            <p><%= locals.word %></p>
-            <div class="product-not-found">
-            <p style="color:tomato"><%= notFound %></p>
-            <a href="/"><p>Volver a la home</p></a>  
-            </div>
-        <% } %>
-        
-    
 
 
-    </main>
 
-    <%- include('../partials/footer.ejs') %>
-</body>
+
+                <section class="products">
+                    <% products.forEach(product=> { %>
+                        <article>
+                            <img src="<%= product.image%>" alt="<%= product.name%>">
+                            <div class="product-description">
+                                <p class="product-name">
+                                    <%= product.name%>
+                                </p>
+                                <p class="price">$<%= product.price%>
+                                </p>
+                                <button><a href="/products/productDetail/<%= product.id %>">Agregar al
+                                        carrito</a></button>
+                            </div>
+                        </article>
+                        <% }); %>
+                </section>
+                <% if(products.length==0){ %>
+                    <p>
+                        <%= locals.word %>
+                    </p>
+                    <div class="product-not-found">
+                        <p style="color:tomato">
+                            <%= notFound %>
+                        </p>
+                        <a href="/">
+                            <p>Volver a la home</p>
+                        </a>
+                    </div>
+                    <% } %>
+
+
+
+
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+    </body>
 
 </html>

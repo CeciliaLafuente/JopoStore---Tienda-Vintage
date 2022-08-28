@@ -309,7 +309,8 @@
   "price": 2500,
   "discount": 15,
   "color": "madera",
-  "image": "/images/products/radios/radio-6.jpg"
+  "image": "/images/products/radios/radio-6.jpg",
+  "special": 1
  },
  {
   "id": 36,
@@ -490,6 +491,6 @@
   "price": 4000,
   "discount": 10,
   "id": 54,
-  "image": "/images/products/televisores/televisores-1660346035050.jpg"
+  "image": "/images/products/televisores/tv-6.jpg"
  }
 ]

@@ -92,24 +92,23 @@ const controller = {
 
         let products = Product.findAll();
        
-        // res.render('admin/productsListAdmin', {products: products});
-        res.render('admin/PRUEBAlistado', {products, toThousand, categories});
+        res.render('admin/productsListAdmin', {products: products, categories});
     },
     
     filtroPorCategoria:(req, res) => {
         let products = Product.findAll();
-       
+        let categories = Category.findAll();
+        
         if (req.body.category ==''){
-            return  res.render('admin/productsListAdmin', {products: products});
-        }
+            return  res.render('admin/productsListAdmin', {products, categories});
+    }
 
         const productosFiltrados = products.filter((producto)=>{
             return producto.category == req.body.category;
         })
 
-        res.render('admin/productsListAdmin', {products: productosFiltrados});
+        return res.render('admin/productsListAdmin', {products: productosFiltrados, categories});
     },
-
     
 }
 

@@ -11,8 +11,6 @@ router.delete ('/shoppingCart/delete/:id', productsController.deleteFromShopping
 
 router.get ('/productDetail/:id', productsController.productDetail);
 
-// router.get ('/productsList', productsController.productsList);
-
 router.post ('/productsList/filtro', productsController.filtroPorCategoria);
 
 router.get ('/productsList', productsController.productsList );
