@@ -20,7 +20,7 @@ const usersController={
         },
 
     store: function(req,res){
-        const error= "Tienes que subir una imágen";
+        const error= "Tienes que subir una imagen";
         const check= 'check';
         const errors= validationResult(req);
         let file= req.file;  
@@ -54,7 +54,16 @@ const usersController={
             const userExist="Ya existe un usuario registrado con este email";
             res.render('./users/register', {categories, userExist, old:req.body,errors:errors.mapped(), check})
         }
-    }  
+    },
+    profile: (req, res) => {
+        let user = Users.findByPk (req.params.id);
+
+        delete user.password;
+
+        user.image = '/images/users/' + user.image;
+
+        res.render ('./users/profile', {user, categories});
+    }
 }
 
 module.exports=usersController;

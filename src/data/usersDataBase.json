@@ -52,5 +52,14 @@
   "password": "$2a$10$mvhST3YixZUSOYSqGU7GK.DtPer8Ig8tyhrwQzSu5I5GOJNWEDET.",
   "image": "1660694116691.png",
   "id": 9
+ },
+ {
+  "first_name": "Marcela",
+  "last_name": "Bustamante",
+  "email": "marcela@gmail.com",
+  "phone": "111111111",
+  "password": "$2a$10$0OEABTA3/HM1WIKs6i1nxO.7JI.xUzwGX.H2/gkUIvhkfKJ5q2HEK",
+  "image": "1661528777919.png",
+  "id": 10
  }
 ]

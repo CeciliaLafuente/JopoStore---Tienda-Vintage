@@ -11,4 +11,6 @@ router.get('/registro', usersController.register);
 
 router.post('/new/register',validationImage.single('image'),validationRegister,usersController.store);
 
+router.get('/profile/:id', usersController.profile);
+
 module.exports=router;

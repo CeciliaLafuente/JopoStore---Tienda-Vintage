@@ -12,6 +12,16 @@ const users = {
         fs.writeFileSync(this.fileName, JSON.stringify (user, null, ' ' ) );
         return true;
     },
+
+    findByPk: function (id) {
+        let users = this.findAll();
+
+        let user = users.find (user => {
+            return user.id == id
+        })
+
+        return user;
+    }
 }
 
 module.exports= users;
