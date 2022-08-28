@@ -191,25 +191,31 @@ article {
     font-size: 18px;
 }
 
+.total h2{
+    font-size: 18px;
+}
+
 
 .start-the-buy {
     display: flex;
     justify-content: center;
-    width: 60%;
+    width: 75%;
+    height: 40%;
     margin: auto;
     margin-top: 30px;
 }
 
 .start-the-buy button{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bolder;
-    padding: 10px 8px;
+    padding: 10px 10px;
     text-transform: uppercase;
     color: white;
     background-color: var(--marron);
     border: none;
     border-radius: 5px;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 .more-products {
@@ -250,7 +256,7 @@ article {
     main {
         padding: 20px 80px;
     }
-    
+
 }
     
 
@@ -276,18 +282,35 @@ article {
         padding: 25px;
     }
 
-    
+
     .start-the-buy {
-        width: 50%;
-        font-size: 16px;
-        padding: 5px 5px;
+        display: flex;
+        justify-content: center;
+        width: 75%;
+        height: 8%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    
+    .start-the-buy button{
+        font-size: 12px;
+        font-weight: bolder;
+        padding: 10px 10px;
         text-transform: uppercase;
         color: white;
         background-color: var(--marron);
         border: none;
         border-radius: 5px;
         letter-spacing: 2px;
-        margin-top: 30px;
-        margin-bottom: 5px;
+        text-align: center;
+    }
+
+
+    .more-products {
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 25px;
+        text-decoration: none;
+        text-align: center;
     }
 }

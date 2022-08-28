@@ -312,7 +312,8 @@
   "price": 2500,
   "discount": 15,
   "color": "madera",
-  "image": "/images/products/radios/radio-6.jpg"
+  "image": "/images/products/radios/radio-6.jpg",
+  "special": 1
  },
  {
   "id": 36,
