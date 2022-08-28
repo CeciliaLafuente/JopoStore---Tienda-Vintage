@@ -1,7 +1,5 @@
 <header>
     <div class="header">
-       
-        
 
         <div class="bars-menu">
             <label id="menu-open" for="check">
@@ -9,19 +7,33 @@
             </label> 
         </div>
 
-
         <input id="check" type="checkbox">
+
         <nav class="menu-desplegable">
-            <a href="/products/productsList"><p>Todos los productos</p></a>
-            
-            <nav class="vertical-nav-bar">
-                <ul>
-                    <% categories.forEach (category => { %> 
-                        <li><a href="/products/productsList/?category=<%= category.id %>"><%= (category.label).toUpperCase() %></a></li>
-                    <% }) %>        
-                </ul>
-            </nav>
-        
+            <div class="menu-options">
+
+                <div class="nav-options">
+                    <a href="/products/productsList"><p>Todos los productos</p></a>
+                    
+                    <nav class="vertical-nav-bar">
+                        <ul>
+                            <% categories.forEach (category => { %> 
+                                <li><a href="/products/productsList/?category=<%= category.id %>"><%= (category.label).toUpperCase() %></a></li>
+                            <% }) %>        
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="user-options">
+                    <a href="/users/login"><p>Iniciar sesión</p></a>
+                    <a href="/users/registro"><p>Registrarse</p></a>
+                    <a href="#"><p>Salir</p></a>
+                </div>
+                        
+                <label id="menu-closed" for="check">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
 
             <!-- <p>Filtrar por categorías</p> -->
             <!-- <form name ="categoria" action="/products/productsList/filtro/" method = 'post'>
@@ -35,15 +47,6 @@
             <button class="button-filter" type="submit" >FILTRAR</button>
             </form> -->
 
-            <div class="user-options">
-                <a href="/users/login"><p>Iniciar sesión</p></a>
-                <a href="/users/registro"><p>Registrarse</p></a>
-                <a href="#"><p>Salir</p></a>
-            </div>
-                    
-            <label id="menu-closed" for="check">
-                <i class="fa-solid fa-xmark"></i>
-            </label>
         </nav>
             
         
