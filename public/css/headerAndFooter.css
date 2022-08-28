@@ -59,7 +59,7 @@ input:checked ~ .menu-desplegable{
 .menu-desplegable{
     position: absolute;
     display: none;
-    background-color: var(--gris-claro);
+    background-color: var(--gris-muy-claro);
     width: 50vw;
     z-index: 1;
     height: 100vh;
@@ -92,14 +92,13 @@ input:checked ~ .menu-desplegable{
 
 .menu-desplegable .vertical-nav-bar li {
     list-style: none;
-    /* padding-top: 10px; */
+    font-size: 12px;
     margin: 10px 0;
 }
 
 .menu-desplegable .vertical-nav-bar li a{
     text-decoration: none;
     color: var(--gris-medio2);
-    font-size: 12px;
     text-transform: uppercase;
 }
 
