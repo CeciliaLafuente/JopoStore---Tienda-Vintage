@@ -8,7 +8,7 @@ main{
 h1 {
     padding: 0;
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -29,6 +29,10 @@ label{
     margin-bottom: 10px;
 }
 
+.div-datos-producto {
+    margin-top: 15px;
+}
+
 .div-datos-producto input,
 .div-datos-producto select {
     border-radius: 5px;
@@ -46,6 +50,15 @@ label{
 
 .div-datos-producto .input-archivo {
     padding: 3px;
+}
+
+.div-destacado {
+    margin: 20px 0 10px;
+}
+
+.div-destacado input {
+    margin: 15px 0 0 10px;
+    width: 15px;
 }
 
 .div-botones {
@@ -84,7 +97,7 @@ label{
     }
     
     h1 {
-        padding: 0 20%;
+        padding: 0 20% 20px;
         text-align: left;
     }
     main form{

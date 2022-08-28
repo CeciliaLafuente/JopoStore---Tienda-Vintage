@@ -108,7 +108,8 @@
   "price": 2000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/products/radios/radio-3.jpg"
+  "image": "/images/products/radios/radio-3.jpg",
+  "special": 1
  },
  {
   "id": 13,
@@ -188,7 +189,8 @@
   "price": 4000,
   "discount": 20,
   "color": "madera",
-  "image": "/images/products/telefonos/telefono-4.jpg"
+  "image": "/images/products/telefonos/telefono-4.jpg",
+  "special": 1
  },
  {
   "id": 24,
@@ -371,7 +373,8 @@
   "price": 5000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/products/televisores/tv-2.jpg"
+  "image": "/images/products/televisores/tv-2.jpg",
+  "special": 1
  },
  {
   "id": 42,
@@ -391,7 +394,8 @@
   "price": 2000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/products/telefonos/telefono-9.jpg"
+  "image": "/images/products/telefonos/telefono-9.jpg",
+  "special": 1
  },
  {
   "id": 44,
@@ -441,7 +445,8 @@
   "price": 2000,
   "discount": 0,
   "color": "madera",
-  "image": "/images/products/televisores/tv-3.jpg"
+  "image": "/images/products/televisores/tv-3.jpg",
+  "special": 1
  },
  {
   "id": 49,
@@ -481,7 +486,8 @@
   "price": 1000,
   "discount": 0,
   "id": 53,
-  "image": "/images/products/telefonos/telefonos-1660345891542.jpg"
+  "image": "/images/products/telefonos/telefonos-1660345891542.jpg",
+  "special": 1
  },
  {
   "name": "tv moderna",

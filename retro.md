@@ -64,3 +64,31 @@ Hacer menos:
 
 Dejar de hacer:
     - En esta primera etapa no identificamos algo que cumpla esta consigna.
+
+
+
+Retrospectiva Sprint 4
+----------------------
+Comenzar a hacer:
+    - Actualizar Trello más frecuentemente
+
+Hacer más:
+    - Acordar los detalles de partes del código comunes a varias tareas (i.e. parámetros de multer) y asignarlas a un miembro del equipo.
+    
+    
+Continuar haciendo:
+    - Mensaje diario qué hice hoy / qué voy a hacer mañana
+    - Asignación de tareas de acuerdo a habilidades de cada integrante
+    - Respetar las opiniones de los otros integrantes del grupo
+    - Consensuar las decisiones
+    - Respetar horarios de reuniones 
+
+    
+Hacer menos:
+    - En esta etapa no identificamos algo que cumpla esta consigna.
+
+
+Dejar de hacer:
+    - Cerrar definiciones de estilo
+
+

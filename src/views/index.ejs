@@ -36,25 +36,36 @@
     <div class="div-destacados"> 
         <h4>Productos destacados</h4>
  
-        <section class="destacados">
-           
+        <section class="destacados carrousel">
+           <ul class="carrousel-productos">
             <% products.forEach (product => { %> 
                 <% if (product.special == 1) { %> 
-                    <article>
+                    <li>
                         <a href="/products/productDetail/<%= product.id %>">
                             <img src="<%= product.image %>" alt="Product Img">
                         </a>
                         
                         <div class="product-description">
                             <p class="product-name"><%= product.name %></p>
-                            <p class="price">$<%= toThousand(product.price) %></p>
+
+                            <% if (!product.discount || product.discount == 0) { %> 
+                                <p class="price">$<%= toThousand(product.price)%></p>
+                                <p class="cuotas">6 cuotas sin interés de <strong>$<%= toThousand((product.price / 6).toFixed(2))%></strong></p>
+                            <% } else { %>
+                                <div class="price-discount">
+                                    <span class="orig-price">$<%= toThousand(product.price) %></span>
+                                    <span class="final-price">$<%= toThousand(product.price * (1 - product.discount / 100)) %></span>
+                                </div>
+                                <p class="cuotas">6 cuotas sin interés de <strong>$<%= toThousand(((product.price * (1 - product.discount / 100)) / 6).toFixed(2)) %></strong></p>
+                                <% } %>
+    
                             <button><a href="/products/productDetail/<%= product.id %>">Agregar al carrito</a></button>
                         </div>
                         
-                    </article>
+                    </li>
                 <% } %>
             <% }) %>
-                  
+        </ul>
         </section>
     </div>  
 

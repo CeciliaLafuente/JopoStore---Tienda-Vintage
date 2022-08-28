@@ -1,15 +1,14 @@
 <footer>
   <div class="categorias">
     <h3>Categorías</h3>
-    
-    <ul>
-      <li><a href="/products/productsList/?category=1">CÁMARAS</a></li>
-      <li><a href="/products/productsList/?category=2">TELEVISORES</a></li>
-      <li><a href="/products/productsList/?category=3">VINILOS</a></li>
-      <li><a href="/products/productsList/?category=4">TOCADISCOS</a></li>
-      <li><a href="/products/productsList/?category=5">RADIOS</a></li>
-      <li><a href="/products/productsList/?category=6">TELÉFONOS</a></li>
-    </ul>
+
+    <nav>
+      <ul>
+          <% categories.forEach (category => { %> 
+              <li><a href="/products/productsList/?category=<%= category.id %>"><%= (category.label).toUpperCase() %></a></li>
+          <% }) %>        
+      </ul>
+    </nav>
    
   </div>
 

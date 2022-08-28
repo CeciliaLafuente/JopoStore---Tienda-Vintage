@@ -3,7 +3,11 @@ const path = require("path");
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+<<<<<<< HEAD
 const productsInCartMiddleware = require('./middlewares/productsInCartMiddleware');
+=======
+const productCountMiddleware = require ('./middlewares/productCountMiddleware');
+>>>>>>> 87cebbb108bec7b90de8545f88462129f5e32d61
 
 
 const app = express();
@@ -14,6 +18,7 @@ app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+<<<<<<< HEAD
 app.use(session({
     secret: 'Hush hush',
     resave: false,
@@ -21,6 +26,13 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(productsInCartMiddleware);
+=======
+app.use(session ({ secret: 'Hush hush',
+                    resave: false,
+                    saveUninitialized: false }));
+app.use (cookieParser());
+app.use (productCountMiddleware);
+>>>>>>> 87cebbb108bec7b90de8545f88462129f5e32d61
 
 const indexRouter = require('./src/routers/index.js');
 const productsRouter = require('./src/routers/products.js');
