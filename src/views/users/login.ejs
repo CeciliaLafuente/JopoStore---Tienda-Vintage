@@ -10,8 +10,10 @@
     <body>
         <%- include('../partials/header.ejs') %>
         <main>
-            <form action="/login" method="POST" class="formulario">
-              
+            
+            <form action="/users/login" method="POST" class="formulario">
+                <input class="mensaje" value="<%= locals.msg? locals.msg:null %>">
+
                 <div class="form-control">
                     <label>Email </label>
                         <input type="email" name="email" class="input-login">

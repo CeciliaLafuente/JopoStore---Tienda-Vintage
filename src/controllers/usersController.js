@@ -11,8 +11,28 @@ let users= Users.findAll();
 
 const usersController={
     login: function (req,res){
-        res.render('./users/login', {categories});  
+        if (req.query.msg) {
+            let msg = req.query.msg;
+            return res.render('./users/login', {categories, msg}) 
+        } else {
+            return res.render('./users/login', {categories}) 
+        }
     },
+
+    /**********************************************
+     *****         AGREGUÉ LA FUNCIÓN logUser PARA PROBAR EL MIDDLEWARE QUE LIMITA LAS RUTAS
+     *****         DE ACCESO A USUARIOS LOGONEADOS O NO LOGONEADOS
+     ************************************************************/
+    logUser: (req, res) => {
+        if (req.body.email == 'marcela@gmail.com') {
+            req.session.user = Users.findByPk (10);
+        }
+
+        return res.redirect ('/');
+    },
+    /**********************************************
+     *****        FIN DEL AGREGADO
+     ************************************************************/
 
     register: function(req, res){
       
@@ -62,7 +82,12 @@ const usersController={
 
         user.image = '/images/users/' + user.image;
 
-        res.render ('./users/profile', {user, categories});
+        if (req.query.msg) {
+            let msg = req.query.msg;
+            res.render ('./users/profile', {user, categories, msg})
+        } else {
+            res.render ('./users/profile', {user, categories})
+        }
     }
 }
 
