@@ -302,7 +302,9 @@ footer ul a {
             right: -3px;
         }
     
-        
+        .menu-desplegable {
+            width: 30vw;
+        }
         
 }
 
