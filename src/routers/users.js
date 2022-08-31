@@ -7,15 +7,17 @@ let validationImage= require('../../middlewares/validationImage');
 let validationRegister= require('../../middlewares/validationRegister');
 let validationLogin= require('../../middlewares/validationLogin.js');
 
+const userNotLoggedMiddleware = require ( '../../middlewares/userNotLoggedMiddleware' );
+const userLoggedMiddleware = require ( '../../middlewares/userLoggedMiddleware' );
 
-router.get('/login', usersController.login);
+router.get('/login', userNotLoggedMiddleware, usersController.login);
 
 router.post('/login', validationLogin, usersController.loginProcess);
 
-router.get('/registro', usersController.register);
+router.get('/registro', userNotLoggedMiddleware, usersController.register);
 
 router.post('/new/register',validationImage.single('image'),validationRegister,usersController.store);
 
-router.get('/profile/:id', usersController.profile);
+router.get('/profile/:id', userLoggedMiddleware,usersController.profile);
 
 module.exports=router;

@@ -10,7 +10,12 @@ let users = Users.findAll();
 
 const usersController = {
     login: function (req, res) {
-        res.render("./users/login", { categories });
+        if (req.query.msg) {
+            let msg = req.query.msg;
+            return res.render('./users/login', { categories, msg })
+        } else {
+            return res.render('./users/login', { categories })
+        }
     },
 
     register: function (req, res) {
@@ -76,8 +81,14 @@ const usersController = {
 
         user.image = "/images/users/" + user.image;
 
-        res.render("./users/profile", { user, categories });
+        if (req.query.msg) {
+            let msg = req.query.msg;
+            res.render('./users/profile', { user, categories, msg })
+        } else {
+            res.render('./users/profile', { user, categories })
+        }
     },
+
     loginProcess: function (req, res) {
         let error = validationResult(req);
 

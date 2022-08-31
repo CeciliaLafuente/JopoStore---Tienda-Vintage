@@ -3,11 +3,13 @@ const express = require ('express');
 const productsController = require ('../controllers/productsController');
 
 const router = express.Router();
+const userLoggedMiddleware = require ( '../../middlewares/userLoggedMiddleware' );
 
 
-router.get ('/shoppingCart', productsController.shoppingCart);
-router.post ('/shoppingCart/add/:id', productsController.addToShoppingCart);
-router.delete ('/shoppingCart/delete/:id', productsController.deleteFromShoppingCart);
+
+router.get ('/shoppingCart', userLoggedMiddleware, productsController.shoppingCart);
+router.post ('/shoppingCart/add/:id', userLoggedMiddleware, productsController.addToShoppingCart);
+router.delete ('/shoppingCart/delete/:id', userLoggedMiddleware, productsController.deleteFromShoppingCart);
 
 router.get ('/productDetail/:id', productsController.productDetail);
 

@@ -11,7 +11,8 @@
         <%- include('../partials/header.ejs') %>
             <main>
                 <form action="/users/login" method="POST" class="formulario">
-
+                    <input class="mensaje" value="<%= locals.msg? locals.msg:null %>">
+ 
                     <div class="form-control">
                         <label>Email </label>
                         <% if (locals.error) { 

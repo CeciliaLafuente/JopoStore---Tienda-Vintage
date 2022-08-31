@@ -15,9 +15,10 @@
   "name": "Teléfono",
   "description": "hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem",
   "price": 4000,
-  "discount": 0,
+  "discount": null,
   "color": "madera",
-  "image": "/images/products/telefonos/telefono-1.jpg"
+  "image": "/images/products/telefonos/telefono-1.jpg",
+  "special": 1
  },
  {
   "id": 4,
@@ -497,6 +498,28 @@
   "price": 4000,
   "discount": 10,
   "id": 54,
-  "image": "/images/products/televisores/tv-6.jpg"
+  "image": "/images/products/televisores/televisores-1660346035050.jpg"
+ },
+ {
+  "name": "Teléfono marca Siemens",
+  "description": "Cras commodo leo orci, ut facilisis tortor elementum id. Cras semper ipsum id diam scelerisque, ultricies imperdiet arcu sollicitudin. Cras nec ipsum vitae erat tristique lobortis a eget ante. Suspendisse tempor urna ut metus pellentesque aliquet. Nunc vulputate sollicitudin risus eget mollis. Suspe",
+  "category": "6",
+  "color": "blanco",
+  "price": 2500,
+  "discount": 0,
+  "special": 1,
+  "id": 55,
+  "image": "/images/products/telefonos/telefonos-1660939156669.jpg"
+ },
+ {
+  "name": "Radio a transistores marca Spika",
+  "description": "Ideal para ir a la cancha a ver al equipo de sus amores sin perder la emoción del relato radial",
+  "category": "5",
+  "color": "rojo",
+  "price": 1000,
+  "discount": 15,
+  "special": 1,
+  "id": 56,
+  "image": "/images/products/radios/radios-1660942577766.jpg"
  }
 ]

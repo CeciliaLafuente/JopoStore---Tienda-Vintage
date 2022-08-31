@@ -1,5 +1,5 @@
 main {
-    padding: 5%;
+    padding: 0 5%;
 }
 
 .user {
@@ -47,4 +47,13 @@ main {
     border: 1px solid var(--gris-medio);
     border-radius: 3px;
    
+}
+
+.mensaje {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    width:100%;
+    margin: 15px 0;
 }

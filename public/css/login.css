@@ -87,9 +87,20 @@ label {
     font-size: 15px;;
 }
 
+<<<<<<< HEAD
 .error {
     color: red;
     font-size: 12px;
+=======
+.mensaje {
+    color: red;
+    font-weight: bold;
+    border: none;
+    width:100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+>>>>>>> 6e26383051d264b1b49167fd4269e98f072e8d90
 }
 
 @media (min-width:700px){
