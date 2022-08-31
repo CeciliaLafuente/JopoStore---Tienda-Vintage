@@ -87,6 +87,11 @@ label {
     font-size: 15px;;
 }
 
+.error {
+    color: red;
+    font-size: 12px;
+}
+
 @media (min-width:700px){
     .form-control{
     width: 100%;
