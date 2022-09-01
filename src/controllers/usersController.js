@@ -93,15 +93,12 @@ const usersController = {
         let error = validationResult(req);
 
         if (!error.isEmpty()) {
-            console.log(error)
             return res.render("./users/login", {
                 userToLogin: {},
                 categories,
-                errors: {
-                    email: {
-                        msg: "Hay errores en la validación"
-                    }
-                }
+                errors: error.mapped(),
+                old: req.body
+        
             })
         }
 
@@ -118,9 +115,10 @@ const usersController = {
                     userToLogin,
                     categories,
                     errors: {
-                        email: {
+                        password: {
                             msg: "La contraseña es incorrecta"
-                        }
+                        },
+                        old: req.body
                     }
                 })
             }

@@ -15,12 +15,9 @@
  
                     <div class="form-control">
                         <label>Email </label>
-                        <% if (locals.error) { 
-                        error.forEach(error => { %>
-                            <p class="error"><%= error.msg %></p>
-                            <% }) } %>
-
-                                <input type="email" name="email" class="input-login">
+                      
+                                <input type="email" name="email" class="input-login" 
+                                value = "<%= locals.old && old.email ? old.email : null%>">
                                 <% if (locals.errors && errors.email) { %>
                                     <div class="error">
                                         <%= errors.email.msg %>
@@ -30,6 +27,12 @@
                     <div class="form-control">
                         <label>Contraseña </label>
                         <input type="password" name="password" class="input-login">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="error">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
+
                         <a href="#" class="a-password">¿Olvidaste tu contraseña?</a>
                     </div>
 

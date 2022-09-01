@@ -109,6 +109,41 @@
     height: 28px;
     margin: 5px;
   }
+
+  /*nuevo Marce*/
+
+  .products .price {
+    font-size: 20px;
+    font-weight: bold;
+    margin:  0 0 10px;
+}
+
+.price-discount {
+    margin: 0 0 10px;
+}
+
+.products .orig-price {
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: line-through;
+    text-align: left;
+    margin: 0 10px;
+}
+
+.products .final-price {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin: 0 10px;
+}
+.products .discount {
+  font-size: 14px;
+}
+
+.cuotas {
+    margin: 0 0 10px;;
+}
+
   
   /* -----------------------------  footer  -----------------------------------------------*/
   
