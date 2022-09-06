@@ -87,6 +87,21 @@ label {
     font-size: 15px;;
 }
 
+.error {
+    color: red;
+    font-size: 12px;
+ }
+
+.mensaje {
+    color: red;
+    font-weight: bold;
+    border: none;
+    width:100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+}
+
 @media (min-width:700px){
     .form-control{
     width: 100%;

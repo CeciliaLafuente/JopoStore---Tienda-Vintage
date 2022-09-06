@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html>
 
-    <%- include('../partials/headAdmin.ejs') %>
+<%- include('../partials/headAdmin.ejs') %>
 
-    <link rel="stylesheet" href="/css/styles.css">
-   
 
-</head>
+    <link rel="stylesheet" href="/css/productsListAdmin.css">
 
-<body>
 
-    <%- include('../partials/headerAdmin.ejs') %>
-<!-- <!- ---------------------- Main ----------------------------------> 
-    <main>
- 
-     
-        <div class="div-datos-producto">
-            <p>Filtrar por categorías</p>
-            <form name ="categoria" action="/admin/productsListAdmin/filtro" method = 'post'>
-                <select name="category">
-                    <option value="Cámaras">Cámaras</option>
-                    <option value="Televisores">Televisores</option>
-                    <option value="Vinilos">Vinilos</option>
-                    <option value="Tocadiscos">Tocadiscos</option>
-                    <option value="Radios">Radios</option>
-                    <option value="Teléfonos">Teléfonos</option>
-                    <option value="Todas">Todas</option>
-                </select>
+    </head>
 
-        <button class="button-filter" type="submit" >FILTRAR</button>
-    </form>
-        </div>
-         
+    <body>
 
-        
-        <section class="productsList">
-            <% products.forEach((product, id) => { %>
-            <article>
-                <a href="/admin/productDetail/<%= product.id %>"><img src= "<%= product.image%>" alt="<%= product.name%>"></a>
-                <div class="product-description">
-                    <p class="product-name"><a href="/admin/productDetail/<%= product.id %>"><%= product.name%></a></p>
-                    <p class="price">$<%= product.price%></p>
-                    <!-- <button><a href="/admin/productDetail/<%= product.id %>">Agregar al carrito</a></button> -->
+        <%- include('../partials/headerAdmin.ejs') %>
+            <!-- <!- ---------------------- Main ---------------------------------->
+            <main>
+
+
+                <div class="div-datos-producto">
+                    <p>Filtrar por categorías</p>
+                    <form name="categoria" action="/admin/productsList/filtro/" method='post'>
+                        <select name="category" class="select-categorias">
+                            <option selected value="">Todas</option>
+                            <% categories.forEach (category=> { %>
+                                <option value="<%= category.id %>">
+                                    <%= category.label %>
+                                </option>
+                                <% }) %>
+                        </select>
+
+                        <button class="button-filter" type="submit">FILTRAR</button>
+                    </form>
                 </div>
-            </article>
-            <% }); %>
-        </section>
-        
-    
 
 
-    </main>
 
-    <%- include('../partials/footer.ejs') %>
-</body>
+                <section class="productsList">
+                    <% products.forEach((product, id)=> { %>
+                        <article class="article">
+                            <a href="/admin/productDetail/<%= product.id %>"><img src="<%= product.image%>"
+                                    alt="<%= product.name%>"></a>
+                            <div class="product-description">
+                                <p class="product-name"><a href="/admin/productDetail/<%= product.id %>">
+                                        <%= product.name%>
+                                    </a></p>
+                            </div>
+                            <br>
+                            <div class="button-to-detail">
+                                <a href="/admin/productDetail/<%= product.id %>">VER DETALLE</a>
+                            </div>
+                        </article>
+                        <% }); %>
+                </section>
+
+
+
+
+            </main>
+
+    </body>
 
 </html>

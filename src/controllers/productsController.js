@@ -109,10 +109,6 @@ const controller = {
         let subtotal = shoppingCart.reduce (sum, )
 
         res.redirect ('products/shoppingCart', { shoppingCart, categories, toThousand });
-
-        res.render('products/productsList', {products, categories});
-    
-        res.render('products/productsList', {products, categories, notFound});
     },
 
 }

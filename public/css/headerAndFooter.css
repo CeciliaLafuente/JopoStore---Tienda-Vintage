@@ -58,26 +58,75 @@ input:checked ~ .menu-desplegable{
 .menu-desplegable{
     position: absolute;
     display: none;
-    background-color: gray;
-    width: 70%;
+    background-color: var(--gris-muy-claro);
+    width: 50vw;
     z-index: 1;
     height: 100vh;
     box-shadow: 0px 0px 10px var(--gris-medio);
-    padding: 30px;
+    padding: 10px;
     position: fixed;
+    text-align: left;
     margin: 30px;
 }
 
 
 .menu-desplegable a{
     text-decoration: none;
+
 }
 
 .menu-desplegable p{
-    color: black;
-    font-weight: bold;
-    padding-top: 20px;
+    color: var(--gris-medio2);
+    font-size: 12px;
+    padding-top: 10px;
+    text-transform: uppercase;
 }
+
+.menu-desplegable .vertical-nav-bar ul{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.menu-desplegable .vertical-nav-bar li {
+    list-style: none;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.menu-desplegable .vertical-nav-bar li a{
+    text-decoration: none;
+    color: var(--gris-medio2);
+    text-transform: uppercase;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    /* align-content: space-between; */
+    /* height: 80vh; */
+ }
+
+.user-options {
+    /* height: 30vh; */
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 0;
+    margin: 40px 0 10px;
+    justify-content: flex-end;
+    color: var(--gris-medio2);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.user-options p {
+    padding: 0;
+}
+
+/* .nav-options{
+    height: 50vh;
+} */
 
 form select, button{
     border-radius: 10px;
@@ -268,7 +317,16 @@ footer ul a {
             font-size: 13px;
             right: 3px;
         }
-        
+
+        .product-count {
+            padding: 0.4%;
+            top: 14px;
+            right: -3px;
+        }
+    
+        .menu-desplegable {
+            width: 30vw;
+        }
         
 }
 

@@ -1,0 +1,59 @@
+main {
+    padding: 0 5%;
+}
+
+.user {
+    display:flex;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.userImg {
+    width: 20vw;
+    /* height: 25vw; */
+    margin: 0;
+}
+
+.user img {
+    width: 100%;
+    object-fit: contain;
+    border: 1px solid var(--gris-medio);
+}
+
+.userData {
+    width: 30vw;
+    margin: 0 40px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.userData p {
+    margin-top: 0;
+}
+
+.userData strong {
+    font-size: 20px;
+}
+
+.button {
+    text-align: left;
+    margin: 30px 0;
+}
+
+.button button {
+    font-size: 16px;
+    background-color: var(--gris-claro);
+    color: var(--gris-medio2);
+    border: 1px solid var(--gris-medio);
+    border-radius: 3px;
+   
+}
+
+.mensaje {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    width:100%;
+    margin: 15px 0;
+}

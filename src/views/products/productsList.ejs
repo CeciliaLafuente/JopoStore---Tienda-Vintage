@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 
-    <%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/productsList.css">
 
-</head>
+    </head>
 
-<body>
+    <body>
 
     <%- include('../partials/header.ejs') %>
 <!-- <!- ---------------------- Main ----------------------------------> 
@@ -29,7 +29,7 @@
             </form>
         </div>
        
-        <section class="destacados">
+        <section class="products">
             <% products.forEach(product => { %>
             <article>
                 
@@ -66,10 +66,28 @@
         
     
 
+                <!-- <section class="products">
+                    <% products.forEach(product=> { %>
+                        <article>
+                            <img src="<%= product.image%>" alt="<%= product.name%>">
+                            <div class="product-description">
+                                <p class="product-name">
+                                    <%= product.name%>
+                                </p>
+                                <p class="price">$<%= product.price%>
+                                </p>
+                                <button><a href="/products/productDetail/<%= product.id %>">Agregar al
+                                        carrito</a></button>
+                            </div>
+                        </article>
+                        <% }); %>
+                </section>
+                -->
+                    
 
-    </main>
+            </main>
 
-    <%- include('../partials/footer.ejs') %>
-</body>
+            <%- include('../partials/footer.ejs') %>
+    </body>
 
 </html>
