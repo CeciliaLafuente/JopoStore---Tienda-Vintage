@@ -71,25 +71,15 @@
   "image": "/images/products/camaras/camara-2.jpg"
  },
  {
-  "id": 9,
-  "category": "3",
-  "name": "Vinilo",
-  "description": "pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut",
-  "price": 3000,
-  "discount": 15,
-  "color": "n/a",
-  "image": "/images/products/vinilos/vinilo-3.jpg"
- },
- {
-  "id": 10,
-  "category": "5",
-  "name": "Radio",
-  "description": "morbi vestibulum velit id pretium iaculis diam erat fermentum justo",
-  "price": "3300",
-  "discount": 20,
-  "color": "madera",
-  "image": "/images/products/radios/radio-10.jpg"
- },
+    "id": 10,
+    "category": "5",
+    "name": "Radio",
+    "description": "morbi vestibulum velit id pretium iaculis diam erat fermentum justo",
+    "price": "3300",
+    "discount": 20,
+    "color": "madera",
+    "image": "/images/products/radios/radio-10.jpg"
+   },
  {
   "id": 11,
   "category": "2",

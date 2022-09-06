@@ -22,7 +22,8 @@ main {
 }
 
 .div-img-producto {
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
 
 .div-img-producto img {
@@ -36,7 +37,7 @@ main {
 }
 
 .p-descuento, .p-precio {
-    font-size: 18px;
+    font-size: 15px;
     color: var(--naranja);
     margin: 10px 0 0;
 }
@@ -47,7 +48,7 @@ small {
 
 
 .p-precio-final {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     margin: 20px 0;
 }
@@ -55,7 +56,7 @@ small {
 .div-formas-pago {
     display: flex;
     margin: 0 0 20px;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .div-envio-gratis {
@@ -147,11 +148,9 @@ small {
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
+    align-items: center;
 }
 
-.div-botones form{
-    width: 45%;
-}
 
 .action-button.edit {
     background-color: rgb(27, 81, 27);
@@ -176,7 +175,49 @@ small {
     justify-content: center;
     padding: 15px 30px;
     text-decoration: none;
+    height: 45px;
   }
+
+  input:not(:checked) ~ .delete-form {
+    display: none;
+  }
+
+  input:checked ~ .delete-form {
+    display: block;
+  }
+
+  #check {
+    display: none;
+}
+
+#delete-open{
+    width: 45%;
+}
+
+.delete-form{
+    display: none;
+    position: absolute;
+    background-color: gray;
+    width: 80%;
+}
+
+.delete-form p{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.delete-form button{
+    width: 45%;
+}
+
+.delete-open {
+    width: 45%;
+}
+
+.action-button.delete.form{
+  width: 45%;
+  font-weight: bold;
+}
 
 /* -------------------------------------------------------------------------------------*/
 /* ------------------------------   TABLET  ----------------------------------------------*/
@@ -231,6 +272,20 @@ small {
         padding: 0 20px;
     }
 
+    .p-descuento, .p-precio {
+        font-size: 18px;
+    }
   
+    .h4-nombre-producto {
+        font-size: 20px;
+    }
+
+    .div-formas-pago {
+        font-size: 12px;
+    }
+
+    .delete-form p{
+        font-size: 18px;
+    }
       
 }

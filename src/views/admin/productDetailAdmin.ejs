@@ -60,9 +60,19 @@
             </div>   
 
             <div class="div-botones">
-
-                <form action="/admin/delete/<%= product.id %>?_method=DELETE" method="POST" >
-                    <button type="submit" class="action-button delete">ELIMINAR</button>
+                
+                <input id="check" type="checkbox">
+                <label id="delete-open" for="check">
+                <p class="action-button delete">ELIMINAR</p>
+                </label>
+                
+                <input id="check" type="checkbox">
+                <form class="delete-form" action="/admin/delete/<%= product.id %>?_method=DELETE" method="POST">
+                        <p>¿Estás seguro que querés eliminar este producto?</p>
+                        <button type="submit" class="action-button delete form">ACEPTAR</button>
+                    <label id="delete-open" for="check">
+                        <p class="action-button delete form">CANCELAR</p>
+                    </label>
                 </form>
 
                 <div class="boton-edit">

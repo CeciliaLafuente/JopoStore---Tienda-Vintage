@@ -35,7 +35,7 @@ const controller = {
     },
 
     productDetail: (req, res) => {
-        let product = Product.findById (req.params.id);
+        let product = Product.findById(req.params.id);
         
         return res.render ('./admin/productDetailAdmin', {product, toThousand});
     },
@@ -95,7 +95,7 @@ const controller = {
         let products = Product.findAll();
        
         // res.render('admin/productsListAdmin', {products: products});
-        res.render('admin/PRUEBAlistado', {products, toThousand, categories});
+        res.render('admin/productsListAdmin', {products, toThousand, categories});
     },
     
     filtroPorCategoria:(req, res) => {
