@@ -3,6 +3,7 @@ create database jopo_store_db;
 
 use jopo_store_db;
 
+/*
 drop table if exists shopping_cart;
 drop table if exists shopping_cart_detail;
 drop table if exists product_colors;
@@ -11,6 +12,7 @@ drop table if exists products;
 drop table if exists product_categories;
 drop table if exists users;
 drop table if exists user_categories;
+*/
 
 create table user_categories (
 	id int primary key not null auto_increment,
@@ -24,7 +26,7 @@ create table users (
     last_name varchar(30) not null,
     email varchar(50) not null unique,
     password varchar(100) not null,
-    phone bigint not null,
+    phone bigint,
     date_birth date,
     img varchar(500) default 'images/logo1.jpg',
     category_id int not null,
@@ -40,7 +42,7 @@ create table product_categories (
     
 create table products (
 	id int primary key not null auto_increment,
-    name varchar(50) not null,
+    name varchar(100) not null,
     description varchar(500) not null,
     price decimal(6, 2) not null,
     discount tinyint,
@@ -84,7 +86,7 @@ create table shopping_cart_detail (
 	product_id int not null,
     quantity tinyint not null,
     price decimal(6, 2) not null,
-    discount tinyint not null,
+    discount tinyint,
     foreign key (shopping_cart_id)
     references shopping_cart(id),
     foreign key (product_id)
