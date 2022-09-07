@@ -47,8 +47,8 @@ main form{
 .form-control-registro i{
     position: absolute;
     color: green;
-    top:34px;
-    right: 15px;
+    top:33px;
+    right: 5px;
     display: none;
 }
 
