@@ -75,6 +75,7 @@ const usersController = {
         }
     },
     profile: (req, res) => {
+
         let user = Users.findByPk(req.params.id);
 
         delete user.password;
