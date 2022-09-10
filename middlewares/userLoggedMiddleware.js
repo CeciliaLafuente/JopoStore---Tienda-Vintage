@@ -1,7 +1,8 @@
 const userLoggedMiddleware = function(req, res, next) {
-    if (!req.session.user) {
-        let msg = 'Por favor ingresá al sitio para continuar';
-        return res.redirect ('/users/login/?msg=' + msg);
+    if (req.session.userLogged) {
+        let userId = req.session.userLogged.id;
+        let msg = 'Ya ingresaste al sitio';
+        return res.redirect ('/users/profile/'+ userId +'?msg=' + msg);
     }
 
     next();

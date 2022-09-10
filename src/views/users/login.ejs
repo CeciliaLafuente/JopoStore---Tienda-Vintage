@@ -12,17 +12,17 @@
             <main>
                 <form action="/users/login" method="POST" class="formulario">
                     <input class="mensaje" value="<%= locals.msg? locals.msg:null %>">
- 
+
                     <div class="form-control">
                         <label>Email </label>
-                      
-                                <input type="email" name="email" class="input-login" 
-                                value = "<%= locals.old && old.email ? old.email : null%>">
-                                <% if (locals.errors && errors.email) { %>
-                                    <div class="error">
-                                        <%= errors.email.msg %>
-                                    </div>
-                                    <% } %>
+
+                        <input type="email" name="email" class="input-login"
+                            value="<%= locals.old && old.email ? old.email : null%>">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="error">
+                                <%= errors.email.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="form-control">
                         <label>Contraseña </label>
@@ -33,7 +33,12 @@
                             </div>
                             <% } %>
 
-                        <a href="#" class="a-password">¿Olvidaste tu contraseña?</a>
+                                <div class="small-letter">
+                                    <label class="remember-me"><input type="checkbox"
+                                            name="remember_user">Recordarme</label>
+                                </div>
+
+                                <a href="#" class="a-password">¿Olvidaste tu contraseña?</a>
                     </div>
 
 

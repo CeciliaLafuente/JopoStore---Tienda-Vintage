@@ -89,7 +89,8 @@ const usersController = {
         }
     },
 
-    loginProcess: function (req, res) {
+    loginProcess: (req, res)=> {
+        console.log(req.session.userLogged)
         let error = validationResult(req);
 
         if (!error.isEmpty()) {
@@ -133,6 +134,11 @@ const usersController = {
                 }
             })
         }
+    },
+
+    logout:(req, res)=>{
+        req.session.destroy();
+return res.redirect('/');
     }
 };
 

@@ -4,7 +4,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const productCountMiddleware = require('./middlewares/productCountMiddleware');
-
+const cookieMiddleware = require('./middlewares/cookieMiddleware');
 
 
 const app = express();
@@ -22,6 +22,8 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(productCountMiddleware);
+app.use(cookieMiddleware);
+
 
 const indexRouter = require('./src/routers/index.js');
 const productsRouter = require('./src/routers/products.js');

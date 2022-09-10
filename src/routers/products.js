@@ -3,7 +3,7 @@ const express = require ('express');
 const productsController = require ('../controllers/productsController');
 
 const router = express.Router();
-const userLoggedMiddleware = require ( '../../middlewares/userLoggedMiddleware' );
+const userLoggedMiddleware = require ( '../../middlewares/userNotLoggedMiddleware' );
 
 
 
