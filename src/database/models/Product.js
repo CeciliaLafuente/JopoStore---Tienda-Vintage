@@ -61,12 +61,11 @@ module.exports = (sequelize, dataTypes) => {
                 timestamps: false
             })
 
-            // Product.associate = function (models) {
-            //     Product.hasMany(models.shopping_cart_detail, {
-            //         as: "shopping_cart_detail",
-            //         foreignKey: "product_id"
-            //     })
-            // }
+              Product.hasMany(models.ShoppingDetail, {
+                    as: "shopping_cart_detail",
+                    foreignKey: "product_id"
+                 })
+             
     };
 
 
