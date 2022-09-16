@@ -48,24 +48,24 @@ module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function (models) {
-        Product.belongsTo(models.Product_Category, {
+        Product.belongsTo(models.Product_Categories, {
             as: "product_categories",
             foreignKey: "category_id"
         }),
 
-            Product.belongsToMany(models.Color, {
-                as: "colors",
-                through: 'product_colors',
-                foreignKey: 'product_id',
-                otherKey: 'color_id',
-                timestamps: false
-            })
+        Product.belongsToMany(models.Colors, {
+            as: "colors",
+            through: 'product_colors',
+            foreignKey: 'product_id',
+            otherKey: 'color_id',
+            timestamps: false
+        })
 
-              Product.hasMany(models.ShoppingDetail, {
-                    as: "shopping_cart_detail",
-                    foreignKey: "product_id"
-                 })
-             
+        Product.hasMany(models.Shopping_Cart_Details, {
+            as: "shopping_cart_detail",
+            foreignKey: "product_id"
+            })
+        
     };
 
 

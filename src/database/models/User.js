@@ -53,11 +53,11 @@ module.exports = (sequelize, dataTypes) => {
         User.belongsTo (models.User_Categories, {
             as: 'category',
             foreignKey: 'category_id'
+        }),
+        User.hasMany (models.Shopping_Carts, {
+            as: 'shopping_carts',
+            foreignKey: 'user_id'
         })
-        // ,User.hasMany (models.Shopping_Cart, {
-        //     as: 'shopping_carts',
-        //     foreignKey: 'user_id'
-        // })
     }
 
     return User;

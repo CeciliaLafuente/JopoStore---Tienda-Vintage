@@ -1,12 +1,12 @@
 
 
 module.exports= (Sequelize, DataTypes)=>{
-    let alias='ShoppingDetail';
+    let alias='Shopping_Cart_Details';
 
     let cols={
         id:{
             type: DataTypes.INTEGER,
-            primarykey:true,
+            primaryKey:true,
             autoIncrement:true,
             allowNull: false
         },
@@ -34,23 +34,23 @@ module.exports= (Sequelize, DataTypes)=>{
 
     let config={
         tableName:'shopping_cart_detail',
-        timeStamps:false
+        timestamps:false
     }
 
-    const ShoppingDetail=Sequelize.define(alias,cols,config);
+    const Shopping_Cart_Detail=Sequelize.define(alias,cols,config);
 
-    ShoppingDetail.associate= function(models){
-        ShoppingDetail.belongsTo(models.Shopping,{
-            as:'shoppingDetail',
+    Shopping_Cart_Detail.associate= function(models){
+        Shopping_Cart_Detail.belongsTo(models.Shopping_Carts,{
+            as:'shopping_cart',
             foreignKey:'shopping_cart_id'
         })
 
 
-    ShoppingDetail.belongsTo(models.Products,{
-        as:'product_shoppingDetail',
-        foreignKey:'product_id'
+        Shopping_Cart_Detail.belongsTo(models.Products,{
+            as:'product_shopping_cart_details',
+            foreignKey:'product_id'
     })
 }
 
-    return ShoppingDetail;
+    return Shopping_Cart_Detail;
 }

@@ -1,11 +1,15 @@
 module.exports=(Sequelize, DataTypes)=>{
-    let alias='Shopping';
+    let alias='Shopping_Carts';
 
     let cols={
         id:{
             type: DataTypes.INTEGER,
-            primarykey:true,
+            primaryKey:true,
             autoIncrement:true,
+            allowNull: false
+        },
+        user_id : {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         address_line1:{
@@ -28,17 +32,17 @@ module.exports=(Sequelize, DataTypes)=>{
 
     let config={
         tableName:'shopping_cart',
-        timeStamps: false
+        timestamps: false
     }
 
-    const Shopping= Sequelize.define(alias,cols,config);
+    const Shopping_Cart = Sequelize.define(alias,cols,config);
 
-    Shopping.associate= function(models){
-        Shopping.hasMany(models.ShoppingDetail,{
-            as:'shoppingCart',
+    Shopping_Cart.associate= function(models){
+        Shopping_Cart.hasMany(models.Shopping_Cart_Details,{
+            as:'shopping_cart_details',
             foreignKey:'shopping_cart_id'
         })
     }
 
-    return Shopping;
+    return Shopping_Cart;
 }
