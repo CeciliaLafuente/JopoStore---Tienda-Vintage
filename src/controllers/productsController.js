@@ -93,7 +93,7 @@ const controller = {
         });
         
 
-        res.render('products/productsList', {products, categories, notFound, word:req.body.keyWords});
+        res.render('products/productsList', {toThousand, products, categories, notFound, word:req.body.keyWords});
     },
 
 
