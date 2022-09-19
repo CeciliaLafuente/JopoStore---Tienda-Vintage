@@ -1,4 +1,4 @@
-const User = require('../src/models/users')
+const User = require('../src/models/Users')
 
 function cookieMiddleware(req, res, next) {
     res.locals.isLogged = false;
