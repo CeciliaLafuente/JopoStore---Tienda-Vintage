@@ -45,15 +45,6 @@
   "dateBirth": "18/6/2022"
  },
  {
-  "first_name": "Leonel",
-  "last_name": "Mariani",
-  "email": "leomariani_1@hotmail.com",
-  "phone": "11-5133-5555",
-  "password": "$2a$10$mvhST3YixZUSOYSqGU7GK.DtPer8Ig8tyhrwQzSu5I5GOJNWEDET.",
-  "image": "1660694116691.png",
-  "id": 9
- },
- {
   "first_name": "Marcela",
   "last_name": "Bustamante",
   "email": "marcela@gmail.com",
@@ -79,5 +70,14 @@
   "password": "$2a$10$zJSTNbPxnNuatPPRLWKMw.htj9rTV20c6e0/cZugf2Qvw1c5NYP/2",
   "image": "1661884973144.jpg",
   "id": 12
+ },
+ {
+  "first_name": "Leonel ",
+  "last_name": "Mariani",
+  "email": "leomariani_1@hotmail.com",
+  "phone": "1151505487",
+  "password": "$2a$10$kWv5eAamYti9tLDwMKI0R.3vLNBEN1EiNQ7ML3kJxO9fJRWlHEiTi",
+  "image": "1663297124270.jpg",
+  "id": 13
  }
 ]

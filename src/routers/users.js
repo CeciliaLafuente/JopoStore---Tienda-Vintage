@@ -23,5 +23,10 @@ router.get('/profile/:id', userLoggedMiddleware,usersController.profile);
 
 router.get('/logout/',usersController.logout)
 
+router.post('/editProfile/:id', usersController.editProfile)
+
+router.get('/update/profile/:id', usersController.updateProfile)
+
+
 
 module.exports=router;
