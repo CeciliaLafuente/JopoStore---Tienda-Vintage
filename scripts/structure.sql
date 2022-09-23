@@ -1,7 +1,7 @@
-drop database if exists jopo_store_db;
-create database jopo_store_db;
+-- drop database if exists jopo_store_db;
+-- create database jopo_store_db;
 
-use jopo_store_db;
+-- use jopo_store_db;
 
 /*
 drop table if exists shopping_cart;
