@@ -28,22 +28,21 @@
                 
                 <div class="div-datos-producto">
                     <label for="category">Categoría:</label>
-                    <select name="category" id="category" required>
+                    <select name="category_id" id="category_id" required>
                         <option value="">Elija una categoría</option>
                         <% categories.forEach (category => { %> 
-                            <option value="<%= category.id %>"><%= category.label %></option>
+                            <option value="<%= category.id %>"><%= category.name.toUpperCase() %></option>
                         <% }) %>
                     </select>
                 </div>
                 
                 <div class="div-datos-producto">
-                    <% const colors = ['blanco', 'negro', 'rojo', 'verde', 'metal', 'madera', 'n/a'] %>
                     <label for="color">Color:</label>
-                    <select name="color" id="color">
+                    <select name="color_id" id="color_id">
                         <option value "">Elija un color</option>>
                         <% colors.forEach (color => { %> 
-                        <option value="<%= color %>" 
-                            ><%= color.toUpperCase() %>
+                        <option value="<%= color.id %>" 
+                            ><%= color.name.toUpperCase() %>
                         </option>
                         <% }) %>
                     </select>
@@ -60,8 +59,8 @@
                 </div>
                 
                 <div class="div-datos-producto">
-                    <label for="image">Imagen:</label>
-                    <input type="file" name="image" id="image" accept=".jpg, .png" class="input-archivo" required>
+                    <label for="img">Imagen:</label>
+                    <input type="file" name="img" id="img" accept=".jpg, .png" class="input-archivo" required>
                 </div>  
                 
                 <div class="div-destacado">

@@ -21,16 +21,18 @@
                     <p><strong><%=user.first_name%> <%=user.last_name%></strong></p>
                     <p><%=user.email%></p>
                     <p><%=user.phone%></p>
-                    <p><%=user.dateBirth%></p>
+                   
                 </div>
 
             </div>
 
+            <form action="/users/editProfile/<%= user.id %>"  method="post">
             <div class="button">
-                <a href="#">
-                    <button>Modificar datos</button>
-                </a>
+               
+                    <button type="submit">Modificar datos</button>
+            
             </div>
+        </form>
 
 
             

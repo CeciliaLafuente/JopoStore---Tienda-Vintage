@@ -29,8 +29,12 @@ main form{
 }
 
 .form-registro p{
-    color: tomato;
+    color: red;
+    font-weight: bold;
     font-size: 14px;
+    border: none;
+    width: 100%;
+    margin: 0 0 5px;
 }
 
 .form-control-registro input{

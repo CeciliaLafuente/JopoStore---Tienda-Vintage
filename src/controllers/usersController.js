@@ -90,6 +90,41 @@ const usersController = {
         }
     },
 
+    editProfile: function(req,res){
+        let user = Users.findByPk(req.params.id);
+
+        res.render('./users/editProfile', {user, categories})
+    },
+
+    updateProfile: function(req,res){
+      users.forEach(valor => {
+                if(valor.id== req.params.id){
+
+                    valor.first_name= req.query.first_name;
+                    valor.last_name= req.query.last_name;
+                    valor.email= req.query.email;
+                    valor.phone= req.query.phone;
+
+                    if(req.query.password){
+                        valor.password= req.query.password
+                    } else{
+                        valor.password= valor.password
+                    }
+                    
+                    if(req.query.image){
+                        valor.image= req.query.image
+                    } else{
+                        valor.image= valor.image
+                    }
+                }
+                });
+
+                    Users.writeFile(users);
+
+
+        res.redirect('/')
+    },
+
     loginProcess: (req, res)=> {
         console.log(req.session.userLogged)
         let error = validationResult(req);

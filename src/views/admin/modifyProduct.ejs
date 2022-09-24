@@ -28,25 +28,24 @@
                 
                 <div class="div-datos-producto">
                     <label for="category">Categoría:</label>
-                    <select name="category" id="category" required>
+                    <select name="category_id" id="category_id" required>
 
                         <% categories.forEach (category => { %> 
                             <option value="<%= category.id %>" 
-                                <%= productFind.category == category.id ? 'selected':null %>
-                                ><%= category.label %></option>
+                                <%= productFind.category_id == category.id ? 'selected':null %>
+                                ><%= category.name.toUpperCase() %></option>
                         <% }) %>
 
                     </select>
                 </div>
                 
                 <div class="div-datos-producto">
-                    <% const colors = ['blanco', 'negro', 'rojo', 'verde', 'metal', 'madera', 'n/a'] %>
                     <label for="color">Color:</label>
-                    <select name="color" id="color">
+                    <select name="color_id" id="color_id">
                         <% colors.forEach (color => { %> 
-                        <option value="<%= color %>" 
-                            <%= productFind.color == color? 'selected':null %> 
-                            ><%= color.toUpperCase() %>
+                        <option value="<%= color.id %>" 
+                            <%= productFind.color_id == color.id? 'selected':null %> 
+                            ><%= color.name.toUpperCase() %>
                         </option>
                         <% }) %>
                     </select>
@@ -56,10 +55,15 @@
                     <label>Precio:</label>
                     <input type="number" name="price" id="price"  value="<%= productFind.price %>">
                 </div>
-                
+
                 <div class="div-datos-producto">
-                    <label>Imagen:</label><span class="nombre-imagen"><%= productFind.image %></span>
-                    <input type="file" name="image" id="image" accept=".jpg, .png" class="input-archivo" >
+                    <label>Descuento:</label>
+                    <input type="number" name="discount" id="discount"  value="<%= productFind.discount %>">
+                </div>
+
+                <div class="div-datos-producto">
+                    <label>Imagen:</label><span class="nombre-imagen"><%= productFind.img %></span>
+                    <input type="file" name="img" id="img" accept=".jpg, .png" class="input-archivo" >
                 </div>
                 
                 <div class="div-destacado">

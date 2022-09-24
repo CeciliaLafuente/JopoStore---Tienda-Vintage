@@ -1,4 +1,5 @@
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db= require('../database/models')
 
 const Product = require ('../models/Product');
 const Category = require ('../models/Category');
@@ -7,6 +8,7 @@ const Category = require ('../models/Category');
 const categories = Category.findAll();
 
 const controller = {
+
 
     deleteFromShoppingCart: (req, res) => {
         let shoppingCart = req.session.shoppingCart.filter (product => {

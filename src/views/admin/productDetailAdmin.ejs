@@ -20,14 +20,14 @@
             <div class="div-producto">
 
                 <div class="div-img-producto">
-                    <img src="<%= product.image %>" alt="telefono-8">
+                    <img src="<%= product.img %>" alt="telefono-8">
                 </div>
 
                 <div class="div-datos-producto">
 
                     <h4 class="h4-nombre-producto"><%= product.name %></h4>
 
-                    <% if (product.discount != 0) { %>
+                    <% if (product.discount != 0 && product.discount != null) { %>
 
                         <div class="div-precio-con-descuento">
 

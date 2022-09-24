@@ -5,9 +5,31 @@
             <a href="/"><img src="/images/logo/isologo-negro.png" alt="Logo"></a>
         </div>
 
-        <div class="div-bars-menu">           
-            <button><a href="#"><i class="fas fa-bars i-bars-menu"></i></a></button>
+        <div class="nav-profile">
+            <div class="user-img">
+                <img src="/images/users/<%= locals.isLogged.image %>" width="40">
+            </div>
+
+            <nav class="nav-user">
+                <ul class="user-name">
+                    <li class="name"><a>
+                            ¡Hola <%= locals.isLogged.first_name %>!<i class="fa-solid fa-caret-down"></i>
+                        </a> </li>
+                    <ul class="nav-options-user">
+                        <li><a href="/admin/createProduct">Agregar un producto</a> </li>
+                        <li><a href="/admin/productsList">Listado de productos</a> </li>
+                        <li><a href="/">Tienda</a> </li>
+                        <li><a href="/users/profile/<%= locals.isLogged.id %>">Mi perfil</a> </li>
+                        <li><a href="/users/logout/">Salir</a> </li>
+                    </ul>
+                </ul>
+            </nav>
+
         </div>
+
+        <!-- <div class="div-bars-menu">           
+            <button><a href="#"><i class="fas fa-bars i-bars-menu"></i></a></button>
+        </div> -->
         
     </div> 
 

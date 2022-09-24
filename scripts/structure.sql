@@ -1,18 +1,18 @@
 -- drop database if exists jopo_store_db;
 -- create database jopo_store_db;
 
--- use jopo_store_db;
+use jopo_store_db;
 
-/*
-drop table if exists shopping_cart;
 drop table if exists shopping_cart_detail;
+drop table if exists shopping_cart;
+drop table if exists users;
+drop table if exists user_categories;
 drop table if exists product_colors;
 drop table if exists colors;
 drop table if exists products;
 drop table if exists product_categories;
-drop table if exists users;
-drop table if exists user_categories;
-*/
+
+
 
 create table user_categories (
 	id int primary key not null auto_increment,

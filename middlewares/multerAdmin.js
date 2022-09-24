@@ -1,19 +1,42 @@
 const path = require ('path');
 const multer= require ('multer');
-const Category = require ('../src/models/Category');
+// const Category = require ('../src/models/Category');
+const db = require ('../src/database/models');
 
-const storage = multer.diskStorage ( {
+// ***** versión sin BD ********************
+// const storage = multer.diskStorage ( {
+//     destination: (req, file, cb) => {
+//         let categoryName = Category.findById(req.body.category).name;
+//         let folder = 'public/images/products/' + categoryName;
+//         cb (null, folder);
+//     },
+//     filename: (req, file, cb) => {
+//         let categoryName = Category.findById(req.body.category).name;
+//         let fileName =  categoryName + '-' + Date.now() + path.extname(file.originalname);
+//         cb (null, fileName);
+//     }
+// } );
+// ***********************************
+let categoryName;
+
+const storage = multer.diskStorage ({
     destination: (req, file, cb) => {
-        let categoryName = Category.findById(req.body.category).name;
-        let folder = 'public/images/products/' + categoryName;
-        cb (null, folder);
-    },
+        db.Product_Categories.findByPk (req.body.category_id)
+            .then (category => {
+                // remove accents and convert to lowercase
+                categoryName = (category.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")).toLowerCase();
+                let folder = 'public/images/products/' + categoryName;
+                cb (null, folder);
+            })
+            .catch ( (error) => {
+                console.log ( error )
+            })
+        },
     filename: (req, file, cb) => {
-        let categoryName = Category.findById(req.body.category).name;
         let fileName =  categoryName + '-' + Date.now() + path.extname(file.originalname);
         cb (null, fileName);
-    }
-} );
+        }
+});
 
 let upload = multer ({storage});
 

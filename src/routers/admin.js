@@ -13,12 +13,12 @@ const router = express.Router();
 router.get ('/', adminController.productsList);
 
 router.get ('/createProduct', adminController.createProduct);
-router.post ('/createProduct', upload.single('image'), adminController.storeProduct);
+router.post ('/createProduct', upload.single('img'), adminController.storeProduct);
 
 router.get ('/productDetail/:id', adminController.productDetail);
 
 router.get('/edit/:id', adminController.edit);
-router.put('/:id', upload.single('image'), adminController.update);
+router.put('/:id', upload.single('img'), adminController.update);
 
 router.delete('/delete/:id', adminController.destroy);
 
