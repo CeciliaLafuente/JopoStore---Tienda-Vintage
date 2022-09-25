@@ -14,17 +14,31 @@
             
             <div class="user">
                 <div class="userImg">
-                    <img src="<%=user.image%>">
+                    <img src="<%=user.img%>">
                 </div>
-                
+               
                 <div class="userData">
                     <p><strong><%=user.first_name%> <%=user.last_name%></strong></p>
                     <p><%=user.email%></p>
                     <p><%=user.phone%></p>
                    
                 </div>
+              
+                    <form action="/users/update/profile/img/<%= user.id %>?_method=PUT"  method="post" enctype="multipart/form-data" class="change-image">
+                    <label for="image" class="modify-img">Modificar imágen</label>
+                        <input type="file" name="image" class="input-img">
+                    
+                    <button type="submit" class="button-img">Guardar Imágen</button>
+                    </form>
+                     
 
             </div>
+
+            <form action="/users/update/profile/password/<%= user.id %>"  method="get">
+                <div class="button">
+                        <button type="submit">Modificar contraseña</button>    
+                </div>
+            </form>
 
             <form action="/users/editProfile/<%= user.id %>"  method="post">
             <div class="button">
@@ -32,7 +46,7 @@
                     <button type="submit">Modificar datos</button>
             
             </div>
-        </form>
+            </form>
 
 
             
@@ -40,5 +54,6 @@
 
         </main>
         <%- include('../partials/footer.ejs') %>
+        <script src="../../../js/profile.js" ></script>
     </body>
 </html>

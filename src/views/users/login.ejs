@@ -17,12 +17,12 @@
                         <label>Email </label>
 
                         <input type="email" name="email" class="input-login"
-                            value="<%= locals.old && old.email ? old.email : null%>">
+                            value="<%= locals.errors && errors.old ? errors.old.email : null%>">
                         <% if (locals.errors && errors.email) { %>
                             <div class="error">
                                 <%= errors.email.msg %>
                             </div>
-                            <% } %>
+                            <% } %> 
                     </div>
                     <div class="form-control">
                         <label>Contraseña </label>
@@ -34,8 +34,9 @@
                             <% } %>
 
                                 <div class="small-letter">
-                                    <label class="remember-me"><input type="checkbox"
-                                            name="remember_user">Recordarme</label>
+                                    <label for="remember_user" class="remember-me">
+                                        <input type="checkbox" name="remember_user">Recordarme
+                                    </label>
                                 </div>
 
                                 <a href="#" class="a-password">¿Olvidaste tu contraseña?</a>

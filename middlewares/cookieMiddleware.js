@@ -5,15 +5,11 @@ function cookieMiddleware(req, res, next) {
 
     let emailInCookie=[];
 
-console.log (req.cookies.remember_user);
-
        if(req.cookies.remember_user!=undefined){
             emailInCookie = req.cookies.remember_user;
        }else{
             emailInCookie= 'default@hotmail.com'
        }
-
-console.log('emailInCookie', emailInCookie) ;
 
         db.Users.findOne({
             where:{
@@ -22,19 +18,16 @@ console.log('emailInCookie', emailInCookie) ;
         })
         .then(function(userFromCookie){
 
-console.log ('userFromCookie: ', userFromCookie);
 
             if (userFromCookie!=null) {
                 req.session.userLogged = userFromCookie;
             }
 
-console.log ('req.session.userLogged: ', req.session.userLogged);   
 
             if (req.session && req.session.userLogged) {
                 res.locals.isLogged = req.session.userLogged;
                 // locals = req.session.userLogged;
             } 
-console.log ('res.locals.userLogged: ', res.locals.userLogged);             
         })
 
         if (req.session && req.session.userLogged) {

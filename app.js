@@ -25,6 +25,7 @@ app.use(productCountMiddleware);
 app.use(cookieMiddleware);
 
 
+
 const indexRouter = require('./src/routers/index.js');
 const productsRouter = require('./src/routers/products.js');
 const usersRouter = require('./src/routers/users.js');
