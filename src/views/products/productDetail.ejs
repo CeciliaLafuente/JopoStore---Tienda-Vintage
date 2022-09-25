@@ -31,7 +31,7 @@
 
                     <div class="div-precio-con-descuento">
 
-                        <p class="p-precio"><small>ANTES </small>$<%= toThousand (product.price) %></p>
+                        <p class="p-precio"><small>ANTES </small><span>$<%= toThousand (product.price) %></span></p>
                         <p class="p-descuento"><%= product.discount %>% <small>de </small>DESCUENTO</p>
                         <h5 class="p-precio-final">$<%= toThousand(product.price * (1 - product.discount / 100)) %></h5>
 

@@ -9,7 +9,7 @@
     <body>
         <%- include('../partials/header.ejs') %>
         <main>
-            <form action="/users/update/profile/<%= user.id %>" method="get" class="form-registro" enctype="multipart/form-data">
+            <form action="/users/update/profile/<%= user.id %>?_method=PUT" method="post" class="form-registro" >
                 
                 <div class="form-control-registro">
                     <label for="first_name">Nombre:</label>
@@ -34,22 +34,11 @@
                     <input type="tel"  name="phone" id="phone"  value="<%= locals.user && user.phone? user.phone : '' %>">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
-                
-                <div class="form-control-registro">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" name="password" id="password">
-                    <i class="fa-solid fa-circle-check"></i>
-                </div> 
-                
-                <div class="form-control-registro">
-                    <label>Subir foto:</label>
-                    <input type="file" name="image">
-                </div>
     
                 <button type="reset" class="delete-button">BORRAR</button>
                
                 <div class="form-final-registro">
-                <button type="submit" class="create-account">MODIFICAR CUENTA</button>
+                <button type="submit" class="create-account">MODIFICAR DATOS</button>
                 
                 </div>
             </form>

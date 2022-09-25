@@ -4,8 +4,42 @@ main {
 
 .user {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     padding: 0;
+}
+
+.change-image{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.change-image label{
+    color:black;
+    background-color: rgb(85, 85, 3);
+    width: 20vw;
+    font-size: 12px;
+}
+
+.input-img-block{
+    display: block;
+    width: 20vw;
+    font-size: 10px;
+}
+
+.input-img{
+    display: none;
+}
+
+.button-img-block{
+    display: block;
+    width: 20vw;
+    font-size: 14px;
+}
+
+.button-img{
+    display: none;
 }
 
 .userImg {

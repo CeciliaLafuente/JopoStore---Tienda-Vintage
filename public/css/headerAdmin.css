@@ -65,6 +65,99 @@ header{
     font-size: 40px;
 }
 
+/* Desplegable Usuario Web */
+
+.nav-profile {
+    display: none;
+    align-items: center;
+}
+
+.user-img {
+    padding-right: 10px;
+}
+
+.user-img img {
+    border-radius: 100%;
+    border: 1px var(--gris-medio2) solid;
+    width: 40px;
+    height: 40px;
+
+}
+
+.nav-user {
+    width: 100%;
+}
+
+.nav-user ul li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.user-name {
+    justify-items: center;
+}
+.user-name .name {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 550;
+}
+
+.nav-user ul li a {
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    padding-right: 20px;
+    text-transform: uppercase;
+}
+
+.user-name i {
+    margin-left: 10px;
+    color: rgb(141, 102, 72);
+}
+
+.user-name ul {
+    align-items: center;
+}
+
+.nav-options-user {
+    display: none;
+    position: absolute;
+    background-color: var(--gris-muy-claro);
+    padding: 10px;
+    text-align: left;
+    margin-top: 0;
+    z-index: 1;
+}
+
+.nav-options-user li {
+    margin-bottom: 10px;
+}
+.adminAccess {
+    font-weight: bold;
+    
+}
+.nav-options-user a {
+    padding: 5px 0px;
+}
+
+.nav-options-user a:hover {
+    background-color: rgb(237, 234, 234);
+}
+
+.user-name {
+    padding: 0px;
+}
+
+.user-name:hover .nav-options-user {
+    display: block;
+}
+
+.nav-options-user a {
+    color: var(--gris-medio2);
+    width: 100%;
+}
+
+
 
 @media (min-width:480px) {
     .logo a {
@@ -87,6 +180,12 @@ header{
         padding: 0;
     } 
     
+    .nav-profile {
+        display: flex;
+        align-content: center;
+        width: 20%;
+    }
+
        
 }
     

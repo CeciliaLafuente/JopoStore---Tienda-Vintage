@@ -127,7 +127,7 @@ main .text {
 } 
 
 .destacados .product-name {
-   min-height: 20px;
+   min-height: 45px;
    font-size: 18px;
 }
 

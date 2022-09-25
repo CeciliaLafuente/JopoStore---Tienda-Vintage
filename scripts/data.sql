@@ -1,23 +1,23 @@
-/*use jopo_store_db;
+use jopo_store_db;
 
 /* PRODUCT_CATEGORIES */
 insert product_categories (name, img) values (
-     'Cámaras', 'images/products/camaras/camara-0.jpg'
+     'Cámaras', '/images/products/camaras/camara-0.jpg'
 	);
 insert product_categories (name, img) values (
-    'Televisores','images/products/televisores/tv-0.jpg'
+    'Televisores','/images/products/televisores/tv-0.jpg'
     );
 insert product_categories (name, img) values (
-    'Vinilos', 'images/products/vinilos/vinilo-0.jpg'
+    'Vinilos', '/images/products/vinilos/vinilo-0.jpg'
     );
 insert product_categories (name, img) values (
-    'Tocadiscos', 'images/products/tocadiscos/tocadiscos-00.jpg'
+    'Tocadiscos', '/images/products/tocadiscos/tocadiscos-00.jpg'
     );
 insert product_categories (name, img) values (
-    'Radios', 'images/products/radios/radio-0.jpg'
+    'Radios', '/images/products/radios/radio-0.jpg'
     );
 insert product_categories (name, img) values (
-    'Teléfonos', 'images/products/telefonos/telefono-0.jpg'
+    'Teléfonos', '/images/products/telefonos/telefono-0.jpg'
 	);
 
 /* COLORS */

@@ -23,7 +23,7 @@
                             <option selected value="">Todas</option>
                             <% categories.forEach (category=> { %>
                                 <option value="<%= category.id %>">
-                                    <%= category.label %>
+                                    <%= category.name %>
                                 </option>
                                 <% }) %>
                         </select>
@@ -37,7 +37,7 @@
                 <section class="productsList">
                     <% products.forEach((product, id)=> { %>
                         <article class="article">
-                            <a href="/admin/productDetail/<%= product.id %>"><img src="<%= product.image%>"
+                            <a href="/admin/productDetail/<%= product.id %>"><img src="<%= product.img%>"
                                     alt="<%= product.name%>"></a>
                             <div class="product-description">
                                 <p class="product-name"><a href="/admin/productDetail/<%= product.id %>">

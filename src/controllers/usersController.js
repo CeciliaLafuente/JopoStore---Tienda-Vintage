@@ -146,6 +146,7 @@ const usersController = {
             if (passwordOk) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+console.log (req.sessionUserLogged);
                 res.redirect("/")
             } else {
                 res.render("./users/login", {

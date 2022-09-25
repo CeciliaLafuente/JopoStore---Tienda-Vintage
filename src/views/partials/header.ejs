@@ -39,11 +39,13 @@
                         </a>
                         <% } %>
                             <% if(locals.isLogged) { %>
+                                <% if (isLogged.category_id == 1) { %>
+                                    <a class="adminAccess" href="/admin/">
+                                        <p>Acceso Administrador</p>
+                                    </a> 
+                                <% } %>
                                 <a href="/users/profile/<%= locals.isLogged.id %>">
-                                    <p>
-                                        <%= locals.isLogged.first_name %>
-                                            <%= locals.isLogged.last_name %>
-                                    </p>
+                                    <p><%= locals.isLogged.first_name %></p>
                                 </a>
                                 <a href="/users/logout/">
                                     <p>Salir</p>
@@ -81,17 +83,20 @@
             <% if(locals.isLogged) { %>
                 <div class="nav-profile">
                     <div class="user-img">
-                        <img src="/images/users/<%= locals.isLogged.image %>" width="40">
+                        <img src="/images/users/<%= locals.isLogged.img %>" width="40">
                     </div>
                     <nav class="nav-user">
                         <ul class="user-name">
-                            <li><a>
-                                    <%= locals.isLogged.first_name %>
-                                        <%= locals.isLogged.last_name %><i class="fa-solid fa-caret-down"></i>
+                            <li class="name"><a>
+                                    <%= locals.isLogged.first_name %><i class="fa-solid fa-caret-down"></i>
                                 </a> </li>
                             <ul class="nav-options-user">
-                                <li><a href="/users/profile/<%= locals.isLogged.id %>">Profile</a> </li>
-                                <li><a href="/users/logout/">Logout</a> </li>
+                                <!-- Acceso Administrador is only available for category_id = 1 -->
+                                <% if (locals && locals.isLogged && isLogged.category_id == 1) { %>
+                                    <li class="adminAccess"><a href="/admin/">Acceso Administrador</a> </li>
+                                <% } %>
+                                <li><a href="/users/profile/<%= locals.isLogged.id %>">Mi perfil</a> </li>
+                                <li><a href="/users/logout/">Salir</a> </li>
                             </ul>
                         </ul>
                     </nav>
@@ -142,4 +147,5 @@
 
     </nav>
 
+    
 </header>
