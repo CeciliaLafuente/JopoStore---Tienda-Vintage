@@ -34,7 +34,7 @@
                     <article>
                         <div class="product">
                             <a href="/products/productDetail/<%= product.id %>" class="ir-a-detail">
-                                <img src="<%= product.image %>" alt="Product Image">
+                                <img src="<%= product.img %>" alt="Product Image">
                             </a>
                             <p><%= product.name %></p>
                             <form action="/products/shoppingCart/delete/<%= product.id %>?_method=DELETE" method="POST">

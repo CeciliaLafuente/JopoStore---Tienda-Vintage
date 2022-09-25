@@ -24,11 +24,11 @@ app.use(cookieParser());
 app.use(productCountMiddleware);
 app.use(cookieMiddleware);
 
-
 const indexRouter = require('./src/routers/index.js');
 const productsRouter = require('./src/routers/products.js');
 const usersRouter = require('./src/routers/users.js');
 const adminRouter = require('./src/routers/admin.js');
+const res = require("express/lib/response");
 
 
 app.use('/', indexRouter);
@@ -39,6 +39,9 @@ app.use('/admin', adminRouter);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, './src/views'));
 
+app.use((req, res, next) =>{
+    res.status(404).render("notFound")
+})
 
 app.listen(process.env.PORT || 3040, () => {
     console.log("Servidor corriendo en el puerto 3040");

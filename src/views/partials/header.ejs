@@ -21,7 +21,7 @@
                         <ul>
                             <% categories.forEach (category=> { %>
                                 <li><a href="/products/productsList/?category=<%= category.id %>">
-                                        <%= (category.label).toUpperCase() %>
+                                        <%= (category.name).toUpperCase() %>
                                     </a></li>
                                 <% }) %>
                         </ul>
@@ -135,7 +135,7 @@
         <ul>
             <% categories.forEach (category=> { %>
                 <li><a href="/products/productsList/?category=<%= category.id %>">
-                        <%= (category.label).toUpperCase() %>
+                        <%= (category.name).toUpperCase() %>
                     </a></li>
                 <% }) %>
         </ul>
