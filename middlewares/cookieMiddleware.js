@@ -26,7 +26,7 @@ module.exports = cookieMiddleware;*/
 
 
 const db= require('../src/database/models')
-let locals;
+
 
 function cookieMiddleware(req, res, next) {
     res.locals.isLogged=false;
@@ -51,12 +51,13 @@ function cookieMiddleware(req, res, next) {
         
             if (req.session && req.session.userLogged) {
                 res.locals.isLogged = true;
-                locals = req.session.userLogged;
+                res.locals.isLogged = req.session.userLogged;
+                
             } 
-        })
+        });
 
-        console.log(locals)
-        res.locals.isLogged= locals;
+        console.log( res.locals.isLogged)
+
 
         if (req.session && req.session.userLogged) {
             res.locals.isLogged = true;
