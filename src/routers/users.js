@@ -25,13 +25,13 @@ router.get('/logout/',usersController.logout);
 
 router.post('/editProfile/:id', usersController.editProfile);
 
-router.put('/update/profile/:id', usersController.updateProfile);
+ router.put('/update/profile/:id', usersController.updateProfile);
 
 router.put('/update/profile/img/:id', validationImage.single('image'), usersController.updateProfileImg);
 
-router.put('/update/profile/password/:id', usersController.updateProfilePasswordProcess);
+ router.put('/update/profile/password/:id',validationRegister, usersController.updateProfilePasswordProcess);
 
-router.get('/update/profile/password/:id', usersController.updateProfilePassword);
+ router.get('/update/profile/password/:id', usersController.updateProfilePassword);
 
 
 

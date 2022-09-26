@@ -17,23 +17,25 @@ function cookieMiddleware(req, res, next) {
             }
         })
         .then(function(userFromCookie){
-              if (userFromCookie!=null) {
+            
+              if (userFromCookie!=null ) {
+             
                 req.session.userLogged = userFromCookie;
-            }
+              }
 
             if (req.session && req.session.userLogged) {
                 res.locals.isLogged = true;
                 res.locals.isLogged = req.session.userLogged;
             } 
-            
+
         });
 
-        console.log( res.locals.isLogged)
+      
 
-        if (req.session && req.session.userLogged) {
+       /* if (req.session && req.session.userLogged) {
             res.locals.isLogged = true;
             res.locals.isLogged = req.session.userLogged;
-        } 
+        } */
                     
     next();
 }

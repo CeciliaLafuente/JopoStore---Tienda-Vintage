@@ -48,7 +48,7 @@ main form{
     position: relative;
 }
 
-.form-control-registro i{
+.form-control-registro .fa-circle-check{
     position: absolute;
     color: green;
     top:33px;
@@ -109,6 +109,19 @@ label{
 
 p{
     font-size: 12px;
+}
+
+.fa-circle-xmark{
+    position: absolute;
+    top:33px;
+    right: 5px;
+    color: red;
+    display: none;
+}
+
+.invalid-password-msg{
+
+    color:red;
 }
 
 @media (min-width:700px){
