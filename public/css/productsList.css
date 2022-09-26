@@ -37,8 +37,9 @@
   }
   
   .products .product-name {
-    min-height: 20px;
-    font-size: 18px;
+    height: 45px;
+    font-size: 16px;
+    margin: 0 0 10px;
   }
   
   .products button a {
@@ -90,13 +91,14 @@
     color: var(--gris-medio2);
     height: 28px;
     font-size: 18px;
-    background-color: var(--gris-muy-claro);
+    background-color: var(--gris-claro);
     border: 1px var(--gris-medio) solid;
     margin: 5px;
+    border-radius: 3px;
   }
   
   .product-not-found p {
-    color: tomato;
+    color: red;
   }
   
   .product-not-found a {
@@ -108,6 +110,9 @@
     color: var(--gris-medio2);
     height: 28px;
     margin: 5px;
+    background-color: var(--gris-muy-claro);
+    border: solid var(--gris-medio) 1px;
+    border-radius: 3px;
   }
 
   /*nuevo Marce*/
@@ -147,11 +152,11 @@
   
   /* -----------------------------  footer  -----------------------------------------------*/
   
-  @media (min-width: 361px) {
+  @media (min-width: 480px) {
     /* ------------------------------   main ----------------------------------------------*/
     .products .product-name {
-      min-height: 20px;
-      font-size: 20px;
+      height: 45px;
+      font-size: 18px;
     }
   }
   

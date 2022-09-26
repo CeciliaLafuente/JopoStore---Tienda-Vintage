@@ -1,7 +1,6 @@
 const bcryptjs = require("bcryptjs");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
-const db= require('../database/models')
 
 const Category = require("../models/Category");
 const Users = require("../models/Users");
@@ -24,63 +23,6 @@ const usersController = {
     },
 
     store: function (req, res) {
-        const error = "Tienes que subir una imagen";
-        const check = "check";
-        const errors = validationResult(req);
-        let file = req.file;
-
-         db.Users.findOne({
-            where:{
-                email: req.body.email
-            }
-        }).then(function(data){
-            if (data == null) {
-                if (errors.isEmpty()) {
-                    if (file != undefined){
-                        const passwordCrypt = bcrypt.hashSync(req.body.password, 10);
-                        db.Users.create({
-                            first_name: req.body.first_name,
-                            last_name: req.body.last_name,
-                            email: req.body.email,
-                            password: passwordCrypt,
-                            phone: req.body.phone,
-                            img: req.file.filename,
-                            category_id: 1
-                        }).then(function(){
-                            res.redirect("/users/login");
-                        })
-                    }else {
-                            res.render("./users/register", {
-                                categories,
-                                error,
-                                old: req.body,
-                                check,
-                            });
-                        }
-                    } else {
-                        res.render("./users/register", {
-                            categories,
-                            errors: errors.mapped(),
-                            error,
-                            old: req.body,
-                            check,
-                            file: req.file,
-                        });
-                    }
-                } else {
-                    const userExist = "Ya existe un usuario registrado con este email";
-                    res.render("./users/register", {
-                        categories,
-                        userExist,
-                        old: req.body,
-                        errors: errors.mapped(),
-                        check,
-                    });
-                }
-            })
-    },
-
-    /* store: function (req, res) {
         const error = "Tienes que subir una imagen";
         const check = "check";
         const errors = validationResult(req);
@@ -131,25 +73,8 @@ const usersController = {
                 check,
             });
         }
-    },*/
-    profile: (req, res) => {
-
-        db.Users.findByPk(req.params.id)
-        .then(function(user){
-            
-            delete user.password;
-
-        user.img = "/images/users/" + user.img;
-
-        if (req.query.msg) {
-            let msg = req.query.msg;
-            res.render('./users/profile', { user, categories, msg })
-        } else {
-            res.render('./users/profile', { user, categories })
-        }
-        })
     },
-    /*profile: (req, res) => {
+    profile: (req, res) => {
 
         let user = Users.findByPk(req.params.id);
 
@@ -163,41 +88,15 @@ const usersController = {
         } else {
             res.render('./users/profile', { user, categories })
         }
-    },*/
+    },
 
     editProfile: function(req,res){
-      db.Users.findByPk(req.params.id)
-      .then(function(user){
-        res.render('./users/editProfile', {user, categories})
-      })
-    },
-    /*editProfile: function(req,res){
         let user = Users.findByPk(req.params.id);
 
         res.render('./users/editProfile', {user, categories})
-    },*/
-    updateProfile: function(req,res){
-
-        db.Users.update({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            phone: req.body.phone
-        },{
-            where:{
-                id:req.params.id
-            }
-        })
-        .then(function(){
-            db.Users.findByPk(req.params.id)
-            .then(function(data){
-                req.session.userLogged = data;
-                res.redirect('/')
-            })
-        })
     },
-      
-    /*updateProfile: function(req,res){
+
+    updateProfile: function(req,res){
       users.forEach(valor => {
                 if(valor.id== req.params.id){
 
@@ -221,107 +120,13 @@ const usersController = {
                 });
 
                     Users.writeFile(users);
+
+
         res.redirect('/')
-    }, */
-
-    updateProfileImg: function(req,res){
-       
-        db.Users.update({
-            img: req.file.filename
-        },{
-            where:{
-                id:req.params.id
-            }
-        }).then(function(){
-            db.Users.findByPk(req.params.id)
-            .then(function(data){
-                req.session.userLogged = data;
-                res.redirect('/')
-            })
-        })
     },
-
 
     loginProcess: (req, res)=> {
-        
-        let error = validationResult(req);
-
-        if (!error.isEmpty()) {
-            return res.render("./users/login", {
-                userToLogin: {},
-                categories,
-                errors: error.mapped(),
-                old: req.body
-        
-            })
-        }
-
-        db.Users.findOne({
-            where:{
-                email: req.body.email
-            }
-        }).then(function(userToLogin){
-            
-        if (userToLogin!=null) {
-
-            let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password)
-            if (passwordOk) {
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-                if(req.body.remember_user!=undefined){
-                    res.cookie('remember_user', req.body.email, {maxAge: 60000});
-                  }
-                  
-                  
-                res.redirect("/")
-            } else {
-                res.render("./users/login", {
-                    userToLogin,
-                    categories,
-                    errors: {
-                        password: {
-                            msg: "La contraseña es incorrecta"
-                        },
-                        
-                        old: req.body
-                    }
-                })
-            }
-        } else {
-            res.render("./users/login", {
-                userToLogin,
-                categories,
-                errors: {
-                    email: {
-                        msg: "No se encuentra este email en nuestra base de datos"
-                    }
-                }
-            })
-        }
-    })
-    },
-
-    updateProfilePassword: function(req,res){
-        db.Users.findByPk(req.params.id)
-      .then(function(user){
-        res.render('./users/editPassword', {user, categories})
-      })
-    },
-
-    updateProfilePasswordProcess: function(req,res){
-        db.Users.update({
-            img: req.body.password
-        },{
-            where:{
-                id:req.params.id
-            }
-        }).then(function(){
-                res.redirect('/')
-            })
-    },
-
-    /*loginProcess: (req, res)=> {
-        
+        console.log(req.session.userLogged)
         let error = validationResult(req);
 
         if (!error.isEmpty()) {
@@ -341,6 +146,7 @@ const usersController = {
             if (passwordOk) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+console.log (req.sessionUserLogged);
                 res.redirect("/")
             } else {
                 res.render("./users/login", {
@@ -365,12 +171,11 @@ const usersController = {
                 }
             })
         }
-    },*/
+    },
 
     logout:(req, res)=>{
-        res.clearCookie('remember_user');
         req.session.destroy();
-        return res.redirect('/');
+return res.redirect('/');
     }
 };
 

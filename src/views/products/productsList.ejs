@@ -21,7 +21,7 @@
                     <option selected value="">Todas</option>
 
                     <% categories.forEach (category => { %> 
-                        <option value="<%= category.id %>"><%= category.label %></option>
+                        <option value="<%= category.id %>"><%= category.name %></option>
                     <% }) %>
                 </select>
 
@@ -34,7 +34,7 @@
             <article>
                 
                 <a href="/products/productDetail/<%= product.id %>">
-                    <img src= "<%= product.image%>" alt="<%= product.name%>">
+                    <img src= "<%= product.img%>" alt="<%= product.name%>">
                 </a>
 
                 <p class="product-name"><%= product.name%></p>

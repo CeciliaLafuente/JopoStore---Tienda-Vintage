@@ -5,7 +5,7 @@
     <nav>
       <ul>
           <% categories.forEach (category => { %> 
-              <li><a href="/products/productsList/?category=<%= category.id %>"><%= (category.label).toUpperCase() %></a></li>
+              <li><a href="/products/productsList/?category=<%= category.id %>"><%= (category.name).toUpperCase() %></a></li>
           <% }) %>        
       </ul>
     </nav>

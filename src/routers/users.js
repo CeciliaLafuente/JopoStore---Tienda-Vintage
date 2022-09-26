@@ -8,30 +8,30 @@ let validationRegister= require('../../middlewares/validationRegister');
 let validationLogin= require('../../middlewares/validationLogin.js');
 
 
-const userNotLoggedMiddleware = require ( '../../middlewares/userLoggedMiddleware' );
-const userLoggedMiddleware = require ( '../../middlewares/userNotLoggedMiddleware' );
+const userLoggedMiddleware = require ( '../../middlewares/userLoggedMiddleware' );
+const userNotLoggedMiddleware = require ( '../../middlewares/userNotLoggedMiddleware' );
 
-router.get('/login', userNotLoggedMiddleware, usersController.login);
+router.get('/login', userLoggedMiddleware, usersController.login);
 
 router.post('/login', validationLogin, usersController.loginProcess);
 
-router.get('/registro', userNotLoggedMiddleware, usersController.register);
+router.get('/registro', userLoggedMiddleware, usersController.register);
 
-router.post('/new/register',validationImage.single('image'),validationRegister,usersController.store);
+router.post('/new/register',validationImage.single('image'), validationRegister, usersController.store);
 
-router.get('/profile/:id', userLoggedMiddleware,usersController.profile);
+router.get('/profile/:id', userNotLoggedMiddleware, usersController.profile);
 
-router.get('/logout/',usersController.logout)
+router.get('/logout/',usersController.logout);
 
-router.post('/editProfile/:id', usersController.editProfile)
+router.post('/editProfile/:id', usersController.editProfile);
 
-router.put('/update/profile/:id', usersController.updateProfile)
+// router.put('/update/profile/:id', usersController.updateProfile);
 
-router.put('/update/profile/img/:id', validationImage.single('image'), usersController.updateProfileImg)
+// router.put('/update/profile/img/:id', validationImage.single('image'), usersController.updateProfileImg);
 
-router.put('/update/profile/password/:id', usersController.updateProfilePasswordProcess)
+// router.put('/update/profile/password/:id', usersController.updateProfilePasswordProcess);
 
-router.get('/update/profile/password/:id', usersController.updateProfilePassword)
+// router.get('/update/profile/password/:id', usersController.updateProfilePassword);
 
 
 

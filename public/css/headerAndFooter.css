@@ -122,6 +122,7 @@ input:checked~.menu-desplegable {
 
 .user-options p {
     padding: 0;
+    text-decoration: none;
 }
 
 /* .nav-options{
@@ -246,6 +247,8 @@ button {
 
 .user-img img {
     border-radius: 100%;
+    width: 40px;
+    height: 40px;
 }
 
 .nav-user {
@@ -260,12 +263,17 @@ button {
 .user-name {
     justify-items: center;
 }
+.user-name .name {
+    font-size: 14px;
+    text-transform: uppercase;
+}
 
 .nav-user ul li a {
     text-decoration: none;
     display: flex;
     width: 100%;
     padding-right: 20px;
+    text-transform: uppercase;
 }
 
 .user-name i {
@@ -280,11 +288,20 @@ button {
 .nav-options-user {
     display: none;
     position: absolute;
-    background-color: white;
-    color: var(--gris-medio2);
-    padding: 5px 10px 0px 0px;
+    background-color: var(--gris-muy-claro);
+    padding: 10px;
+    text-align: left;
+    margin-top: 0;
+    z-index: 1;
 }
 
+.nav-options-user li {
+    margin-bottom: 10px;
+}
+.adminAccess {
+    font-weight: bold;
+    
+}
 .nav-options-user a {
     padding: 5px 0px;
 }
