@@ -140,6 +140,7 @@ const usersController = {
             delete user.password;
 
         user.img = "/images/users/" + user.img;
+        
 
         if (req.query.msg) {
             let msg = req.query.msg;
@@ -269,7 +270,7 @@ const usersController = {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
                 if(req.body.remember_user!=undefined){
-                    res.cookie('remember_user', req.body.email, {maxAge: 60000});
+                    res.cookie('remember_user', req.body.email, {maxAge: 600000});
                   }
                   
                   
@@ -309,15 +310,32 @@ const usersController = {
     },
 
     updateProfilePasswordProcess: function(req,res){
-        db.Users.update({
-            img: req.body.password
-        },{
-            where:{
-                id:req.params.id
-            }
-        }).then(function(){
-                res.redirect('/')
-            })
+       const passwordNew= req.body.password;
+        
+
+        if (passwordNew.length>=8) {
+            const passwordCrypt = bcrypt.hashSync(passwordNew, 10);
+             db.Users.update({
+                password: passwordCrypt
+            },{
+                where:{
+                    id:req.params.id
+                }
+            }).then(function(){
+                    res.redirect('/')
+                })
+        }else{
+            db.Users.findByPk(req.params.id)
+                .then(function(user){
+                    res.render('./users/editPassword', {user, categories, errors:{
+                        password:{
+                            msg: "La contraseña debe contener al menos 8 caracteres"
+                        }
+                    }})
+      })
+        }
+       
+        
     },
 
     /*loginProcess: (req, res)=> {
@@ -369,7 +387,7 @@ const usersController = {
 
     logout:(req, res)=>{
         res.clearCookie('remember_user');
-        req.session.destroy();
+        req.session.userLogged=false;
         return res.redirect('/');
     }
 };
