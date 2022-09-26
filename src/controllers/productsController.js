@@ -75,8 +75,8 @@ const controller = {
             db.Products.findAll(productsFilter)
         ])
             .then(function ([categorias, products]) {
-
-                return res.render('products/productsList', { products, categories: categorias, toThousand });
+                let selectedCategory = req.query.category;
+                return res.render('products/productsList', { products, categories: categorias, toThousand, selectedCategory });
             })
     },
 
@@ -96,8 +96,8 @@ const controller = {
             db.Products.findAll(productsFilter)
         ])
             .then(function ([categorias, products]) {
-
-                return res.render('products/productsList', { products, categories: categorias, toThousand });
+                let selectedCategory = req.body.category;
+                return res.render('products/productsList', { products, categories: categorias, toThousand, selectedCategory });
             })
     },
 

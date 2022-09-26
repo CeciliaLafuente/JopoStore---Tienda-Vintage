@@ -246,13 +246,13 @@ const controller = {
         } else {
             getProductCategories = db.Product_Categories.findAll();
             getProducts = db.Products.findAll({
-                where: { id: { [Öp.eq]: filteredCategory}}
+                where: { category_id: { [Op.eq]: filteredCategory}}
             });
         }
     
         Promise.all ([ getProductCategories, getProducts])
             .then ( ( [categories, products] ) => {
-                res.render('admin/productsListAdmin', {products, categories, toThousand });
+                res.render('admin/productsListAdmin', {products, categories, toThousand, filteredCategory });
             })
             .catch ( (error) => {
                 console.log ( error )

@@ -323,6 +323,11 @@ button {
     width: 100%;
 }
 
+.div-bars-nemu button:hover .nav-options-user {
+    display: block;
+}
+
+
 
 
 

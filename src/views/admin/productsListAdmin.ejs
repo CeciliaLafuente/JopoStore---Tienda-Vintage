@@ -22,9 +22,10 @@
                         <select name="category" class="select-categorias">
                             <option selected value="">Todas</option>
                             <% categories.forEach (category=> { %>
-                                <option value="<%= category.id %>">
-                                    <%= category.name %>
-                                </option>
+                                <option value="<%= category.id %>"
+                                    <%= locals.filteredCategory && locals.filteredCategory == category.id? 'selected':null %>        
+                                    
+                                    ><%= category.name %></option>
                                 <% }) %>
                         </select>
 

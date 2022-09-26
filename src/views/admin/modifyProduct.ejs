@@ -23,7 +23,8 @@
                 
                 <div class="div-datos-producto">
                     <label for="description">Descripción:</label>
-                    <input name="description" id="description" value="<%= productFind.description %>">
+                    <input name="description" id="description" maxlength="300" value="<%= productFind.description %>">
+                   
                 </div>
                 
                 <div class="div-datos-producto">
@@ -62,7 +63,8 @@
                 </div>
 
                 <div class="div-datos-producto">
-                    <label>Imagen:</label><span class="nombre-imagen"><%= productFind.img %></span>
+                    <label>Imagen:</label>
+                    <p class="nombre-imagen"><%= productFind.img %></p>
                     <input type="file" name="img" id="img" accept=".jpg, .png" class="input-archivo" >
                 </div>
                 

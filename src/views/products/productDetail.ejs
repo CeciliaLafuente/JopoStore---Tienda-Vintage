@@ -27,7 +27,7 @@
                 <h4 class="h4-nombre-producto"><%= product.name %></h4>
 
 
-                <% if (product.discount != 0) { %>
+                <% if (product.discount != 0 && product.discount != null) { %>
 
                     <div class="div-precio-con-descuento">
 

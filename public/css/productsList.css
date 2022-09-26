@@ -14,12 +14,12 @@
   
   .products {
     width: 100vw;
-    padding: 20px 10px;
+    padding: 0 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-bottom: 70px;
-    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-top: 0;
   }
   .products article {
     text-align: center;
@@ -80,22 +80,42 @@
     margin-bottom: 60px;
     text-align: center;
   }
+
+  .div-datos-producto p {
+    font-size: 20px;
+    margin: 0 0 5px;
+  }
   
   .div-datos-producto input {
     margin-top: 10px;
     text-align: center;
   }
   
-  .button-filter {
-    text-decoration: none;
-    color: var(--gris-medio2);
-    height: 28px;
-    font-size: 18px;
-    background-color: var(--gris-claro);
-    border: 1px var(--gris-medio) solid;
-    margin: 5px;
-    border-radius: 3px;
-  }
+  
+.select-categorias {
+  font-size: 18px;
+  color: var(--gris-medio2);
+  height: 28px;
+  margin: 5px;
+  background-color: var(--gris-muy-claro);
+  border: solid var(--gris-medio) 1px;
+  border-radius: 3px;
+}
+
+.button-filter {
+  text-decoration: none;
+  color: var(--gris-medio2);
+  height: 28px;
+  font-size: 18px;
+  background-color: var(--gris-claro);
+  border: 1px var(--gris-medio) solid;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+form {
+  margin-bottom: 0;
+}
   
   .product-not-found p {
     color: red;
@@ -105,15 +125,6 @@
     text-decoration: none;
   }
   
-  .select-categorias {
-    font-size: 18px;
-    color: var(--gris-medio2);
-    height: 28px;
-    margin: 5px;
-    background-color: var(--gris-muy-claro);
-    border: solid var(--gris-medio) 1px;
-    border-radius: 3px;
-  }
 
   /*nuevo Marce*/
 

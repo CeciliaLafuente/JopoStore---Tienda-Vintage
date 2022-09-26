@@ -164,10 +164,6 @@ header{
         width: 10%;
     }
     
-    .div-bars-menu {
-        width: 20%;
-        
-    } 
 }  
 
 @media (min-width:769px) {
@@ -176,8 +172,8 @@ header{
     }
 
     .div-bars-menu {
-        width: 20%;
         padding: 0;
+        display: none;
     } 
     
     .nav-profile {

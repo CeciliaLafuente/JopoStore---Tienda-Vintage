@@ -22,7 +22,7 @@
         <% categories.forEach (category => { %> 
             <article>
                 <a href="/products/productsList/?category=<%= category.id %>">
-                    <p class="nombre-categoria"><%= category.label %></p>
+                    <p class="nombre-categoria"><%= category.name %></p>
                     <img src="<%= category.img %>" alt="CategoryImg">
                 </a>
             </article>

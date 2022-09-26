@@ -22,6 +22,7 @@ main form{
 .form-producto {
    text-align: left;
    font-weight: bold;
+   opacity: 90%;
 }
 
 label{
@@ -41,20 +42,25 @@ label{
     border: 1px var(--gris-claro) solid;
 }
 
-.div-datos-producto textarea {
-    border-radius: 5px;
-    width: 100%;
+.div-datos-producto #description {
+    /* border-radius: 5px;
+    width: 100%; */
     height: 60px;
-    border: 1px var(--gris-claro) solid;
+    /* border: 1px var(--gris-claro) solid;
+    color: var(--gris-medio2); */
 }
+
 
 .div-datos-producto .input-archivo {
     padding: 3px;
 }
 
 .nombre-imagen {
-    margin-left: 20px;
     font-weight: normal;
+    border: none;
+    margin: 0;
+    padding: 0;
+
 }
 
 .div-destacado {

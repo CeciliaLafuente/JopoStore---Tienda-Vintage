@@ -42,7 +42,7 @@ main {
 
 
 .p-precio span{
-    text-decoration:line-through var(--naranja);
+    text-decoration:line-through var(--naranja) solid 2.5px;
 }
 
 .p-precio small {
