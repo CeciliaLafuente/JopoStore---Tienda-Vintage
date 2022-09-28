@@ -43,11 +43,11 @@ label{
 }
 
 .div-datos-producto #description {
-    /* border-radius: 5px;
-    width: 100%; */
+    border-radius: 5px;
+    width: 100%;
     height: 60px;
-    /* border: 1px var(--gris-claro) solid;
-    color: var(--gris-medio2); */
+    border: 1px var(--gris-claro) solid;
+    color: var(--gris-medio2);
 }
 
 
