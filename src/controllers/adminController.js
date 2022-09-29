@@ -21,7 +21,8 @@ const controller = {
                 return res.render ('./admin/createProduct', {categories, colors});
             })
             .catch ( (error) => {
-                console.log ( error )
+                console.log ( error );
+                return res.render ('error');
             })
  
     },
@@ -74,7 +75,8 @@ const controller = {
                 return res.redirect ('/admin');
             })
             .catch ( (error) => {
-                console.log ( error )
+                console.log ( error );
+                return res.render ('error');
             })
             })
     },
@@ -91,7 +93,8 @@ const controller = {
                 return res.render ('./admin/productDetailAdmin', {product, toThousand});
             })
             .catch ( (error) => {
-                console.log ( error )
+                console.log ( error );
+                return res.render ('error');
             })
  
     },
@@ -119,12 +122,13 @@ const controller = {
                 return res.render('./admin/modifyProduct', {product : product, categories, colors});
             })
             .catch ( (error) => {
-                console.log ( error )
+                console.log ( error );
+                return res.render ('error');
             })
  
     },
 
-    update: function (req,res){
+    update: function (req,res) {
         // ******** versión sin BD ********
         // let products = Product.findAll();
 
@@ -159,6 +163,7 @@ const controller = {
         if (req.file) {
             // remove word "public" from destination 
             imgName = req.file.destination.substring(6) + '/' + req.file.filename;
+
         } else {
             imgName = req.session.product.img;
         };
@@ -181,7 +186,6 @@ const controller = {
                 special: req.body.special? 1:0,
                 img: imgName,
                 category_id: req.body.category_id
-                // ,colors: req.body.colors
             },
             {        
                 where: {
@@ -203,8 +207,10 @@ const controller = {
                 return res.redirect('/admin');
             })
             .catch ( (error) => {
-                console.log ( error )
+                console.log ( error );
+                return res.render ('error');
             })
+
     },
 
     destroy: function (req,res) {
@@ -220,18 +226,18 @@ const controller = {
 
         // res.redirect ('/admin');
         // *****************************
-
-        db.Products.destroy ({
-            where: { id: {[Op.eq]: req.params.id} }
-        },
-        {
-            include: [ {association: 'colors'}] 
+        db.Product_Colors.destroy ({
+            where: { product_id : {[Op.eq]: req.params.id}}
         })
+            .then ( db.Products.destroy ({
+                where: { id: {[Op.eq]: req.params.id} }
+            }))
             .then ( () => {
                 res.redirect ('/admin')
             })
             .catch ( (error) => {
-                console.log ( error )
+                console.log ( error );
+                return res.render ('error');
             })
  
     },
@@ -252,7 +258,8 @@ const controller = {
                 res.render('admin/productsListAdmin', {products, categories, toThousand });
             })
             .catch ( (error) => {
-                console.log ( error )
+                console.log ( error );
+                return res.render ('error');
             })
     },
     
@@ -288,7 +295,8 @@ const controller = {
                 res.render('admin/productsListAdmin', {products, categories, toThousand, filteredCategory });
             })
             .catch ( (error) => {
-                console.log ( error )
+                console.log ( error );
+                return res.render ('error');
             })
         }    
 }

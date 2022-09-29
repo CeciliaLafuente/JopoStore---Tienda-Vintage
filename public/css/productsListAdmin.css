@@ -48,27 +48,33 @@ form {
     width: 90%;
 }
 
+.product-img {
+    display: block;
+}
 .product-name {
     height: 45px;
+    margin: 0;
+    box-sizing: content-box;
 }
 
 .product-name a {
     text-decoration: none;
     color: black;
-    font-size: 18px;
+    font-size: 12px;
+    height: 45px;
 }
 
 .button-to-detail{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
     height: 10%;
     margin: auto;
     border: none;
     background-color: var(--marron);
     text-decoration: none;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 40px;
     align-content: center;
     border-radius: 5px;
@@ -83,6 +89,7 @@ form {
 .button-to-detail a{
     text-decoration: none;
     color: white;
+    font-size: 12px;
 }
 
 @media(min-width: 361px){

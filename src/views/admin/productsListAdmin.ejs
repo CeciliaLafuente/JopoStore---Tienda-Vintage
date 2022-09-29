@@ -38,7 +38,7 @@
                 <section class="productsList">
                     <% products.forEach((product, id)=> { %>
                         <article class="article">
-                            <a href="/admin/productDetail/<%= product.id %>"><img src="<%= product.img%>"
+                            <a class="product-img" href="/admin/productDetail/<%= product.id %>"><img src="<%= product.img%>"
                                     alt="<%= product.name%>"></a>
                             <div class="product-description">
                                 <p class="product-name"><a href="/admin/productDetail/<%= product.id %>">
