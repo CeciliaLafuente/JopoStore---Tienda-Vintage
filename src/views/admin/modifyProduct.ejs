@@ -12,18 +12,18 @@
         <%- include ('../partials/headerAdmin.ejs') %>
 
         <main>
-            <h1>Modificar producto: <%= productFind.name %></h1>
+            <h1>Modificar producto: <%= product.name %></h1>
 
-            <form action="/admin/<%= productFind.id %>?_method=PUT" method="POST" class="form-producto" enctype="multipart/form-data">
+            <form action="/admin/<%= product.id %>?_method=PUT" method="POST" class="form-producto" enctype="multipart/form-data">
 
                 <div class="div-datos-producto">
                     <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name" value="<%= productFind.name %>">
+                    <input type="text" name="name" id="name" value="<%= product.name %>">
                 </div>
                 
                 <div class="div-datos-producto">
                     <label for="description">Descripción:</label>
-                    <input name="description" id="description" maxlength="300" value="<%= productFind.description %>">
+                    <input name="description" id="description" maxlength="300" value="<%= product.description %>">
                    
                 </div>
                 
@@ -33,45 +33,62 @@
 
                         <% categories.forEach (category => { %> 
                             <option value="<%= category.id %>" 
-                                <%= productFind.category_id == category.id ? 'selected':null %>
+                                <%= product.category_id == category.id ? 'selected':null %>
                                 ><%= category.name.toUpperCase() %></option>
                         <% }) %>
 
                     </select>
                 </div>
+
+                <div class="colors-checkbox">
+                    <p class="colors-label">Colores:</p>
+                    
+                    <div class="color-list">
+                        <% colors.forEach (color => { %> 
+                        <label for="colors">
+                            <input type="checkbox" name="colors" value="<%= color.id %>"
+                            <% product.colors.forEach (productColor => { %>
+                                <%= color.id == productColor.dataValues.id ? 'checked' : null %>
+                            <% }) %>>
+                            <%= color.name %>
+                        </label>
+                        <% }) %>
+                    </div>
+                </div>
+
                 
-                <div class="div-datos-producto">
+                <!-- <div class="div-datos-producto">
                     <label for="color">Color:</label>
                     <select name="color_id" id="color_id">
                         <% colors.forEach (color => { %> 
                         <option value="<%= color.id %>" 
-                            <%= productFind.color_id == color.id? 'selected':null %> 
+                            <%= product.color_id == color.id? 'selected':null %> 
                             ><%= color.name.toUpperCase() %>
                         </option>
                         <% }) %>
                     </select>
-                </div>
+                </div> -->
                 
                <div class="div-datos-producto">
                     <label>Precio:</label>
-                    <input type="number" name="price" id="price"  value="<%= productFind.price %>">
+                    <input type="number" name="price" id="price"  value="<%= product.price %>">
                 </div>
 
                 <div class="div-datos-producto">
                     <label>Descuento:</label>
-                    <input type="number" name="discount" id="discount"  value="<%= productFind.discount %>">
+                    <input type="number" name="discount" id="discount"  value="<%= product.discount %>">
                 </div>
 
                 <div class="div-datos-producto">
                     <label>Imagen:</label>
-                    <p class="nombre-imagen"><%= productFind.img %></p>
+                    <p class="nombre-imagen"><%= product.img %></p>
                     <input type="file" name="img" id="img" accept=".jpg, .png" class="input-archivo" >
                 </div>
                 
                 <div class="div-destacado">
                     <label for="special">Producto destacado</label>
                     <input type="checkbox" name="special" id="special" class="input-destacado" 
-                        <%= productFind.special && productFind.special == 1? 'checked':null %>
+                        <%= product.special && product.special == 1? 'checked':null %>
                 </div>  
                 
                 <div class="div-botones">

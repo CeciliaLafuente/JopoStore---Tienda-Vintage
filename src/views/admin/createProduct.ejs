@@ -36,8 +36,22 @@
                     </select>
                 </div>
                 
-                <div class="div-datos-producto">
+                <div class="colors-checkbox">
+                    <p class="colors-label">Colores:</p>
+                    
+                    <div class="color-list">
+                        <% colors.forEach (color => { %> 
+                        <label for="colors">
+                            <input type="checkbox" name="colors" value="<%= color.id %>">
+                            <%= color.name %>
+                        </label>
+                        <% }) %>
+                    </div>
+                </div>
+
+                <!-- <div class="div-datos-producto">
                     <label for="color">Color:</label>
+        
                     <select name="color_id" id="color_id">
                         <option value "">Elija un color</option>>
                         <% colors.forEach (color => { %> 
@@ -46,7 +60,7 @@
                         </option>
                         <% }) %>
                     </select>
-                </div>
+                </div> -->
                 
                 <div class="div-datos-producto">
                     <label for="price" >Precio:</label>

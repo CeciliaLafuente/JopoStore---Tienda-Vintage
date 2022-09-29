@@ -11,7 +11,9 @@ const controller = {
         // let categories = Category.findAll();
         // return res.render ('./admin/createProduct', {categories});
         // ********************************
-        let getColors = db.Colors.findAll();
+        let getColors = db.Colors.findAll({
+            order: [['name']]
+        });
         let getProductCategories = db.Product_Categories.findAll();
 
         Promise.all ([ getProductCategories, getColors])
@@ -65,6 +67,9 @@ const controller = {
                     category_id: req.body.category_id,
                     color_id: req.body.color_id
                 })
+            .then ( product => {
+                product.addColors (req.body.colors);
+            })
             .then ( () => {
                 return res.redirect ('/admin');
             })
@@ -95,19 +100,23 @@ const controller = {
         // ******** versión sin BD ********
         // let categories = Category.findAll();
 
-        // let productFind = Product.findById (req.params.id);
+        // let product = Product.findById (req.params.id);
 
-        // return res.render('./admin/modifyProduct', {productFind, categories});
+        // return res.render('./admin/modifyProduct', {product, categories});
         // *****************************
 
-        let getColors = db.Colors.findAll();
+        let getColors = db.Colors.findAll({
+            order: [['name']]
+        });
         let getProductCategories = db.Product_Categories.findAll();
-        let getProduct = db.Products.findByPk (req.params.id);
+        let getProduct = db.Products.findByPk (req.params.id, {
+            include: [ {association: 'colors'}]
+        });
 
         Promise.all ([ getProductCategories, getProduct, getColors ])
-            .then (([ categories, productFind, colors ]) => {
-                req.session.product = productFind;
-                return res.render('./admin/modifyProduct', {productFind, categories, colors});
+            .then (([ categories, product, colors ]) => {
+                req.session.product = product;
+                return res.render('./admin/modifyProduct', {product : product, categories, colors});
             })
             .catch ( (error) => {
                 console.log ( error )
@@ -145,6 +154,7 @@ const controller = {
         // return res.redirect('/admin');
         // *****************************
         let imgName;
+        let productColors = req.body.colors;
 
         if (req.file) {
             // remove word "public" from destination 
@@ -153,22 +163,42 @@ const controller = {
             imgName = req.session.product.img;
         };
 
-        db.Products.update ({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            discount: req.body.discount,
-            special: req.body.special? 1:0,
-            img: imgName,
-            category_id: req.body.category_id,
-            color_id: req.body.color_id
-        },
-        {        
-            where: {
-                id: {[Op.eq]: req.params.id} 
-
+        db.Products.findByPk (req.params.id, 
+            {        
+                where: {
+                    id: {[Op.eq]: req.params.id} 
+                }
+            },
+            {
+                include: [ {association: 'colors'}] 
+            })
+            .then ( product => {
+                db.Products.update ({
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                discount: req.body.discount,
+                special: req.body.special? 1:0,
+                img: imgName,
+                category_id: req.body.category_id
+                // ,colors: req.body.colors
+            },
+            {        
+                where: {
+                    id: {[Op.eq]: req.params.id} 
+                }
             }
-        })
+            // ,{
+            //     include: [ {association: 'colors'}] 
+            // }
+            )
+                return product;
+            })
+            .then (product => {
+                if (productColors) {
+                    product.setColors (req.body.colors)
+                }
+            })
             .then ( () => {
                 return res.redirect('/admin');
             })
@@ -193,6 +223,9 @@ const controller = {
 
         db.Products.destroy ({
             where: { id: {[Op.eq]: req.params.id} }
+        },
+        {
+            include: [ {association: 'colors'}] 
         })
             .then ( () => {
                 res.redirect ('/admin')
