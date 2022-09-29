@@ -37,7 +37,7 @@ form {
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: white;
-    padding-top: 20px;
+    padding: 20px;
 }
 
 .article {
@@ -92,7 +92,7 @@ form {
     font-size: 12px;
 }
 
-@media(min-width: 361px){
+@media(min-width: 480px){
     .article {
         width: 30%;
     }
