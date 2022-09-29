@@ -25,8 +25,9 @@ body {
     margin: 0;
     font-weight: 900;
     letter-spacing: 20px;
-    background: url(/images/fondos/fondo-9.jpg) center no-repeat;
-    -webkit-text-fill-color: transparent;
+    background: url(/images/fondos/fondo-11.jpg) center no-repeat;
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
     -webkit-background-clip: text;
 }
 
