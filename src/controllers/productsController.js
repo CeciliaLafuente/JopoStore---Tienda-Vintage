@@ -21,6 +21,7 @@ const controller = {
 
     addToShoppingCart: async (req, res) => {
         /* Crea el array shoppingCart si no existe. Agregar el nuevo producto comprado */
+        
         !req.session.shoppingCart ? req.session.shoppingCart = [] : null;
 
         let addToCart = await db.Products.findByPk(req.params.id);
@@ -28,24 +29,33 @@ const controller = {
         req.session.shoppingCart.push(addToCart);
 
         return res.redirect('/products/shoppingCart');
+        
     },
 
-    shoppingCart: async (req, res) => {
-        let categories = await db.Product_Categories.findAll();
-        if (!req.session.shoppingCart || req.session.shoppingCart.length == 0) {
-            return res.render('./products/shoppingCart', { categories });
-        }
 
-        let shoppingCart = req.session.shoppingCart;
+    shoppingCart: (req, res) => {
+        Promise.all([
+            db.Product_Categories.findAll(),
+            db.Products.findByPk(req.params.id)
+        ])
+            .then(function ([categories, product]) {
+                if (!req.session.shoppingCart || req.session.shoppingCart.length == 0) {
+                    return res.render('./products/shoppingCart', { categories });
+                }
 
-        let subtotal = 0;
+                let shoppingCart = req.session.shoppingCart;
 
-        shoppingCart.forEach((product, index) => {
-            subtotal = subtotal + (product.price * (1 - product.discount / 100));
-        });
-        let products = await db.Products.findAll();
+                let subtotal = 0;
 
-        return res.render('./products/shoppingCart', { categories, shoppingCart, toThousand, subtotal });
+                shoppingCart.forEach((product, index) => {
+                    subtotal = subtotal + (product.price * (1 - product.discount / 100));
+                });
+
+                return res.render('./products/shoppingCart', { categories, shoppingCart, toThousand, subtotal });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     },
 
     productDetail: (req, res) => {
@@ -57,7 +67,9 @@ const controller = {
 
                 return res.render('./products/productDetail', { product, categories: categorias, toThousand });
             })
-
+            .catch(function (error){
+                console.log(error)
+            })
     },
 
     productsList: (req, res) => {
@@ -74,9 +86,12 @@ const controller = {
             db.Product_Categories.findAll(),
             db.Products.findAll(productsFilter)
         ])
-            .then(function ([categorias, products]) {
+            .then(function ([categories, products]) {
                 let selectedCategory = req.query.category;
-                return res.render('products/productsList', { products, categories: categorias, toThousand, selectedCategory });
+                return res.render('products/productsList', { products, categories, toThousand, selectedCategory });
+            })
+            .catch(function (error) {
+                res.redirect("index")
             })
     },
 
@@ -95,40 +110,56 @@ const controller = {
             db.Product_Categories.findAll(),
             db.Products.findAll(productsFilter)
         ])
-            .then(function ([categorias, products]) {
+            .then(function ([categories, products]) {
                 let selectedCategory = req.body.category;
-                return res.render('products/productsList', { products, categories: categorias, toThousand, selectedCategory });
+                return res.render('products/productsList', { products, categories, toThousand, selectedCategory });
+            })
+            .catch(function (error) {
+                console.log(error);
             })
     },
 
 
-    search: async function (req, res) {
-        const notFound = "No hay productos que coincidan con su búsqueda"
-        const keyWords = req.body.keyWords;
-        let productsFilter = {}
-        if (keyWords) {
-            productsFilter = {
-                where: {
-                    [Sequelize.Op.or]: [
-                        {
-                            name: {
-                                [Op.like]: '%' + keyWords + '%'
-                            }
-                        },
-                        {
-                            description: {
-                                [Op.like]: '%' + keyWords + '%'
-                            }
-                        }
-                    ]
+    search: function (req, res) {
+   
+            const notFound = "No hay productos que coincidan con su búsqueda"
+            const keyWords = req.body.keyWords;
+
+            let productsFilter = {}
+            if (keyWords) {
+                productsFilter = {
+                    where: {
+                        [Sequelize.Op.or]: [
+                            {
+                                name: {
+                                    [Op.like]: '%' + keyWords + '%'
+                                }
+                            },
+                            {
+                                description: {
+                                    [Op.like]: '%' + keyWords + '%'
+                                }
+                            },
+                            {
+                                price: {
+                                    [Op.like]: '%' + keyWords + '%'
+                                }
+                            },
+                        ]
+                    }
                 }
             }
-        }
-        let products = await db.Products.findAll(productsFilter);
-        let categories = await db.Product_Categories.findAll();
-
-        res.render('products/productsList', { toThousand, products, categories, notFound, word: req.body.keyWords });
-    },
+            Promise.all([
+                db.Product_Categories.findAll(),
+                db.Products.findAll(productsFilter)
+            ])
+                .then(function ([categories, products]) {
+                    res.render('products/productsList', { toThousand, products, categories, notFound, word: req.body.keyWords });
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+    }
 
     //Código para la base de datos Json
 
