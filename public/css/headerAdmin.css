@@ -78,9 +78,9 @@ header{
     text-align: left;
     margin: 0;
     z-index: 1;
-    width: 25vw;
+    width: 35vw;
     right: 0;
-    top: 15vh;
+    top: 13vh;
 }
 
 .nav-user ul li {
@@ -180,7 +180,7 @@ header{
     }
 
     .nav-user {
-        width: 20vw;
+        width: 15vw;
         top: 15vh;
     }
     
