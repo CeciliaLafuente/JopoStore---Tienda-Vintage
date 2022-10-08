@@ -53,7 +53,7 @@ const controller = {
         // return res.redirect ('/admin');
         // ********************************
 
-//********** AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
+//********** COMIENZO AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
         
         let old = req.body;
 
@@ -61,7 +61,6 @@ const controller = {
             let oldColors = [];
             oldColors.push(req.body.colors);
         }
-console.log ('old: ', old);
 
         if (req.imgError) {
             res.locals.imgError = req.imgError;
