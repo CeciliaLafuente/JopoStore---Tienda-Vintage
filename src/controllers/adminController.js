@@ -52,33 +52,63 @@ const controller = {
 
         // return res.redirect ('/admin');
         // ********************************
-        
-        db.Product_Categories.findByPk (req.body.category_id)
-            .then (category => {
-                // remove accents and convert to lowercase
-                let categoryName = (category.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")).toLowerCase();
 
-                db.Products.create ({
-                    name: req.body.name,
-                    description: req.body.description,
-                    price: req.body.price,
-                    discount: req.body.discount,
-                    special: req.body.special? 1:0,
-                    img: '/images/products/' + categoryName + '/' + req.file.filename,
-                    category_id: req.body.category_id,
-                    color_id: req.body.color_id
+//********** AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
+        
+        let old = req.body;
+
+        if (req.body.colors.length <= 1) {
+            let oldColors = [];
+            oldColors.push(req.body.colors);
+        }
+console.log ('old: ', old);
+
+        if (req.imgError) {
+            res.locals.imgError = req.imgError;
+
+            let getColors = db.Colors.findAll({
+                order: [['name']]
+            });
+            let getProductCategories = db.Product_Categories.findAll();
+    
+            Promise.all ([ getProductCategories, getColors])
+                .then ( ([categories, colors]) => {
+                    return res.render ('./admin/createProduct', {categories, colors, old});
                 })
-            .then ( product => {
-                product.addColors (req.body.colors);
+                .catch ( (error) => {
+                    console.log ( error );
+                    return res.render ('error');
+                })
+        } else {
+//********** FIN AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
+
+            db.Product_Categories.findByPk (req.body.category_id)
+                .then (category => {
+                    // remove accents and convert to lowercase
+                    let categoryName = (category.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")).toLowerCase();
+
+                    db.Products.create ({
+                        name: req.body.name,
+                        description: req.body.description,
+                        price: req.body.price,
+                        discount: req.body.discount,
+                        special: req.body.special? 1:0,
+                        img: '/images/products/' + categoryName + '/' + req.file.filename,
+                        category_id: req.body.category_id,
+                        color_id: req.body.color_id
+                    })
+                .then ( product => {
+                    product.addColors (req.body.colors);
+                })
+                .then ( () => {
+                    return res.redirect ('/admin');
+                })
+                .catch ( (error) => {
+                    console.log ( error );
+                    return res.render ('error');
+                })
             })
-            .then ( () => {
-                return res.redirect ('/admin');
-            })
-            .catch ( (error) => {
-                console.log ( error );
-                return res.render ('error');
-            })
-            })
+        }
     },
 
     productDetail: (req, res) => {

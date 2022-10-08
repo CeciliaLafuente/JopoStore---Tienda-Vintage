@@ -38,6 +38,18 @@ const storage = multer.diskStorage ({
         }
 });
 
-let upload = multer ({storage});
+const fileFilter = (req, file, cb) => {
+    const acceptedFormats = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+
+    if (acceptedFormats.includes(file.mimetype)) {
+        cb(null,true)
+    } else {        
+        req.imgError = 'Los formatos de imagen aceptados son .jpg, .png, .gif';
+        cb(null,false)
+    }
+};
+
+
+let upload = multer ({storage, fileFilter});
 
 module.exports=upload;
