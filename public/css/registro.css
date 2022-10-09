@@ -48,12 +48,20 @@ main form{
     position: relative;
 }
 
-.form-control-registro .fa-circle-check{
+ .fa-circle-check{
     position: absolute;
     color: green;
     top:33px;
     right: 5px;
-    display: none;
+   display: none;
+}
+
+.fa-circle-xmark{
+    position: absolute;
+    color: red;
+    top:33px;
+    right: 5px;
+   display: none;
 }
 
 .check ~ i{

@@ -24,10 +24,11 @@ const usersController = {
     },
 
     store: function (req, res) {
-        const error = "Tienes que subir una imagen";
+        const error = "Debes subir una imagen, (jpg, jpeg, png, gif)";
         const check = "check";
         const errors = validationResult(req);
         let file = req.file;
+        
 
          db.Users.findOne({
             where:{
