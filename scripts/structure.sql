@@ -29,7 +29,7 @@ create table users (
     phone bigint,
     date_birth date,
     img varchar(500) default 'images/logo1.jpg',
-    category_id int not null,
+    category_id int not null default 2,
     foreign key (category_id) 
 	references user_categories(id)
     );
@@ -53,20 +53,20 @@ create table products (
     references product_categories(id)
     );
     
-    create table colors (
-        id int primary key not null auto_increment,
-        name varchar(20) not null
-        );
-        
-    create table product_colors (
-        id int primary key not null auto_increment,
-        product_id int not null,
-        color_id int not null,
-        foreign key (product_id)
-        references products(id),
-        foreign key (color_id)
-        references colors(id)
-        );
+create table colors (
+	id int primary key not null auto_increment,
+	name varchar(20) not null
+	);
+	
+create table product_colors (
+	id int primary key not null auto_increment,
+	product_id int not null,
+	color_id int not null,
+	foreign key (product_id)
+	references products(id),
+	foreign key (color_id)
+	references colors(id)
+	);
 
 create table shopping_cart(
 	id int primary key not null auto_increment,

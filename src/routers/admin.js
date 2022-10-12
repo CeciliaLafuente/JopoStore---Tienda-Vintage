@@ -4,8 +4,6 @@ const upload= require('../../middlewares/multerAdmin');
 
 const adminController = require (path.join (__dirname, '../controllers/adminController'));
 
-const Category = require ('../models/Category');
-
 const router = express.Router();
 
 

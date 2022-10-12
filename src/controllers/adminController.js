@@ -57,9 +57,9 @@ const controller = {
         
         let old = req.body;
 
-        if (req.body.colors.length <= 1) {
-            let oldColors = [];
-            oldColors.push(req.body.colors);
+    // Si el usuario ingresó solamente 1 color lo convierto en un array para poder trabajarlo en la vista //
+        if (!Array.isArray(req.body.colors)) {
+            old.colors = [req.body.colors];
         }
 
         if (req.imgError) {
@@ -186,60 +186,103 @@ const controller = {
         //
         // return res.redirect('/admin');
         // *****************************
-        let imgName;
-        let productColors = req.body.colors;
 
-        if (req.file) {
-            // remove word "public" from destination 
-            imgName = req.file.destination.substring(6) + '/' + req.file.filename;
+        //********** COMIENZO AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
+    
+    // Crea un objeto old que contenga los datos ingresados por el usuario. Agrega el id porque no está en el req.body//
 
+        let old = req.body;
+        old.id = req.params.id;
+
+        let colorsArray = [];
+
+    // Creo el objeto oldColors para poder usarlo en la vista, si hay errores 
+    // Crea el array colorArray para que sea usado al actualizar la BD
+        if (!Array.isArray(req.body.colors)) {
+            colorsArray = [req.body.colors];
+            old.colors = [{id: req.body.colors}]
         } else {
-            imgName = req.session.product.img;
+            colorsArray = req.body.colors;
+            let oldColors = [];
+            req.body.colors.forEach (color => {
+               oldColors.push({id: color});
+            })
+            old.colors = oldColors;
         };
+        
+        if (req.imgError) {
+            res.locals.imgError = req.imgError;
 
-        db.Products.findByPk (req.params.id, 
-            {        
-                where: {
-                    id: {[Op.eq]: req.params.id} 
-                }
-            },
-            {
-                include: [ {association: 'colors'}] 
-            })
-            .then ( product => {
-                db.Products.update ({
-                name: req.body.name,
-                description: req.body.description,
-                price: req.body.price,
-                discount: req.body.discount,
-                special: req.body.special? 1:0,
-                img: imgName,
-                category_id: req.body.category_id
-            },
-            {        
-                where: {
-                    id: {[Op.eq]: req.params.id} 
-                }
-            }
-            // ,{
-            //     include: [ {association: 'colors'}] 
-            // }
-            )
-                return product;
-            })
-            .then (product => {
-                if (productColors) {
-                    product.setColors (req.body.colors)
-                }
-            })
-            .then ( () => {
-                return res.redirect('/admin');
-            })
-            .catch ( (error) => {
-                console.log ( error );
-                return res.render ('error');
-            })
+            let getColors = db.Colors.findAll({
+                order: [['name']]
+            });
+            let getProductCategories = db.Product_Categories.findAll();
+    
+            Promise.all ([ getProductCategories, getColors])
+                .then ( ([categories, colors]) => {
+                    return res.render ('./admin/modifyProduct', {categories, colors, product:old});
+                })
+                .catch ( (error) => {
+                    console.log ( error );
+                    return res.render ('error');
+                })
+        } else {
+//********** FIN AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
 
+            let imgName;
+            let productColors = req.body.colors;
+
+            if (req.file) {
+                // remove word "public" from destination 
+                imgName = req.file.destination.substring(6) + '/' + req.file.filename;
+
+            } else {
+                imgName = req.session.product.img;
+            };
+
+            db.Products.findByPk (req.params.id, 
+                {        
+                    where: {
+                        id: {[Op.eq]: req.params.id} 
+                    }
+                },
+                {
+                    include: [ {association: 'colors'}] 
+                })
+                .then ( product => {
+                    db.Products.update ({
+                    name: req.body.name,
+                    description: req.body.description,
+                    price: req.body.price,
+                    discount: req.body.discount,
+                    special: req.body.special? 1:0,
+                    img: imgName,
+                    category_id: req.body.category_id
+                },
+                {        
+                    where: {
+                        id: {[Op.eq]: req.params.id} 
+                    }
+                }
+                // ,{
+                //     include: [ {association: 'colors'}] 
+                // }
+                )
+                    return product;
+                })
+                .then (product => {
+                    if (productColors) {
+                        product.setColors (colorsArray)
+                    }
+                })
+                .then ( () => {
+                    return res.redirect('/admin');
+                })
+                .catch ( (error) => {
+                    console.log ( error );
+                    return res.render ('error');
+                })
+        }
     },
 
     destroy: function (req,res) {

@@ -10,6 +10,7 @@ window.addEventListener ('load', () => {
     let discount = document.querySelector('#discount');
     let img = document.querySelector('#img');
     let special = document.querySelector ('#special');
+    let nombreImagen = document.querySelector('.nombre-imagen');
 
     let nameError = document.querySelector('.name-error');
     let descriptionError = document.querySelector('.description-error');
@@ -22,6 +23,56 @@ window.addEventListener ('load', () => {
     
     name.focus();
 
+/* Validación al salir del campo */
+name.addEventListener ('blur', () => {
+    if (name.value == '') {
+        nameError.innerText = 'Debe ingresar un nombre';
+    } else {
+        if (name.value.length < 5) {
+            nameError.innerText = 'El nombre debe tener, al menos, 5 caracteres';
+    } else {
+        nameError.innerText = '';    
+    }};
+})
+
+description.addEventListener ('blur', () => {
+    if (description.value == '') {
+        descriptionError.innerText = 'Debe ingresar la descripción';
+    } else {
+        if (description.value.length <= 20 || description.value.length > 300) {
+            descriptionError.innerText = 'La descripción debe tener entre 20 y 300 caracteres';
+    } else {
+        descriptionError.innerText = '';    
+    }}
+})
+
+categoryId.addEventListener ('blur', () => {
+    if (categoryId.value == '') {
+        categoryIdError.innerText = 'Debe seleccionar la categoría';
+    } else {
+        categoryIdError.innerText = '';  
+    };  
+})
+
+price.addEventListener ('blur', () => {
+    if (price.value == '' || price.value == 0) {
+        priceError.innerText = 'Debe ingresar el precio';
+    } else {
+        priceError.innerText = '';  
+    };  
+})
+
+discount.addEventListener ('blur', () => {
+    if (discount.value && (discount.value < 0 || discount.value > 100 )) {
+        discountError.innerText = 'El descuento debe estar entre 0 y 100';
+    } else {
+        discountError.innerText = '';
+    }
+})
+
+
+
+/* Validación del formulario */
     form.addEventListener ('submit', (e) => {
         e.preventDefault();
 
@@ -49,17 +100,21 @@ window.addEventListener ('load', () => {
         for ( const oneColor of colors) {
             if (oneColor.checked) { colorCount += 1;}
         }
+
         if (colorCount == 0) {
             errors.colors = 'Debe seleccionar, al menos, 1 color';
+        } else {
+            delete errors.colors;
+            colorsError.innerText = '';
         };
 
         if (price.value == '' || price.value == 0) {
             errors.price = 'Debe ingresar el precio';
         };
 
-        if (discount.value && (discount.value < 5 || discount.value > 70) ) {
-            errors.discount = 'El descuento debe estar entre 5% y 70%';
-        };
+        if (discount.value != '' && ( discount.value < 0 || discount.value > 100 )) {
+            errors.discount = 'El descuento debe estar entre 0 y 100';
+        }
 
         if (Object.keys(errors).length > 0) {
             nameError.innerText = errors.name? errors.name : null;
@@ -70,8 +125,16 @@ window.addEventListener ('load', () => {
             discountError.innerText = errors.discount? errors.discount : null;
 
         } else {
+
+            errors = {};
+
+            if (img.value == '' && (nombreImagen == null || nombreImagen.value == '' )) {
+                errors.img = 'Debe subir una imagen';
+                imgError.innerText = 'Debe subir una imagen';
+
+        } else {
             form.submit();
-        }
+        }};
        
     })
 

@@ -102,7 +102,7 @@
                 
                 <div class="div-datos-producto">
                     <label for="img">Imagen:</label>
-                    <input type="file" name="img" id="img" class="input-archivo">
+                    <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif" class="input-archivo">
                     <p class="img-error validation-error">
                         <%= locals && locals.imgError? imgError:null %> 
                     </p>
@@ -120,7 +120,7 @@
             </form>
         </main>
 
-    <script src="../../../js/createProductValidation.js" type="text/javascript"></script>
+    <script src="../../../js/productValidation.js" type="text/javascript"></script>
     
     </body>
     </html>
