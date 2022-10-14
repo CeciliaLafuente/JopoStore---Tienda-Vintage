@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+        <%- include ('../partials/headAdmin.ejs') %>
+    
+        <link href="/css/productAdmin.css", rel="stylesheet">
+        
+    
+    </head>
+
+    <body>
+
+        <%- include ('../partials/headerAdmin.ejs') %>
+
+        <main>
+            <h1>Buscar Usuario por email: </h1>
+
+            <form action="/admin/createAdmin" method="POST" class="form-producto">
+
+                <div class="div-datos-producto">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <button type="submit">Buscar</button>
+                                   
+            </form>
+
+
+        </main>
+
+    </body>
+    </html>
+
+
+ 

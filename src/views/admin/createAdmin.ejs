@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+        <%- include ('../partials/headAdmin.ejs') %>
+    
+        <link href="/css/productAdmin.css", rel="stylesheet">
+        
+    
+    </head>
+
+    <body>
+
+        <%- include ('../partials/headerAdmin.ejs') %>
+
+        <main>
+            <h1>Datos del Usuario: </h1>
+
+            <p style="color:black"><%= user.first_name %></p>
+            <p style="color:black"><%= user.last_name %></p>
+            <p style="color:black"><%= user.email %></p>
+            <p style="color:black"><%= user.phone %></p>
+
+            <h1>Cambiar categoría:</h1>
+
+            <form action="/admin/saveAdmin/<%= user.id %>?_method=PUT" method="POST" class="form-producto">
+
+                <div class="div-datos-producto">
+                    <label for="category_id">Categoría:</label>
+                    <input type="text" name="category_id" id="category_id" value="<%= user.category_id %>">
+                </div>
+
+                <button type="submit">Guardar</button>
+                                   
+            </form>
+
+
+        </main>
+
+    </body>
+    </html>

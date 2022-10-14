@@ -13,6 +13,10 @@ router.get ('/', adminController.productsList);
 router.get ('/createProduct', adminController.createProduct);
 router.post ('/createProduct', upload.single('img'), adminController.storeProduct);
 
+router.get ('/createAdmin', adminController.findUser);
+router.post ('/createAdmin', adminController.createAdmin);
+router.put ('/saveAdmin/:id', adminController.saveAdmin);
+
 router.get ('/productDetail/:id', adminController.productDetail);
 
 router.get('/edit/:id', adminController.edit);

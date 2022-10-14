@@ -46,7 +46,7 @@ const usersController = {
                             password: passwordCrypt,
                             phone: req.body.phone,
                             img: req.file.filename,
-                            category_id: 1
+                            category_id: 2
                         }).then(function(){
                             res.redirect("/users/login");
                         })

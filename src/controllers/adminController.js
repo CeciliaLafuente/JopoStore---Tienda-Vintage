@@ -370,7 +370,33 @@ const controller = {
                 console.log ( error );
                 return res.render ('error');
             })
-        }    
+        },
+
+        findUser: (req, res)=>{
+            res.render('admin/findUser')
+        },
+
+        createAdmin: (req,res)=>{
+            db.Users.findOne({
+                where:{
+                    email: req.body.email
+                }
+            }).then(user=>{
+                res.render('admin/createAdmin', {user})
+            })
+        },
+
+        saveAdmin: (req,res)=>{
+            db.Users.update({
+                category_id: req.body.category_id
+            },{
+                where:{
+                id:req.params.id
+                }
+            }).then(admin=>{
+                res.redirect('/admin')
+            })
+        }
 }
 
 
