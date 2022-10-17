@@ -397,7 +397,7 @@ const usersController = {
 
     logout:(req, res)=>{
         res.clearCookie('remember_user');
-        req.session.userLogged=false;
+        req.session.destroy();
         return res.redirect('/');
     }
 };

@@ -40,14 +40,14 @@
                         <% } %>
                             <% if(locals.isLogged) { %>
                                 <% if (isLogged.category_id == 1) { %>
-                                    <a class="adminAccess" href="/admin/">
+                                    <a class="adminAccess" href="/admin">
                                         <p>Acceso Administrador</p>
                                     </a> 
                                 <% } %>
                                 <a href="/users/profile/<%= locals.isLogged.id %>">
                                     <p><%= locals.isLogged.first_name %></p>
                                 </a>
-                                <a href="/users/logout/">
+                                <a href="/users/logout">
                                     <p>Salir</p>
                                 </a>
                 </div>

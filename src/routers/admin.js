@@ -1,13 +1,14 @@
 const express = require ('express');
 const path = require ('path');
-const upload= require('../../middlewares/multerAdmin');
+const upload= require('../../middlewares/productImageValidationMiddleware');
+const adminValidationMiddleware = require ( '../../middlewares/adminValidationMiddleware' );
 
 
 const adminController = require (path.join (__dirname, '../controllers/adminController'));
 
 const router = express.Router();
 
-
+router.use ( adminValidationMiddleware );
 
 router.get ('/', adminController.productsList);
 

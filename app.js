@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser');
 const productCountMiddleware = require('./middlewares/productCountMiddleware');
 const cookieMiddleware = require('./middlewares/cookieMiddleware');
 
-
 const app = express();
 
 const publicPath = path.join(__dirname, "./public");
@@ -29,13 +28,18 @@ const indexRouter = require('./src/routers/index.js');
 const productsRouter = require('./src/routers/products.js');
 const usersRouter = require('./src/routers/users.js');
 const adminRouter = require('./src/routers/admin.js');
-const res = require("express/lib/response");
+// const res = require("express/lib/response");
+const productsApiRouter = require('./src/routers/api/products.js');
 
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+
+// API routes
+app.use ( '/api/products', productsApiRouter);
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, './src/views'));
