@@ -312,31 +312,40 @@ const usersController = {
 
     updateProfilePasswordProcess: function(req,res){
        const passwordNew= req.body.password;
+       const errorCurrentPassword= 'Este campo no coincide con su contraseña actual';
+       //const currentPassword= bcrypt.hashSync(req.body.current-password, 10);
         
-
-        if (passwordNew.length>=8) {
-            const passwordCrypt = bcrypt.hashSync(passwordNew, 10);
-             db.Users.update({
-                password: passwordCrypt
-            },{
-                where:{
-                    id:req.params.id
-                }
-            }).then(function(){
-                    res.redirect('/')
-                })
-        }else{
-            db.Users.findByPk(req.params.id)
-                .then(function(user){
-                    res.render('./users/editPassword', {user, categories, errors:{
-                        password:{
-                            msg: "La contraseña debe contener al menos 8 caracteres"
+        db.Users.findByPk(req.params.id)
+        .then(user=>{
+            const existPassword=bcryptjs.compareSync(req.body.currentPassword, user.password)
+            if(existPassword){
+                if (passwordNew.length>=8) {
+                    const passwordCrypt = bcrypt.hashSync(passwordNew, 10);
+                     db.Users.update({
+                        password: passwordCrypt
+                    },{
+                        where:{
+                            id:req.params.id
                         }
-                    }})
-      })
-        }
-       
-        
+                    }).then(function(){
+                            res.redirect('/')
+                        })
+                }else{
+                    db.Users.findByPk(req.params.id)
+                        .then(function(user){
+                            res.render('./users/editPassword', {user, categories, errors:{
+                                password:{
+                                    msg: "La contraseña debe contener al menos 8 caracteres"
+                                }
+                            }})
+              })
+                }
+            }else{
+                res.render('./users/editPassword', {errorCurrentPassword, categories, user})
+            }
+               
+            }
+        ) 
     },
 
     /*loginProcess: (req, res)=> {

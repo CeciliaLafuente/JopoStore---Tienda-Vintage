@@ -377,12 +377,18 @@ const controller = {
         },
 
         createAdmin: (req,res)=>{
+            let notFound= 'No existe ningún usuario con ese email'
             db.Users.findOne({
                 where:{
                     email: req.body.email
                 }
             }).then(user=>{
-                res.render('admin/createAdmin', {user})
+                if(user!=null){
+                    res.render('admin/createAdmin', {user})
+                } else{
+                    res.render('admin/findUser', {notFound, old:req.body})
+                }
+                
             })
         },
 

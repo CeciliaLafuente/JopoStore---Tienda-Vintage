@@ -28,6 +28,8 @@ function cookieMiddleware(req, res, next) {
                 res.locals.isLogged = req.session.userLogged;
             } 
 
+            console.log(res.locals.isLogged)
+
         });
 
       

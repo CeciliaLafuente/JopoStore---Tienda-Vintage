@@ -18,12 +18,16 @@
 
                 <div class="div-datos-producto">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" value="<%= locals.old && old.email? old.email :'' %>">
                 </div>
 
                 <button type="submit">Buscar</button>
                                    
             </form>
+
+            <% if(locals.notFound){ %>
+                <p style="color:red"><%= notFound %></p>
+            <% } %>
 
 
         </main>
