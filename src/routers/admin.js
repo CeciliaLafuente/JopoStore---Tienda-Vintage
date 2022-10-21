@@ -1,6 +1,7 @@
 const express = require ('express');
 const path = require ('path');
 const upload= require('../../middlewares/multerAdmin');
+const validationCreateProduct= require('../../middlewares/validationCreateProduct');
 
 const adminController = require (path.join (__dirname, '../controllers/adminController'));
 
@@ -9,11 +10,10 @@ const Category = require ('../models/Category');
 const router = express.Router();
 
 
-
 router.get ('/', adminController.productsList);
 
 router.get ('/createProduct', adminController.createProduct);
-router.post ('/createProduct', upload.single('img'), adminController.storeProduct);
+router.post ('/createProduct', upload.single('img'), validationCreateProduct, adminController.storeProduct);
 
 router.get ('/productDetail/:id', adminController.productDetail);
 

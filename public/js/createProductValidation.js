@@ -98,7 +98,5 @@ window.addEventListener ('load', () => {
     
     });
 
-
-
 })
 

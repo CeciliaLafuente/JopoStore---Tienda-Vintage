@@ -14,12 +14,19 @@
         <main>
             <h1>Nuevo producto</h1>
 
+
+
             <form action="/admin/createProduct" method="POST" class="form-producto" enctype="multipart/form-data">
                 
                 <div class="div-datos-producto">
                     <label for="name">Nombre:</label>
                     <input type="text" name="name" id="name" 
                     value="<%= locals.old && old.name? old.name:null %>">
+                   <% if(locals.errors && errors.name){ %>
+                   <div class="text-danger">
+                      <%= errors.name.msg%>
+                   </div>
+                 <% } %>
                     <p class="name-error validation-error">
                         <%= locals.errors && errors.name? errors.name.msg:null %> 
                     </p>
@@ -28,6 +35,11 @@
                 <div class="div-datos-producto">
                     <label for="description">Descripción:</label>
                     <textarea name="description" id="description"><%= locals.old && old.description? old.description:null %></textarea>
+                    <% if(locals.errors && errors.description){ %>
+                        <div class="text-danger">
+                           <%= errors.description.msg%>
+                        </div>
+                      <% } %>
                     <p class="description-error validation-error">
                         <%= locals.errors && errors.description? errors.description.msg:null %> 
                     </p>
@@ -44,6 +56,11 @@
                             ><%= category.name.toUpperCase() %></option>
                         <% }) %>
                     </select>
+                    <% if(locals.errors && errors.category_id){ %>
+                        <div class="text-danger">
+                           <%= errors.category_id.msg%>
+                        </div>
+                      <% } %>
                     <p class="category-id-error validation-error">
                         <%= locals.errors && errors.categoryId? errors.categoryId.msg:null %> 
                     </p>
@@ -64,6 +81,11 @@
                         ><%= color.name %></label>
                         <% }) %>
                     </div>
+                    <% if(locals.errors && errors.colors){ %>
+                        <div class="text-danger">
+                           <%= errors.colors.msg%>
+                        </div>
+                      <% } %>
                     <p class="colors-error validation-error">
                         <%= locals.errors && errors.colors? errors.colors.msg:null %> 
                     </p>
@@ -86,6 +108,11 @@
                     <label for="price" >Precio:</label>
                     <input type="number" name="price" id="price" 
                     value="<%= locals.old && old.price? old.price:null %>">
+                    <% if(locals.errors && errors.price){ %>
+                        <div class="text-danger">
+                           <%= errors.price.msg%>
+                        </div>
+                      <% } %>
                     <p class="price-error validation-error">
                         <%= locals.errors && errors.price? errors.price.msg:null %> 
                     </p>
