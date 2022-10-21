@@ -1,9 +1,15 @@
 // const Product = require('../models/Product');
 // const Category = require ('../models/Category');
-const db = require ('../database/models');
-const {Op} = require ('sequelize');
-
+const db = require('../database/models');
+const { Op } = require('sequelize');
+const { validationResult } = require('express-validator');
+const res = require('express/lib/response');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+// const resultValidation = validationResult(req);
+// if (resultValidation.errors.length > 0){
+// return res.render ('./admin/createProduct', {errors: resultValidation.mapped()})
+// }
 
 const controller = {
     createProduct: (req, res) => {
@@ -16,22 +22,22 @@ const controller = {
         });
         let getProductCategories = db.Product_Categories.findAll();
 
-        Promise.all ([ getProductCategories, getColors])
-            .then ( ([categories, colors]) => {
-                return res.render ('./admin/createProduct', {categories, colors});
+        Promise.all([getProductCategories, getColors])
+            .then(([categories, colors]) => {
+                return res.render('./admin/createProduct', { categories, colors });
             })
-            .catch ( (error) => {
-                console.log ( error );
-                return res.render ('error');
+            .catch((error) => {
+                console.log(error);
+                return res.render('error');
             })
- 
+
     },
-    
+
     storeProduct: (req, res) => {
 
         // ******** versión sin BD ********
         // let products = Product.findAll();
-       
+
         // /***** Obtengo el máximo ID utilizado *****/
         // let maxId = Math.max ( ...products.map ( product => {
         //         return product.id;
@@ -41,7 +47,7 @@ const controller = {
 
         // /***** Completo los campos del nuevo producto *****/
         // let newProduct = req.body;
-        
+
         // newProduct.price = parseInt (newProduct.price);
         // newProduct.discount = newProduct.discount != ''? parseInt (newProduct.discount) : 0;
         // newProduct.id = maxId + 1;
@@ -53,82 +59,85 @@ const controller = {
         // return res.redirect ('/admin');
         // ********************************
 
-//********** COMIENZO AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
-        
+        //********** COMIENZO AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
+       
+        const resultValidations = validationResult(req);
         let old = req.body;
+        
 
     // Si el usuario ingresó solamente 1 color lo convierto en un array para poder trabajarlo en la vista //
         if (!Array.isArray(req.body.colors)) {
             old.colors = [req.body.colors];
         }
-
-        if (req.imgError) {
-            res.locals.imgError = req.imgError;
+        if (resultValidations.errors.length > 0 || req.imgError) {
+            const errors = resultValidations.mapped()
+            if (req.imgError)
+                res.locals.imgError = req.imgError;
 
             let getColors = db.Colors.findAll({
                 order: [['name']]
             });
             let getProductCategories = db.Product_Categories.findAll();
-    
-            Promise.all ([ getProductCategories, getColors])
-                .then ( ([categories, colors]) => {
-                    return res.render ('./admin/createProduct', {categories, colors, old});
+
+            Promise.all([getProductCategories, getColors])
+                .then(([categories, colors]) => {
+                    return res.render('./admin/createProduct', { categories, colors, old, errors });
                 })
-                .catch ( (error) => {
-                    console.log ( error );
-                    return res.render ('error');
+                .catch((error) => {
+                    console.log(error);
+                    return res.render('error');
                 })
         } else {
-//********** FIN AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
+            //********** FIN AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
 
-            db.Product_Categories.findByPk (req.body.category_id)
-                .then (category => {
+            db.Product_Categories.findByPk(req.body.category_id)
+                .then(category => {
                     // remove accents and convert to lowercase
                     let categoryName = (category.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")).toLowerCase();
 
-                    db.Products.create ({
+                    db.Products.create({
                         name: req.body.name,
                         description: req.body.description,
                         price: req.body.price,
                         discount: req.body.discount,
-                        special: req.body.special? 1:0,
+                        special: req.body.special ? 1 : 0,
                         img: '/images/products/' + categoryName + '/' + req.file.filename,
                         category_id: req.body.category_id,
                         color_id: req.body.color_id
                     })
-                .then ( product => {
-                    product.addColors (req.body.colors);
+                        .then(product => {
+                            product.addColors(req.body.colors);
+                        })
+                        .then(() => {
+                            return res.redirect('/admin');
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            return res.render('error');
+                        })
                 })
-                .then ( () => {
-                    return res.redirect ('/admin');
-                })
-                .catch ( (error) => {
-                    console.log ( error );
-                    return res.render ('error');
-                })
-            })
         }
     },
 
     productDetail: (req, res) => {
         // ******** versión sin BD ********
         // let product = Product.findById(req.params.id);
-        
+
         // return res.render ('./admin/productDetailAdmin', {product, toThousand});
         // *************************
 
-        db.Products.findByPk (req.params.id)
-            .then (product => {
-                return res.render ('./admin/productDetailAdmin', {product, toThousand});
+        db.Products.findByPk(req.params.id)
+            .then(product => {
+                return res.render('./admin/productDetailAdmin', { product, toThousand });
             })
-            .catch ( (error) => {
-                console.log ( error );
-                return res.render ('error');
+            .catch((error) => {
+                console.log(error);
+                return res.render('error');
             })
- 
+
     },
 
-    edit: function (req,res){
+    edit: function (req, res) {
         // ******** versión sin BD ********
         // let categories = Category.findAll();
 
@@ -141,23 +150,23 @@ const controller = {
             order: [['name']]
         });
         let getProductCategories = db.Product_Categories.findAll();
-        let getProduct = db.Products.findByPk (req.params.id, {
-            include: [ {association: 'colors'}]
+        let getProduct = db.Products.findByPk(req.params.id, {
+            include: [{ association: 'colors' }]
         });
 
-        Promise.all ([ getProductCategories, getProduct, getColors ])
-            .then (([ categories, product, colors ]) => {
+        Promise.all([getProductCategories, getProduct, getColors])
+            .then(([categories, product, colors]) => {
                 req.session.product = product;
-                return res.render('./admin/modifyProduct', {product : product, categories, colors});
+                return res.render('./admin/modifyProduct', { product: product, categories, colors });
             })
-            .catch ( (error) => {
-                console.log ( error );
-                return res.render ('error');
+            .catch((error) => {
+                console.log(error);
+                return res.render('error');
             })
- 
+
     },
 
-    update: function (req,res) {
+    update: function (req, res) {
         // ******** versión sin BD ********
         // let products = Product.findAll();
 
@@ -171,7 +180,7 @@ const controller = {
         //         valor.special = req.body.special? 1:0;
         //     }
         // });
-        
+
         // let categoryName = Category.findById(req.body.category).name;
 
         // if (req.file){
@@ -285,11 +294,11 @@ const controller = {
         }
     },
 
-    destroy: function (req,res) {
+    destroy: function (req, res) {
 
         // ************ versión sin BD *******
         // let products = Product.findAll();
-       
+
         // products = products.filter (product => {
         //     return product.id != req.params.id;
         // });
@@ -298,20 +307,20 @@ const controller = {
 
         // res.redirect ('/admin');
         // *****************************
-        db.Product_Colors.destroy ({
-            where: { product_id : {[Op.eq]: req.params.id}}
+        db.Product_Colors.destroy({
+            where: { product_id: { [Op.eq]: req.params.id } }
         })
-            .then ( db.Products.destroy ({
-                where: { id: {[Op.eq]: req.params.id} }
+            .then(db.Products.destroy({
+                where: { id: { [Op.eq]: req.params.id } }
             }))
-            .then ( () => {
-                res.redirect ('/admin')
+            .then(() => {
+                res.redirect('/admin')
             })
-            .catch ( (error) => {
-                console.log ( error );
-                return res.render ('error');
+            .catch((error) => {
+                console.log(error);
+                return res.render('error');
             })
- 
+
     },
 
     productsList: (req, res) => {
@@ -319,37 +328,37 @@ const controller = {
         // let categories = Category.findAll();
 
         // let products = Product.findAll();
-       
+
         // res.render('admin/productsListAdmin', {products, toThousand, categories});
         // *******************************
         getProductCategories = db.Product_Categories.findAll();
         getProducts = db.Products.findAll();
 
-        Promise.all ([ getProductCategories, getProducts])
-            .then ( ( [categories, products] ) => {
-                res.render('admin/productsListAdmin', {products, categories, toThousand });
+        Promise.all([getProductCategories, getProducts])
+            .then(([categories, products]) => {
+                res.render('admin/productsListAdmin', { products, categories, toThousand });
             })
-            .catch ( (error) => {
-                console.log ( error );
-                return res.render ('error');
+            .catch((error) => {
+                console.log(error);
+                return res.render('error');
             })
     },
-    
+
     filtroPorCategoria: (req, res) => {
         // **************** versión sin BD ***********
-    //     let products = Product.findAll();
-    //     let categories = Category.findAll();
-        
-    //     if (req.body.category ==''){
-    //         return  res.render('admin/productsListAdmin', {products, categories});
-    // }
+        //     let products = Product.findAll();
+        //     let categories = Category.findAll();
 
-    //     const productosFiltrados = products.filter((producto)=>{
-    //         return producto.category == req.body.category;
-    //     })
+        //     if (req.body.category ==''){
+        //         return  res.render('admin/productsListAdmin', {products, categories});
+        // }
 
-    //     return res.render('admin/productsListAdmin', {products: productosFiltrados, categories});
-    // ***********************
+        //     const productosFiltrados = products.filter((producto)=>{
+        //         return producto.category == req.body.category;
+        //     })
+
+        //     return res.render('admin/productsListAdmin', {products: productosFiltrados, categories});
+        // ***********************
         let filteredCategory = req.body.category;
 
         if (filteredCategory == '') {
@@ -358,17 +367,17 @@ const controller = {
         } else {
             getProductCategories = db.Product_Categories.findAll();
             getProducts = db.Products.findAll({
-                where: { category_id: { [Op.eq]: filteredCategory}}
+                where: { category_id: { [Op.eq]: filteredCategory } }
             });
         }
-    
-        Promise.all ([ getProductCategories, getProducts])
-            .then ( ( [categories, products] ) => {
-                res.render('admin/productsListAdmin', {products, categories, toThousand, filteredCategory });
+
+        Promise.all([getProductCategories, getProducts])
+            .then(([categories, products]) => {
+                res.render('admin/productsListAdmin', { products, categories, toThousand, filteredCategory });
             })
-            .catch ( (error) => {
-                console.log ( error );
-                return res.render ('error');
+            .catch((error) => {
+                console.log(error);
+                return res.render('error');
             })
         },
 

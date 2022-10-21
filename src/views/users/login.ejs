@@ -16,21 +16,21 @@
                     <div class="form-control">
                         <label>Email </label>
 
-                        <input type="email" name="email" class="input-login"
+                        <input type="email" name="email" id= "email" class="input-login"
                             value="<%= locals.errors && errors.old ? errors.old.email : null%>">
                         <% if (locals.errors && errors.email) { %>
-                            <div class="error">
-                                <%= errors.email.msg %>
-                            </div>
+                            <p class="email-error">
+                                <%= locals.errors && errors.email? errors.email.msg:null %> 
+                            </p>
                             <% } %> 
                     </div>
                     <div class="form-control">
                         <label>Contraseña </label>
-                        <input type="password" name="password" class="input-login">
+                        <input type="password" name="password" id = "password" class="input-login">
                         <% if (locals.errors && errors.password) { %>
-                            <div class="error">
-                                <%= errors.password.msg %>
-                            </div>
+                            <p class="password-error">
+                                <%= locals.errors && errors.password? errors.password.msg:null %> 
+                            </p>
                             <% } %>
 
                                 <div class="small-letter">
