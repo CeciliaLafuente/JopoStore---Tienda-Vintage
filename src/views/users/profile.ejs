@@ -3,7 +3,8 @@
 
         <%- include('../partials/head.ejs') %>
         <link href="/css/profile.css", rel="stylesheet">
-    
+
+        <script src="../../../js/profile.js" ></script>
         
     </head>
   
@@ -24,11 +25,17 @@
                    
                 </div>
               
-                    <form action="/users/update/profile/img/<%= user.id %>?_method=PUT"  method="post" enctype="multipart/form-data" class="change-image">
+                    <form action="/users/profile/<%= user.id %>?_method=PUT"  method="post" enctype="multipart/form-data" class="change-image">
                     <label for="image" class="modify-img">Modificar imágen</label>
                         <input type="file" name="image" class="input-img">
                     
                     <button type="submit" class="button-img">Guardar Imágen</button>
+                    <% if(locals.error){ %>
+                        <p class="changeImg-error"  style="color:red"> <%= error %> </p>
+                    <% } %>
+                    
+                        <p class="changeImg-empty" style="color:red">No seleccionaste ninguna imágen</p>
+                    
                     </form>
                      
 
@@ -54,6 +61,6 @@
 
         </main>
         <%- include('../partials/footer.ejs') %>
-        <script src="../../../js/profile.js" ></script>
+        
     </body>
 </html>

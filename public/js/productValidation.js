@@ -161,7 +161,5 @@ discount.addEventListener ('blur', () => {
     
     });
 
-
-
 })
 

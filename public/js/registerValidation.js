@@ -3,16 +3,24 @@ let last_name= document.querySelector('#last_name')
 let email= document.querySelector('#email')
 let phone= document.querySelector('#phone')
 let password= document.querySelector('#password')
+let confirmPassword= document.querySelector('#confirmPassword')
+let image= document.querySelector('#image')
 let buttonCreate= document.querySelector('.create-account')
 let form= document.querySelector('.form-registro')
 let icons= document.querySelectorAll('.fa-circle-check')
 let iconsCross= document.querySelectorAll('.fa-circle-xmark')
+let userExist= document.querySelector('.user-exist')
+
+
 
 let nameError= document.querySelector('.name-error')
 let lastNameError= document.querySelector('.lastName-error')
 let emailError= document.querySelector('.email-error')
 let phoneError= document.querySelector('.phone-error')
 let passwordError= document.querySelector('.password-error')
+let confirmPasswordError= document.querySelector('.confirmPassword-error')
+let differentsPasswords= document.querySelectorAll('.differentsPasswords')
+let imageError= document.querySelector('.image-error')
 
 
 form.addEventListener('submit', function(e){
@@ -52,6 +60,7 @@ form.addEventListener('submit', function(e){
     } else{
         iconsCross[2].style.display='none'
         icons[2].style.display='block'
+        userExist.style.display='none'
     }
 
 
@@ -77,7 +86,39 @@ form.addEventListener('submit', function(e){
         iconsCross[4].style.display='none'
         icons[4].style.display='block'
     }
-    
+
+    if(confirmPassword.value==''){
+        errors.confirmPassword= 'Debes ingresar una contraseña';
+        iconsCross[5].style.display='block'
+    }else if(confirmPassword.value.length<8){
+            errors.confirmPassword= 'La contraseña debe contener al menos 8 caracteres';
+            iconsCross[5].style.display='block'
+    } else{
+        iconsCross[5].style.display='none'
+        icons[5].style.display='block'
+    }
+
+    if(confirmPassword.value==password.value && (confirmPassword.value!='' && password.value!='')){
+            for(let i=0; i<differentsPasswords.length; i++){
+                    differentsPasswords[i].style.display='none'
+                }
+        iconsCross[4].style.display='none'
+        iconsCross[5].style.display='none'
+        icons[4].style.display='block'
+        icons[5].style.display='block'
+    }else if(confirmPassword.value!='' && password.value!=''){
+        errors.differentsPasswords='Las contraseñas no coinciden';
+        icons[4].style.display='none'
+        icons[5].style.display='none'
+        iconsCross[4].style.display='block'
+        iconsCross[5].style.display='block'
+    }
+
+
+    if(image.value==''){
+        errors.image= 'Debes ingresar una imágen';
+    }
+    console.log(errors.image)
 
     if(Object.keys(errors).length > 0){
         nameError.innerHTML= errors.name? errors.name : null;
@@ -85,6 +126,14 @@ form.addEventListener('submit', function(e){
         emailError.innerHTML= errors.email? errors.email :null;
         phoneError.innerHTML= errors.phone? errors.phone :null;
         passwordError.innerHTML= errors.password? errors.password :null;
+        confirmPasswordError.innerHTML= errors.confirmPassword? errors.confirmPassword :null;
+        imageError.innerHTML= errors.image? errors.image :null;
+        if(errors.differentsPasswords){
+        for(let i=0; i<differentsPasswords.length; i++){
+                differentsPasswords[i].style.display='block'
+                differentsPasswords[i].innerHTML= errors.differentsPasswords
+            }
+        }
     }else{
         form.submit();
     }

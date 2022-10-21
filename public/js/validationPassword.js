@@ -4,8 +4,10 @@ let button= document.querySelector('.create-account')
 let form= document.querySelector('form') 
 let p= document.querySelectorAll('.msg-error')
 let icons= document.querySelectorAll('.fa-circle-xmark')
+let errorCurrentPassword= document.querySelectorAll('.errorCurrentPassword')
 
 button.addEventListener('click', function(e){
+   
     if(password.value!=confirmPassword.value){
         e.preventDefault();
         for(let i=0; i<p.length;i++){
@@ -16,6 +18,7 @@ button.addEventListener('click', function(e){
         for(let i=0; i<icons.length;i++){
             icons[i].style.display='block'
         }
+        errorCurrentPassword.style.display= 'none'
         
     }
 })

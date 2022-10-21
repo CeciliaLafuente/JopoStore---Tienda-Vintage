@@ -38,12 +38,19 @@
                 <button type="reset" class="delete-button">BORRAR</button>
                
                 <div class="form-final-registro">
-                <button type="submit" class="create-account">MODIFICAR DATOS</button>
+                <button class="create-account">MODIFICAR DATOS</button>
+                
+                <div class="sure">
+                <p>¿Confirma los cambios?</p>
+                <button type="submit" class="accept">ACEPTAR</button>
+                <button class="cancel">CANCELAR</button>
+                </div>
                 
                 </div>
             </form>
 
         </main>
         <%- include('../partials/footer.ejs') %>
+        <script src="/../../../js/dataConfirmationAlert.js" ></script>
     </body>
     </html>

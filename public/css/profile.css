@@ -93,6 +93,10 @@ main {
     margin: 15px 0;
 }
 
+.changeImg-empty{
+    display: none;
+}
+
 @media (min-width:480px){
     .change-image label{
         width: 20vw;

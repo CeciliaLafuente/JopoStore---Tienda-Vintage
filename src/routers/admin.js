@@ -1,7 +1,9 @@
 const express = require ('express');
 const path = require ('path');
+const validationCreateProduct= require('../../middlewares/validationCreateProduct');
 const upload= require('../../middlewares/productImageValidationMiddleware');
 const adminValidationMiddleware = require ( '../../middlewares/adminValidationMiddleware' );
+
 
 const adminController = require (path.join (__dirname, '../controllers/adminController'));
 
@@ -12,9 +14,9 @@ router.use ( adminValidationMiddleware );
 router.get ('/', adminController.productsList);
 
 router.get ('/createProduct', adminController.createProduct);
-router.post ('/createProduct', upload.single('img'), adminController.storeProduct);
+router.post ('/createProduct', upload.single('img'), validationCreateProduct, adminController.storeProduct);
 
-router.get ('/createAdmin', adminController.findUser);
+router.get ('/findUser', adminController.findUser);
 router.post ('/createAdmin', adminController.createAdmin);
 router.put ('/saveAdmin/:id', adminController.saveAdmin);
 
