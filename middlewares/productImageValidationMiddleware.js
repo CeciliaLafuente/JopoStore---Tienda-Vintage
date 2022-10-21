@@ -44,7 +44,7 @@ const fileFilter = (req, file, cb) => {
     if (acceptedFormats.includes(file.mimetype)) {
         cb(null,true)
     } else {        
-        req.imgError = 'Los formatos de imagen aceptados son .jpg, .png, .gif';
+        req.imgError = 'Los formatos de imagen aceptados son .jpg, .jpeg, .png, .gif';
         cb(null,false)
     }
 };

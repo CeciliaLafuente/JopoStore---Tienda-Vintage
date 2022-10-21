@@ -1,19 +1,24 @@
 const express = require ('express');
 const path = require ('path');
-const upload= require('../../middlewares/multerAdmin');
 const validationCreateProduct= require('../../middlewares/validationCreateProduct');
+const upload= require('../../middlewares/productImageValidationMiddleware');
+const adminValidationMiddleware = require ( '../../middlewares/adminValidationMiddleware' );
+
 
 const adminController = require (path.join (__dirname, '../controllers/adminController'));
 
-const Category = require ('../models/Category');
-
 const router = express.Router();
 
+router.use ( adminValidationMiddleware );
 
 router.get ('/', adminController.productsList);
 
 router.get ('/createProduct', adminController.createProduct);
 router.post ('/createProduct', upload.single('img'), validationCreateProduct, adminController.storeProduct);
+
+router.get ('/findUser', adminController.findUser);
+router.post ('/createAdmin', adminController.createAdmin);
+router.put ('/saveAdmin/:id', adminController.saveAdmin);
 
 router.get ('/productDetail/:id', adminController.productDetail);
 

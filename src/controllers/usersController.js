@@ -24,10 +24,11 @@ const usersController = {
     },
 
     store: function (req, res) {
-        const error = "Tienes que subir una imagen";
+        const error = "Debes subir una imagen, (jpg, jpeg, png, gif)";
         const check = "check";
         const errors = validationResult(req);
         let file = req.file;
+        
 
          db.Users.findOne({
             where:{
@@ -45,7 +46,7 @@ const usersController = {
                             password: passwordCrypt,
                             phone: req.body.phone,
                             img: req.file.filename,
-                            category_id: 1
+                            category_id: 2
                         }).then(function(){
                             res.redirect("/users/login");
                         })
@@ -311,31 +312,40 @@ const usersController = {
 
     updateProfilePasswordProcess: function(req,res){
        const passwordNew= req.body.password;
+       const errorCurrentPassword= 'Este campo no coincide con su contraseña actual';
+       //const currentPassword= bcrypt.hashSync(req.body.current-password, 10);
         
-
-        if (passwordNew.length>=8) {
-            const passwordCrypt = bcrypt.hashSync(passwordNew, 10);
-             db.Users.update({
-                password: passwordCrypt
-            },{
-                where:{
-                    id:req.params.id
-                }
-            }).then(function(){
-                    res.redirect('/')
-                })
-        }else{
-            db.Users.findByPk(req.params.id)
-                .then(function(user){
-                    res.render('./users/editPassword', {user, categories, errors:{
-                        password:{
-                            msg: "La contraseña debe contener al menos 8 caracteres"
+        db.Users.findByPk(req.params.id)
+        .then(user=>{
+            const existPassword=bcryptjs.compareSync(req.body.currentPassword, user.password)
+            if(existPassword){
+                if (passwordNew.length>=8) {
+                    const passwordCrypt = bcrypt.hashSync(passwordNew, 10);
+                     db.Users.update({
+                        password: passwordCrypt
+                    },{
+                        where:{
+                            id:req.params.id
                         }
-                    }})
-      })
-        }
-       
-        
+                    }).then(function(){
+                            res.redirect('/')
+                        })
+                }else{
+                    db.Users.findByPk(req.params.id)
+                        .then(function(user){
+                            res.render('./users/editPassword', {user, categories, errors:{
+                                password:{
+                                    msg: "La contraseña debe contener al menos 8 caracteres"
+                                }
+                            }})
+              })
+                }
+            }else{
+                res.render('./users/editPassword', {errorCurrentPassword, categories, user})
+            }
+               
+            }
+        ) 
     },
 
     /*loginProcess: (req, res)=> {
@@ -387,7 +397,7 @@ const usersController = {
 
     logout:(req, res)=>{
         res.clearCookie('remember_user');
-        req.session.userLogged=false;
+        req.session.destroy();
         return res.redirect('/');
     }
 };
