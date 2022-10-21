@@ -4,10 +4,10 @@ const { validationResult } = require("express-validator");
 const db= require('../database/models')
 
 const Category = require("../models/Category");
-const Users = require("../models/Users");
+
 
 const categories = Category.findAll();
-let users = Users.findAll();
+
 
 const usersController = {
     login: function (req, res) {
@@ -26,9 +26,12 @@ const usersController = {
     store: function (req, res) {
         const error = "Debes subir una imagen, (jpg, jpeg, png, gif)";
         const check = "check";
+        const wrong = "wrong";
+        const userExist = "Ya existe un usuario registrado con este email";
         const errors = validationResult(req);
         let file = req.file;
         
+        if (errors.isEmpty()) {
 
          db.Users.findOne({
             where:{
@@ -36,7 +39,7 @@ const usersController = {
             }
         }).then(function(data){
             if (data == null) {
-                if (errors.isEmpty()) {
+                
                     if (file != undefined){
                         const passwordCrypt = bcrypt.hashSync(req.body.password, 10);
                         db.Users.create({
@@ -58,27 +61,43 @@ const usersController = {
                                 check,
                             });
                         }
-                    } else {
+                     } else {
+                        res.render("./users/register", {
+                            categories,
+                            userExist,
+                            old: req.body,
+                            wrong,
+                            check,
+                        });
+                    }})
+                } else {
+                    db.Users.findOne({
+                        where:{
+                            email: req.body.email
+                        }
+                    }).then(function(user){
+                        if (user != null) {
+                        res.render("./users/register", {
+                            categories,
+                            errors: errors.mapped(),
+                            error,
+                            old: req.body,
+                            wrong,
+                            check,
+                            userExist
+                        });
+                    }else{
                         res.render("./users/register", {
                             categories,
                             errors: errors.mapped(),
                             error,
                             old: req.body,
                             check,
-                            file: req.file,
-                        });
-                    }
-                } else {
-                    const userExist = "Ya existe un usuario registrado con este email";
-                    res.render("./users/register", {
-                        categories,
-                        userExist,
-                        old: req.body,
-                        errors: errors.mapped(),
-                        check,
-                    });
+                            wrong,
+                    })
+            }
+        })
                 }
-            })
     },
 
     /* store: function (req, res) {
@@ -227,20 +246,29 @@ const usersController = {
     }, */
 
     updateProfileImg: function(req,res){
+        let error= 'Debes subir una imagen, (jpg, jpeg, png, gif)';
        
-        db.Users.update({
-            img: req.file.filename
-        },{
-            where:{
-                id:req.params.id
-            }
-        }).then(function(){
+        if(req.file==undefined){
             db.Users.findByPk(req.params.id)
-            .then(function(data){
-                req.session.userLogged = data;
-                res.redirect('/')
+                .then(function(user){
+                    user.img = "/images/users/" + user.img;
+            res.render('./users/profile', {error, categories, user})
+                })  
+        }else{
+            db.Users.update({
+                img: req.file.filename
+            },{
+                where:{
+                    id:req.params.id
+                }
+            }).then(function(){
+                db.Users.findByPk(req.params.id)
+                .then(function(user){
+                    req.session.userLogged = user;
+                    res.redirect('/')
+                })
             })
-        })
+        }
     },
 
 

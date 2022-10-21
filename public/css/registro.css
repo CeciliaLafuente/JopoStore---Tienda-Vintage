@@ -64,7 +64,11 @@ main form{
    display: none;
 }
 
-.check ~ i{
+.check ~ .fa-circle-check{
+    display: block;
+}
+
+.wrong ~ .fa-circle-xmark{
     display: block;
 }
 
