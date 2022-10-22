@@ -3,7 +3,8 @@
         <%- include ('../partials/headAdmin.ejs') %>
     
         <link href="/css/productAdmin.css", rel="stylesheet">
-        
+        <link href="/css/findUser.css", rel="stylesheet">
+        <link href="/css/createAdmin.css", rel="stylesheet">        
     
     </head>
 
@@ -14,12 +15,13 @@
         <main>
             <h1>Datos del Usuario: </h1>
 
-            <p style="color:black"><%= user.first_name %></p>
-            <p style="color:black"><%= user.last_name %></p>
-            <p style="color:black"><%= user.email %></p>
-            <p style="color:black"><%= user.phone %></p>
+            <ul >
+                <li><%= user.first_name %></li>
+                <li><%= user.last_name %></li>
+                <li><%= user.email %></li>
+            </ul>
 
-            <h1>Cambiar categoría:</h1>
+            <h1 id="titulo2">Cambiar categoría:</h1>
 
             <form action="/admin/saveAdmin/<%= user.id %>?_method=PUT" method="POST" class="form-producto">
 

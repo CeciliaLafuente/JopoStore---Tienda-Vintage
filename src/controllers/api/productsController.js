@@ -1,7 +1,4 @@
 const db = require('../../database/models')
-const Sequelize = require('sequelize');
-const { promiseImpl } = require('ejs');
-const Op = Sequelize.Op;
 
 const controller = {
 
@@ -95,6 +92,22 @@ const controller = {
         })
         .catch ( e => console.log ( e ))
             
+    },
+
+    categoryList: (req, res) => {
+        db.Product_Categories
+            .findAll()
+            .then ( categories => {
+                return res.status(200).json ( 
+                    {
+                        meta: {
+                            count: categories.length,
+                            status: 200
+                        },
+                        data: categories
+                        
+                    })
+            })
     },
 
 

@@ -14,6 +14,10 @@ main {
     opacity: 0.9;
 }
 
+#p-id-producto {
+    display: none;
+}
+
 .div-img-producto {
     width: 100%;
 }

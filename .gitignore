@@ -1,8 +1,24 @@
 /node_modules/.
-/docSprints
+/docs
 /src/views/admin/PRUEBAlistado.ejs
 /src/data/productsDataBase-BKP*.json
 /src/data/productsDataBase.json
-/src/views/index BKP.ejs
+/src/data/*.*
+/src/*/*/*BKP*.*
+/src/*/*BKP*.*
+/src/*/*/*/*BKP*.*
+/public/*/*BKP*.*
+/public/*/*/*BKP*.*
 /public/css/PRUEBAlistado.css
-prueba.js
+/public/css/*BKP*.css
+/public/*/*CARRITO*.*
+prueba*.js
+practicas.js
+/src/*/*CARRITO*.*
+/src/*/*/*CARRITO*.*
+/src/*/*/*/*CARRITO*.*
+/public/images/*.*
+/public/images/*/*.*
+/public/images/*/*/*.*
+
+
