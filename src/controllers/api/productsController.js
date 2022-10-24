@@ -7,17 +7,28 @@ const controller = {
     list: (req, res) => {
 
         let productArray = [];
-        let countByCategory = {};   
+        let countByCategory = {};  
+        let findParameters = {};
+        
+        if (req.query.page) {
+            findParameters = {
+                include: [ {association: 'colors'} ],
+                limit: 10, 
+                offset: (req.query.page - 1) * 10
+                }
+        } else {
+            findParameters = {
+                include: [ {association: 'colors'} ],
+                }
+        }
 
         const getProducts = db.Products
-                                .findAll({
-                                include: [ {association: 'colors'} ],
-                                })
+                                .findAll(findParameters);
 
         const getCategories =   db.Product_Categories
                                     .findAll({
                                     include: [ {association: 'products'} ],
-                                })
+                                });
 
         Promise.all ( [ getProducts, getCategories] )
             .then ( ([ products, categories ]) => {
@@ -83,6 +94,22 @@ const controller = {
         })
         .catch ( e => console.log ( e ))
             
+    },
+
+    categoryList: (req, res) => {
+        db.Product_Categories
+            .findAll()
+            .then ( categories => {
+                return res.status(200).json ( 
+                    {
+                        meta: {
+                            count: categories.length,
+                            status: 200
+                        },
+                        data: categories
+                        
+                    })
+            })
     },
 
 
