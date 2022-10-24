@@ -1,6 +1,5 @@
 const db = require('../../database/models')
 const Sequelize = require('sequelize');
-const { promiseImpl } = require('ejs');
 const Op = Sequelize.Op;
 
 const controller = {
