@@ -1,25 +1,51 @@
-const db = require('../../database/models')
+const db = require('../../database/models');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const controller = {
 
     list: (req, res) => {
 
+    // Accepts a query string with:
+    //  page=N  returns page number N, considering 10 products per page
+    //  search=KEYWORD  returns products containing KEYWORD in name, description
+    // With no query string, returns all products
+
         let productArray = [];
         let countByCategory = {};  
-        let findParameters = {};
-        
-        if (req.query.page) {
-            findParameters = {
-                include: [ {association: 'colors'} ],
-                limit: 10, 
-                offset: (req.query.page - 1) * 10
-                }
-        } else {
-            findParameters = {
-                include: [ {association: 'colors'} ],
-                }
-        }
 
+        let findParameters = {
+            include: [ {association: 'colors'}, {association: 'product_category'} ]
+            };
+            
+        let whereClause;
+        let offsetClause;
+        
+        
+    // where clause to use in findAll
+        if (req.query.search) { 
+            let keyword = `%${req.query.search}%`;
+        
+            whereClause = { [Op.or]:
+                            [
+                                {name: { [Op.like]: keyword }}, 
+                                {description: { [Op.like]: keyword }}, 
+                                // {'$product.product_category.name$': { [Op.like]: keyword }}, 
+                                // {'$product.colors.color.name$': { [Op.like]: keyword }}
+                            ]
+                        };
+            findParameters.where = whereClause;
+        }
+        
+    // offset clause to use in findAll
+        if (req.query.page) {
+            offsetClause = (req.query.page - 1) * 10;
+        
+            findParameters.offset = offsetClause;
+            findParameters.limit = 10;
+        }
+    
+console.log (findParameters);
         const getProducts = db.Products
                                 .findAll(findParameters);
 
@@ -38,7 +64,10 @@ const controller = {
                         name: product.name, 
                         description: product.description, 
                         colors: product.colors,
-                        url: 'http://localhost:3040/api/products/' + product.id
+                        url: 'http://localhost:3040/api/products/' + product.id,
+                        categoryId: product.product_category.id,
+                        categoryName: product.product_category.name,
+                        img: product.img
                     } ;
             
                     productArray.push ( productData );
@@ -110,7 +139,7 @@ const controller = {
             })
     },
 
-
+    
 }
 
 
