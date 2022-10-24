@@ -7,7 +7,7 @@ const controller = {
     list: (req, res) => {
 
         let productArray = [];
-        let countByCategory = {};  
+        let countByCategory = [];  
         let findParameters = {};
         
         if (req.query.page) {
@@ -48,7 +48,11 @@ const controller = {
             
             // countByCategory 
                 categories.forEach ( category => {
-                    countByCategory [category.name] = category.products.length;
+                    //countByCategory [category.name] = category.products.length;
+                    let categoryData={
+                        title:category.name
+                    }
+                    countByCategory.push(categoryData)
                 })
 
             // result
