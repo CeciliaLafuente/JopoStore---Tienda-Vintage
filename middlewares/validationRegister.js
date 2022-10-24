@@ -7,8 +7,7 @@ const validation= [
     .isLength({min:3}).withMessage('No se admiten apellidos con menos de 3 caracteres'),
     body('email').notEmpty().withMessage('Debes completar con tu email').bail()
     .isEmail().withMessage('Debes colocar un formato válido de email'),
-    body('phone').notEmpty().withMessage('Debes colocar un teléfono').bail()
-    .isNumeric().withMessage('Debes colocar un formato válido de teléfono'),
+    body('phone').notEmpty().withMessage('Debes colocar un teléfono'),
     body('password').notEmpty().withMessage('Debes colocar una contraseña').bail()
     .isLength({min:8}).withMessage('La contraseña debe tener como mínimo 8 caracteres')
 ]

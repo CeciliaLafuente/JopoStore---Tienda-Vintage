@@ -3,9 +3,10 @@ const path = require("path");
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const cors = require ('cors');
 const productCountMiddleware = require('./middlewares/productCountMiddleware');
 const cookieMiddleware = require('./middlewares/cookieMiddleware');
-const cors = require ('cors');
+
 
 const app = express();
 
@@ -23,8 +24,10 @@ app.use(session({
     saveUninitialized: false
 }));
 app.use(cookieParser());
+app.use (cors());
 app.use(productCountMiddleware);
 app.use(cookieMiddleware);
+app.use(cors())
 
 
 const indexRouter = require('./src/routers/index.js');
@@ -34,6 +37,7 @@ const adminRouter = require('./src/routers/admin.js');
 // const res = require("express/lib/response");
 const productsApiRouter = require('./src/routers/api/products.js');
 const categoriesApiRouter = require('./src/routers/api/categories.js');
+const usersApiRouter= require('./src/routers/api/users.js')
 
 
 app.use('/', indexRouter);
@@ -44,6 +48,7 @@ app.use('/admin', adminRouter);
 // API routes
 app.use ( '/api/products', productsApiRouter);
 app.use ( '/api/categories', categoriesApiRouter);
+app.use ( '/api/users', usersApiRouter);
 
 
 app.set("view engine", "ejs");
