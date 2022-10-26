@@ -1,4 +1,8 @@
-/node_modules/.
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
 /docs
 /src/views/admin/PRUEBAlistado.ejs
 /src/data/productsDataBase-BKP*.json
@@ -21,4 +25,4 @@ practicas.js
 /public/images/*/*.*
 /public/images/*/*/*.*
 
-
+package*.json
