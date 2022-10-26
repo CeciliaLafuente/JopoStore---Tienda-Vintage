@@ -7,7 +7,10 @@ const cors = require ('cors');
 const productCountMiddleware = require('./middlewares/productCountMiddleware');
 const cookieMiddleware = require('./middlewares/cookieMiddleware');
 
+
 const app = express();
+
+app.use(cors());
 
 const publicPath = path.join(__dirname, "./public");
 
@@ -24,6 +27,7 @@ app.use(cookieParser());
 app.use (cors());
 app.use(productCountMiddleware);
 app.use(cookieMiddleware);
+app.use(cors())
 
 
 const indexRouter = require('./src/routers/index.js');
@@ -32,6 +36,7 @@ const usersRouter = require('./src/routers/users.js');
 const adminRouter = require('./src/routers/admin.js');
 // const res = require("express/lib/response");
 const productsApiRouter = require('./src/routers/api/products.js');
+const categoriesApiRouter = require('./src/routers/api/categories.js');
 const usersApiRouter= require('./src/routers/api/users.js')
 
 
@@ -42,6 +47,7 @@ app.use('/admin', adminRouter);
 
 // API routes
 app.use ( '/api/products', productsApiRouter);
+app.use ( '/api/categories', categoriesApiRouter);
 app.use ( '/api/users', usersApiRouter);
 
 

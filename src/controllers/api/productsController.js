@@ -12,9 +12,23 @@ const controller = {
     // With no query string, returns all products
 
         let productArray = [];
-        let countByCategory = {};  
+        let countByCategory = [];  
+        let findParameters = {};
+        
+        if (req.query.page) {
+            findParameters = {
+                include: [ {association: 'colors'} ],
+                limit: 10, 
+                offset: (req.query.page - 1) * 10
+                }
+        } else {
+            findParameters = {
+                include: [ {association: 'colors'} ],
+                }
+        }
+      
 
-        let findParameters = {
+         findParameters = {
             include: [ {association: 'colors'}, {association: 'product_category'} ]
             };
             
@@ -75,7 +89,11 @@ console.log (findParameters);
             
             // countByCategory 
                 categories.forEach ( category => {
-                    countByCategory [category.name] = category.products.length;
+                    //countByCategory [category.name] = category.products.length;
+                    let categoryData={
+                        title:category.name
+                    }
+                    countByCategory.push(categoryData)
                 })
 
             // result
