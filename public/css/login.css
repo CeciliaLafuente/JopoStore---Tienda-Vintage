@@ -9,7 +9,7 @@ main{
     background-color: var(--blanco);
     color: var(--gris-oscuro);
     display: flex;
-    background-image: url('../images/vinilos/vinilo-0.jpg');
+    background-image: url('../images/products/vinilos/vinilo-0.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
