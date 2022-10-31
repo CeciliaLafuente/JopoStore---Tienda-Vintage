@@ -24,10 +24,10 @@ app.use(session({
     saveUninitialized: false
 }));
 app.use(cookieParser());
-app.use (cors());
+app.use(cors());
 app.use(productCountMiddleware);
 app.use(cookieMiddleware);
-app.use(cors())
+
 
 
 const indexRouter = require('./src/routers/index.js');
