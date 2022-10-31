@@ -61,10 +61,10 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         })
 
-        Product.hasMany(models.Shopping_Cart_Details, {
-            as: "shopping_cart_detail",
-            foreignKey: "product_id"
-            })
+        // Product.belongsTo (models.Shopping_Cart_Details, {
+        //     as: "shopping_cart_detail",
+        //     foreignKey: "product_id"
+        //     })
         
     };
 

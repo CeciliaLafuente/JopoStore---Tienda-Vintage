@@ -29,7 +29,20 @@ module.exports= (Sequelize, DataTypes)=>{
         discount:{
             type: DataTypes.INTEGER,
             allowNull: false
-        }
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        img: {
+            type: DataTypes.STRING(500),
+            defaultValue: 'images/default_product.jpg'
+        },
+       
     }
 
     let config={
@@ -40,16 +53,17 @@ module.exports= (Sequelize, DataTypes)=>{
     const Shopping_Cart_Detail=Sequelize.define(alias,cols,config);
 
     Shopping_Cart_Detail.associate= function(models){
+
         Shopping_Cart_Detail.belongsTo(models.Shopping_Carts,{
             as:'shopping_cart',
             foreignKey:'shopping_cart_id'
         })
 
 
-        Shopping_Cart_Detail.belongsTo(models.Products,{
-            as:'product_shopping_cart_details',
-            foreignKey:'product_id'
-    })
+        // Shopping_Cart_Detail.hasMany (models.Products,{
+        //     as:'products',
+        //     foreignKey:'product_id'
+        // })
 }
 
     return Shopping_Cart_Detail;

@@ -87,10 +87,11 @@ create table shopping_cart_detail (
     quantity tinyint not null,
     price decimal(6, 2) not null,
     discount tinyint,
+    name varchar(100) not null,
+    description varchar(500) not null,
+    img varchar(500) default 'images/logo1.jpg',
     foreign key (shopping_cart_id)
-    references shopping_cart(id),
-    foreign key (product_id)
-    references products(id)
+    references shopping_cart(id)
     );
 
     
