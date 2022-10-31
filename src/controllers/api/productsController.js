@@ -59,7 +59,7 @@ const controller = {
             findParameters.limit = 10;
         }
     
-console.log (findParameters);
+
         const getProducts = db.Products
                                 .findAll(findParameters);
 
