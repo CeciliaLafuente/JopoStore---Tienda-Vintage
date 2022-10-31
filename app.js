@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const cors = require ('cors');
 const productCountMiddleware = require('./middlewares/productCountMiddleware');
 const cookieMiddleware = require('./middlewares/cookieMiddleware');
-const cors= require('cors')
+
 
 const app = express();
 
@@ -22,10 +22,10 @@ app.use(session({
     saveUninitialized: false
 }));
 app.use(cookieParser());
-app.use (cors());
+app.use(cors());
 app.use(productCountMiddleware);
 app.use(cookieMiddleware);
-app.use(cors())
+
 
 
 const indexRouter = require('./src/routers/index.js');

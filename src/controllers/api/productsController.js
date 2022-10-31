@@ -81,7 +81,9 @@ console.log (findParameters);
                         url: 'http://localhost:3040/api/products/' + product.id,
                         categoryId: product.product_category.id,
                         categoryName: product.product_category.name,
-                        img: product.img
+                        img: product.img,
+                        discount: product.discount,
+                        price: product.price
                     } ;
             
                     productArray.push ( productData );
@@ -89,11 +91,8 @@ console.log (findParameters);
             
             // countByCategory 
                 categories.forEach ( category => {
-                    //countByCategory [category.name] = category.products.length;
-                    let categoryData={
-                        title:category.name
-                    }
-                    countByCategory.push(categoryData)
+                countByCategory.push([category.name + "=" + category.products.length]);
+               
                 })
 
             // result
@@ -148,11 +147,12 @@ console.log (findParameters);
                 return res.status(200).json ( 
                     {
                         meta: {
-                            count: categories.length,
                             status: 200
                         },
-                        data: categories
-                        
+                        data: {
+                            count: categories.length,   
+                            categories
+                        }
                     })
             })
     },
