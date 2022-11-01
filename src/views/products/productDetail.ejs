@@ -4,7 +4,7 @@
     <%- include ('../partials/head.ejs') %>
 
     <link href="/css/productDetail.css", rel="stylesheet">
- 
+    <script src="../../../js/productDetail.js"></script>     
 
 </head>    
 
@@ -17,6 +17,11 @@
 
 
         <article class="article-producto">
+
+            <!-- Datos escondidos  -->
+            <p id="p-id-producto"><%= product.id %></p>
+            <!-- Fin datos escondidos  -->
+
 
             <div class="div-img-producto">
                 <img  src="<%= product.img %>" alt="telefono-8">
@@ -50,10 +55,12 @@
                 </div>
 
 
-                <form class="form-comprar" action="/products/shoppingCart/add/<%= product.id %>"     method="POST">
-                    
+                <!-- <form class="form-comprar" action="/products/shoppingCart/add/<%= product.id %>"     method="POST"> -->
+                <form class="form-comprar" action="/products/shoppingCart" method="GET">
+                  
                     <button class="button-agregar-al-carrito" type="submit">AGREGAR AL CARRITO</button>
                 </form>
+
                 
 
                 <div class="div-envio-gratis">

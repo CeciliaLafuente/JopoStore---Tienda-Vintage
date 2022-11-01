@@ -4,17 +4,22 @@
 
 .div-datos-producto p {
     font-size: 20px;
-    margin: 0 0 5px;
+    margin: 40px 0 10px 5px;
 }
 
-.select-categorias {
+.select-categories {
     font-size: 18px;
     color: var(--gris-medio2);
     height: 28px;
+    width: 40%;
     margin: 5px;
     background-color: var(--gris-muy-claro);
     border: solid var(--gris-medio) 1px;
     border-radius: 3px;
+  }
+
+  .options:hover{
+      background-color: black;
   }
 
   .button-filter {
@@ -100,11 +105,19 @@ form {
     .productsList {
         padding-right: 40px;
         padding-left: 40px;
+        margin-top: 20px;
     }
+
+    .select-categories {
+        width: 30%;
+      }
 }
 
 @media (min-width: 769px){
     .article {
         width: 15%;
-    }
+    } 
+    .select-categories {
+        width: 15%;
+      }
 }

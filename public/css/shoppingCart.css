@@ -6,6 +6,7 @@ main {
     background-size: cover;
     background-position: center;
     padding:20px;
+    margin-top: 250px;
 }
 
 section {
@@ -255,6 +256,7 @@ article {
 
     main {
         padding: 20px 80px;
+        margin-top: 250px;
     }
 
 }
@@ -264,6 +266,10 @@ article {
 
         /* Main */
 
+     main{
+      margin-top: 200px;
+        }
+        
     section {
         margin: 0 10px;
         width: 60%;
@@ -312,5 +318,15 @@ article {
         padding: 25px;
         text-decoration: none;
         text-align: center;
+    }
+
+    .mensaje {
+        width: 70%;
+    }
+}
+
+@media (min-width:769px) {
+    .mensaje {
+        width: 50%;
     }
 }

@@ -1,5 +1,8 @@
 main {
     padding: 0 5%;
+    padding-bottom: 20px;
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%);
+    margin-top: 200px;
 }
 
 .user {
@@ -16,11 +19,14 @@ main {
 }
 
 .change-image label{
-    color:white;
-    background-color: rgb(85, 85, 3);
-    padding: 5px 10px;
-    width: 20vw;
+    width: 70%;
+    background-color: var(--marron);
+    color: white;
     font-size: 12px;
+    font-weight: bold;
+    border: none;
+    letter-spacing: 1px;
+    padding: 5px;
 }
 
 .input-img-block{
@@ -56,8 +62,8 @@ main {
 }
 
 .userData {
-    width: 30vw;
-    margin: 0 40px;
+    width: 40vw;
+    margin: 0 30px;
     font-size: 16px;
     text-align: left;
 }
@@ -70,21 +76,27 @@ main {
     font-size: 20px;
 }
 
+.buttons{
+    display: flex;
+}
+
 .button {
     text-align: left;
     margin: 30px 0;
+    margin-right: 10px;
 }
 
 .button button {
-    font-size: 16px;
-    background-color: var(--gris-claro);
-    color: var(--gris-medio2);
-    border: 1px solid var(--gris-medio);
-    border-radius: 3px;
-
+    margin-left: 10px;
+    background-color: var(--gris-medio2);
+    color: white;
+    border:none;
+    padding: 10px;
+    margin: auto
 }
 
 .mensaje {
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%);
     color: red;
     font-weight: bold;
     font-size: 16px;

@@ -7,11 +7,14 @@ main{
 
 h1 {
     padding: 0;
-    text-align: center;
-    font-size: 28px;
+    text-align: left;
+    font-size: 20px;
     margin-top: 0;
     margin-bottom: 0;
+    margin-top: 60px;
+    margin-left: 35px;
 }
+
 main form{
     padding: 20px 20px 5px;
     background-color: white;
@@ -100,7 +103,7 @@ label,
 
 .div-botones button {
     text-align: center;
-    background-color: var(--amarillo);
+    background-color: var(--marron);
     color: white;
     border:none;
     border-radius: 5px;
@@ -119,6 +122,10 @@ label,
 
 @media (min-width:480px) {
 
+    h1 {
+        margin-left: 43px;
+    }
+
     .div-botones button {
         width: 30%;
         margin: 30px;
@@ -135,7 +142,9 @@ label,
     h1 {
         padding: 0 20% 20px;
         text-align: left;
+        margin-left: 20px;
     }
+    
     main form{
         width: 60%;
     }

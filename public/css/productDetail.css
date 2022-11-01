@@ -7,6 +7,7 @@ main {
     background-position: center;
     background-size: cover;
     padding: 20px;
+    margin-top: 250px
 }
 
 .article-producto {
@@ -24,7 +25,7 @@ main {
 
 .div-img-producto img {
     width: 100%;
-}  
+}
 
 .div-datos-producto {
     padding: 15px;
@@ -38,15 +39,16 @@ main {
     margin: 20px 0;
 }
 
-.p-descuento, .p-precio {
+.p-descuento,
+.p-precio {
     font-size: 18px;
     color: var(--naranja);
     margin: 10px 0 0;
 }
 
 
-.p-precio span{
-    text-decoration:line-through var(--naranja) solid 2.5px;
+.p-precio span {
+    text-decoration: line-through var(--naranja) solid 2.5px;
 }
 
 .p-precio small {
@@ -78,7 +80,7 @@ main {
 }
 
 .div-formas-pago span,
-.div-envio-gratis span{
+.div-envio-gratis span {
     margin: 0;
     font-size: 14px;
 }
@@ -98,26 +100,27 @@ main {
 .form-comprar {
     text-align: center;
     padding: 10px 0;
-    box-sizing:content-box;
+    box-sizing: content-box;
 }
 
-.button-agregar-al-carrito{
+.button-agregar-al-carrito {
     width: 70%;
     height: 35px;
     background-color: var(--marron);
     color: var(--blanco);
     border: none;
-    border-radius:5px;
+    border-radius: 5px;
     padding: 10px 8px;
+    font-size: 13px;
 }
 
 .button-agregar-al-carrito a {
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 2px;
     font-weight: bolder;
     text-decoration: none;
     color: var(--blanco);
-    
+
 }
 
 .div-costo-envio {
@@ -166,34 +169,42 @@ main {
 /* ------------------------------   TABLET  ----------------------------------------------*/
 /* -------------------------------------------------------------------------------------*/
 
-@media (min-width:480px){
+@media (min-width:480px) {
 
     /* ------------------------------   main  ----------------------------------------------*/
-        
-        .article-producto {
-            width: 90%;
-            margin: auto;
-        }
-    
-        .div-img-producto {
-            width: 70%;
-            margin: auto;
-        }
-    
-        .div-datos-producto {
-            margin:auto;
-            padding: 15px 30px;
-        }
-    }    
+
+    .article-producto {
+        width: 90%;
+        margin: auto;
+    }
+
+    .div-img-producto {
+        width: 70%;
+        margin: auto;
+    }
+
+    .div-datos-producto {
+        margin: auto;
+        padding: 15px 30px;
+    }
+
+    .button-agregar-al-carrito {
+        width: 40%;
+    }
+}
 
 /* -------------------------------------------------------------------------------------*/
 /* ------------------------------   LAPTOP  ----------------------------------------------*/
 /* -------------------------------------------------------------------------------------*/
 
-@media (min-width:769px){
+@media (min-width:769px) {
 
-/* ------------------------------   main  ----------------------------------------------*/
-    
+    /* ------------------------------   main  ----------------------------------------------*/
+
+   main{
+    margin-top: 200px
+   }
+   
     .article-producto {
         width: 70%;
         margin: 30px 15%;
@@ -212,4 +223,17 @@ main {
         padding: 40px;
     }
 
+    
+    .button-agregar-al-carrito {
+        width: 80%;
+        font-size: 13px;
+    }
+
+}
+
+@media (min-width:769px){
+    .button-agregar-al-carrito {
+        width: 40%;
+        font-size: 13px;
+    }
 }

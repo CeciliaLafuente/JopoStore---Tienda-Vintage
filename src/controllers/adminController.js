@@ -60,12 +60,12 @@ const controller = {
         // ********************************
 
         //********** COMIENZO AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
-       
+
         const resultValidations = validationResult(req);
         let old = req.body;
-        
 
-    // Si el usuario ingresó solamente 1 color lo convierto en un array para poder trabajarlo en la vista //
+
+        // Si el usuario ingresó solamente 1 color lo convierto en un array para poder trabajarlo en la vista //
         if (!Array.isArray(req.body.colors)) {
             old.colors = [req.body.colors];
         }
@@ -197,46 +197,49 @@ const controller = {
         // *****************************
 
         //********** COMIENZO AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
-    
-    // Crea un objeto old que contenga los datos ingresados por el usuario. Agrega el id porque no está en el req.body//
+
+        // Crea un objeto old que contenga los datos ingresados por el usuario. Agrega el id porque no está en el req.body//
 
         let old = req.body;
         old.id = req.params.id;
 
         let colorsArray = [];
 
-    // Creo el objeto oldColors para poder usarlo en la vista, si hay errores 
-    // Crea el array colorArray para que sea usado al actualizar la BD
+        // Creo el objeto oldColors para poder usarlo en la vista, si hay errores 
+        // Crea el array colorArray para que sea usado al actualizar la BD
+
         if (!Array.isArray(req.body.colors)) {
             colorsArray = [req.body.colors];
-            old.colors = [{id: req.body.colors}]
+            old.colors = [{ id: req.body.colors }]
         } else {
             colorsArray = req.body.colors;
             let oldColors = [];
-            req.body.colors.forEach (color => {
-               oldColors.push({id: color});
+            req.body.colors.forEach(color => {
+                oldColors.push({ id: color });
             })
             old.colors = oldColors;
         };
-        
-        if (req.imgError) {
-            res.locals.imgError = req.imgError;
+
+        if (resultValidations.errors.length > 0 || req.imgError) {
+            const errors = resultValidations.mapped()
+            if (req.imgError)
+                res.locals.imgError = req.imgError;
 
             let getColors = db.Colors.findAll({
                 order: [['name']]
             });
             let getProductCategories = db.Product_Categories.findAll();
-    
-            Promise.all ([ getProductCategories, getColors])
-                .then ( ([categories, colors]) => {
-                    return res.render ('./admin/modifyProduct', {categories, colors, product:old});
+
+            Promise.all([getProductCategories, getColors])
+                .then(([categories, colors]) => {
+                    return res.render('./admin/modifyProduct', { categories, colors, product: old, errors });
                 })
-                .catch ( (error) => {
-                    console.log ( error );
-                    return res.render ('error');
+                .catch((error) => {
+                    console.log(error);
+                    return res.render('error');
                 })
         } else {
-//********** FIN AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
+            //********** FIN AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
 
             let imgName;
             let productColors = req.body.colors;
@@ -249,47 +252,47 @@ const controller = {
                 imgName = req.session.product.img;
             };
 
-            db.Products.findByPk (req.params.id, 
-                {        
+            db.Products.findByPk(req.params.id,
+                {
                     where: {
-                        id: {[Op.eq]: req.params.id} 
+                        id: { [Op.eq]: req.params.id }
                     }
                 },
                 {
-                    include: [ {association: 'colors'}] 
+                    include: [{ association: 'colors' }]
                 })
-                .then ( product => {
-                    db.Products.update ({
-                    name: req.body.name,
-                    description: req.body.description,
-                    price: req.body.price,
-                    discount: req.body.discount,
-                    special: req.body.special? 1:0,
-                    img: imgName,
-                    category_id: req.body.category_id
-                },
-                {        
-                    where: {
-                        id: {[Op.eq]: req.params.id} 
-                    }
-                }
-                // ,{
-                //     include: [ {association: 'colors'}] 
-                // }
-                )
+                .then(product => {
+                    db.Products.update({
+                        name: req.body.name,
+                        description: req.body.description,
+                        price: req.body.price,
+                        discount: req.body.discount,
+                        special: req.body.special ? 1 : 0,
+                        img: imgName,
+                        category_id: req.body.category_id
+                    },
+                        {
+                            where: {
+                                id: { [Op.eq]: req.params.id }
+                            }
+                        }
+                        // ,{
+                        //     include: [ {association: 'colors'}] 
+                        // }
+                    )
                     return product;
                 })
-                .then (product => {
+                .then(product => {
                     if (productColors) {
-                        product.setColors (colorsArray)
+                        product.setColors(colorsArray)
                     }
                 })
-                .then ( () => {
+                .then(() => {
                     return res.redirect('/admin');
                 })
-                .catch ( (error) => {
-                    console.log ( error );
-                    return res.render ('error');
+                .catch((error) => {
+                    console.log(error);
+                    return res.render('error');
                 })
         }
     },
@@ -379,39 +382,39 @@ const controller = {
                 console.log(error);
                 return res.render('error');
             })
-        },
+    },
 
-        findUser: (req, res)=>{
-            res.render('admin/findUser')
-        },
+    findUser: (req, res) => {
+        res.render('admin/findUser')
+    },
 
-        createAdmin: (req,res)=>{
-            let notFound= 'No existe ningún usuario con ese email'
-            db.Users.findOne({
-                where:{
-                    email: req.body.email
-                }
-            }).then(user=>{
-                if(user!=null){
-                    res.render('admin/createAdmin', {user})
-                } else{
-                    res.render('admin/findUser', {notFound, old:req.body})
-                }
-                
-            })
-        },
+    createAdmin: (req, res) => {
+        let notFound = 'No existe ningún usuario con ese email'
+        db.Users.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then(user => {
+            if (user != null) {
+                res.render('admin/createAdmin', { user })
+            } else {
+                res.render('admin/findUser', { notFound, old: req.body })
+            }
 
-        saveAdmin: (req,res)=>{
-            db.Users.update({
-                category_id: req.body.category_id
-            },{
-                where:{
-                id:req.params.id
-                }
-            }).then(admin=>{
-                res.redirect('/admin')
-            })
-        }
+        })
+    },
+
+    saveAdmin: (req, res) => {
+        db.Users.update({
+            category_id: req.body.category_id
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(admin => {
+            res.redirect('/admin')
+        })
+    }
 }
 
 
