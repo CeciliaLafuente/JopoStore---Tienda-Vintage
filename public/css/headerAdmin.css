@@ -13,8 +13,8 @@ body {
     width: 100%;
     margin: 0;
     text-align: center;
-    background-color: var(--gris-claro);
-    background-image: url('../images/logo/isologo-blanco.png');
+    /* background-color: var(--gris-claro);
+    background-image: url('../images/logo/isologo-blanco.png'); */
     background-size: 5%;
     background-repeat: repeat; 
     color: var(--gris-medio2);
@@ -24,12 +24,13 @@ body {
 
 header{
     background-color: transparent;
-    width: 100%; 
+    width: 100%;
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%);
 }
 
 .header{
     margin: auto;
-    padding: 20px 0 0px 20px;
+    padding: 20px 0 20px 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -78,22 +79,31 @@ header{
     text-align: left;
     margin: 0;
     z-index: 1;
-    width: 35vw;
+    width: 50vw;
     right: 0;
     top: 13vh;
 }
 
 .nav-user ul li {
     list-style: none;
+    padding:5px 0 5px 0;
 }
 
+.nav-user ul li:hover {
+    background-color: var(--gris-claro);
+}
 
 .nav-user ul li a {
+    font-size: 12px;
     text-decoration: none;
     width: 100%;
-    padding: 0;
+    padding-left: 10px;
     text-align: right;
     text-transform: uppercase;
+}
+
+.nav-user ul li a:hover {
+    background-color: var(--gris-claro);
 }
 
 .user-name i {
@@ -107,7 +117,7 @@ header{
 
 .nav-options-user {
     background-color: var(--gris-muy-claro);
-    padding: 10px;
+    padding: 0px;
     text-align: left;
     margin: 0;
 }
@@ -156,12 +166,12 @@ header{
         justify-content: flex-end;
         width: 30vw;
         height: 5.5vh;
-        margin: 4vh 3vh;
+        margin: 4vh 5vh;
     }
 
     .user-img {
         border-radius: 100%;
-        border: 1px var(--gris-medio2) solid;
+        /* border: 1px var(--gris-medio2) solid; */
         width: 2.5vw;
         height: 2.5vw;
         margin-right: 10px;

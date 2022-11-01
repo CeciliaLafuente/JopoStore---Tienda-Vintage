@@ -20,12 +20,13 @@ main .text {
 }
 
 
-
 /* main .categorias-home{
     margin-top: 60px;
     margin-bottom: 60px;
 } */
-
+ .carousel{
+   margin-top: 230px;
+ }
 
 .categorias-home article {
   padding: 0px 15px;
@@ -37,6 +38,7 @@ main .text {
   width: 100%;
 }
 .nombre-categoria {
+  /* font-family: 'Lobster', cursive; */
   color: rgb(50, 49, 49);
   font-size: 22px;
   text-transform: uppercase;
@@ -57,6 +59,7 @@ main .text {
   border: none;
   margin-top: 10px;
   margin-bottom: 75px;
+  margin-top: 50px;
 }
 
 .showAllProducts a {
@@ -128,7 +131,7 @@ main .text {
 
 .destacados .product-name {
    min-height: 45px;
-   font-size: 18px;
+   font-size: 16px;
 }
 
 .destacados button a {
@@ -143,7 +146,7 @@ main .text {
 }
 
 .destacados .price {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin:  0 0 10px;
 }
@@ -259,12 +262,20 @@ main .text {
         width: 27vw;
         height: 27vw;
     }
+    
+    .carousel{
+      margin-top: 200px;
+    }
 }
 
 @media (min-width:769px) {
 /* ------------------------------   header ----------------------------------------------*/
 
 /* Main */
+
+.carousel{
+  margin-top: 150px;
+}
 
   .carrousel-productos {
       gap: 5vw;
@@ -285,11 +296,17 @@ main .text {
       justify-content: center;
       flex-wrap: wrap;
       margin: auto;
+      margin-top: 50PX;
     }
 
     .categorias-home article {
       width: 30%;
     }
+
+/* 
+    .d-block{
+      height: 530px;
+    } */
 
   
   /* -----------------------------  footer  -----------------------------------------------*/
@@ -304,4 +321,11 @@ main .text {
     padding: 20px 10px;
     width: 30%;
   }
+}
+
+@media (min-width:1000px) {
+
+.carousel{
+  margin-top: 100px;
+}
 }

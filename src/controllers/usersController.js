@@ -340,7 +340,7 @@ const usersController = {
 
     updateProfilePasswordProcess: function(req,res){
        const passwordNew= req.body.password;
-       const errorCurrentPassword= 'Este campo no coincide con su contraseña actual';
+       const errorCurrentPassword= 'Las contraseñas no coinciden';
        //const currentPassword= bcrypt.hashSync(req.body.current-password, 10);
         
         db.Users.findByPk(req.params.id)
