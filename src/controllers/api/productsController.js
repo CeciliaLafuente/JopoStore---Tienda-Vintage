@@ -12,7 +12,7 @@ const controller = {
     // With no query string, returns all products
 
         let productArray = [];
-        let countByCategory = [];  
+        let countByCategory = [];
         let findParameters = {};
         
         if (req.query.page) {
@@ -91,8 +91,12 @@ console.log (findParameters);
             
             // countByCategory 
                 categories.forEach ( category => {
-                countByCategory.push([category.name + "=" + category.products.length]);
-               
+                    let data={
+                        name: category.name,
+                        quantity: category.products.length
+                    }
+
+                countByCategory.push(data);
                 })
 
             // result
@@ -123,15 +127,26 @@ console.log (findParameters);
             include: [ {association: 'colors'} ],
         })
         .then ( product => {
+            let productModify=[];
+            let data={
+                id: product.id,
+                name: product.name,
+                description: product.description,
+                price: product.price,
+                discount: product.discount,
+                img: product.img,
+                colors: product.colors,
+                url: 'api/products/:' + req.params.id,
+            }
+            productModify=data
 
             return res.status(200).json (
                 {
                     meta: {
                         status: 200,
-                        url: 'api/products/:' + req.params.id,
                         product_id: req.params.id,
                     },
-                    data: product
+                    data: productModify
                 }
             )
 
@@ -141,9 +156,11 @@ console.log (findParameters);
     },
 
     categoryList: (req, res) => {
-        db.Product_Categories
-            .findAll()
-            .then ( categories => {
+
+                const getCategories =   db.Product_Categories
+                    .findAll({
+                })
+                .then ( ( categories) => {
                 return res.status(200).json ( 
                     {
                         meta: {
@@ -161,4 +178,4 @@ console.log (findParameters);
 }
 
 
-module.exports = controller;
+module.exports = controller
