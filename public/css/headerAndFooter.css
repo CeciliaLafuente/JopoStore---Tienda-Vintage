@@ -264,6 +264,7 @@ button {
 
 .nav-user {
     width: 100%;
+    margin-top: 10px;
 }
 
 .nav-user ul li {
@@ -407,6 +408,10 @@ footer ul a {
     opacity: 0.8;
     color: var(--verde-wa);
     border-radius: 50%;
+}
+
+.firma{
+    font-family: 'Lobster', cursive;
 }
 
 /* ---------------------------------------------------------------------------------------*/
