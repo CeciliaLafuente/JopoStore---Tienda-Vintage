@@ -29,7 +29,7 @@ const controller = {
       
 
          findParameters = {
-            include: [ {association: 'colors'}, {association: 'product_category'} ]
+            include: [ {association: 'colors'}, {association: 'product_category'} ],
             };
             
         let whereClause;
@@ -37,7 +37,7 @@ const controller = {
         
         
     // where clause to use in findAll
-        if (req.query.search) { 
+        if (req.query.search != null && req.query.search != '') { 
             let keyword = `%${req.query.search}%`;
         
             whereClause = { [Op.or]:
@@ -49,7 +49,7 @@ const controller = {
                             ]
                         };
             findParameters.where = whereClause;
-        }
+        } 
         
     // offset clause to use in findAll
         if (req.query.page) {
@@ -58,7 +58,11 @@ const controller = {
             findParameters.offset = offsetClause;
             findParameters.limit = 10;
         }
-    
+
+    // order by category_id and name
+
+        //findParameters.order = [ ['product_category', 'name'] ];
+    console.log (findParameters);
 
         const getProducts = db.Products
                                 .findAll(findParameters);

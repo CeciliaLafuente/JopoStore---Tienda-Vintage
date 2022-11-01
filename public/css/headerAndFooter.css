@@ -193,8 +193,8 @@ button {
     border-radius: 50%;
     background-color: var(--blanco);
     position: absolute;
-    top: 12px;
-    right: 0;
+    top: 30px;
+    right: -3px;
 
 }
 
@@ -423,7 +423,7 @@ footer ul a {
 
     .product-count {
         padding: 0.4%;
-        top: 14px;
+        top: 30px;
         right: -3px;
     }
 
@@ -510,7 +510,7 @@ footer ul a {
 
     .product-count {
         padding: 12%;
-        top: -14px;
+        top: -1px;
         right: -10px;
     }
 
