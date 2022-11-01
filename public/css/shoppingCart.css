@@ -197,7 +197,7 @@ article {
 }
 
 
-.start-the-buy {
+.start-the-purchase {
     display: flex;
     justify-content: center;
     width: 75%;
@@ -206,7 +206,7 @@ article {
     margin-top: 30px;
 }
 
-.start-the-buy button{
+.start-the-purchase button{
     font-size: 14px;
     font-weight: bolder;
     padding: 10px 10px;
@@ -284,7 +284,7 @@ article {
     }
 
 
-    .start-the-buy {
+    .start-the-purchase {
         display: flex;
         justify-content: center;
         width: 75%;
@@ -293,7 +293,7 @@ article {
         margin-top: 30px;
     }
     
-    .start-the-buy button{
+    .start-the-purchase button{
         font-size: 12px;
         font-weight: bolder;
         padding: 10px 10px;

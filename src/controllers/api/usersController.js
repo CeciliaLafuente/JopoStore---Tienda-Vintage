@@ -1,6 +1,6 @@
 const db = require('../../database/models')
 const Sequelize = require('sequelize');
-const userNotLoggedMiddleware = require('../../../middlewares/userNotLoggedMiddleware');
+
 
 const controller={  
     

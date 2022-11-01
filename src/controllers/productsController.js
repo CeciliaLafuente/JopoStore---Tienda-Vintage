@@ -3,55 +3,78 @@ const db = require('../database/models')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-// const Product = require('../models/Product');
-// const Category = require('../models/Category');
-// const categories = Category.findAll();
-
 const controller = {
 
-    deleteFromShoppingCart: (req, res) => {
-        let shoppingCart = req.session.shoppingCart.filter(product => {
-            return product.id != req.params.id;
-        });
+    purchase: (req, res) => {
+        let shoppingCart = JSON.parse (req.params.cartString);
 
-        req.session.shoppingCart = shoppingCart;
-
-        return res.redirect('/products/shoppingCart');
-    },
-
-    addToShoppingCart: async (req, res) => {
-        /* Crea el array shoppingCart si no existe. Agregar el nuevo producto comprado */
+        let userLoggedId = req.session.userLogged.id;
+   
+        const createShoppingCart = async () => {
         
-        !req.session.shoppingCart ? req.session.shoppingCart = [] : null;
-
-        let addToCart = await db.Products.findByPk(req.params.id);
-
-        req.session.shoppingCart.push(addToCart);
-
-        return res.redirect('/products/shoppingCart');
-        
-    },
-
-
-    shoppingCart: (req, res) => {
-        Promise.all([
-            db.Product_Categories.findAll(),
-            db.Products.findByPk(req.params.id)
-        ])
-            .then(function ([categories, product]) {
-                if (!req.session.shoppingCart || req.session.shoppingCart.length == 0) {
-                    return res.render('./products/shoppingCart', { categories });
+            // let userLoggedId = req.session.userLogged.id;   
+         
+            let cartProducts = await Promise.all (
+                shoppingCart.map ( async item => {
+                    let product = await db.Products.findByPk ( item );
+                    return product;
+                }))
+         
+            let cartDetails = cartProducts.map ( product => {
+                return {
+                    product_id: product.id,
+                    quantity: 1,
+                    price: product.price,
+                    discount: product.discount == null? 0 : product.discount,
+                    name: product.name,
+                    description: product.description,
+                    img: product.img
                 }
+            });
+        
+            db.Shopping_Carts
+                .create ({
+                    user_id: userLoggedId,
+                    shopping_cart_details : cartDetails,
+                },
+                {
+                    include: [{association: 'shopping_cart_details'}]
+                })
+                .then ( 
+                    cartDetails.forEach ( product => {
+                        db.Product_Colors.destroy ({
+                            where: { product_id : product.product_id }
+                        })
+                            .then (  db.Products.destroy ({
+                                where: { id :  product.product_id  } 
+                            }))
+                }))
+                .then( () => {
+                     return res.redirect('/products/purchaseFinalized');
+                 })
+                .catch (e => console.log (e))
+        }
 
-                let shoppingCart = req.session.shoppingCart;
+        createShoppingCart ();
 
-                let subtotal = 0;
+    },
 
-                shoppingCart.forEach((product, index) => {
-                    subtotal = subtotal + (product.price * (1 - product.discount / 100));
-                });
+    purchaseFinalized: (req, res) => {
 
-                return res.render('./products/shoppingCart', { categories, shoppingCart, toThousand, subtotal });
+        db.Product_Categories.findAll()
+            .then( categories => {
+                 return res.render('./products/purchaseFinalized', { categories });
+             })
+             .catch(function (error) {
+                 console.log(error);
+             })
+     },
+ 
+     shoppingCart: (req, res) => {
+
+       db.Product_Categories.findAll()
+           .then( categories => {
+                return res.render('./products/shoppingCart', { categories });
             })
             .catch(function (error) {
                 console.log(error);
@@ -161,7 +184,36 @@ const controller = {
                 })
     }
 
+    
+    // deleteFromShoppingCart: (req, res) => {
+    //     let shoppingCart = req.session.shoppingCart.filter(product => {
+    //         return product.id != req.params.id;
+    //     });
+
+    //     req.session.shoppingCart = shoppingCart;
+
+    //     return res.redirect('/products/shoppingCart');
+    // },
+
+    // addToShoppingCart: async (req, res) => {
+    //     /* Crea el array shoppingCart si no existe. Agregar el nuevo producto comprado */
+        
+    //     !req.session.shoppingCart ? req.session.shoppingCart = [] : null;
+
+    //     let addToCart = await db.Products.findByPk(req.params.id);
+
+    //     req.session.shoppingCart.push(addToCart);
+
+    //     return res.redirect('/products/shoppingCart');
+        
+    // },
+
     //Código para la base de datos Json
+    
+    // const Product = require('../models/Product');
+    // const Category = require('../models/Category');
+    // const categories = Category.findAll();
+
 
     // deleteFromShoppingCart: (req, res) => {
     //     let shoppingCart = req.session.shoppingCart.filter (product => {
