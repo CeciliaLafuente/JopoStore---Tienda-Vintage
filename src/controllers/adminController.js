@@ -1,21 +1,19 @@
 // const Product = require('../models/Product');
 // const Category = require ('../models/Category');
+// const resultValidation = validationResult(req);
+// if (resultValidation.errors.length > 0){
+// return res.render ('./admin/createProduct', {errors: resultValidation.mapped()})
+// }
 const db = require('../database/models');
 const { Op } = require('sequelize');
 const { validationResult } = require('express-validator');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-// const resultValidation = validationResult(req);
-// if (resultValidation.errors.length > 0){
-// return res.render ('./admin/createProduct', {errors: resultValidation.mapped()})
-// }
+
 
 const controller = {
     createProduct: (req, res) => {
-        // ******** versión sin BD ********
-        // let categories = Category.findAll();
-        // return res.render ('./admin/createProduct', {categories});
-        // ********************************
+
         let getColors = db.Colors.findAll({
             order: [['name']]
         });
@@ -33,30 +31,6 @@ const controller = {
     },
 
     storeProduct: (req, res) => {
-
-        // ******** versión sin BD ********
-        // let products = Product.findAll();
-
-        // /***** Obtengo el máximo ID utilizado *****/
-        // let maxId = Math.max ( ...products.map ( product => {
-        //         return product.id;
-        // }));
-
-        // let categoryName = Category.findById(req.body.category).name;
-
-        // /***** Completo los campos del nuevo producto *****/
-        // let newProduct = req.body;
-
-        // newProduct.price = parseInt (newProduct.price);
-        // newProduct.discount = newProduct.discount != ''? parseInt (newProduct.discount) : 0;
-        // newProduct.id = maxId + 1;
-        // newProduct.image = '/images/products/' + categoryName + '/' + req.file.filename;
-        // newProduct.special = req.body.special? 1:0;
-
-        // Product.addProduct (newProduct);
-
-        // return res.redirect ('/admin');
-        // ********************************
 
         //********** COMIENZO AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
 
@@ -119,11 +93,6 @@ const controller = {
     },
 
     productDetail: (req, res) => {
-        // ******** versión sin BD ********
-        // let product = Product.findById(req.params.id);
-
-        // return res.render ('./admin/productDetailAdmin', {product, toThousand});
-        // *************************
 
         db.Products.findByPk(req.params.id)
             .then(product => {
@@ -137,13 +106,6 @@ const controller = {
     },
 
     edit: function (req, res) {
-        // ******** versión sin BD ********
-        // let categories = Category.findAll();
-
-        // let product = Product.findById (req.params.id);
-
-        // return res.render('./admin/modifyProduct', {product, categories});
-        // *****************************
 
         let getColors = db.Colors.findAll({
             order: [['name']]
@@ -166,34 +128,7 @@ const controller = {
     },
 
     update: function (req, res) {
-        // ******** versión sin BD ********
-        // let products = Product.findAll();
 
-        // products.forEach(valor=>{
-        //     if (valor.id==req.params.id){
-        //         valor.name=req.body.name;
-        //         valor.description=req.body.description;
-        //         valor.category=req.body.category;
-        //         valor.price= parseInt(req.body.price);
-        //         valor.discount = req.body.discount = ''? 0 : parseInt(req.body.discount);
-        //         valor.special = req.body.special? 1:0;
-        //     }
-        // });
-
-        // let categoryName = Category.findById(req.body.category).name;
-
-        // if (req.file){
-        //     products.forEach(valor=>{
-        //         if (valor.id==req.params.id){
-        //     valor.image= '/images/products/' + categoryName + '/' + req.file.filename;
-        //         }
-        //     });
-        // }
-        //          
-        // Product.writeFile (products);
-        //
-        // return res.redirect('/admin');
-        // *****************************
 
         //********** COMIENZO AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
 
@@ -298,17 +233,6 @@ const controller = {
 
     destroy: function (req, res) {
 
-        // ************ versión sin BD *******
-        // let products = Product.findAll();
-
-        // products = products.filter (product => {
-        //     return product.id != req.params.id;
-        // });
-
-        // Product.writeFile (products);
-
-        // res.redirect ('/admin');
-        // *****************************
         db.Product_Colors.destroy({
             where: { product_id: { [Op.eq]: req.params.id } }
         })
@@ -326,13 +250,7 @@ const controller = {
     },
 
     productsList: (req, res) => {
-        // *********** versión sin BD **********
-        // let categories = Category.findAll();
 
-        // let products = Product.findAll();
-
-        // res.render('admin/productsListAdmin', {products, toThousand, categories});
-        // *******************************
         getProductCategories = db.Product_Categories.findAll();
         getProducts = db.Products.findAll();
 
@@ -347,20 +265,7 @@ const controller = {
     },
 
     filtroPorCategoria: (req, res) => {
-        // **************** versión sin BD ***********
-        //     let products = Product.findAll();
-        //     let categories = Category.findAll();
 
-        //     if (req.body.category ==''){
-        //         return  res.render('admin/productsListAdmin', {products, categories});
-        // }
-
-        //     const productosFiltrados = products.filter((producto)=>{
-        //         return producto.category == req.body.category;
-        //     })
-
-        //     return res.render('admin/productsListAdmin', {products: productosFiltrados, categories});
-        // ***********************
         let filteredCategory = req.body.category;
 
         if (filteredCategory == '') {
@@ -415,6 +320,114 @@ const controller = {
         })
     }
 }
+
+// ******** versión sin BD Create product ********
+// let categories = Category.findAll();
+// return res.render ('./admin/createProduct', {categories});
+// ********************************
+
+// ******** versión sin BD Store Product********
+// let products = Product.findAll();
+
+// /***** Obtengo el máximo ID utilizado *****/
+// let maxId = Math.max ( ...products.map ( product => {
+//         return product.id;
+// }));
+
+// let categoryName = Category.findById(req.body.category).name;
+
+// /***** Completo los campos del nuevo producto *****/
+// let newProduct = req.body;
+
+// newProduct.price = parseInt (newProduct.price);
+// newProduct.discount = newProduct.discount != ''? parseInt (newProduct.discount) : 0;
+// newProduct.id = maxId + 1;
+// newProduct.image = '/images/products/' + categoryName + '/' + req.file.filename;
+// newProduct.special = req.body.special? 1:0;
+
+// Product.addProduct (newProduct);
+
+// return res.redirect ('/admin');
+// ********************************
+
+// ******** versión sin BD Product Detail********
+// let product = Product.findById(req.params.id);
+
+// return res.render ('./admin/productDetailAdmin', {product, toThousand});
+// *************************
+
+// ******** versión sin BD Edit ********
+// let categories = Category.findAll();
+
+// let product = Product.findById (req.params.id);
+
+// return res.render('./admin/modifyProduct', {product, categories});
+// *****************************
+
+// ******** versión sin BD Update********
+// let products = Product.findAll();
+
+// products.forEach(valor=>{
+//     if (valor.id==req.params.id){
+//         valor.name=req.body.name;
+//         valor.description=req.body.description;
+//         valor.category=req.body.category;
+//         valor.price= parseInt(req.body.price);
+//         valor.discount = req.body.discount = ''? 0 : parseInt(req.body.discount);
+//         valor.special = req.body.special? 1:0;
+//     }
+// });
+
+// let categoryName = Category.findById(req.body.category).name;
+
+// if (req.file){
+//     products.forEach(valor=>{
+//         if (valor.id==req.params.id){
+//     valor.image= '/images/products/' + categoryName + '/' + req.file.filename;
+//         }
+//     });
+// }
+//          
+// Product.writeFile (products);
+//
+// return res.redirect('/admin');
+// *****************************
+
+// ************ versión sin BD Destroy*******
+// let products = Product.findAll();
+
+// products = products.filter (product => {
+//     return product.id != req.params.id;
+// });
+
+// Product.writeFile (products);
+
+// res.redirect ('/admin');
+// *****************************
+
+// *********** versión sin BD Product List**********
+// let categories = Category.findAll();
+
+// let products = Product.findAll();
+
+// res.render('admin/productsListAdmin', {products, toThousand, categories});
+// *******************************
+
+// **************** versión sin BD Filtro por categoría***********
+//     let products = Product.findAll();
+//     let categories = Category.findAll();
+
+//     if (req.body.category ==''){
+//         return  res.render('admin/productsListAdmin', {products, categories});
+// }
+
+//     const productosFiltrados = products.filter((producto)=>{
+//         return producto.category == req.body.category;
+//     })
+
+//     return res.render('admin/productsListAdmin', {products: productosFiltrados, categories});
+// ***********************
+
 
 
 module.exports = controller;

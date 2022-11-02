@@ -8,10 +8,6 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const indexController = {
 
     vistaIndex: (req, res) => {
-        // let categories = db.Category.findAll();
-        // let products = db.Product.findAll()
-        //
-        // res.render('index', { categories, products, toThousand});
 
         getProductCategories = db.Product_Categories.findAll();
         getProducts = db.Products.findAll();
@@ -25,6 +21,11 @@ const indexController = {
             })
     },
 }
+
+        // let categories = db.Category.findAll();
+        // let products = db.Product.findAll()
+        //
+        // res.render('index', { categories, products, toThousand});
 
 module.exports = indexController;
 
