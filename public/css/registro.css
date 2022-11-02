@@ -58,7 +58,7 @@ main form{
  .fa-circle-check{
     position: absolute;
     color: green;
-    top:33px;
+    top:47px;
     right: 5px;
    display: none;
 }
@@ -66,7 +66,7 @@ main form{
 .fa-circle-xmark{
     position: absolute;
     color: red;
-    top:33px;
+    top:47px;
     right: 5px;
    display: none;
 }
@@ -138,13 +138,7 @@ p{
     font-size: 12px;
 }
 
-.fa-circle-xmark{
-    position: absolute;
-    top:33px;
-    right: 5px;
-    color: red;
-    display: none;
-}
+
 
 .invalid-password-msg{
 

@@ -424,8 +424,8 @@ const usersController = {
     },*/
 
     logout:(req, res)=>{
-        res.clearCookie('remember_user');
         req.session.destroy();
+        res.clearCookie('remember_user');
         return res.redirect('/');
     }
 };
