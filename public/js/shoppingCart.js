@@ -14,8 +14,9 @@ window.addEventListener ('load', async () => {
     let newArticle;
 
     // obtengo el carrito del localStorage (el array contiene solamente el id de los productos)
-
+   
     let cartString = localStorage.getItem ( 'shoppingCart') ? localStorage.getItem ( 'shoppingCart') : [];
+    
     let cartArray = localStorage.getItem ( 'shoppingCart') ? JSON.parse (localStorage.getItem ( 'shoppingCart')) : [];
 
     if ( cartArray.length == 0) {
@@ -36,7 +37,6 @@ window.addEventListener ('load', async () => {
                 const data = await fetch ( 'http://localhost:3040/api/products/' + item );
                 return data.json();
             }))
-
         
         // para cada producto de cartProducts agrego el valor al subtotay mando el html a la vista
         cartProducts.forEach ( product => {
@@ -44,8 +44,9 @@ window.addEventListener ('load', async () => {
             !product.data.discount || product.data.discount == 0  ?
                 subtotal = subtotal + parseInt(product.data.price):
                 subtotal = subtotal + (parseInt(product.data.price) * (1 - parseInt(product.data.discount) / 100));
- 
-            newArticle =
+            
+            
+                newArticle =
                 `<article class="productArticle" >
                     <div class="product">
                         <a href="/products/productDetail/${product.data.id}" class="ir-a-detail">
@@ -58,7 +59,8 @@ window.addEventListener ('load', async () => {
                             </button>
                         </form>
                     </div>`
-
+              
+           
                 if (!product.data.discount || product.data.discount == 0) {  
                     newArticle += `<p class="price">$${product.data.price}</p>`
                 } else {
@@ -87,6 +89,7 @@ window.addEventListener ('load', async () => {
         theSubtotal.innerText = strSubtotal;
         theTotal.innerText = strTotal;
         theInstallments.innerText = strInstallments;
+        
         
         purchaseButton.href = `/products/purchase/${cartString}`;
 

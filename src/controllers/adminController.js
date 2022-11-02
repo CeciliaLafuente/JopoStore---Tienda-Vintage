@@ -198,7 +198,8 @@ const controller = {
         //********** COMIENZO AGREGADO POR MB PARA PROBAR VALIDACIÓN DE ARCHIVO EN MULTER  */
 
         // Crea un objeto old que contenga los datos ingresados por el usuario. Agrega el id porque no está en el req.body//
-
+        const resultValidations = validationResult(req);
+        
         let old = req.body;
         old.id = req.params.id;
 

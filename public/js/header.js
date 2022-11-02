@@ -24,7 +24,7 @@ window.addEventListener ('load', () => {
     }}
 
     localStorage.setItem ('cartCount', cartCount);
-
+    
     productCount.innerText = cartCount;
 
     shoppingCart.addEventListener ('click', () => {
