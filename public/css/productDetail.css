@@ -189,7 +189,7 @@ main {
     }
 
     .button-agregar-al-carrito {
-        width: 40%;
+        width: 50%;
     }
 }
 
@@ -201,10 +201,10 @@ main {
 
     /* ------------------------------   main  ----------------------------------------------*/
 
-   main{
-    margin-top: 200px
-   }
-   
+    main {
+        margin-top: 200px
+    }
+
     .article-producto {
         width: 70%;
         margin: 30px 15%;
@@ -223,17 +223,15 @@ main {
         padding: 40px;
     }
 
-    
     .button-agregar-al-carrito {
         width: 80%;
         font-size: 13px;
     }
-
 }
 
-@media (min-width:769px){
+@media (min-width:1000px) {
+
     .button-agregar-al-carrito {
-        width: 40%;
-        font-size: 13px;
+        width: 60%;
     }
 }

@@ -17,7 +17,7 @@ router.get ('/', adminController.productsList);
 router.get ('/createProduct', adminController.createProduct);
 router.post ('/createProduct', upload.single('img'), validationCreateProduct, adminController.storeProduct);
 
-router.get ('/findUser',cookieMiddleware, adminController.findUser);
+router.get ('/findUser', adminController.findUser);
 router.post ('/createAdmin', adminController.createAdmin);
 router.put ('/saveAdmin/:id', adminController.saveAdmin);
 

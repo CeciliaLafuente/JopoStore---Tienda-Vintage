@@ -29,12 +29,10 @@ app.use(productCountMiddleware);
 app.use(cookieMiddleware);
 
 
-
 const indexRouter = require('./src/routers/index.js');
 const productsRouter = require('./src/routers/products.js');
 const usersRouter = require('./src/routers/users.js');
 const adminRouter = require('./src/routers/admin.js');
-// const res = require("express/lib/response");
 const productsApiRouter = require('./src/routers/api/products.js');;
 const usersApiRouter= require('./src/routers/api/users.js')
 

@@ -3,6 +3,7 @@
 
 <%- include('../partials/head.ejs') %>
     <link href="/css/login.css" , rel="stylesheet">
+    <script src="../../../js/userLogin.js"></script>
 
 
     </head>
@@ -16,20 +17,22 @@
                     <div class="form-control">
                         <label>Email </label>
 
-                        <input type="email" name="email" id= "email" class="input-login"
+                        <input type="email" name="email" id="email" class="input-login"
                             value="<%= locals.errors && errors.old ? errors.old.email : null%>">
+                        <p class="email-error"></p>
                         <% if (locals.errors && errors.email) { %>
-                            <p class="email-error">
-                                <%= locals.errors && errors.email? errors.email.msg:null %> 
+                            <p>
+                                <%=errors.email.msg %>
                             </p>
-                            <% } %> 
+                            <% } %>
                     </div>
                     <div class="form-control">
                         <label>Contraseña </label>
-                        <input type="password" name="password" id = "password" class="input-login">
+                        <input type="password" name="password" id="password" class="input-login">
+                        <p class="password-error"></p>
                         <% if (locals.errors && errors.password) { %>
-                            <p class="password-error">
-                                <%= locals.errors && errors.password? errors.password.msg:null %> 
+                            <p>
+                                <%= errors.password.msg %>
                             </p>
                             <% } %>
 
@@ -42,22 +45,19 @@
                                 <a href="#" class="a-password">¿Olvidaste tu contraseña?</a>
                     </div>
 
-
                     <div class="form-final-login">
-                        <button type="submit" class="button-inicio">INICIAR SESIÓN</button>
+                        <button class="button-inicio">INICIAR SESIÓN</button>
                         <p>¿No tenés cuenta aún?</p>
                         <div class="enlace-registro">
                             <a href='/users/registro'>Crear cuenta</a>
                         </div>
                     </div>
 
-
-
                 </form>
             </main>
             <%- include('../partials/footer.ejs') %>
 
-            
+
     </body>
 
 </html>
