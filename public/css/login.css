@@ -2,26 +2,16 @@
 .inicio {
     font-size: 40px;
     text-align: center;
-
 }
 
 main {
-    /* font-family: Arial, Helvetica, sans-serif;
-    background-image: url('../images/portadas/portada3.jpg');
-    background-size: cover;
-    background-position: center;
-    padding:20px; */
-    
     background-color: var(--blanco);
     color: var(--gris-oscuro);
     display: flex;
-    /* background-color: rgb(192, 165, 123);   */
-    /* background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%); */
     background-image: url('../images/fondos/fondo-12.jpg');
     background-size: cover;
     margin-top: 230px;
 }
-
 
 .formulario {
     text-align: center;
@@ -42,13 +32,11 @@ main {
 
 .input-login {
     background-color: rgb(209, 206, 202);
-    /* background-color:rgb(189, 172, 145); */
     width: 100%;
     border-radius: 3px;
     height: 25px;
     border: none;
 }
-
 
 .a-password {
     margin-top: 10px;
@@ -56,7 +44,6 @@ main {
     display: block;
     font-size: 14px;
     color: var(--verde);
-
 }
 
 .a-password:hover {
@@ -84,8 +71,6 @@ main {
     text-decoration: none;
     font-size: 14px;
     color: var(--verde);
-    
-
 }
 
 .form-final-login a:hover {
@@ -113,7 +98,6 @@ main form {
 
 label {
     font-size: 15px;
-    ;
 }
 
 .error {
@@ -130,7 +114,7 @@ label {
     font-size: 10px;
 }
 
-.password-error{
+.password-error {
     color: red;
     font-size: 12px;
 }
@@ -167,6 +151,7 @@ label {
     .formulario {
         width: 65%;
     }
+
     .mensaje {
         font-size: 14px;
     }
@@ -174,7 +159,7 @@ label {
 
 @media (min-width:700px) {
 
-    main{
+    main {
         margin-top: 200px;
     }
 
@@ -223,7 +208,7 @@ label {
     .email-error {
         font-size: 12px;
     }
-    
+
     .password-error {
         font-size: 12px;
     }

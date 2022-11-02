@@ -1,18 +1,15 @@
 /*registro*/
 
-main{
-    background-image: radial-gradient(73% 147%, #EADFDF 59%, #c0c4c7 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%);
-   background-image: url('../images/fondos/fondo-12.jpg');
-   background-size: cover;
+main {
+    background-image: url('../images/fondos/fondo-12.jpg');
+    background-size: cover;
     color: var(--gris-oscuro);
     display: flex;
     opacity: 0-9;
     margin-top: 200px;
-
 }
 
-
-main form{
+main form {
     padding: 20px;
     background-color: white;
     opacity: 0.9;
@@ -24,15 +21,14 @@ main form{
     margin-bottom: 50px;
 }
 
-.form-registro{
-   text-align: left;
-   font-weight: normal;
-   width: 90%;
-   letter-spacing: 0,5px;
+.form-registro {
+    text-align: left;
+    font-weight: normal;
+    width: 90%;
+    letter-spacing: 0, 5px;
 }
 
-
-.form-registro p{
+.form-registro p {
     color: var(--verde);
     font-weight: bold;
     font-size: 14px;
@@ -41,8 +37,8 @@ main form{
     margin: 0 0 5px;
 }
 
-.form-control-registro input{
-    background-color:rgb(209, 206, 202);
+.form-control-registro input {
+    background-color: rgb(209, 206, 202);
     /* background-color:rgb(189, 172, 145); */
     border-radius: 3px;
     width: 100%;
@@ -50,45 +46,44 @@ main form{
     border: none
 }
 
-.form-control-registro{
+.form-control-registro {
     padding: 10px 0px;
     position: relative;
 }
 
- .fa-circle-check{
+.fa-circle-check {
     position: absolute;
     color: green;
-    top:47px;
+    top: 47px;
     right: 5px;
-   display: none;
+    display: none;
 }
 
-.fa-circle-xmark{
+.fa-circle-xmark {
     position: absolute;
     color: red;
-    top:47px;
+    top: 47px;
     right: 5px;
-   display: none;
+    display: none;
 }
 
-.check ~ .fa-circle-check{
+.check~.fa-circle-check {
     display: block;
 }
 
-.wrong ~ .fa-circle-xmark{
+.wrong~.fa-circle-xmark {
     display: block;
 }
 
-.form-control-registro input:focus{
+.form-control-registro input:focus {
     border-color: var(--amarillo);
 }
 
-
-.form-control-birtday{
+.form-control-birtday {
     margin-left: 10px;
 }
 
-.create-account{
+.create-account {
     width: 50%;
     height: 35px;
     border-radius: 5px;
@@ -96,22 +91,22 @@ main form{
     color: white;
     font-size: 13px;
     font-weight: bold;
-    border:none;
-    letter-spacing:1px;
+    border: none;
+    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
-.form-final-registro{
+.form-final-registro {
     margin: 40px 0px 0px 0px;
     text-align: center;
 
 }
 
-.delete-button{
+.delete-button {
     margin-left: 10px;
     background-color: var(--gris-medio2);
     color: white;
-    border:none;
+    border: none;
     padding: 10px;
     margin: auto
 }
@@ -120,7 +115,7 @@ button {
     font-size: 14px;
 }
 
-a{
+a {
     color: var(--verde);
     text-decoration: none;
 }
@@ -130,22 +125,19 @@ a:hover {
     text-decoration: none;
 }
 
-label{
+label {
     font-size: 14px;
 }
 
-p{
+p {
     font-size: 12px;
 }
 
-
-
-.invalid-password-msg{
-
-    color:red;
+.invalid-password-msg {
+    color: red;
 }
 
-.sure{
+.sure {
     background-color: gray;
     position: absolute;
     width: 40%;
@@ -156,20 +148,20 @@ p{
     display: none;
 }
 
-.sure p{
+.sure p {
     color: black;
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 17px;
 }
 
-.accept{
+.accept {
     margin-right: 10px;
     font-weight: bold;
     background-color: green;
 }
 
-.cancel{
+.cancel {
     margin-left: 10px;
     font-weight: bold;
     background-color: red;
@@ -183,43 +175,46 @@ p{
 }
 
 
-@media (min-width:700px){
+@media (min-width:700px) {
 
     .form-registro {
         width: 60%;
     }
-    .form-control-registro{
-        width:100%;
+
+    .form-control-registro {
+        width: 100%;
     }
 
-    .create-account{
+    .create-account {
         font-size: 14px;
         width: 50%;
     }
 
-    label, p {
+    label,
+    p {
         font-size: 16px;
     }
 
-    button{
+    button {
         font-size: 16px;
     }
 
-    main form{
+    main form {
         padding: 20px 60px;
         width: 45%;
     }
 
-    p{
+    p {
         font-size: 14px;
     }
 }
+
 @media (min-width:1000px) {
     .form-registro {
         width: 40%;
     }
 
-    .create-account{
+    .create-account {
         font-size: 14px;
         width: 35%;
     }

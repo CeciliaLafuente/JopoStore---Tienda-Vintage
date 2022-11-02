@@ -21,8 +21,8 @@ practicas.js
 /src/*/*CARRITO*.*
 /src/*/*/*CARRITO*.*
 /src/*/*/*/*CARRITO*.*
-/public/images/*.*
-/public/images/*/*.*
-/public/images/*/*/*.*
+# /public/images/*.*
+# /public/images/*/*.*
+# /public/images/*/*/*.*
 
 package*.json
