@@ -93,7 +93,7 @@ main {
     text-decoration: none;
 }
 
-p {
+.form-final-login p {
     font-size: 12px;
     margin-top: 15px;
     margin-bottom: 5px;
@@ -216,7 +216,7 @@ label {
         width: 45%;
     }
 
-    p {
+    .form-final-login p {
         font-size: 16px;
     }
 
