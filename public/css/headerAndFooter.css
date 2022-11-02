@@ -65,7 +65,7 @@ input:checked~.menu-desplegable {
     position: absolute;
     display: none;
     background-color: var(--gris-muy-claro);
-    width: 50vw;
+    width: 60vw;
     z-index: 1;
     height: 100vh;
     box-shadow: 0px 0px 10px var(--gris-medio);
@@ -92,17 +92,16 @@ input:checked~.menu-desplegable {
     display: flex;
     flex-direction: column;
     padding: 0;
-    margin: 10px 0 0;
 }
 
-.menu-desplegable .vertical-nav-bar ul li:hover{
+/* .menu-desplegable .vertical-nav-bar ul li:hover{
   background-color: var(--claro);
-}
+} */
 
 .menu-desplegable .vertical-nav-bar li {
     list-style: none;
     font-size: 12px;
-    margin: 10px 0;
+    padding: 10px;
 }
 
 
@@ -112,8 +111,8 @@ input:checked~.menu-desplegable {
     text-transform: uppercase;
 }
 
-.menu-desplegable .vertical-nav-bar li a:hover {
-    color: var(--verde);
+.menu-desplegable .vertical-nav-bar ul li:hover {
+    background-color: var(--gris-claro);
 }
 
 .menu-options {
@@ -126,7 +125,7 @@ input:checked~.menu-desplegable {
     display: flex;
     flex-direction: column;
     padding: 30px 0 0;
-    margin: 40px 0 10px;
+    margin: 0;
     justify-content: flex-end;
     color: var(--gris-medio2);
     font-size: 12px;
@@ -134,8 +133,13 @@ input:checked~.menu-desplegable {
 }
 
 .user-options p {
-    padding: 0;
     text-decoration: none;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.user-options p:hover {
+background-color: var(--gris-claro);
 }
 
 
@@ -302,21 +306,20 @@ button {
     display: none;
     position: absolute;
     background-color: var(--gris-muy-claro);
-    padding: 10px;
+    padding: 0px;
     text-align: left;
     margin-top: 0;
     z-index: 1;
 }
 
-.nav-options-user li {
-    margin-bottom: 10px;
-}
 .adminAccess {
     font-weight: bold;
     
 }
 .nav-options-user a {
-    padding: 5px 0px;
+    padding: 10px 10px;
+    font-size: 13px;
+   
 }
 
 .nav-options-user a:hover {
@@ -339,10 +342,6 @@ button {
 .div-bars-nemu button:hover .nav-options-user {
     display: block;
 }
-
-
-
-
 
 
 /* -----------------------------  footer  -----------------------------------------------*/
@@ -445,9 +444,8 @@ footer ul a {
     }
 
     .menu-desplegable {
-        width: 30vw;
+        width: 40vw;
     }
-
 }
 
 
@@ -571,6 +569,16 @@ footer ul a {
         align-content: center;
     }
 
+    .nav-options-user{
+        width: 40%;
+        background-color: var(--gris-muy-claro);
+        font-size: 12px;
+}
+
+    .nav-options-user ul li:hover{
+            background-color: var(--gris-claro);
+    }
+  
 
 
     /* -----------------------------  footer  -----------------------------------------------*/
