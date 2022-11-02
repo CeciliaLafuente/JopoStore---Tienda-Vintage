@@ -37,13 +37,13 @@ window.addEventListener('load', async () => {
                 return data.json();
             }))
 
-
         // para cada producto de cartProducts agrego el valor al subtotay mando el html a la vista
         cartProducts.forEach(product => {
 
             !product.data.discount || product.data.discount == 0 ?
                 subtotal = subtotal + parseInt(product.data.price) :
                 subtotal = subtotal + (parseInt(product.data.price) * (1 - parseInt(product.data.discount) / 100));
+            
 
             newArticle =
                 `<article class="productArticle" >
@@ -58,12 +58,13 @@ window.addEventListener('load', async () => {
                             </button>
                         </form>
                     </div>`
-
-            if (!product.data.discount || product.data.discount == 0) {
-                newArticle += `<p class="price">$${product.data.price}</p>`
-            } else {
-                newArticle +=
-                    `<div class="price-discount">
+              
+           
+                if (!product.data.discount || product.data.discount == 0) {  
+                    newArticle += `<p class="price">$${product.data.price}</p>`
+                } else {
+                    newArticle += 
+                        `<div class="price-discount">
                             <span class="orig-price">$${product.data.price}</span>
                             <span class="final-price">$${product.data.price * (1 - product.data.discount / 100).toFixed()}</span>
                         </div>
@@ -87,7 +88,6 @@ window.addEventListener('load', async () => {
         theSubtotal.innerText = strSubtotal;
         theTotal.innerText = strTotal;
         theInstallments.innerText = strInstallments;
-
         purchaseButton.href = `/products/purchase/${cartString}`;
 
 
