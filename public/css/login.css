@@ -19,7 +19,7 @@ main {
     /* background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%); */
     background-image: url('../images/fondos/fondo-12.jpg');
     background-size: cover;
-    margin-top: 200px;
+    margin-top: 230px;
 }
 
 
@@ -173,6 +173,10 @@ label {
 }
 
 @media (min-width:700px) {
+
+    main{
+        margin-top: 200px;
+    }
 
     .formulario {
         width: 50%;
