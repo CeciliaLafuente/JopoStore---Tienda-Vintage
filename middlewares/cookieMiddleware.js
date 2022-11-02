@@ -18,16 +18,16 @@ function cookieMiddleware(req, res, next) {
         })
         .then(function(userFromCookie){
             
-              if (userFromCookie!=null ) {
+              if (userFromCookie!=null && req.session && req.session.userLogged) {
              
                 req.session.userLogged = userFromCookie;
               }
-
+           
             if (req.session && req.session.userLogged) {
                 res.locals.isLogged = true;
                 res.locals.isLogged = req.session.userLogged;
             }
-        });
+        })
 
       
 

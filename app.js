@@ -35,8 +35,7 @@ const productsRouter = require('./src/routers/products.js');
 const usersRouter = require('./src/routers/users.js');
 const adminRouter = require('./src/routers/admin.js');
 // const res = require("express/lib/response");
-const productsApiRouter = require('./src/routers/api/products.js');
-const categoriesApiRouter = require('./src/routers/api/categories.js');
+const productsApiRouter = require('./src/routers/api/products.js');;
 const usersApiRouter= require('./src/routers/api/users.js')
 
 
@@ -47,7 +46,6 @@ app.use('/admin', adminRouter);
 
 // API routes
 app.use ( '/api/products', productsApiRouter);
-app.use ( '/api/categories', categoriesApiRouter);
 app.use ( '/api/users', usersApiRouter);
 
 
