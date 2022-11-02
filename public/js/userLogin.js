@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
 
-    let form = document.querySelector('.form-producto');
+    let form = document.querySelector('.formulario');
     let email = document.querySelector('#email');
     let emailError = document.querySelector('.email-error');
     let password = document.querySelector('#password');
@@ -14,20 +14,19 @@ window.addEventListener('load', () => {
             );
     };
 
-
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         let errors = {};
 
         if (email.value == '') {
-            errors.email = 'Debe ingresar un email';
+            errors.email = 'Debes ingresar un email';
         } else if (validateEmail(email.value) === null) {
-            errors.email = 'Debe ser un email válido';
+            errors.email = 'Debes ingresar un email válido';
         };
 
         if (password.value == '') {
-            errors.password = 'Debe ingresar tu contraseña';
+            errors.password = 'Debes ingresar tu contraseña';
         };
 
         if (Object.keys(errors).length > 0) {
