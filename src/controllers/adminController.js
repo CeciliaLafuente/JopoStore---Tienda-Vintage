@@ -199,6 +199,10 @@ const controller = {
 
         // Crea un objeto old que contenga los datos ingresados por el usuario. Agrega el id porque no está en el req.body//
 
+
+//*********    AGREGADO PARA VER SI SE SOLUCIONA LA CANCELACIÓN EN EL UPDATE ***************/
+        const resultValidations = validationResult(req);
+        
         let old = req.body;
         old.id = req.params.id;
 

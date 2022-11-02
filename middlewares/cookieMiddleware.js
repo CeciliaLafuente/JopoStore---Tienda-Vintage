@@ -28,13 +28,20 @@ function cookieMiddleware(req, res, next) {
                 res.locals.isLogged = req.session.userLogged;
             }
         })
+
+      
+
+       /* if (req.session && req.session.userLogged) {
+            res.locals.isLogged = true;
+            res.locals.isLogged = req.session.userLogged;
+        } */
                     
     next();
 }
 
 module.exports = cookieMiddleware;
 
-//Consultas a la base de datos
+
 
 // const User = require('../src/models/Users')
 
