@@ -7,6 +7,7 @@ const controller = {
 
     purchase: (req, res) => {
         let shoppingCart = JSON.parse (req.params.cartString);
+        console.log(shoppingCart)
 
         let userLoggedId = req.session.userLogged.id;
    

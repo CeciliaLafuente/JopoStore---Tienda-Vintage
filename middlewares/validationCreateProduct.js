@@ -8,7 +8,7 @@ const validation = [
     .isLength({min:20,max:300}).withMessage('Debe tener entre 20 y 300 caracteres'),
     body('category_id').notEmpty().withMessage('Debes seleccionar una categoría').bail(),
     body('colors').notEmpty().withMessage('Debes seleccionar al menos un color').bail(),
-    body('price').isNumeric().notEmpty().withMessage('Debes colocar el precio').bail()
+    body('price').notEmpty().withMessage('Debes colocar el precio').bail()
   
 ]
 
