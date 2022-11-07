@@ -79,7 +79,7 @@ main {
 }
 
 .form-final-login p {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 15px;
     margin-bottom: 5px;
 }
@@ -111,12 +111,12 @@ label {
 
 .email-error {
     color: red;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .password-error {
     color: red;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .mensaje {

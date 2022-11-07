@@ -21,7 +21,7 @@
                             value="<%= locals.errors && errors.old ? errors.old.email : null%>">
                         <p class="email-error"></p>
                         <% if (locals.errors && errors.email) { %>
-                            <p>
+                            <p class="email-error">
                                 <%=errors.email.msg %>
                             </p>
                             <% } %>
@@ -31,7 +31,7 @@
                         <input type="password" name="password" id="password" class="input-login">
                         <p class="password-error"></p>
                         <% if (locals.errors && errors.password) { %>
-                            <p>
+                            <p class="password-error">
                                 <%= errors.password.msg %>
                             </p>
                             <% } %>
