@@ -29,8 +29,7 @@ main form {
 }
 
 .form-registro p {
-    color: var(--verde);
-    font-weight: bold;
+    color: red;
     font-size: 14px;
     border: none;
     width: 100%;
