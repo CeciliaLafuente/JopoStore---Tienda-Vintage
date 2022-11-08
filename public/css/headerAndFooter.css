@@ -360,6 +360,7 @@ footer ul {
 
 footer ul :hover {
     color: var(--verde);
+    text-decoration: none;
 }
 
 footer li {
@@ -401,9 +402,12 @@ footer ul a {
     border-radius: 50%;
 }
 
-.firma {
+.firma h1{
     font-family: 'Lobster', cursive;
+    font-size: 23px;
 }
+
+
 
 /* ---------------------------------------------------------------------------------------*/
 /* ------------------------------   TABLET  ----------------------------------------------*/

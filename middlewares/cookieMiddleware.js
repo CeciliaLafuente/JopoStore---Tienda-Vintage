@@ -21,7 +21,7 @@ function cookieMiddleware(req, res, next) {
                
               if (userFromCookie!=null) { 
                 res.locals.isLogged = userFromCookie ; 
-                
+
               } else if (req.session && req.session.userLogged) {
                 res.locals.isLogged = true;
                 res.locals.isLogged = req.session.userLogged;
@@ -33,7 +33,7 @@ function cookieMiddleware(req, res, next) {
 
 module.exports = cookieMiddleware;
 
-//Consultas a la base de datos
+
 
 // const User = require('../src/models/Users')
 

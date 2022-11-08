@@ -114,7 +114,7 @@ const controller = {
                     {
                         meta: {
                             status : 200,
-                            url: 'api/products',
+                            url: 'http://localhost:3040/api/products',
                             
                     },
                         data: data
@@ -140,7 +140,7 @@ const controller = {
                 discount: product.discount,
                 img: product.img,
                 colors: product.colors,
-                url: 'api/products/:' + req.params.id,
+                url: 'http://localhost:3040/api/products/' + req.params.id,
             }
             productModify=data
 
