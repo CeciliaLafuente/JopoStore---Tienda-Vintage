@@ -31,7 +31,7 @@ router.put('/profile/:id', validationImage.single('image'), usersController.upda
 
  router.get('/update/profile/password/:id', usersController.updateProfilePassword);
 
- router.get('/logout/',usersController.logout);
+ router.get('/logout',usersController.logout);
 
 
 module.exports=router;
