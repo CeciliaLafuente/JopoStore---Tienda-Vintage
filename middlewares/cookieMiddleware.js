@@ -1,41 +1,35 @@
 const db= require('../src/database/models')
 
 function cookieMiddleware(req, res, next) {
-    res.locals.isLogged=false;
+  res.locals.isLogged=false;
 
     let emailInCookie=[];
 
        if(req.cookies.remember_user!=undefined){
             emailInCookie = req.cookies.remember_user;
        }else{
-            emailInCookie= 'default@hotmail.com'
+        emailInCookie = 'noexiste@hotmail.com';
        }
 
-        db.Users.findOne({
+       
+         db.Users.findOne({
             where:{
                 email: emailInCookie
             }
         })
         .then(function(userFromCookie){
-            
-              if (userFromCookie!=null && req.session && req.session.userLogged) {
-             
-                req.session.userLogged = userFromCookie;
-              }
-           
-            if (req.session && req.session.userLogged) {
+               
+              if (userFromCookie!=null) { 
+                res.locals.isLogged = userFromCookie;
+
+              } else if (req.session && req.session.userLogged) {
                 res.locals.isLogged = true;
-                res.userLogged = req.session.userLogged;
-            }
-        })
+                res.locals.isLogged = req.session.userLogged;
+              
+            } 
+        }) 
 
-console.log ('res.locals.isLogged', res.locals.isLogged) ;     
-
-       /* if (req.session && req.session.userLogged) {
-            res.locals.isLogged = true;
-            res.locals.isLogged = req.session.userLogged;
-        } */
-                    
+                
     next();
 }
 

@@ -3,7 +3,7 @@ const path = require ('path');
 const validationCreateProduct= require('../../middlewares/validationCreateProduct');
 const upload= require('../../middlewares/productImageValidationMiddleware');
 const adminValidationMiddleware = require ( '../../middlewares/adminValidationMiddleware' );
-const cookieMiddleware= require('../../middlewares/cookieMiddleware')
+
 
 
 const adminController = require (path.join (__dirname, '../controllers/adminController'));

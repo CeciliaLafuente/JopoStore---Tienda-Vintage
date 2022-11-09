@@ -290,7 +290,12 @@ const controller = {
     },
 
     findUser: (req, res) => {
-        res.render('admin/findUser')
+        db.Products.findAll()
+        .then(products=>{
+            res.render('admin/findUser')
+        })
+
+        
     },
 
     createAdmin: (req, res) => {
