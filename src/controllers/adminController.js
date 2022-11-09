@@ -294,8 +294,6 @@ const controller = {
         .then(products=>{
             res.render('admin/findUser')
         })
-
-        
     },
 
     createAdmin: (req, res) => {

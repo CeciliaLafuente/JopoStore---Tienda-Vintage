@@ -11,6 +11,7 @@ let validationLogin= require('../../middlewares/validationLogin.js');
 const userLoggedMiddleware = require ( '../../middlewares/userLoggedMiddleware' );
 const userNotLoggedMiddleware = require ( '../../middlewares/userNotLoggedMiddleware' );
 
+
 router.get('/login', userLoggedMiddleware, usersController.login);
 
 router.post('/login', validationLogin, usersController.loginProcess);
