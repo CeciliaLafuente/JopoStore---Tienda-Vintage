@@ -25,11 +25,11 @@ function cookieMiddleware(req, res, next) {
            
             if (req.session && req.session.userLogged) {
                 res.locals.isLogged = true;
-                res.locals.isLogged = req.session.userLogged;
+                res.userLogged = req.session.userLogged;
             }
         })
 
-      
+console.log ('res.locals.isLogged', res.locals.isLogged) ;     
 
        /* if (req.session && req.session.userLogged) {
             res.locals.isLogged = true;

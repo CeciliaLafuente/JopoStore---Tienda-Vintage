@@ -4,7 +4,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cors = require ('cors');
-const productCountMiddleware = require('./middlewares/productCountMiddleware');
+//const productCountMiddleware = require('./middlewares/productCountMiddleware');
 const cookieMiddleware = require('./middlewares/cookieMiddleware');
 
 
@@ -25,7 +25,7 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(cors());
-app.use(productCountMiddleware);
+//app.use(productCountMiddleware);
 app.use(cookieMiddleware);
 
 
