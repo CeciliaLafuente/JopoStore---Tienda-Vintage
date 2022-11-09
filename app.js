@@ -23,8 +23,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
 app.use(cookieParser());
-app.use(cors());
+
 //app.use(productCountMiddleware);
 app.use(cookieMiddleware);
 
