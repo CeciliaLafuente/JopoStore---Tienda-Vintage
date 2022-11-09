@@ -23,13 +23,12 @@ function cookieMiddleware(req, res, next) {
                 res.locals.isLogged = userFromCookie;
 
               } else if (req.session && req.session.userLogged) {
-                
                 res.locals.isLogged = true;
                 res.locals.isLogged = req.session.userLogged;
               
             } 
         }) 
-        console.log(res.locals.isLogged)
+
                 
     next();
 }
