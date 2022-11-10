@@ -8,61 +8,46 @@ const controller = {
 
     // Accepts a query string with:
     //  page=N  returns page number N, considering 10 products per page
-    //  search=KEYWORD  returns products containing KEYWORD in name, description
+    //  search=KEYWORD  returns products containing KEYWORD in name, description, category name or color
     // With no query string, returns all products
 
         let productArray = [];
         let countByCategory = [];
         let findParameters = {};
         
-        if (req.query.page) {
-            findParameters = {
-                include: [ {association: 'colors'} ],
-                limit: 10, 
-                offset: (req.query.page - 1) * 10
-                }
-        } else {
-            findParameters = {
-                include: [ {association: 'colors'} ],
-                }
-        }
-      
+    // include clause to use in findAll        
+        findParameters.include = [ {association: 'colors'}, {association: 'product_category'} ];
+    
+    // // offset clause to use in findAll
+        if ( req.query.page ) {
+            findParameters.offset = (req.query.page - 1) * 10;
+            findParameters.limit = 10;
 
-         findParameters = {
-            include: [ {association: 'colors'}, {association: 'product_category'} ],
-            };
-            
-        let whereClause;
-        let offsetClause;
-        
-        
+        } 
+
     // where clause to use in findAll
         if (req.query.search != null && req.query.search != '') { 
             let keyword = `%${req.query.search}%`;
         
-            whereClause = { [Op.or]:
-                            [
-                                {name: { [Op.like]: keyword }}, 
-                                {description: { [Op.like]: keyword }}, 
-                                // {'$product.product_category.name$': { [Op.like]: keyword }}, 
-                                // {'$product.colors.color.name$': { [Op.like]: keyword }}
-                            ]
-                        };
+            let whereClause = { [Op.or]:
+                                [
+                                    {name: { [Op.like]: keyword }}, 
+                                    {description: { [Op.like]: keyword }}, 
+                                    {'$product_category.name$': { [Op.like]: keyword }}, 
+                                    {'$colors.name$': { [Op.like]: keyword }}
+                                ]
+                            }
+
             findParameters.where = whereClause;
-        } 
+            findParameters.subQuery = false;
         
-    // offset clause to use in findAll
-        if (req.query.page) {
-            offsetClause = (req.query.page - 1) * 10;
-        
-            findParameters.offset = offsetClause;
-            findParameters.limit = 10;
         }
+        
 
     // order by category_id and name
+        findParameters.order = [ ['product_category', 'name'], 'name' ];
 
-        //findParameters.order = [ ['product_category', 'name'] ];
-    console.log (findParameters);
+
 
         const getProducts = db.Products
                                 .findAll(findParameters);
